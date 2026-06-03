@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panashe Tech Solutions — Logo Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; font-family: 'Segoe UI', sans-serif; padding: 60px 40px; }
+  h1 { color: #fff; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; color: #64748b; margin-bottom: 60px; text-align: center; }
+  .grid { display: flex; flex-direction: column; gap: 60px; max-width: 700px; margin: 0 auto; }
+  .version { display: flex; flex-direction: column; gap: 12px; }
+  .label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #334155; }
+  .logo-wrap { display: inline-block; border-radius: 12px; overflow: hidden; }
+  .logo-wrap.dark-bg { background: #0A2540; }
+  .logo-wrap.black-bg { background: #000; }
+  .logo-wrap.light-bg { background: #fff; border: 1px solid #e2e8f0; }
+  .logo-wrap img { display: block; }
+  .icon-row { display: flex; gap: 20px; align-items: center; }
+  .icon-wrap { border-radius: 16px; overflow: hidden; }
+  .save-btn { display: inline-block; margin-top: 8px; padding: 8px 20px; background: #2563EB; color: #fff; border: none; border-radius: 8px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; text-decoration: none; }
+  .save-btn:hover { background: #1D4ED8; }
+  .divider { border: none; border-top: 1px solid #1e293b; margin: 20px 0; }
+</style>
+</head>
+<body>
+<h1>Panashe Tech Solutions — Logo Suite</h1>
+
+<div class="grid">
+
+  <!-- Version 1: Dark Navy -->
+  <div class="version">
+    <div class="label">01 — Primary Dark (Navy Background)</div>
+    <div class="logo-wrap dark-bg" style="padding: 24px 32px;">
+      <img src="/images/logo.svg" width="480" height="104" alt="Logo Dark">
+    </div>
+    <a class="save-btn" href="/images/logo.svg" download="panashe-tech-logo-dark.svg">⬇ Download SVG</a>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Version 2: Black -->
+  <div class="version">
+    <div class="label">02 — Dark (Black Background)</div>
+    <div class="logo-wrap black-bg" style="padding: 24px 32px;">
+      <img src="/images/logo.svg" width="480" height="104" alt="Logo Black">
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Version 3: Light -->
+  <div class="version">
+    <div class="label">03 — Light (White Background)</div>
+    <div class="logo-wrap light-bg" style="padding: 24px 32px;">
+      <img src="/images/logo-light.svg" width="480" height="104" alt="Logo Light">
+    </div>
+    <a class="save-btn" href="/images/logo-light.svg" download="panashe-tech-logo-light.svg" style="background:#0A2540;">⬇ Download SVG</a>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Version 4: Icon only -->
+  <div class="version">
+    <div class="label">04 — Icon Mark (Profile / Favicon)</div>
+    <div class="icon-row">
+      <div class="icon-wrap" style="background:#0A2540; padding: 8px;">
+        <img src="/images/logo-icon.svg" width="80" height="80" alt="Icon">
+      </div>
+      <div class="icon-wrap" style="background:#fff; padding: 8px; border: 1px solid #e2e8f0;">
+        <img src="/images/logo-icon.svg" width="80" height="80" alt="Icon Light">
+      </div>
+      <div class="icon-wrap" style="background:#0A2540; padding: 4px; border-radius: 50%; width: 64px; height: 64px; display:flex; align-items:center; justify-content:center;">
+        <img src="/images/logo-icon.svg" width="56" height="56" alt="Icon Circle">
+      </div>
+    </div>
+    <a class="save-btn" href="/images/logo-icon.svg" download="panashe-tech-icon.svg">⬇ Download Icon SVG</a>
+  </div>
+
+</div>
+
+</body>
+</html>
