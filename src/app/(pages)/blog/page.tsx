@@ -23,7 +23,7 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function BlogPage() {
-  const [featured, ...rest] = blogPosts;
+  const [featured, ...rest] = blogPosts as typeof blogPosts;
   return (
     <main>
       <Navbar />
