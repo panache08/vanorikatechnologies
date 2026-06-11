@@ -12,7 +12,7 @@ const servicesDropdown = [
   { label: "Web Development", icon: "🌐", href: "/services#web-development" },
   { label: "Custom Software", icon: "💻", href: "/services#software-development" },
   { label: "Mobile Apps", icon: "📱", href: "/services#mobile-apps" },
-  { label: "Technical Support", icon: "🔧", href: "/services#tech-support" },
+  { label: "AI & Automation", icon: "🤖", href: "/services#ai-solutions" },
 ];
 
 export default function Navbar() {
