@@ -40,7 +40,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
           return () => cancelAnimationFrame(raf);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
 
     observer.observe(el);
