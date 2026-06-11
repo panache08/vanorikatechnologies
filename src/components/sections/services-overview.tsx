@@ -19,7 +19,7 @@ export default function ServicesOverview() {
           badge="WHAT WE DO"
           title="End-to-End"
           titleGradient="Tech Services"
-          subtitle="From concept to deployment — every technology service your business needs, delivered with precision."
+          subtitle="Web, mobile, software, and security — built and delivered by one person who knows the work."
         />
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

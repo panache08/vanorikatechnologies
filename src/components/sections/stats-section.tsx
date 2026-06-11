@@ -13,7 +13,7 @@ const colors = [
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [n, setN] = useState(value); // real value on SSR; animates on scroll
+  const [n, setN] = useState(value); // SSR renders real value immediately
   const ran = useRef(false);
 
   useEffect(() => {
@@ -26,22 +26,21 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
           ran.current = true;
           observer.disconnect();
 
-          if (value <= 2) { setN(value); return; }
-
-          const dur = 1600;
+          const dur = 1400;
           const start = performance.now();
-          setN(0);
+          let raf: number;
           const tick = (now: number) => {
             const p = Math.min((now - start) / dur, 1);
             const eased = 1 - Math.pow(1 - p, 3);
             setN(Math.round(value * eased));
-            if (p < 1) requestAnimationFrame(tick);
+            if (p < 1) raf = requestAnimationFrame(tick);
             else setN(value);
           };
-          requestAnimationFrame(tick);
+          raf = requestAnimationFrame(tick);
+          return () => cancelAnimationFrame(raf);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.3 }
     );
 
     observer.observe(el);

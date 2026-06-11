@@ -65,7 +65,7 @@ export const services = [
     id: "cybersecurity",
     icon: "Shield",
     title: "Cybersecurity",
-    shortDesc: "Protect your business from cyber threats with enterprise-grade security.",
+    shortDesc: "Protect your business from cyber threats with proper security practices.",
     description: "Comprehensive cybersecurity solutions including vulnerability assessments, penetration testing, and security consulting to safeguard your digital assets.",
     features: ["Security Assessments", "Penetration Testing", "Security Audits", "Threat Monitoring", "Employee Training", "Compliance Consulting"],
     color: "from-red-500 to-orange-500",
