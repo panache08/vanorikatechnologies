@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Globe, Code2, Smartphone, Shield, Cloud, Lightbulb, Brain, Headphones, ArrowRight } from "lucide-react";
+import { Globe, Code2, Smartphone, Shield, Brain, ArrowRight } from "lucide-react";
 import { services } from "@/lib/data";
 import SectionHeader from "@/components/ui/section-header";
 
-const iconMap: Record<string, React.ElementType> = { Globe, Code2, Smartphone, Shield, Cloud, Lightbulb, Brain, Headphones };
+const iconMap: Record<string, React.ElementType> = { Globe, Code2, Smartphone, Shield, Brain };
 
 export default function ServicesOverview() {
   return (
@@ -16,10 +16,10 @@ export default function ServicesOverview() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="WHAT WE DO"
-          title="End-to-End"
-          titleGradient="Tech Services"
-          subtitle="Web, mobile, software, and security — built and delivered by one person who knows the work."
+          badge="WHAT WE ACTUALLY DO"
+          title="What We"
+          titleGradient="Actually Do"
+          subtitle="Five services. Done properly."
         />
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">

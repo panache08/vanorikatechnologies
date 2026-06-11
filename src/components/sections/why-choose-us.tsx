@@ -1,15 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
-import { UserCheck, DollarSign, Zap, Clock, Eye, HeartHandshake } from "lucide-react";
+import { Shield, UserCheck, Zap, FileText, MessageCircle } from "lucide-react";
 import SectionHeader from "@/components/ui/section-header";
 
 const reasons = [
-  { icon: UserCheck, title: "CompTIA PenTest+ Certified", desc: "One of very few penetration testers in Zimbabwe with this certification. Not self-taught — tested, examined, and verified.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
-  { icon: HeartHandshake, title: "You Talk to the Person Doing the Work", desc: "When you call, I answer. When you have a question, I explain it myself. No support tickets, no handoffs.", color: "text-cyan", bg: "bg-cyan/10 group-hover:bg-cyan/18" },
-  { icon: Eye, title: "Honest About What I Find", desc: "A security assessment means telling you the bad news clearly — not softening it to keep you comfortable. You'll get a straight report.", color: "text-gold", bg: "bg-gold/10 group-hover:bg-gold/18" },
-  { icon: Zap, title: "Fast Delivery", desc: "Most websites done in 1–2 weeks. Security assessments delivered with a full written report in 5–7 business days.", color: "text-violet", bg: "bg-violet/10 group-hover:bg-violet/18" },
-  { icon: DollarSign, title: "Priced for Zimbabwe", desc: "Rates set for local businesses, not South African or UK budgets. Serious work at a price that makes sense here.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
-  { icon: Clock, title: "Based in Harare, Available Everywhere", desc: "I work on-site in Harare and remotely across Zimbabwe. WhatsApp me directly — +263 77 690 2542.", color: "text-cyan", bg: "bg-cyan/10 group-hover:bg-cyan/18" },
+  { icon: Shield, title: "CompTIA PenTest+ Certified", desc: "One of very few certified penetration testers operating in Zimbabwe.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
+  { icon: UserCheck, title: "Direct Founder Access", desc: "You deal with Donovan directly. No junior staff, no middlemen, no broken telephone.", color: "text-cyan", bg: "bg-cyan/10 group-hover:bg-cyan/18" },
+  { icon: Zap, title: "Fast Turnaround", desc: "Websites delivered in 1–2 weeks. Security audits start within 48 hours of sign-off.", color: "text-gold", bg: "bg-gold/10 group-hover:bg-gold/18" },
+  { icon: FileText, title: "Plain English Reports", desc: "Security findings written so you understand them, not just your IT person.", color: "text-violet", bg: "bg-violet/10 group-hover:bg-violet/18" },
+  { icon: MessageCircle, title: "WhatsApp First", desc: "Reply within 2 hours during business hours. No ticket systems.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
 ];
 
 export default function WhyChooseUs() {
@@ -18,7 +17,7 @@ export default function WhyChooseUs() {
       <div className="absolute inset-0 bg-grid opacity-30" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader badge="WHY US" title="The PanasheTech" titleGradient="Difference"
+        <SectionHeader badge="WHY US" title="Why Businesses in Harare Choose" titleGradient="Panashe Tech"
           subtitle="You deal directly with me — no account managers, no middlemen." />
 
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

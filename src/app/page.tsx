@@ -9,7 +9,6 @@ import ProcessSection from "@/components/sections/process-section";
 import Testimonials from "@/components/sections/testimonials";
 import TechStack from "@/components/sections/tech-stack";
 import CTABanner from "@/components/sections/cta-banner";
-import IndustriesSection from "@/components/sections/industries-section";
 
 export default function HomePage() {
   return (
@@ -22,7 +21,6 @@ export default function HomePage() {
       <PortfolioPreview />
       <ProcessSection />
       <Testimonials />
-      <IndustriesSection />
       <TechStack />
       <CTABanner />
       <Footer />

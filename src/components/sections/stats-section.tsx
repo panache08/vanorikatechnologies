@@ -1,54 +1,11 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { stats } from "@/lib/data";
 
-const icons = ["🚀", "🌟", "⚡", "🛠️"];
-const colors = [
-  "from-blue-500 to-cyan-500",
-  "from-violet-500 to-blue-500",
-  "from-cyan-500 to-teal-500",
-  "from-orange-500 to-red-500",
+const certs = [
+  { abbr: "CompTIA PenTest+", label: "Penetration Testing Certification", color: "from-red-500 to-orange-500", glow: "bg-red-500/8" },
+  { abbr: "CompTIA Security+", label: "Cybersecurity Certification", color: "from-blue-500 to-cyan-500", glow: "bg-blue-500/8" },
+  { abbr: "CompTIA A+", label: "IT Fundamentals Certification", color: "from-violet-500 to-blue-500", glow: "bg-violet-500/8" },
 ];
-
-function Counter({ value, suffix }: { value: number; suffix: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [n, setN] = useState(value); // SSR renders real value immediately
-  const ran = useRef(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !ran.current) {
-          ran.current = true;
-          observer.disconnect();
-
-          const dur = 1400;
-          const start = performance.now();
-          let raf: number;
-          const tick = (now: number) => {
-            const p = Math.min((now - start) / dur, 1);
-            const eased = 1 - Math.pow(1 - p, 3);
-            setN(Math.round(value * eased));
-            if (p < 1) raf = requestAnimationFrame(tick);
-            else setN(value);
-          };
-          raf = requestAnimationFrame(tick);
-          return () => cancelAnimationFrame(raf);
-        }
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [value]);
-
-  return <span ref={ref}>{n}{suffix}</span>;
-}
 
 export default function StatsSection() {
   return (
@@ -57,27 +14,25 @@ export default function StatsSection() {
       <div className="absolute inset-0 bg-grid opacity-25" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/40 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/40 to-transparent" />
-      <div className="absolute left-1/4 top-1/2 -translate-y-1/2 w-64 h-64 bg-electric/8 rounded-full blur-3xl" />
-      <div className="absolute right-1/4 top-1/2 -translate-y-1/2 w-48 h-48 bg-violet/6 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((s, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {certs.map((c, i) => (
             <motion.div
-              key={s.label}
+              key={c.abbr}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ delay: i * 0.1, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="text-center group"
+              className="relative text-center group bg-card border border-border rounded-2xl p-8 overflow-hidden"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl glass border border-white/8 text-2xl mb-4 group-hover:scale-110 transition-transform">
-                {icons[i]}
+              <div className={`absolute inset-0 ${c.glow} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className="relative">
+                <p className={`font-display text-xl font-bold mb-2 bg-gradient-to-r ${c.color} bg-clip-text text-transparent`}>
+                  {c.abbr}
+                </p>
+                <p className="text-white/45 text-sm tracking-wider uppercase font-medium">{c.label}</p>
               </div>
-              <p className={`font-display text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r ${colors[i]} bg-clip-text text-transparent`}>
-                <Counter value={s.value} suffix={s.suffix} />
-              </p>
-              <p className="text-white/45 text-sm tracking-wider uppercase font-medium">{s.label}</p>
             </motion.div>
           ))}
         </div>
