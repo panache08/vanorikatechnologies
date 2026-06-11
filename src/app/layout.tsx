@@ -21,13 +21,11 @@ export const metadata: Metadata = {
     siteName: "Panashe Tech Solutions",
     title: "Panashe Tech Solutions | Premium Technology Company – Zimbabwe",
     description: "Premium technology solutions for businesses in Zimbabwe. Web development, software, mobile apps, cybersecurity & AI.",
-    images: [{ url: "/images/og-image.jpg", width: 1200, height: 630, alt: "Panashe Tech Solutions" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Panashe Tech Solutions | Technology Company – Zimbabwe",
     description: "Premium tech solutions for businesses in Zimbabwe.",
-    images: ["/images/og-image.jpg"],
   },
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.ico" },
