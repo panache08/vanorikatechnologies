@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: ["Panashe Tech Solutions", "web development Zimbabwe", "software development Harare", "mobile app development Zimbabwe", "cybersecurity Zimbabwe", "IT company Harare", "cloud services Zimbabwe", "AI solutions Zimbabwe"],
   authors: [{ name: "Donovan Mudarikwa" }],
   creator: "Panashe Tech Solutions",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://panashe-tech.vercel.app"),
+  metadataBase: new URL("https://panashe-tech.vercel.app"),
   openGraph: {
     type: "website", locale: "en_ZW",
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://panashe-tech.vercel.app",
