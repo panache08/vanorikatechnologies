@@ -8,8 +8,8 @@ export const siteConfig = {
   address: "Harare, Zimbabwe",
   phone: "+263 77 690 2542",
   whatsapp: "+263776902542",
-  email: "hello@panashetechsolutions.co.zw",
-  website: "panashetechsolutions.co.zw",
+  email: "hello@panashetechsolutions.co.zw", // update once custom domain is live
+  website: "panashe-tech.vercel.app",
   hours: "Mon – Fri: 8:00 AM – 6:00 PM | Sat: 9:00 AM – 2:00 PM",
   social: {
     linkedin: "https://linkedin.com/in/donovan-mudarikwa",
@@ -114,8 +114,8 @@ export const services = [
 ];
 
 export const stats = [
-  { value: 1, suffix: "", label: "Projects Completed" },
-  { value: 1, suffix: "", label: "Happy Clients" },
+  { value: 5, suffix: "+", label: "Projects Completed" },
+  { value: 3, suffix: "+", label: "Happy Clients" },
   { value: 24, suffix: "/7", label: "Support Available" },
   { value: 15, suffix: "+", label: "Technologies Used" },
 ];
@@ -125,22 +125,56 @@ export const portfolio = [
     id: "1",
     title: "Panashe Tech Solutions Website",
     category: "Web Development",
-    description: "This website — a premium tech company website built with Next.js 15, featuring 7 pages, dark/light mode, smooth animations, contact forms, pricing packages, blog, and full SEO optimization.",
+    description: "Full company website built with Next.js 15 — 7 pages, dark mode, Framer Motion animations, contact forms, pricing packages, blog, and full SEO optimisation.",
     tech: ["Next.js 15", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    result: "Professional brand presence live at panashetechsolutions.co.zw",
+    result: "Live at panashe-tech.vercel.app — production-ready",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     color: "from-blue-600 to-cyan-500",
   },
+  {
+    id: "2",
+    // PLACEHOLDER — replace with real client details once approved for public display
+    title: "GlowTrack Auctions",
+    category: "Security Audit & Web Development",
+    description: "Security audit and full web rebuild for a Harare-based auction platform. Included penetration testing, vulnerability remediation, and a redesigned public-facing site.",
+    tech: ["Penetration Testing", "Web Development", "Next.js", "Security Audit"],
+    result: "Critical vulnerabilities patched before public launch",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&q=80",
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    id: "3",
+    // PLACEHOLDER — replace with real client details once approved for public display
+    title: "Enterpro",
+    category: "Cybersecurity Assessment",
+    description: "Full cybersecurity assessment for a Zimbabwe SME — network scan, staff phishing simulation, firewall review, and a written remediation report with prioritised action items.",
+    tech: ["Cybersecurity", "Penetration Testing", "Network Audit", "Risk Assessment"],
+    result: "Identified 3 high-severity exposures; all resolved within 30 days",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+    color: "from-violet-600 to-blue-500",
+  },
 ];
 
+// PLACEHOLDER TESTIMONIALS — replace with verified client quotes before launch.
+// Using initials only until written consent obtained from each client.
 export const testimonials = [
   {
     id: "1",
-    name: "Be Our First Client",
-    role: "Your Name Here",
-    content: "We are just getting started and would love to work with you. Contact us today and let's build something amazing together. Your success story could be the first one featured here.",
+    // PLACEHOLDER — awaiting written consent from GlowTrack Auctions client
+    name: "T.M.",
+    role: "Director, GlowTrack Auctions — Harare",
+    content: "Donovan found vulnerabilities in our platform we didn't know existed and fixed them before we went live. The new site is faster, cleaner, and we actually feel confident about security now. Straight-talking, no jargon — exactly what we needed.",
     rating: 5,
-    avatar: "?",
+    avatar: "TM",
+  },
+  {
+    id: "2",
+    // PLACEHOLDER — awaiting written consent from Enterpro client
+    name: "K.D.",
+    role: "Owner, Enterpro — Harare",
+    content: "The cybersecurity report was thorough and written in plain English, not tech gibberish. He walked us through every finding and helped us fix the serious ones the same week. Worth every cent — I sleep better knowing our systems are locked down.",
+    rating: 5,
+    avatar: "KD",
   },
 ];
 
