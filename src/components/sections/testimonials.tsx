@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Clock } from "lucide-react";
+import { Shield } from "lucide-react";
 import SectionHeader from "@/components/ui/section-header";
 
 export default function Testimonials() {
@@ -12,22 +12,22 @@ export default function Testimonials() {
       </div>
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader badge="CLIENT REVIEWS" title="What Our" titleGradient="Clients Say"
-          subtitle="Don't take our word for it — hear from businesses we've helped transform." />
+        <SectionHeader badge="GUARANTEE" title="My" titleGradient="Guarantee"
+          subtitle="Every engagement ends with a clear deliverable — not a vague promise." />
 
         <div className="mt-16">
           <div className="relative bg-card border border-border rounded-3xl p-10 md:p-14 overflow-hidden shine">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/20 to-transparent" />
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-2xl bg-gradient-to-br from-electric to-violet flex items-center justify-center blue-glow-sm">
-              <Clock className="w-5 h-5 text-white" />
+              <Shield className="w-5 h-5 text-white" />
             </div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }} className="text-center py-4">
               <p className="font-display font-semibold text-foreground text-xl mb-4">
-                Client Testimonial Coming Soon
+                My Guarantee
               </p>
               <p className="text-muted-foreground text-base leading-relaxed max-w-xl mx-auto">
-                Currently collecting feedback from clients. Real testimonials will be added as projects are completed.
+                Every engagement ends with a clear deliverable — a written report, a live website, or working software. If something isn&apos;t right, I fix it. No arguments, no extra invoice.
               </p>
             </motion.div>
           </div>
