@@ -12,7 +12,7 @@ export const siteConfig = {
   website: "panashe-tech.vercel.app",
   hours: "Mon – Fri: 8:00 AM – 6:00 PM | Sat: 9:00 AM – 2:00 PM",
   social: {
-    linkedin: "https://linkedin.com/in/donovan-mudarikwa",
+    linkedin: "https://www.linkedin.com/in/donovan-panashe-mudarikwa-694a262a5/",
     twitter: "https://twitter.com/PanasheTech",
     facebook: "https://facebook.com/PanasheTechSolutions",
     instagram: "https://instagram.com/panashetechsolutions",
