@@ -72,7 +72,7 @@ export default function AboutPage() {
                 <p className="text-muted-foreground text-sm mt-1">Panashe Tech Solutions</p>
                 <p className="text-muted-foreground text-xs mt-1">📍 Harare, Zimbabwe</p>
                 <div className="mt-6 grid grid-cols-3 gap-4 pt-6 border-t border-border">
-                  {[["20+", "Projects"], ["15+", "Clients"], ["5+", "Years"]].map(([v, l]) => (
+                  {[["1+", "Projects"], ["1+", "Clients"], ["1", "Year"]].map(([v, l]) => (
                     <div key={l} className="text-center">
                       <p className="font-display text-2xl font-bold text-electric">{v}</p>
                       <p className="text-muted-foreground text-xs">{l}</p>
