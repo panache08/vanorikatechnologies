@@ -41,7 +41,7 @@ export default function Testimonials() {
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
               A Harare auction company asked us to check their website. We found 6 vulnerabilities in under 24 hours — including one exposing customer data. All fixed within a week.
             </p>
-            <Link href="/portfolio" className="inline-flex items-center gap-1.5 text-electric text-sm font-semibold hover:gap-2.5 transition-all">
+            <Link href="/case-study/glowtrack-auctions" className="inline-flex items-center gap-1.5 text-electric text-sm font-semibold hover:gap-2.5 transition-all">
               Read the case study <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </motion.div>
