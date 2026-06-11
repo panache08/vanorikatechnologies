@@ -19,8 +19,8 @@ export default function ProcessSection() {
       <div className="absolute inset-0 bg-grid opacity-35" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader badge="HOW WE WORK" title="Our Proven" titleGradient="Process"
-          subtitle="A clear, transparent process that keeps you informed and in control at every step." />
+        <SectionHeader badge="HOW IT WORKS" title="Simple" titleGradient="Process"
+          subtitle="No kickoff decks, no project managers. Just clear steps and honest timelines." />
 
         <div className="mt-16 grid md:grid-cols-5 gap-6">
           {process.map((step, i) => {

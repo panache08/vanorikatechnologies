@@ -4,12 +4,12 @@ import { UserCheck, DollarSign, Zap, Clock, Code2, HeartHandshake } from "lucide
 import SectionHeader from "@/components/ui/section-header";
 
 const reasons = [
-  { icon: UserCheck, title: "Direct Founder Access", desc: "You work directly with Donovan — no account managers or middlemen. Clear, fast, personal communication.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
-  { icon: DollarSign, title: "Affordable Premium Quality", desc: "High-quality work at prices that make sense for businesses. No hidden fees, ever.", color: "text-cyan", bg: "bg-cyan/10 group-hover:bg-cyan/18" },
-  { icon: Zap, title: "Fast Turnaround", desc: "We move quickly without compromising quality. Most websites delivered in 1–2 weeks.", color: "text-gold", bg: "bg-gold/10 group-hover:bg-gold/18" },
-  { icon: Clock, title: "24/7 Support", desc: "Our support is available around the clock. We treat your business like our own.", color: "text-violet", bg: "bg-violet/10 group-hover:bg-violet/18" },
-  { icon: Code2, title: "Modern Technology", desc: "We use current, well-supported technologies — nothing trendy for its own sake, nothing outdated.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
-  { icon: HeartHandshake, title: "Long-Term Partnership", desc: "We don't disappear after launch. Call, WhatsApp, or email — you'll get Donovan directly.", color: "text-cyan", bg: "bg-cyan/10 group-hover:bg-cyan/18" },
+  { icon: UserCheck, title: "CompTIA PenTest+ Certified", desc: "One of very few penetration testers in Zimbabwe with this certification. Not self-taught — tested, examined, and verified.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
+  { icon: HeartHandshake, title: "You Talk to the Person Doing the Work", desc: "When you call, I answer. When you have a question, I explain it myself. No support tickets, no handoffs.", color: "text-cyan", bg: "bg-cyan/10 group-hover:bg-cyan/18" },
+  { icon: UserCheck, title: "Honest About What I Find", desc: "A security assessment means telling you the bad news clearly — not softening it to keep you comfortable. You'll get a straight report.", color: "text-gold", bg: "bg-gold/10 group-hover:bg-gold/18" },
+  { icon: Zap, title: "Fast Delivery", desc: "Most websites done in 1–2 weeks. Security assessments delivered with a full written report in 5–7 business days.", color: "text-violet", bg: "bg-violet/10 group-hover:bg-violet/18" },
+  { icon: DollarSign, title: "Priced for Zimbabwe", desc: "Rates set for local businesses, not South African or UK budgets. Serious work at a price that makes sense here.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
+  { icon: Clock, title: "Based in Harare, Available Everywhere", desc: "I work on-site in Harare and remotely across Zimbabwe. WhatsApp me directly — +263 77 690 2542.", color: "text-cyan", bg: "bg-cyan/10 group-hover:bg-cyan/18" },
 ];
 
 export default function WhyChooseUs() {

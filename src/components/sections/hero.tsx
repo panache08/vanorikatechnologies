@@ -127,20 +127,19 @@ export default function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan" />
                 </span>
-                PREMIUM TECH SOLUTIONS · ZIMBABWE
+                COMPTIA PENTEST+ CERTIFIED · HARARE, ZIMBABWE
               </span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
               className="font-display text-5xl md:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-4">
-              Transforming
+              Your Business
               <br />
-              <span className="text-gradient-white">Businesses</span>
+              <span className="text-gradient-white">Is Probably</span>
               <br />
-              Through{" "}
               <span className="relative">
-                <span className="text-gradient">Technology</span>
+                <span className="text-gradient">Exposed.</span>
                 <motion.span
                   className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-electric via-cyan to-violet"
                   initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, delay: 0.8 }}
@@ -151,14 +150,14 @@ export default function Hero() {
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
               className="text-white/60 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
-              From websites to penetration testing —{" "}
-              <span className="text-white/80 font-medium">Harare-based, founder-led, no middlemen.</span>
+              Most Zimbabwean businesses have never had a security test.{" "}
+              <span className="text-white/80 font-medium">I&apos;ll find your vulnerabilities before someone else does — CompTIA PenTest+ certified. One of a handful in the country.</span>
             </motion.p>
 
             {/* Trust indicators */}
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}
               className="flex flex-wrap gap-5 mb-10">
-              {["Fast Turnaround", "Honest Pricing", "Direct Founder Access"].map((t) => (
+              {["CompTIA Security+ Certified", "CompTIA PenTest+", "CompTIA A+"].map((t) => (
                 <div key={t} className="flex items-center gap-2 text-white/50 text-sm">
                   <CheckCircle className="w-4 h-4 text-cyan flex-shrink-0" />
                   <span>{t}</span>
@@ -172,7 +171,7 @@ export default function Hero() {
               <Link href="/contact"
                 className="group relative overflow-hidden flex items-center justify-center gap-2.5 px-8 py-4 bg-electric text-white font-semibold rounded-2xl text-base blue-glow shine">
                 <span className="relative z-10 flex items-center gap-2">
-                  Start Your Project
+                  Get a Free Security Check
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-electric to-cyan opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -188,7 +187,7 @@ export default function Hero() {
             <motion.form onSubmit={handleLead} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }}
               className="flex gap-2 max-w-md">
               <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email — get a free quote"
+                placeholder="Your email — I'll respond within 2 hours"
                 className="flex-1 px-4 py-3 glass border border-white/12 rounded-xl text-white placeholder-white/30 focus:border-electric/50 focus:outline-none text-sm bg-white/3" />
               <button type="submit"
                 className="px-5 py-3 bg-gradient-to-r from-cyan to-electric text-white font-semibold rounded-xl hover:opacity-90 transition-opacity text-sm whitespace-nowrap">
@@ -204,7 +203,7 @@ export default function Hero() {
                   <Star key={i} className="w-4 h-4 text-gold fill-gold" />
                 ))}
               </div>
-              <span className="text-white/40 text-sm">5.0 · Premium quality guaranteed</span>
+              <span className="text-white/40 text-sm">Taking new clients · Response within 2 hours</span>
             </motion.div>
           </div>
 
