@@ -114,8 +114,8 @@ export const services = [
 ];
 
 export const stats = [
-  { value: 5, suffix: "+", label: "Projects Completed" },
-  { value: 3, suffix: "+", label: "Happy Clients" },
+  { value: 1, suffix: "+", label: "Projects Completed" },
+  { value: 1, suffix: "+", label: "Happy Clients" },
   { value: 24, suffix: "/7", label: "Support Available" },
   { value: 15, suffix: "+", label: "Technologies Used" },
 ];
