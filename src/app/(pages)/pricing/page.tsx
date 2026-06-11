@@ -21,13 +21,64 @@ export default function PricingPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">TRANSPARENT PRICING</span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Simple, Clear Pricing</h1>
-          <p className="text-white/60 text-lg">No hidden fees. No surprises. Just great technology at fair prices.</p>
+          <p className="text-white/60 text-lg">Fixed prices. You know the cost before we start.</p>
+        </div>
+      </section>
+
+      {/* Cybersecurity Pricing */}
+      <section className="py-24 bg-muted/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-4">CYBERSECURITY</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Security Assessments</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Free Security Check",
+                price: "$0",
+                desc: "Basic external scan of your website. Delivered as a short report via WhatsApp. No obligation.",
+                cta: "Request Free Check",
+                href: "/contact",
+                highlight: false,
+              },
+              {
+                name: "Website Security Audit",
+                price: "from $150",
+                desc: "Full vulnerability assessment of your website. Written report with fixes ranked by priority.",
+                cta: "Get a Quote",
+                href: "/contact",
+                highlight: true,
+              },
+              {
+                name: "Full Penetration Test",
+                price: "from $400",
+                desc: "Comprehensive test of your systems, network and website. Formal report suitable for compliance or board review.",
+                cta: "Get a Quote",
+                href: "/contact",
+                highlight: false,
+              },
+            ].map((p) => (
+              <div key={p.name} className={`relative bg-card border rounded-3xl p-8 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl ${p.highlight ? "border-electric shadow-blue-500/20 shadow-lg" : "border-border hover:border-electric/40"}`}>
+                <h3 className="font-display text-xl font-bold text-foreground mb-2">{p.name}</h3>
+                <p className="font-display text-3xl font-bold text-electric mb-4">{p.price}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-8 flex-1">{p.desc}</p>
+                <a href={p.href} className={`block w-full text-center py-3 rounded-xl font-semibold text-sm transition-all ${p.highlight ? "bg-electric text-white hover:bg-electric-dark blue-glow" : "border border-electric/30 text-electric hover:bg-electric/10"}`}>
+                  {p.cta}
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Pricing Cards */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-4">WEB & SOFTWARE</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Website Packages</h2>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {pricingPlans.map((plan) => (
               <div key={plan.id} className={`relative bg-card border rounded-3xl p-8 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl ${

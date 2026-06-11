@@ -3,7 +3,7 @@ import Footer from "@/components/layout/footer";
 import CTABanner from "@/components/sections/cta-banner";
 import type { Metadata } from "next";
 import { services } from "@/lib/data";
-import { Globe, Code2, Smartphone, Shield, Headphones, CheckCircle, ArrowRight } from "lucide-react";
+import { Globe, Code2, Smartphone, Shield, Brain, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SectionHeader from "@/components/ui/section-header";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Penetration testing, web development, custom software, mobile apps, and technical support — delivered by a CompTIA PenTest+ certified professional in Harare, Zimbabwe.",
 };
 
-const iconMap: Record<string, React.ElementType> = { Globe, Code2, Smartphone, Shield, Headphones };
+const iconMap: Record<string, React.ElementType> = { Globe, Code2, Smartphone, Shield, Brain };
 
 export default function ServicesPage() {
   return (
@@ -23,7 +23,7 @@ export default function ServicesPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">WHAT WE OFFER</span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Our Services</h1>
-          <p className="text-white/60 text-lg">End-to-end technology solutions designed to accelerate your business growth.</p>
+          <p className="text-white/60 text-lg">Five services. Quoted honestly. Delivered on time.</p>
         </div>
       </section>
 

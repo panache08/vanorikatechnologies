@@ -8,14 +8,14 @@ import SectionHeader from "@/components/ui/section-header";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about Panashe Tech Solutions, founder Donovan Mudarikwa, our mission, values, and commitment to transforming businesses through technology.",
+  description: "Donovan Mudarikwa — CompTIA A+, Security+, and PenTest+ certified. Penetration tester and web developer based in Harare, Zimbabwe.",
 };
 
 const values = [
-  { icon: Target, title: "Excellence", desc: "I deliver nothing short of the best. Every line of code, every design, every interaction reflects my commitment to quality." },
-  { icon: Heart, title: "Client-First", desc: "Your success is my success. I make decisions based on what is best for your business, not what is easiest for me." },
-  { icon: Zap, title: "Innovation", desc: "I stay ahead of technology trends so my clients always have access to the most powerful and modern solutions." },
-  { icon: CheckCircle, title: "Transparency", desc: "Clear pricing, honest timelines, and open communication throughout every project. No surprises, ever." },
+  { icon: Target, title: "Excellence", desc: "I don't send work I wouldn't put my name on. Every project gets the same attention whether it's $300 or $3000." },
+  { icon: Heart, title: "Client-First", desc: "I tell clients what they need to hear, not what they want to hear. That's more useful long term." },
+  { icon: Zap, title: "Staying Current", desc: "I stay current so I can tell you what actually works — not just what's trendy." },
+  { icon: CheckCircle, title: "Transparency", desc: "Fixed quotes. Real timelines. You always know where things stand." },
 ];
 
 export default function AboutPage() {
@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">MY STORY</span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">About Me</h1>
-          <p className="text-white/60 text-lg">Built by one person with a passion for technology and a mission to transform businesses.</p>
+          <p className="text-white/60 text-lg">One person. Certified. Based in Harare. I do the work myself.</p>
         </div>
       </section>
 
@@ -43,20 +43,20 @@ export default function AboutPage() {
               <p className="text-electric font-medium mb-6">{siteConfig.founderTitle} · Panashe Tech Solutions</p>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  I am Donovan Mudarikwa — a technology entrepreneur based in Harare, Zimbabwe, with a deep passion for building digital solutions that help businesses grow and succeed.
+                  I&apos;m Donovan Mudarikwa — a certified penetration tester and web developer based in Harare, Zimbabwe. I hold CompTIA A+, Security+, and PenTest+ certifications and work directly with clients on cybersecurity and web projects.
                 </p>
                 <p>
-                  I founded Panashe Tech Solutions with one clear goal: to make world-class technology accessible to businesses in Zimbabwe and across Africa at prices that make sense.
+                  I started Panashe Tech Solutions because most Zimbabwean businesses have no idea what their security exposure looks like — and web developers here are either too expensive or too slow.
                 </p>
                 <p>
                   I work directly with every client — no middlemen, no junior developers, no outsourcing. When you hire Panashe Tech Solutions, you get me personally handling your project from start to finish.
                 </p>
                 <p>
-                  My expertise spans web development, mobile applications, custom software, cloud infrastructure, cybersecurity, and AI integration. Whatever your technology challenge, I have the skills to solve it.
+                  My main focus is cybersecurity assessments and web development. If you need a pentest, a website, or both — I handle it personally.
                 </p>
               </div>
               <div className="mt-8 p-6 bg-electric/5 border border-electric/20 rounded-2xl">
-                <p className="text-foreground italic">&ldquo;Technology should be an enabler, not a barrier. My goal is to ensure every business in Zimbabwe has access to the digital tools they need to compete and thrive in the modern world.&rdquo;</p>
+                <p className="text-foreground italic">&ldquo;Most businesses in Zimbabwe find out they&apos;ve been hacked after the damage is done. I&apos;d rather you found out from me first.&rdquo;</p>
                 <p className="text-electric font-semibold mt-3">— {siteConfig.founder}, Founder & CEO</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 <p className="text-muted-foreground text-sm mt-1">Panashe Tech Solutions</p>
                 <p className="text-muted-foreground text-xs mt-1">📍 Harare, Zimbabwe</p>
                 <div className="mt-6 grid grid-cols-3 gap-4 pt-6 border-t border-border">
-                  {[["1+", "Projects"], ["1+", "Clients"], ["1", "Year"]].map(([v, l]) => (
+                  {[["A+", "CompTIA Certified"], ["Sec+", "Security Certified"], ["PenTest+", "Pentest Certified"]].map(([v, l]) => (
                     <div key={l} className="text-center">
                       <p className="font-display text-2xl font-bold text-electric">{v}</p>
                       <p className="text-muted-foreground text-xs">{l}</p>
@@ -96,12 +96,12 @@ export default function AboutPage() {
             <div className="bg-card border border-border rounded-2xl p-10 hover:border-electric/30 transition-all">
               <Target className="w-10 h-10 text-electric mb-6" />
               <h3 className="font-display text-2xl font-bold text-foreground mb-4">My Mission</h3>
-              <p className="text-muted-foreground leading-relaxed">To deliver premium technology solutions that drive real business results — helping companies across Zimbabwe and Africa compete on a global stage through digital innovation, accessible pricing, and unmatched personal service.</p>
+              <p className="text-muted-foreground leading-relaxed">To give Zimbabwean businesses an honest picture of their security exposure and build websites that actually bring in clients — at prices that don&apos;t require a loan.</p>
             </div>
             <div className="bg-card border border-border rounded-2xl p-10 hover:border-cyan/30 transition-all">
               <Eye className="w-10 h-10 text-cyan mb-6" />
               <h3 className="font-display text-2xl font-bold text-foreground mb-4">My Vision</h3>
-              <p className="text-muted-foreground leading-relaxed">To be recognized as Zimbabwe&apos;s most trusted technology solutions provider — known for quality, integrity, and transformative impact. I envision a future where every African business has the technology it needs to grow and succeed.</p>
+              <p className="text-muted-foreground leading-relaxed">To be the first call Harare businesses make when they need a website built properly or want to know if their systems are secure.</p>
             </div>
           </div>
         </div>

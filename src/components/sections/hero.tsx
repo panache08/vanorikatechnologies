@@ -127,7 +127,7 @@ export default function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan" />
                 </span>
-                COMPTIA PENTEST+ CERTIFIED · HARARE, ZIMBABWE
+                CYBERSECURITY & WEB DEVELOPMENT · HARARE, ZIMBABWE
               </span>
             </motion.div>
 
@@ -136,10 +136,10 @@ export default function Hero() {
               className="font-display text-5xl md:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-4">
               Your Business
               <br />
-              <span className="text-gradient-white">Is Probably</span>
+              <span className="text-gradient-white">Is Probably Exposed</span>
               <br />
               <span className="relative">
-                <span className="text-gradient">Exposed.</span>
+                <span className="text-gradient">Online. Let&apos;s Fix That.</span>
                 <motion.span
                   className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-electric via-cyan to-violet"
                   initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, delay: 0.8 }}
@@ -150,14 +150,14 @@ export default function Hero() {
 
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
               className="text-white/60 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
-              Most Zimbabwean businesses have never had a security test.{" "}
-              <span className="text-white/80 font-medium">I&apos;ll find your vulnerabilities before someone else does — CompTIA PenTest+ certified. One of a handful in the country.</span>
+              Donovan Mudarikwa — CompTIA PenTest+ certified, based in Harare.{" "}
+              <span className="text-white/80 font-medium">I find security vulnerabilities in Zimbabwean businesses and build websites that bring in real clients.</span>
             </motion.p>
 
             {/* Trust indicators */}
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}
               className="flex flex-wrap gap-5 mb-10">
-              {["CompTIA Security+ Certified", "CompTIA PenTest+", "CompTIA A+"].map((t) => (
+              {["CompTIA PenTest+ Certified", "Based in Harare — same day response", "Reply within 2 hours"].map((t) => (
                 <div key={t} className="flex items-center gap-2 text-white/50 text-sm">
                   <CheckCircle className="w-4 h-4 text-cyan flex-shrink-0" />
                   <span>{t}</span>
