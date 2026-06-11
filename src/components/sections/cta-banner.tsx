@@ -29,7 +29,7 @@ export default function CTABanner() {
             <span className="text-gradient">Amazing Together</span>
           </h2>
           <p className="text-white/55 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-            Whether you need a website, custom software, or a full digital transformation — we&apos;re ready to make it happen. Free consultation, no obligation.
+            Whether you need a website, custom software, or a security assessment — I&apos;m ready to help. Free consultation, no obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link href="/contact"

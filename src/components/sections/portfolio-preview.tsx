@@ -16,7 +16,7 @@ export default function PortfolioPreview() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader badge="OUR WORK" title="Featured" titleGradient="Projects" light
-          subtitle="Real results for real businesses. Here's what we've built." />
+          subtitle="Our Work" />
 
         <div className="mt-16 grid lg:grid-cols-3 gap-6">
           {featured.map((p, i) => (
