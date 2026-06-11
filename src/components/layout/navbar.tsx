@@ -8,12 +8,11 @@ import { navLinks, siteConfig } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const servicesDropdown = [
-  { label: "Web Development", icon: "🌐", href: "/services#web-development" },
-  { label: "Mobile Apps", icon: "📱", href: "/services#mobile-apps" },
-  { label: "AI & Automation", icon: "🤖", href: "/services#ai-solutions" },
   { label: "Cybersecurity", icon: "🛡️", href: "/services#cybersecurity" },
-  { label: "Cloud Services", icon: "☁️", href: "/services#cloud-services" },
-  { label: "IT Consulting", icon: "💡", href: "/services#it-consulting" },
+  { label: "Web Development", icon: "🌐", href: "/services#web-development" },
+  { label: "Custom Software", icon: "💻", href: "/services#software-development" },
+  { label: "Mobile Apps", icon: "📱", href: "/services#mobile-apps" },
+  { label: "Technical Support", icon: "🔧", href: "/services#tech-support" },
 ];
 
 export default function Navbar() {

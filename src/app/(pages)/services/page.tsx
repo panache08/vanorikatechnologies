@@ -3,16 +3,16 @@ import Footer from "@/components/layout/footer";
 import CTABanner from "@/components/sections/cta-banner";
 import type { Metadata } from "next";
 import { services } from "@/lib/data";
-import { Globe, Code2, Smartphone, Shield, Cloud, Lightbulb, Brain, Headphones, CheckCircle, ArrowRight } from "lucide-react";
+import { Globe, Code2, Smartphone, Shield, Headphones, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SectionHeader from "@/components/ui/section-header";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Explore our full range of technology services: web development, custom software, mobile apps, cybersecurity, cloud, AI, and IT consulting.",
+  description: "Penetration testing, web development, custom software, mobile apps, and technical support — delivered by a CompTIA PenTest+ certified professional in Harare, Zimbabwe.",
 };
 
-const iconMap: Record<string, React.ElementType> = { Globe, Code2, Smartphone, Shield, Cloud, Lightbulb, Brain, Headphones };
+const iconMap: Record<string, React.ElementType> = { Globe, Code2, Smartphone, Shield, Headphones };
 
 export default function ServicesPage() {
   return (

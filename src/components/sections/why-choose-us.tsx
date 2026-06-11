@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
-import { UserCheck, DollarSign, Zap, Clock, Code2, HeartHandshake } from "lucide-react";
+import { UserCheck, DollarSign, Zap, Clock, Eye, HeartHandshake } from "lucide-react";
 import SectionHeader from "@/components/ui/section-header";
 
 const reasons = [
   { icon: UserCheck, title: "CompTIA PenTest+ Certified", desc: "One of very few penetration testers in Zimbabwe with this certification. Not self-taught — tested, examined, and verified.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
   { icon: HeartHandshake, title: "You Talk to the Person Doing the Work", desc: "When you call, I answer. When you have a question, I explain it myself. No support tickets, no handoffs.", color: "text-cyan", bg: "bg-cyan/10 group-hover:bg-cyan/18" },
-  { icon: UserCheck, title: "Honest About What I Find", desc: "A security assessment means telling you the bad news clearly — not softening it to keep you comfortable. You'll get a straight report.", color: "text-gold", bg: "bg-gold/10 group-hover:bg-gold/18" },
+  { icon: Eye, title: "Honest About What I Find", desc: "A security assessment means telling you the bad news clearly — not softening it to keep you comfortable. You'll get a straight report.", color: "text-gold", bg: "bg-gold/10 group-hover:bg-gold/18" },
   { icon: Zap, title: "Fast Delivery", desc: "Most websites done in 1–2 weeks. Security assessments delivered with a full written report in 5–7 business days.", color: "text-violet", bg: "bg-violet/10 group-hover:bg-violet/18" },
   { icon: DollarSign, title: "Priced for Zimbabwe", desc: "Rates set for local businesses, not South African or UK budgets. Serious work at a price that makes sense here.", color: "text-electric", bg: "bg-electric/10 group-hover:bg-electric/18" },
   { icon: Clock, title: "Based in Harare, Available Everywhere", desc: "I work on-site in Harare and remotely across Zimbabwe. WhatsApp me directly — +263 77 690 2542.", color: "text-cyan", bg: "bg-cyan/10 group-hover:bg-cyan/18" },
