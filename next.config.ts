@@ -22,6 +22,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
+      { protocol: "https", hostname: "vanorikatechnologies.vercel.app" },
+      { protocol: "https", hostname: "beauty-by-nyasha.vercel.app" },
     ],
   },
 };

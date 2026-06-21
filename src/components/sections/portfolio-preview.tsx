@@ -7,7 +7,6 @@ import { portfolio } from "@/lib/data";
 import SectionHeader from "@/components/ui/section-header";
 
 export default function PortfolioPreview() {
-  const featured = portfolio.slice(0, 3);
   return (
     <section className="relative py-24 bg-[#07070D] overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-15 pointer-events-none" />
@@ -20,34 +19,45 @@ export default function PortfolioPreview() {
           centered
         />
 
-        <div className="mt-14 grid lg:grid-cols-3 gap-5">
-          {featured.map((p, i) => (
+        <div className="mt-14 grid sm:grid-cols-2 gap-6">
+          {portfolio.map((p, i) => (
             <motion.div
               key={p.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="group rounded-2xl border border-[#1A1A30] bg-[#0D0D1A] hover:border-gold/20 transition-all overflow-hidden"
+              transition={{ delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="group rounded-2xl border border-[#1A1A30] bg-[#0D0D1A] hover:border-gold/25 transition-all overflow-hidden"
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-52 overflow-hidden bg-[#07070D]">
                 <Image
                   src={p.image}
                   alt={p.title}
                   fill
+                  unoptimized={p.image.startsWith("data:")}
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="33vw"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D1A] via-[#0D0D1A]/20 to-transparent" />
-                <span className="absolute top-3 left-3 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-gold bg-[#07070D]/80 border border-gold/20 rounded-lg">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D1A] via-[#0D0D1A]/10 to-transparent" />
+                <span className="absolute top-3 left-3 px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-gold bg-[#07070D]/80 border border-gold/20 rounded-lg backdrop-blur-sm">
                   {p.category}
                 </span>
+                {"url" in p && p.url && (
+                  <a
+                    href={(p as { url: string }).url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 w-7 h-7 rounded-lg bg-[#07070D]/80 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 text-white/60" />
+                  </a>
+                )}
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="font-display font-bold text-white/90 text-[15px] mb-2 group-hover:text-gold/90 transition-colors">
+                <h3 className="font-display font-bold text-white/90 text-base mb-2 group-hover:text-gold/90 transition-colors">
                   {p.title}
                 </h3>
                 <p className="text-white/40 text-sm leading-relaxed mb-4 line-clamp-2 font-light">
@@ -63,12 +73,9 @@ export default function PortfolioPreview() {
                   ))}
                 </div>
 
-                <div className="pt-4 border-t border-[#1A1A30] flex items-center justify-between">
-                  <p className="text-xs text-white/30 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green flex-shrink-0" />
-                    {p.result}
-                  </p>
-                  <ExternalLink className="w-3.5 h-3.5 text-white/20 group-hover:text-gold/50 transition-colors" />
+                <div className="pt-4 border-t border-[#1A1A30] flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green flex-shrink-0" />
+                  <p className="text-xs text-white/30 leading-relaxed">{p.result}</p>
                 </div>
               </div>
             </motion.div>
