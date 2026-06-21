@@ -36,11 +36,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Donovan Mudarikwa" }],
   creator: "Vanorika Technologies",
-  metadataBase: new URL("https://vanorikatechnologies.co.zw"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://vanorikatechnologies.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_ZW",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vanorikatechnologies.co.zw",
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vanorikatechnologies.vercel.app",
     siteName: "Vanorika Technologies",
     title: "Vanorika Technologies | Enterprise Security & Web Development — Zimbabwe",
     description: "CompTIA PenTest+ certified penetration tester and web developer in Harare, Zimbabwe. Security assessments and professional websites.",
