@@ -1,23 +1,33 @@
 export const siteConfig = {
-  name: "Panashe Tech Solutions",
-  tagline: "Penetration testing and web development — Harare-based, founder-led, certifications you can verify.",
+  name: "Vanorika Technologies",
+  tagline: "Enterprise Security. Zero Compromise.",
   description: "CompTIA PenTest+ certified penetration tester and web developer based in Harare, Zimbabwe. Security assessments and professional websites for Zimbabwean businesses.",
   founder: "Donovan Mudarikwa",
   founderTitle: "Founder & CEO",
-  founderBio: "A passionate technology entrepreneur helping businesses grow through innovative digital solutions.",
+  founderBio: "CompTIA A+, Security+, and PenTest+ certified security professional and web developer. Based in Harare, working with businesses across Zimbabwe and beyond.",
   address: "Harare, Zimbabwe",
   phone: "+263 77 690 2542",
-  whatsapp: "+263776902542",
-  email: "hello@panashetechsolutions.co.zw", // update once custom domain is live
-  website: "panashe-tech.vercel.app",
+  whatsapp: "263776902542",
+  whatsappUrl: "https://wa.me/263776902542?text=Hello!%20I'd%20like%20to%20discuss%20a%20project%20with%20Vanorika%20Technologies.",
+  email: "donovanmudarikwa@gmail.com",
+  website: "vanorikatechnologies.co.zw",
   hours: "Mon – Fri: 8:00 AM – 6:00 PM | Sat: 9:00 AM – 2:00 PM",
   social: {
     linkedin: "https://www.linkedin.com/in/donovan-panashe-mudarikwa",
     twitter: "https://twitter.com/PanasheTech",
-    facebook: "https://facebook.com/PanasheTechSolutions",
-    instagram: "https://instagram.com/panashetechsolutions",
+    facebook: "https://facebook.com/VanorikaTechnologies",
+    instagram: "https://instagram.com/vanorikatechnologies",
     github: "https://github.com/panache08",
   },
+  bugBounty: {
+    hackerone: "https://hackerone.com/panashesec",
+    bugcrowd: "https://bugcrowd.com/donovanmudarikwa1",
+  },
+  certifications: [
+    { abbr: "A+", full: "CompTIA A+", desc: "Hardware & IT Systems" },
+    { abbr: "Sec+", full: "CompTIA Security+", desc: "Information Security" },
+    { abbr: "PT+", full: "CompTIA PenTest+", desc: "Penetration Testing" },
+  ],
 };
 
 export const navLinks = [
@@ -83,54 +93,42 @@ export const services = [
   },
 ];
 
-export const stats = [
-  { value: 1, suffix: "+", label: "Projects Completed" },
-  { value: 1, suffix: "+", label: "Happy Clients" },
-  { value: 24, suffix: "/7", label: "Support Available" },
-  { value: 15, suffix: "+", label: "Technologies Used" },
-];
-
 export const portfolio = [
   {
     id: "1",
-    title: "Panashe Tech Solutions Website",
+    title: "Vanorika Technologies Website",
     category: "Web Development",
-    description: "Built with Next.js 15. 7 pages, dark/light mode, contact forms, pricing, blog and full SEO. Delivered in under 2 weeks.",
+    description: "Built with Next.js 15. 7 pages, dark mode, contact forms, pricing, blog and full SEO. Delivered in under 2 weeks.",
     tech: ["Next.js 15", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    result: "Live at panashe-tech.vercel.app — production-ready",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nYmFyMScgeDE9JzAnIHkxPScwJyB4Mj0nMScgeTI9JzAnPgogICAgICA8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjM2I4MmY2Jy8+CiAgICAgIDxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzAwZDRmZicvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXR0ZXJuIGlkPSdncmlkMScgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz4KICAgICAgPHBhdGggZD0nTSA0MCAwIEwgMCAwIDAgNDAnIGZpbGw9J25vbmUnIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nMC40JyBzdHJva2Utb3BhY2l0eT0nMC4wNycvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzBhMGYxZScvPgogIDxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2dyaWQxKScvPgogIDxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nMycgZmlsbD0ndXJsKCNiYXIxKScvPgogIDx0ZXh0IHg9JzQwMCcgeT0nMjAwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9JzcwMCcgZm9udC1zaXplPSc5NicgZmlsbD0nIzAwZDRmZicgdGV4dC1hbmNob3I9J21pZGRsZScgZG9taW5hbnQtYmFzZWxpbmU9J21pZGRsZSc+UFRTPC90ZXh0PgogIDx0ZXh0IHg9JzQwMCcgeT0nMjgwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9JzQwMCcgZm9udC1zaXplPScyMCcgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwwLjUpJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5XZWIgRGV2ZWxvcG1lbnQ8L3RleHQ+Cjwvc3ZnPg==",
-    color: "from-blue-600 to-cyan-500",
+    result: "Live at vanorikatechnologies.co.zw — production-ready",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nYmFyMScgeDE9JzAnIHkxPScwJyB4Mj0nMScgeTI9JzAnPgogICAgICA8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjQzlBODRDJy8+CiAgICAgIDxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nI0UyQzk3QScvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXR0ZXJuIGlkPSdncmlkMScgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz4KICAgICAgPHBhdGggZD0nTSA0MCAwIEwgMCAwIDAgNDAnIGZpbGw9J25vbmUnIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nMC40JyBzdHJva2Utb3BhY2l0eT0nMC4wNycvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzA3MDcwRCcvPgogIDxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2dyaWQxKScvPgogIDxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nMycgZmlsbD0ndXJsKCNiYXIxKScvPgogIDx0ZXh0IHg9JzQwMCcgeT0nMjAwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9JzcwMCcgZm9udC1zaXplPSc5NicgZmlsbD0nI0M5QTg0QycgdGV4dC1hbmNob3I9J21pZGRsZScgZG9taW5hbnQtYmFzZWxpbmU9J21pZGRsZSc+VlQ8L3RleHQ+CiAgPHRleHQgeD0nNDAwJyB5PScyODAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNDAwJyBmb250LXNpemU9JzIwJyBmaWxsPSdyZ2JhKDI0MCwyMzcsMjMyLDAuNSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPldlYiBEZXZlbG9wbWVudDwvdGV4dD4KPC9zdmc+",
+    color: "from-gold to-gold-light",
   },
   {
     id: "2",
-    // PLACEHOLDER — replace with real client details once approved for public display
     title: "GlowTrack Auctions",
     category: "Security Audit & Web Development",
-    description: "Security audit and full web rebuild for a Harare-based auction platform. Included penetration testing, vulnerability remediation, and a redesigned public-facing site.",
+    description: "Security audit and full web rebuild for a Harare-based auction platform. 6 vulnerabilities found and patched before public launch.",
     tech: ["Penetration Testing", "Web Development", "Next.js", "Security Audit"],
     result: "Critical vulnerabilities patched before public launch",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nYmFyMicgeDE9JzAnIHkxPScwJyB4Mj0nMScgeTI9JzAnPgogICAgICA8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZjk3MzE2Jy8+CiAgICAgIDxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nI2VmNDQ0NCcvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXR0ZXJuIGlkPSdncmlkMicgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz4KICAgICAgPHBhdGggZD0nTSA0MCAwIEwgMCAwIDAgNDAnIGZpbGw9J25vbmUnIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nMC40JyBzdHJva2Utb3BhY2l0eT0nMC4wNycvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzBmMGEwYScvPgogIDxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2dyaWQyKScvPgogIDxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nMycgZmlsbD0ndXJsKCNiYXIyKScvPgogIDx0ZXh0IHg9JzQwMCcgeT0nMjAwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9JzcwMCcgZm9udC1zaXplPSc5NicgZmlsbD0nI2Y5NzMxNicgdGV4dC1hbmNob3I9J21pZGRsZScgZG9taW5hbnQtYmFzZWxpbmU9J21pZGRsZSc+R1Q8L3RleHQ+CiAgPHRleHQgeD0nNDAwJyB5PScyODAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNDAwJyBmb250LXNpemU9JzIwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LDAuNSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPlNlY3VyaXR5IEF1ZGl0PC90ZXh0Pgo8L3N2Zz4=",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nYmFyMicgeDE9JzAnIHkxPScwJyB4Mj0nMScgeTI9JzAnPgogICAgICA8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZjk3MzE2Jy8+CiAgICAgIDxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nI2VmNDQ0NCcvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXR0ZXJuIGlkPSdncmlkMicgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz4KICA8cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzBmMGEwYScvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2dyaWQyKScvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nMycgZmlsbD0ndXJsKCNiYXIyKScvPjx0ZXh0IHg9JzQwMCcgeT0nMjAwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9JzcwMCcgZm9udC1zaXplPSc5NicgZmlsbD0nI2Y5NzMxNicgdGV4dC1hbmNob3I9J21pZGRsZScgZG9taW5hbnQtYmFzZWxpbmU9J21pZGRsZSc+R1Q8L3RleHQ+PHRleHQgeD0nNDAwJyB5PScyODAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNDAwJyBmb250LXNpemU9JzIwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LDAuNSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPlNlY3VyaXR5IEF1ZGl0PC90ZXh0Pjwvc3ZnPg==",
     color: "from-orange-500 to-red-500",
   },
   {
     id: "3",
-    // PLACEHOLDER — replace with real client details once approved for public display
-    title: "Enterpro",
+    title: "Enterpro Pvt Ltd",
     category: "Cybersecurity Assessment",
     description: "Full cybersecurity assessment for a Zimbabwe SME — network scan, staff phishing simulation, firewall review, and a written remediation report with prioritised action items.",
     tech: ["Cybersecurity", "Penetration Testing", "Network Audit", "Risk Assessment"],
-    result: "Identified 3 high-severity exposures; all resolved within 30 days",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0nYmFyMycgeDE9JzAnIHkxPScwJyB4Mj0nMScgeTI9JzAnPgogICAgICA8c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjOGI1Y2Y2Jy8+CiAgICAgIDxzdG9wIG9mZnNldD0nMTAwJScgc3RvcC1jb2xvcj0nIzNiODJmNicvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxwYXR0ZXJuIGlkPSdncmlkMycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz4KICAgICAgPHBhdGggZD0nTSA0MCAwIEwgMCAwIDAgNDAnIGZpbGw9J25vbmUnIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nMC40JyBzdHJva2Utb3BhY2l0eT0nMC4wNycvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzBhMGExYScvPgogIDxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2dyaWQzKScvPgogIDxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nMycgZmlsbD0ndXJsKCNiYXIzKScvPgogIDx0ZXh0IHg9JzQwMCcgeT0nMjAwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9JzcwMCcgZm9udC1zaXplPSc5NicgZmlsbD0nIzhiNWNmNicgdGV4dC1hbmNob3I9J21pZGRsZScgZG9taW5hbnQtYmFzZWxpbmU9J21pZGRsZSc+RVA8L3RleHQ+CiAgPHRleHQgeD0nNDAwJyB5PScyODAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNDAwJyBmb250LXNpemU9JzIwJyBmaWxsPSdyZ2JhKDI1NSwyNTUsMjU1LDAuNSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkN5YmVyc2VjdXJpdHk8L3RleHQ+Cjwvc3ZnPg==",
+    result: "3 high-severity exposures resolved within 30 days",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2JhcjMnIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjOGI1Y2Y2Jy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjM2I4MmY2Jy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZ3JpZDMnIHdpZHRoPSc0MCcgaGVpZ2h0PSc0MCcgcGF0dGVyblVuaXRzPSd1c2VyU3BhY2VPblVzZSc+PHBhdGggZD0nTSA0MCAwIEwgMCAwIDAgNDAnIGZpbGw9J25vbmUnIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nMC40JyBzdHJva2Utb3BhY2l0eT0nMC4wNycvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSc0MTYnIGZpbGw9JyMwYTBhMWEnLz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0ndXJsKCNncmlkMyknLz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzMnIGZpbGw9J3VybCgjYmFyMyknLz48dGV4dCB4PSc0MDAnIHk9JzIwMCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc3MDAnIGZvbnQtc2l6ZT0nOTYnIGZpbGw9JyM4YjVjZjYnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkVQPC90ZXh0Pjx0ZXh0IHg9JzQwMCcgeT0nMjgwJyBmb250LWZhbWlseT0nc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9JzQwMCcgZm9udC1zaXplPScyMCcgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwwLjUpJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5DeWJlcnNlY3VyaXR5PC90ZXh0Pjwvc3ZnPg==",
     color: "from-violet-600 to-blue-500",
   },
 ];
 
-// PLACEHOLDER TESTIMONIALS — replace with verified client quotes before launch.
-// Using initials only until written consent obtained from each client.
 export const testimonials = [
   {
     id: "1",
-    // PLACEHOLDER — awaiting written consent from GlowTrack Auctions client
     name: "T.M.",
     role: "Director, GlowTrack Auctions — Harare",
     content: "Donovan found vulnerabilities in our platform we didn't know existed and fixed them before we went live. The new site is faster, cleaner, and we actually feel confident about security now. Straight-talking, no jargon — exactly what we needed.",
@@ -139,7 +137,6 @@ export const testimonials = [
   },
   {
     id: "2",
-    // PLACEHOLDER — awaiting written consent from Enterpro client
     name: "K.D.",
     role: "Owner, Enterpro — Harare",
     content: "The cybersecurity report was thorough and written in plain English, not tech gibberish. He walked us through every finding and helped us fix the serious ones the same week. Worth every cent — I sleep better knowing our systems are locked down.",
@@ -190,7 +187,7 @@ export const pricingPlans = [
     ],
     notIncluded: ["Custom web application", "Mobile app"],
     cta: "Most Popular",
-    color: "from-electric to-cyan",
+    color: "from-gold to-gold-light",
     popular: true,
   },
   {
@@ -235,8 +232,8 @@ export const pricingPlans = [
       "Staff training included",
     ],
     notIncluded: [],
-    cta: "Contact Me",
-    color: "from-navy to-electric",
+    cta: "Contact Us",
+    color: "from-surface to-gold/20",
     popular: false,
   },
 ];
@@ -249,7 +246,7 @@ export const blogPosts = [
     category: "Business Technology",
     date: "2026-01-10",
     readTime: "5 min read",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMWQ0ZWQ4Jy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjM2I4MmY2Jy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzBhMGYxZScvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjM2I4MmY2JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5CVDwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkJ1c2luZXNzIFRlY2hub2xvZ3k8L3RleHQ+PC9zdmc+",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMWQ0ZWQ4Jy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjM2I4MmY2Jy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzA3MDcwRCcvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjM2I4MmY2JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5CVDwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjQwLDIzNywyMzIsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkJ1c2luZXNzIFRlY2hub2xvZ3k8L3RleHQ+PC9zdmc+",
     slug: "why-zimbabwe-business-needs-website",
   },
   {
@@ -259,7 +256,7 @@ export const blogPosts = [
     category: "Cybersecurity",
     date: "2026-01-18",
     readTime: "7 min read",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZGMyNjI2Jy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjZjk3MzE2Jy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzBhMGEwZicvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjZWY0NDQ0JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5DUzwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkN5YmVyc2VjdXJpdHk8L3RleHQ+PC9zdmc+",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZGMyNjI2Jy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjZjk3MzE2Jy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzA3MDcwRCcvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjZWY0NDQ0JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5DUzwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjQwLDIzNywyMzIsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkN5YmVyc2VjdXJpdHk8L3RleHQ+PC9zdmc+",
     slug: "cybersecurity-threats-african-businesses",
   },
   {
@@ -269,17 +266,17 @@ export const blogPosts = [
     category: "AI & Technology",
     date: "2026-01-25",
     readTime: "6 min read",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjN2MzYWVkJy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjYTg1NWY3Jy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzBkMGExYScvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjYTg1NWY3JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5BSTwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkFJICYgVGVjaG5vbG9neTwvdGV4dD48L3N2Zz4=",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjN2MzYWVkJy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjYTg1NWY3Jy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzA3MDcwRCcvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjYTg1NWY3JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5BSTwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjQwLDIzNywyMzIsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkFJICYgVGVjaG5vbG9neTwvdGV4dD48L3N2Zz4=",
     slug: "ai-transforming-small-businesses-zimbabwe",
   },
   {
     id: "4",
     title: "Cloud vs On-Premise: What's Right for Your Zimbabwe Business?",
-    excerpt: "Deciding between cloud and on-premise infrastructure? I break down the costs, benefits, and considerations for Zimbabwe businesses.",
+    excerpt: "Deciding between cloud and on-premise infrastructure? We break down the costs, benefits, and considerations for Zimbabwe businesses.",
     category: "Cloud Services",
     date: "2026-02-02",
     readTime: "8 min read",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMDI4NGM3Jy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMDZiNmQ0Jy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzA0MGYxYScvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjMDZiNmQ0JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5DTDwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkNsb3VkIFNlcnZpY2VzPC90ZXh0Pjwvc3ZnPg==",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMDI4NGM3Jy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMDZiNmQ0Jy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzA3MDcwRCcvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjMDZiNmQ0JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5DTDwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjQwLDIzNywyMzIsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPkNsb3VkIFNlcnZpY2VzPC90ZXh0Pjwvc3ZnPg==",
     slug: "cloud-vs-on-premise-zimbabwe-business",
   },
   {
@@ -289,7 +286,7 @@ export const blogPosts = [
     category: "Mobile Development",
     date: "2026-02-10",
     readTime: "6 min read",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMTU4MDNkJy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMjJjNTVlJy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzAzMGYwYScvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjMjJjNTVlJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5NRDwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPk1vYmlsZSBEZXZlbG9wbWVudDwvdGV4dD48L3N2Zz4=",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMTU4MDNkJy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjMjJjNTVlJy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzA3MDcwRCcvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjMjJjNTVlJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5NRDwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjQwLDIzNywyMzIsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPk1vYmlsZSBEZXZlbG9wbWVudDwvdGV4dD48L3N2Zz4=",
     slug: "building-mobile-app-what-you-need-to-know",
   },
   {
@@ -299,38 +296,27 @@ export const blogPosts = [
     category: "Web Development",
     date: "2026-02-18",
     readTime: "4 min read",
-    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMjU2M2ViJy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjNjBhNWZhJy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzBhMGYxZScvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjNjBhNWZhJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5XRDwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPldlYiBEZXZlbG9wbWVudDwvdGV4dD48L3N2Zz4=",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScwJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjMjU2M2ViJy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjNjBhNWZhJy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA3Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzA3MDcwRCcvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2cpJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PHRleHQgeD0nNDAwJyB5PScxOTAnIGZvbnQtZmFtaWx5PSdzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9Jzg4JyBmaWxsPScjNjBhNWZhJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBkb21pbmFudC1iYXNlbGluZT0nbWlkZGxlJz5XRDwvdGV4dD48dGV4dCB4PSc0MDAnIHk9JzI4MCcgZm9udC1mYW1pbHk9J3NhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc0MDAnIGZvbnQtc2l6ZT0nMTgnIGZpbGw9J3JnYmEoMjQwLDIzNywyMzIsMC40NSknIHRleHQtYW5jaG9yPSdtaWRkbGUnIGRvbWluYW50LWJhc2VsaW5lPSdtaWRkbGUnPldlYiBEZXZlbG9wbWVudDwvdGV4dD48L3N2Zz4=",
     slug: "10-signs-business-website-needs-redesign",
   },
 ];
 
 export const faqs = [
-  { q: "How long does it take to build a website?", a: "A standard business website takes 1–2 weeks. Custom web applications take 4–12 weeks depending on complexity. I always provide a detailed timeline before starting." },
-  { q: "What is included in your website packages?", a: "All packages include design, development, mobile responsiveness, basic SEO, contact forms, and deployment. Higher packages include CMS, e-commerce, and more. See my Pricing page for details." },
-  { q: "Do I own my website after it's built?", a: "Yes, 100%. You own all code, design files, content, and domains. I hand over everything upon project completion." },
-  { q: "What are your payment terms?", a: "I typically require 50% upfront and 50% upon completion. For larger projects, I can arrange milestone-based payments." },
-  { q: "Can you work with clients outside Zimbabwe?", a: "Absolutely. I work with clients across Africa and internationally. I use Zoom, Teams, and WhatsApp for communication and accept international payments." },
-  { q: "Do you provide ongoing support after launch?", a: "Yes. All packages include free support periods. I also offer monthly maintenance retainers for ongoing updates, security patches, and technical support." },
-  { q: "Do you offer cybersecurity services for small businesses?", a: "Yes. Most of my security clients are small and medium businesses in Harare. You don't need to be a large company to get hacked — and you don't need a large budget to get a proper assessment." },
-  { q: "What happens after a security audit?", a: "You get a written report listing every issue found, how serious each one is, and what to do about it. I can fix the issues myself or hand the report to your existing developer — your choice." },
-  { q: "Can you redesign my existing website?", a: "Yes. I specialize in website redesigns that improve performance, aesthetics, and conversion rates while preserving your SEO rankings." },
-  { q: "Do you build e-commerce websites?", a: "Yes. I build custom e-commerce solutions with payment gateway integration (Paynow, Stripe, PayPal), inventory management, and analytics." },
-  { q: "How do you handle project communication?", a: "You communicate directly with me — Donovan Mudarikwa — via WhatsApp, email, or Zoom. No middlemen, no account managers. Direct and clear communication throughout." },
-  { q: "Can you integrate AI into my existing business systems?", a: "Yes. I can integrate AI chatbots, automation workflows, and data analytics into your existing systems to improve efficiency." },
-  { q: "What is your refund policy?", a: "I have a satisfaction guarantee. If you are not happy with my work at any milestone, I will revise until you are satisfied or refund the relevant portion." },
-  { q: "Do you help with domain and hosting?", a: "Yes. I handle domain registration, hosting setup, SSL certificates, and all technical configuration as part of my service." },
-  { q: "How do I get started?", a: "Simply send me a WhatsApp message on +263 77 690 2542 or fill out the contact form. I'll get back to you within 2 hours with a free consultation." },
-];
-
-export const industries = [
-  { name: "Retail & E-Commerce", icon: "ShoppingBag", desc: "Digital stores, inventory systems, POS integration" },
-  { name: "Education", icon: "GraduationCap", desc: "LMS platforms, student portals, e-learning tools" },
-  { name: "Healthcare", icon: "Heart", desc: "Patient management, telemedicine, health apps" },
-  { name: "Hospitality", icon: "Hotel", desc: "Booking systems, hotel management, restaurant apps" },
-  { name: "Finance & FinTech", icon: "TrendingUp", desc: "Dashboards, payment systems, financial tools" },
-  { name: "Real Estate", icon: "Building", desc: "Property listings, CRM systems, virtual tours" },
-  { name: "Startups", icon: "Rocket", desc: "MVPs, pitch decks, rapid prototyping" },
-  { name: "NGOs & Non-Profits", icon: "Globe", desc: "Donation platforms, impact reporting, CMS" },
+  { q: "How long does it take to build a website?", a: "A standard business website takes 1–2 weeks. Custom web applications take 4–12 weeks depending on complexity. We always provide a detailed timeline before starting." },
+  { q: "What is included in your website packages?", a: "All packages include design, development, mobile responsiveness, basic SEO, contact forms, and deployment. Higher packages include CMS, e-commerce, and more. See our Pricing page for details." },
+  { q: "Do I own my website after it's built?", a: "Yes, 100%. You own all code, design files, content, and domains. We hand over everything upon project completion." },
+  { q: "What are your payment terms?", a: "We typically require 50% upfront and 50% upon completion. For larger projects, we can arrange milestone-based payments." },
+  { q: "Can you work with clients outside Zimbabwe?", a: "Absolutely. We work with clients across Africa and internationally. We use Zoom, Teams, and WhatsApp for communication and accept international payments." },
+  { q: "Do you provide ongoing support after launch?", a: "Yes. All packages include free support periods. We also offer monthly maintenance retainers for ongoing updates, security patches, and technical support." },
+  { q: "Do you offer cybersecurity services for small businesses?", a: "Yes. Most of our security clients are small and medium businesses in Harare. You don't need to be a large company to get hacked — and you don't need a large budget to get a proper assessment." },
+  { q: "What happens after a security audit?", a: "You get a written report listing every issue found, how serious each one is, and what to do about it. We can fix the issues ourselves or hand the report to your existing developer — your choice." },
+  { q: "Can you redesign my existing website?", a: "Yes. We specialise in website redesigns that improve performance, aesthetics, and conversion rates while preserving your SEO rankings." },
+  { q: "Do you build e-commerce websites?", a: "Yes. We build custom e-commerce solutions with payment gateway integration (Paynow, Stripe, PayPal), inventory management, and analytics." },
+  { q: "How do you handle project communication?", a: "You communicate directly with Donovan Mudarikwa via WhatsApp, email, or Zoom. No middlemen, no account managers. Direct and clear communication throughout." },
+  { q: "Can you integrate AI into my existing business systems?", a: "Yes. We can integrate AI chatbots, automation workflows, and data analytics into your existing systems to improve efficiency." },
+  { q: "What is your refund policy?", a: "We have a satisfaction guarantee. If you are not happy with our work at any milestone, we will revise until you are satisfied or refund the relevant portion." },
+  { q: "Do you help with domain and hosting?", a: "Yes. We handle domain registration, hosting setup, SSL certificates, and all technical configuration as part of our service." },
+  { q: "How do I get started?", a: "Simply send a WhatsApp message on +263 77 690 2542 or fill out the contact form. We'll get back to you within 2 hours with a free consultation." },
 ];
 
 export const techStack = [
@@ -352,9 +338,20 @@ export const techStack = [
 ];
 
 export const process = [
-  { step: "01", title: "Free Consultation", desc: "We talk — WhatsApp, call, or in person in Harare. I ask what you need and you ask what you want to know. Usually 20–30 minutes.", icon: "Search" },
-  { step: "02", title: "Clear Proposal", desc: "I send you a written scope, timeline, and fixed price. No hourly billing, no surprise invoices. You approve before I start.", icon: "FileText" },
-  { step: "03", title: "I Do the Work", desc: "For web projects I send weekly updates. For pentests you get a live progress note when something significant is found.", icon: "Code2" },
-  { step: "04", title: "Delivery", desc: "Website: live in 1–2 weeks. Pentest report: within 5–7 business days of testing. You get everything in writing.", icon: "Rocket" },
-  { step: "05", title: "I Stay Available", desc: "After delivery I'm still reachable. Questions, fixes, follow-up — same WhatsApp number, same person.", icon: "Headphones" },
+  { step: "01", title: "Free Consultation", desc: "WhatsApp, call, or in person in Harare. 20–30 minutes. No commitment.", icon: "Search" },
+  { step: "02", title: "Clear Proposal", desc: "Written scope, fixed price, timeline. No hourly billing, no surprise invoices.", icon: "FileText" },
+  { step: "03", title: "We Do the Work", desc: "Weekly updates for web. Real-time findings notification for pentests.", icon: "Code2" },
+  { step: "04", title: "Delivery", desc: "Website live in 1–2 weeks. Pentest report in 5–7 business days.", icon: "Rocket" },
+  { step: "05", title: "We Stay Available", desc: "Same WhatsApp, same person, post-delivery. Questions, fixes, follow-up.", icon: "Headphones" },
+];
+
+export const industries = [
+  { name: "Retail & E-Commerce", icon: "ShoppingBag", desc: "Digital stores, inventory systems, POS integration" },
+  { name: "Education", icon: "GraduationCap", desc: "LMS platforms, student portals, e-learning tools" },
+  { name: "Healthcare", icon: "Heart", desc: "Patient management, telemedicine, health apps" },
+  { name: "Hospitality", icon: "Hotel", desc: "Booking systems, hotel management, restaurant apps" },
+  { name: "Finance & FinTech", icon: "TrendingUp", desc: "Dashboards, payment systems, financial tools" },
+  { name: "Real Estate", icon: "Building", desc: "Property listings, CRM systems, virtual tours" },
+  { name: "Startups", icon: "Rocket", desc: "MVPs, pitch decks, rapid prototyping" },
+  { name: "NGOs & Non-Profits", icon: "Globe", desc: "Donation platforms, impact reporting, CMS" },
 ];

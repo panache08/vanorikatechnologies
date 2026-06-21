@@ -5,7 +5,7 @@ import { Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Technology insights, cybersecurity tips, and business technology advice from Panashe Tech Solutions.",
+  description: "Technology insights, cybersecurity tips, and business security advice from Vanorika Technologies.",
 };
 
 export default function BlogPage() {

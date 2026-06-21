@@ -1,40 +1,52 @@
 import Link from "next/link";
-import { Zap, MapPin, Phone, Mail, Clock, Linkedin, Twitter, Facebook, Instagram, Github } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Linkedin, Twitter, Facebook, Instagram, Github } from "lucide-react";
 import { siteConfig, navLinks, services } from "@/lib/data";
+
+function VanorikaFooterLogo() {
+  return (
+    <Link href="/" className="flex items-center gap-3 group mb-6">
+      <div className="relative w-9 h-9 flex items-center justify-center group-hover:scale-105 transition-transform">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-9 h-9">
+          <path d="M20 2L36 11V29L20 38L4 29V11L20 2Z" fill="#0D0D1A" stroke="#C9A84C" strokeWidth="1.5"/>
+          <path d="M13 14L20 26L27 14" stroke="#C9A84C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <p className="font-display font-black text-[14px] tracking-[0.08em] text-white leading-none uppercase">VANORIKA</p>
+        <p className="font-mono text-[8px] tracking-[0.25em] text-gold/60 uppercase mt-0.5">Technologies</p>
+      </div>
+    </Link>
+  );
+}
 
 export default function Footer() {
   return (
-    <footer className="relative bg-navy border-t border-white/5">
-      {/* Top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/30 to-transparent" />
-      <div className="absolute inset-0 bg-grid opacity-15 pointer-events-none" />
+    <footer className="relative bg-[#07070D] border-t border-[#1A1A30]">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
+
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-6 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-electric to-cyan flex items-center justify-center blue-glow-sm group-hover:scale-105 transition-transform">
-                <Zap className="w-5 h-5 text-white" strokeWidth={2.5} />
-              </div>
-              <div>
-                <p className="font-display font-extrabold text-[15px] text-white leading-none">PanasheTech</p>
-                <p className="text-cyan/80 text-[9px] tracking-[0.2em] font-semibold uppercase mt-0.5">Solutions</p>
-              </div>
-            </Link>
-            <p className="text-white/45 text-sm leading-relaxed mb-7">
-              Websites, software, and cybersecurity — built and delivered by a founder who answers his own phone. Based in Harare, working everywhere.
+            <VanorikaFooterLogo />
+            <p className="text-muted text-sm leading-relaxed mb-2 font-light">
+              {siteConfig.tagline}
             </p>
-            <div className="flex items-center gap-2.5">
+            <p className="text-white/30 text-xs leading-relaxed mb-7 font-light">
+              Penetration testing and web development — Harare-based, founder-led.
+            </p>
+            <div className="flex items-center gap-2">
               {[
                 { icon: Linkedin, href: siteConfig.social.linkedin },
-                { icon: Twitter, href: siteConfig.social.twitter },
+                { icon: Twitter,  href: siteConfig.social.twitter },
                 { icon: Facebook, href: siteConfig.social.facebook },
-                { icon: Instagram, href: siteConfig.social.instagram },
-                { icon: Github, href: siteConfig.social.github },
+                { icon: Instagram,href: siteConfig.social.instagram },
+                { icon: Github,   href: siteConfig.social.github },
               ].map(({ icon: Icon, href }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-xl glass border border-white/8 flex items-center justify-center text-white/35 hover:text-white hover:border-electric/40 hover:bg-electric/8 transition-all">
+                  className="w-9 h-9 rounded-lg border border-[#1A1A30] flex items-center justify-center text-white/25 hover:text-gold hover:border-gold/30 hover:bg-gold/5 transition-all">
                   <Icon className="w-3.5 h-3.5" />
                 </a>
               ))}
@@ -43,14 +55,15 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-display font-semibold text-white text-sm mb-6 uppercase tracking-widest">
+            <h3 className="font-mono text-[10px] font-semibold text-gold/70 mb-6 uppercase tracking-[0.2em]">
               Quick Links
             </h3>
             <ul className="space-y-3">
               {navLinks.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-white/45 hover:text-cyan text-sm transition-colors flex items-center gap-2 group">
-                    <span className="w-1 h-1 rounded-full bg-electric/40 group-hover:bg-cyan transition-colors" />
+                  <Link href={l.href}
+                    className="text-white/35 hover:text-gold text-sm transition-colors flex items-center gap-2 group font-light">
+                    <span className="w-3 h-px bg-gold/20 group-hover:bg-gold group-hover:w-4 transition-all" />
                     {l.label}
                   </Link>
                 </li>
@@ -60,14 +73,15 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-display font-semibold text-white text-sm mb-6 uppercase tracking-widest">
+            <h3 className="font-mono text-[10px] font-semibold text-gold/70 mb-6 uppercase tracking-[0.2em]">
               Services
             </h3>
             <ul className="space-y-3">
-              {services.slice(0, 6).map((s) => (
+              {services.map((s) => (
                 <li key={s.id}>
-                  <Link href={s.href} className="text-white/45 hover:text-cyan text-sm transition-colors flex items-center gap-2 group">
-                    <span className="w-1 h-1 rounded-full bg-electric/40 group-hover:bg-cyan transition-colors" />
+                  <Link href={s.href}
+                    className="text-white/35 hover:text-gold text-sm transition-colors flex items-center gap-2 group font-light">
+                    <span className="w-3 h-px bg-gold/20 group-hover:bg-gold group-hover:w-4 transition-all" />
                     {s.title}
                   </Link>
                 </li>
@@ -77,23 +91,23 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-display font-semibold text-white text-sm mb-6 uppercase tracking-widest">
+            <h3 className="font-mono text-[10px] font-semibold text-gold/70 mb-6 uppercase tracking-[0.2em]">
               Contact
             </h3>
             <ul className="space-y-4">
               {[
                 { icon: MapPin, value: siteConfig.address },
-                { icon: Phone, value: siteConfig.phone, href: `tel:${siteConfig.phone}` },
-                { icon: Mail, value: siteConfig.email, href: `mailto:${siteConfig.email}` },
-                { icon: Clock, value: siteConfig.hours },
+                { icon: Phone,  value: siteConfig.phone, href: `tel:${siteConfig.phone}` },
+                { icon: Mail,   value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+                { icon: Clock,  value: siteConfig.hours },
               ].map(({ icon: Icon, value, href }) => (
                 <li key={value} className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-electric/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Icon className="w-3.5 h-3.5 text-electric" />
+                  <div className="w-7 h-7 rounded-lg bg-gold/8 border border-gold/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Icon className="w-3.5 h-3.5 text-gold/60" />
                   </div>
                   {href
-                    ? <a href={href} className="text-white/45 text-sm hover:text-cyan transition-colors leading-relaxed">{value}</a>
-                    : <span className="text-white/45 text-sm leading-relaxed">{value}</span>
+                    ? <a href={href} className="text-white/35 text-sm hover:text-gold transition-colors leading-relaxed font-light">{value}</a>
+                    : <span className="text-white/35 text-sm leading-relaxed font-light">{value}</span>
                   }
                 </li>
               ))}
@@ -102,14 +116,22 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/25 text-xs">
-            © {new Date().getFullYear()} Panashe Tech Solutions. All rights reserved.
+      {/* Bottom bar */}
+      <div className="relative border-t border-[#1A1A30]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="font-mono text-[10px] text-white/20 tracking-wider">
+            © {new Date().getFullYear()} VANORIKA TECHNOLOGIES. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-6">
-            {[{ l: "Privacy Policy", h: "/privacy" }, { l: "Terms of Service", h: "/terms" }].map((i) => (
-              <Link key={i.h} href={i.h} className="text-white/25 hover:text-cyan text-xs transition-colors">{i.l}</Link>
+            {[
+              { l: "Privacy Policy",    h: "/privacy" },
+              { l: "Terms of Service",  h: "/terms" },
+              { l: "Data Protection",   h: "/privacy#data-protection" },
+            ].map((i) => (
+              <Link key={i.h} href={i.h}
+                className="font-mono text-[10px] text-white/20 hover:text-gold/60 transition-colors tracking-wider uppercase">
+                {i.l}
+              </Link>
             ))}
           </div>
         </div>
