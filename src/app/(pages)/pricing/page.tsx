@@ -63,7 +63,7 @@ export default function PricingPage() {
                 <h3 className="font-display text-xl font-bold text-foreground mb-2">{p.name}</h3>
                 <p className="font-display text-3xl font-bold text-electric mb-4">{p.price}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-8 flex-1">{p.desc}</p>
-                <a href={p.href} className={`block w-full text-center py-3 rounded-xl font-semibold text-sm transition-all ${p.highlight ? "bg-electric text-white hover:bg-electric-dark blue-glow" : "border border-electric/30 text-electric hover:bg-electric/10"}`}>
+                <a href={p.href} className={`block w-full text-center py-3 rounded-xl font-semibold text-sm transition-all ${p.highlight ? "bg-electric text-[#07070D] font-bold hover:bg-electric-light gold-glow-sm" : "border border-electric/30 text-electric hover:bg-electric/10"}`}>
                   {p.cta}
                 </a>
               </div>
@@ -84,7 +84,7 @@ export default function PricingPage() {
               <div key={plan.id} className={`relative bg-card border rounded-3xl p-8 flex flex-col transition-all hover:-translate-y-1 hover:shadow-xl ${
                 plan.popular ? "border-electric shadow-blue-500/20 shadow-lg scale-105" : "border-border hover:border-electric/40"}`}>
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 px-4 py-1 bg-electric text-white text-xs font-bold rounded-full">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 px-4 py-1 bg-electric text-[#07070D] text-xs font-bold rounded-full">
                     <Zap className="w-3 h-3" /> MOST POPULAR
                   </div>
                 )}
@@ -118,7 +118,7 @@ export default function PricingPage() {
                 </ul>
                 <Link href="/contact"
                   className={`block w-full text-center py-3 rounded-xl font-semibold text-sm transition-all ${
-                    plan.popular ? "bg-electric text-white hover:bg-electric-dark blue-glow" : "border border-electric/30 text-electric hover:bg-electric/10"}`}>
+                    plan.popular ? "bg-electric text-[#07070D] font-bold hover:bg-electric-light gold-glow-sm" : "border border-electric/30 text-electric hover:bg-electric/10"}`}>
                   {plan.cta}
                 </Link>
               </div>
