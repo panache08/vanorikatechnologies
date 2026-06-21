@@ -50,7 +50,7 @@ export default function ServicesPage() {
                     </div>
                   ))}
                 </div>
-                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-electric text-white font-semibold rounded-xl hover:bg-electric-dark transition-all text-sm">
+                <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-electric text-[#07070D] font-bold rounded-xl hover:bg-electric-light transition-all text-sm gold-glow-sm">
                   Get a Quote <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

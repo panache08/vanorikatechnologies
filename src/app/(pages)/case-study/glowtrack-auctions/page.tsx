@@ -208,7 +208,7 @@ export default function CaseStudyPage() {
           {/* CTA */}
           <div className="text-center">
             <p className="text-muted-foreground mb-6">Want to know what we&apos;d find on your website?</p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-electric text-white font-semibold rounded-2xl hover:bg-electric-dark transition-all blue-glow">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-electric text-[#07070D] font-bold rounded-2xl hover:bg-electric-light transition-all gold-glow-sm">
               Request a Free Security Check <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
