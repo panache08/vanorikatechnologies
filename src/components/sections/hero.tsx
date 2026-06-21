@@ -1,13 +1,13 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Zap, Star, Play, ChevronDown } from "lucide-react";
+import { ArrowRight, CheckCircle, ChevronDown, Shield } from "lucide-react";
 import { siteConfig } from "@/lib/data";
-import { useState, useEffect, useRef } from "react";
-import { toast } from "sonner";
+import { useEffect, useRef } from "react";
 
 function ParticleCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const mouseRef  = useRef({ x: -9999, y: -9999 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -16,34 +16,57 @@ function ParticleCanvas() {
     if (!ctx) return;
 
     let animId: number;
+
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
+      canvas.width  = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     };
     resize();
     window.addEventListener("resize", resize);
 
-    const particles: { x: number; y: number; vx: number; vy: number; size: number; alpha: number; color: string }[] = [];
-    const colors = ["rgba(74,144,255,", "rgba(0,212,255,", "rgba(124,58,237,"];
-    for (let i = 0; i < 80; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 2 + 0.5,
-        alpha: Math.random() * 0.6 + 0.1,
-        color: colors[Math.floor(Math.random() * colors.length)],
-      });
-    }
+    const onMouse = (e: MouseEvent) => {
+      const r = canvas.getBoundingClientRect();
+      mouseRef.current = { x: e.clientX - r.left, y: e.clientY - r.top };
+    };
+    canvas.addEventListener("mousemove", onMouse);
+
+    // Gold + warm nodes
+    const COLORS = [
+      "rgba(201,168,76,",
+      "rgba(226,201,122,",
+      "rgba(240,223,160,",
+    ];
+    const particles = Array.from({ length: 70 }, () => ({
+      x:     Math.random() * (canvas.width  || 1200),
+      y:     Math.random() * (canvas.height || 800),
+      vx:    (Math.random() - 0.5) * 0.35,
+      vy:    (Math.random() - 0.5) * 0.35,
+      size:  Math.random() * 1.8 + 0.4,
+      alpha: Math.random() * 0.5 + 0.08,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    }));
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
       particles.forEach((p, i) => {
+        // Mouse repel
+        const dx = p.x - mouseRef.current.x;
+        const dy = p.y - mouseRef.current.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 100) {
+          const force = (100 - dist) / 100;
+          p.vx += (dx / dist) * force * 0.6;
+          p.vy += (dy / dist) * force * 0.6;
+        }
+        // Dampen velocity
+        p.vx *= 0.98;
+        p.vy *= 0.98;
+
         p.x += p.vx;
         p.y += p.vy;
         if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
+        if (p.x > canvas.width)  p.x = 0;
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
 
@@ -52,21 +75,22 @@ function ParticleCanvas() {
         ctx.fillStyle = `${p.color}${p.alpha})`;
         ctx.fill();
 
-        // Connection lines
+        // Connection lines — gold
         for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[j].x - p.x;
-          const dy = particles[j].y - p.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
+          const ex = particles[j].x - p.x;
+          const ey = particles[j].y - p.y;
+          const d  = Math.sqrt(ex * ex + ey * ey);
+          if (d < 130) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(74,144,255,${0.06 * (1 - dist / 120)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(201,168,76,${0.07 * (1 - d / 130)})`;
+            ctx.lineWidth = 0.6;
             ctx.stroke();
           }
         }
       });
+
       animId = requestAnimationFrame(draw);
     };
     draw();
@@ -74,231 +98,260 @@ function ParticleCanvas() {
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", resize);
+      canvas.removeEventListener("mousemove", onMouse);
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-60" />;
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-50" />;
 }
 
-const words = ["Websites", "Mobile Apps", "AI Systems", "Software", "Automation"];
+const TICKER_ITEMS = [
+  "CompTIA PenTest+ Certified",
+  "17+ Businesses Assessed",
+  "ZW DPA 2021 Compliant",
+  "HackerOne Bug Bounty",
+  "Bugcrowd Researcher",
+  "<48hr Audit Start",
+  "Based in Harare, Zimbabwe",
+  "Plain-English Reports",
+  "Enterprise Security. Zero Compromise.",
+];
 
 export default function Hero() {
-  const [email, setEmail] = useState("");
-  const [wordIndex, setWordIndex] = useState(0);
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const y       = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
-  useEffect(() => {
-    const t = setInterval(() => setWordIndex((i) => (i + 1) % words.length), 2800);
-    return () => clearInterval(t);
-  }, []);
-
-  const handleLead = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    toast.success("Thanks! We'll be in touch within 24 hours.");
-    setEmail("");
-  };
-
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy">
-      {/* Layered backgrounds */}
-      <div className="absolute inset-0 bg-mesh-gradient" />
-      <div className="absolute inset-0 bg-grid opacity-100" />
-      <ParticleCanvas />
+    <>
+      <section ref={ref} className="relative min-h-screen flex flex-col overflow-hidden bg-[#07070D]">
+        {/* Background layers */}
+        <div className="absolute inset-0 bg-mesh-gradient" />
+        <div className="absolute inset-0 bg-grid opacity-100" />
+        <ParticleCanvas />
 
-      {/* Large glowing orbs */}
-      <motion.div style={{ y }} className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[15%] left-[10%] w-[500px] h-[500px] rounded-full bg-electric/10 blur-[120px] animate-glow-pulse" />
-        <div className="absolute bottom-[10%] right-[5%] w-[400px] h-[400px] rounded-full bg-violet/8 blur-[100px] animate-glow-pulse" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-[40%] right-[25%] w-[300px] h-[300px] rounded-full bg-cyan/6 blur-[80px] animate-glow-pulse" style={{ animationDelay: "3s" }} />
-      </motion.div>
+        {/* Gold orbs */}
+        <motion.div style={{ y }} className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-[10%] left-[5%] w-[600px] h-[600px] rounded-full bg-gold/5 blur-[140px] animate-glow-pulse" />
+          <div className="absolute bottom-[15%] right-[8%] w-[400px] h-[400px] rounded-full bg-gold/4 blur-[120px] animate-glow-pulse" style={{ animationDelay: "2s" }} />
+        </motion.div>
 
-      <motion.div style={{ opacity }} className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* LEFT */}
-          <div>
-            {/* Badge */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <span className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold tracking-[0.15em] text-cyan border border-cyan/25 rounded-full bg-cyan/5 backdrop-blur-sm mb-8">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan" />
+        {/* Main content */}
+        <motion.div style={{ opacity }} className="relative z-10 flex-1 flex items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
+          <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
+
+            {/* LEFT */}
+            <div>
+              {/* Pulsing badge */}
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+                <span className="inline-flex items-center gap-2 px-4 py-2 font-mono text-[10px] tracking-[0.2em] text-green border border-green/25 rounded-full bg-green/5 backdrop-blur-sm mb-8 uppercase">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green" />
+                  </span>
+                  Taking New Clients · Response within 2 hours
                 </span>
-                CYBERSECURITY & WEB DEVELOPMENT · HARARE, ZIMBABWE
-              </span>
-            </motion.div>
+              </motion.div>
 
-            {/* Headline */}
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display text-5xl md:text-6xl xl:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-4">
-              Your Business
-              <br />
-              <span className="text-gradient-white">Is Probably Exposed</span>
-              <br />
-              <span className="relative">
-                <span className="text-gradient">Online. Let&apos;s Fix That.</span>
-                <motion.span
-                  className="absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-electric via-cyan to-violet"
-                  initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, delay: 0.8 }}
-                  style={{ transformOrigin: "left" }}
-                />
-              </span>
-            </motion.h1>
-
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-white/60 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
-              Donovan Mudarikwa — CompTIA PenTest+ certified, based in Harare.{" "}
-              <span className="text-white/80 font-medium">I find security vulnerabilities in Zimbabwean businesses and build websites that bring in real clients.</span>
-            </motion.p>
-
-            {/* Trust indicators */}
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35 }}
-              className="flex flex-wrap gap-5 mb-10">
-              {["CompTIA PenTest+ Certified", "Based in Harare — same day response", "Reply within 2 hours"].map((t) => (
-                <div key={t} className="flex items-center gap-2 text-white/50 text-sm">
-                  <CheckCircle className="w-4 h-4 text-cyan flex-shrink-0" />
-                  <span>{t}</span>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* CTAs */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
-              className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Link href="/contact"
-                className="group relative overflow-hidden flex items-center justify-center gap-2.5 px-8 py-4 bg-electric text-white font-semibold rounded-2xl text-base blue-glow shine">
-                <span className="relative z-10 flex items-center gap-2">
-                  Get a Free Security Check
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              {/* Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                className="font-display font-black text-white leading-[1.05] tracking-tight mb-6"
+                style={{ fontSize: "clamp(2.8rem, 6vw, 5.5rem)", letterSpacing: "-0.03em" }}>
+                Your Business
+                <br />
+                <span className="text-gradient-white">Is Probably</span>
+                <br />
+                <span className="relative">
+                  <span className="text-gradient">Exposed Online.</span>
+                  <motion.span
+                    className="absolute -bottom-1 left-0 h-[2px] bg-gold-gradient"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 1.2, delay: 0.9 }}
+                    style={{ transformOrigin: "left" }}
+                  />
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-electric to-cyan opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Link>
-              <Link href="/portfolio"
-                className="group flex items-center justify-center gap-2.5 px-8 py-4 glass border border-white/12 text-white font-semibold rounded-2xl text-base hover:border-electric/40 hover:bg-white/5 transition-all">
-                <Play className="w-4 h-4 text-cyan" />
-                View Our Work
-              </Link>
-            </motion.div>
+                <br />
+                <span className="text-white/70 font-bold" style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.8rem)" }}>
+                  Let&apos;s Fix That.
+                </span>
+              </motion.h1>
 
-            {/* Lead form */}
-            <motion.form onSubmit={handleLead} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.55 }}
-              className="flex gap-2 max-w-md">
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email — I'll respond within 2 hours"
-                className="flex-1 px-4 py-3 glass border border-white/12 rounded-xl text-white placeholder-white/30 focus:border-electric/50 focus:outline-none text-sm bg-white/3" />
-              <button type="submit"
-                className="px-5 py-3 bg-gradient-to-r from-cyan to-electric text-white font-semibold rounded-xl hover:opacity-90 transition-opacity text-sm whitespace-nowrap">
-                Get Quote
-              </button>
-            </motion.form>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="text-muted font-light text-lg leading-[1.75] mb-8 max-w-lg">
+                Donovan Mudarikwa — CompTIA A+, Security+ &amp; PenTest+ certified, based in Harare.{" "}
+                <span className="text-white/70">I find security vulnerabilities in Zimbabwean businesses and build websites that bring in real clients.</span>
+              </motion.p>
 
-            {/* Star rating */}
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }}
-              className="flex items-center gap-3 mt-6">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-gold fill-gold" />
+              {/* Trust badges */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.35 }}
+                className="flex flex-wrap gap-4 mb-10">
+                {[
+                  "CompTIA PenTest+ Certified",
+                  "Based in Harare — same day response",
+                  "Reply within 2 hours",
+                ].map((t) => (
+                  <div key={t} className="flex items-center gap-2 text-white/45 text-sm font-light">
+                    <CheckCircle className="w-4 h-4 text-gold/70 flex-shrink-0" />
+                    <span>{t}</span>
+                  </div>
                 ))}
-              </div>
-              <span className="text-white/40 text-sm">Taking new clients · Response within 2 hours</span>
-            </motion.div>
-          </div>
+              </motion.div>
 
-          {/* RIGHT — Dashboard card */}
-          <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.3 }}
-            className="relative hidden lg:block">
-            {/* Main card */}
-            <div className="relative">
-              {/* Glow behind card */}
-              <div className="absolute inset-0 bg-electric/10 blur-3xl rounded-3xl scale-95" />
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.45 }}
+                className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact"
+                  className="group relative overflow-hidden flex items-center justify-center gap-2.5 px-8 py-4 bg-gold text-[#07070D] font-bold rounded-xl text-base gold-glow shine uppercase tracking-wider">
+                  <Shield className="w-4 h-4" />
+                  <span className="relative z-10 flex items-center gap-2">
+                    Get a Free Security Check
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gold-light opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+                <Link href="/portfolio"
+                  className="group flex items-center justify-center gap-2.5 px-8 py-4 border border-[#1A1A30] text-white/60 font-medium rounded-xl text-base hover:border-gold/30 hover:text-white hover:bg-gold/4 transition-all">
+                  View Our Work
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+            </div>
 
-              <div className="relative glass-strong rounded-3xl p-8 border border-white/10 card-premium overflow-hidden">
-                {/* Scan line effect */}
-                <div className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan/30 to-transparent animate-scan-line pointer-events-none" />
+            {/* RIGHT — credentials card */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, delay: 0.3 }}
+              className="relative hidden lg:block">
+
+              <div className="absolute inset-0 bg-gold/6 blur-3xl rounded-3xl scale-95" />
+
+              <div className="relative bg-[#0D0D1A] rounded-2xl p-8 border border-[#1A1A30] overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+                {/* Scan line */}
+                <div className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/20 to-transparent animate-scan-line pointer-events-none" />
 
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                    <div className="w-3 h-3 rounded-full bg-green/80" />
                   </div>
-                  <span className="text-white/30 text-xs font-mono">panashe.tech</span>
+                  <span className="font-mono text-white/20 text-[10px] tracking-wider uppercase">vanorikatechnologies.co.zw</span>
                 </div>
 
                 {/* Founder */}
                 <div className="flex items-center gap-4 mb-6">
                   <div className="relative">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric to-cyan flex items-center justify-center text-2xl font-bold text-white blue-glow-sm">
+                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-gold/30 to-gold/10 border border-gold/20 flex items-center justify-center text-xl font-black text-gold">
                       DM
                     </div>
-                    <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-green-400 border-2 border-navy flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-white animate-ping" />
+                    <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-green border-2 border-[#0D0D1A] flex items-center justify-center">
+                      <div className="w-2 h-2 rounded-full bg-[#07070D] animate-ping" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-display text-lg font-bold text-white">{siteConfig.founder}</h3>
-                    <p className="text-cyan text-sm">{siteConfig.founderTitle}</p>
-                    <p className="text-white/40 text-xs">Available now</p>
+                    <h3 className="font-display font-bold text-white text-lg">{siteConfig.founder}</h3>
+                    <p className="text-gold text-sm font-mono">{siteConfig.founderTitle}</p>
+                    <p className="text-white/30 text-xs font-light">Available now · Harare, ZW</p>
                   </div>
                 </div>
 
-                {/* Services mini grid */}
+                {/* Certifications */}
+                <div className="mb-6">
+                  <p className="font-mono text-[9px] text-gold/50 tracking-[0.2em] uppercase mb-3">Verified Certifications</p>
+                  <div className="space-y-2">
+                    {siteConfig.certifications.map((c) => (
+                      <div key={c.abbr} className="flex items-center gap-3 p-2.5 bg-gold/4 border border-gold/10 rounded-lg">
+                        <div className="w-10 h-8 bg-gold/10 border border-gold/20 rounded flex items-center justify-center">
+                          <span className="font-mono text-gold text-[9px] font-bold">{c.abbr}</span>
+                        </div>
+                        <div>
+                          <p className="text-white/80 text-xs font-medium">{c.full}</p>
+                          <p className="text-white/30 text-[10px] font-light">{c.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Stats row */}
                 <div className="grid grid-cols-2 gap-3 mb-6">
                   {[
-                    { label: "Web Dev", color: "from-blue-600 to-cyan-500", icon: "🌐" },
-                    { label: "Mobile Apps", color: "from-violet-600 to-blue-500", icon: "📱" },
-                    { label: "AI & Automation", color: "from-purple-600 to-pink-500", icon: "🤖" },
-                    { label: "Cybersecurity", color: "from-red-500 to-orange-500", icon: "🛡️" },
+                    { v: "17+", l: "Businesses Assessed" },
+                    { v: "<48h", l: "Audit Start Time" },
                   ].map((s) => (
-                    <div key={s.label} className={`rounded-xl bg-gradient-to-br ${s.color} p-3 opacity-80 hover:opacity-100 transition-opacity cursor-default`}>
-                      <span className="text-lg">{s.icon}</span>
-                      <p className="text-white text-xs font-semibold mt-1">{s.label}</p>
+                    <div key={s.l} className="bg-[#111122] border border-[#1A1A30] rounded-lg p-3 text-center">
+                      <p className="font-display font-black text-gold text-xl">{s.v}</p>
+                      <p className="text-white/30 text-[10px] font-light mt-0.5">{s.l}</p>
                     </div>
                   ))}
                 </div>
 
-                <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer"
-                  className="block w-full text-center py-3.5 bg-gradient-to-r from-electric to-cyan text-white font-semibold rounded-xl text-sm hover:opacity-90 transition-opacity blue-glow-sm">
+                <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
+                  className="block w-full text-center py-3.5 bg-gold text-[#07070D] font-bold rounded-xl text-sm hover:bg-gold-light transition-colors uppercase tracking-wider">
                   💬 Chat with Donovan Directly
                 </a>
               </div>
-            </div>
 
-            {/* Floating chips */}
-            <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-8 -right-8 glass rounded-2xl px-4 py-3 border border-white/10 shadow-card-premium">
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-1">{["⭐","⭐","⭐","⭐","⭐"].map((s, i) => <span key={i} className="text-xs">{s}</span>)}</div>
-                <span className="text-white text-xs font-semibold">5.0 Rating</span>
-              </div>
+              {/* Floating chips */}
+              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-6 -right-6 bg-[#0D0D1A] border border-gold/20 rounded-xl px-4 py-2.5 shadow-xl">
+                <div className="flex items-center gap-2">
+                  <span className="text-green text-xs">●</span>
+                  <span className="font-mono text-white/60 text-xs">ZW DPA 2021 Compliant</span>
+                </div>
+              </motion.div>
+
+              <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-5 -left-6 bg-[#0D0D1A] border border-gold/20 rounded-xl px-4 py-2.5 shadow-xl">
+                <div className="flex items-center gap-2">
+                  <Shield className="w-3.5 h-3.5 text-gold" />
+                  <span className="font-mono text-white/60 text-xs">HackerOne · Bugcrowd</span>
+                </div>
+              </motion.div>
             </motion.div>
-
-            <motion.div animate={{ y: [0, 10, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -left-8 glass rounded-2xl px-4 py-3 border border-cyan/20 shadow-card-premium">
-              <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-cyan" />
-                <span className="text-white text-xs font-semibold">Delivered in days, not months</span>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.div>
-
-      {/* Scroll indicator */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 z-10">
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-          <ChevronDown className="w-5 h-5" />
+          </div>
         </motion.div>
-      </motion.div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent z-10" />
-    </section>
+        {/* Scroll indicator */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
+          className="absolute bottom-28 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/20 z-10">
+          <span className="font-mono text-[9px] tracking-[0.25em] uppercase">Scroll</span>
+          <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+            <ChevronDown className="w-4 h-4" />
+          </motion.div>
+        </motion.div>
+
+        {/* Bottom fade to ticker */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#07070D] to-transparent z-10" />
+      </section>
+
+      {/* Gold ticker band */}
+      <div className="relative bg-gold/5 border-y border-gold/15 py-3 overflow-hidden">
+        <div className="flex animate-ticker whitespace-nowrap">
+          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
+            <span key={i} className="font-mono text-[10px] text-gold/60 tracking-[0.18em] uppercase mx-8 flex-shrink-0">
+              {item} <span className="text-gold/25 mx-4">·</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }

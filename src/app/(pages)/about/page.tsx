@@ -8,13 +8,13 @@ import SectionHeader from "@/components/ui/section-header";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Donovan Mudarikwa — CompTIA A+, Security+, and PenTest+ certified. Penetration tester and web developer based in Harare, Zimbabwe.",
+  description: "Donovan Mudarikwa — CompTIA A+, Security+, and PenTest+ certified. Founder & CEO of Vanorika Technologies. Penetration tester and web developer based in Harare, Zimbabwe.",
 };
 
 const values = [
-  { icon: Target, title: "Excellence", desc: "I don't send work I wouldn't put my name on. Every project gets the same attention whether it's $300 or $3000." },
-  { icon: Heart, title: "Client-First", desc: "I tell clients what they need to hear, not what they want to hear. That's more useful long term." },
-  { icon: Zap, title: "Staying Current", desc: "I stay current so I can tell you what actually works — not just what's trendy." },
+  { icon: Target, title: "Excellence", desc: "We don't send work we wouldn't put our name on. Every project gets the same attention whether it's $300 or $3000." },
+  { icon: Heart, title: "Client-First", desc: "We tell clients what they need to hear, not what they want to hear. That's more useful long term." },
+  { icon: Zap, title: "Staying Current", desc: "We stay current so we can tell you what actually works — not just what's trendy." },
   { icon: CheckCircle, title: "Transparency", desc: "Fixed quotes. Real timelines. You always know where things stand." },
 ];
 
@@ -24,64 +24,85 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 bg-hero-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-20" />
+      <section className="relative pt-40 pb-24 bg-[#07070D] overflow-hidden">
+        <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[600px] h-[300px] bg-gold/4 rounded-full blur-[120px]" />
+        </div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">MY STORY</span>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">About Me</h1>
-          <p className="text-white/60 text-lg">One person. Certified. Based in Harare. I do the work myself.</p>
+          <p className="font-mono text-[10px] text-gold/60 uppercase tracking-[0.25em] mb-5 inline-flex items-center label-line">
+            Our Story
+          </p>
+          <h1 className="font-display font-black text-white mb-5 leading-tight"
+            style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", letterSpacing: "-0.03em" }}>
+            About Vanorika
+          </h1>
+          <p className="text-white/45 text-lg font-light">
+            One certified founder. Founder-led engagements. Based in Harare.
+          </p>
         </div>
       </section>
 
       {/* Founder Story */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-[#0D0D1A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-electric border border-electric/30 rounded-full bg-electric/5 mb-6">FOUNDER & CEO</span>
-              <h2 className="font-display text-4xl font-bold text-foreground mb-2">{siteConfig.founder}</h2>
-              <p className="text-electric font-medium mb-6">{siteConfig.founderTitle} · Panashe Tech Solutions</p>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p className="font-mono text-[10px] text-gold/60 uppercase tracking-[0.2em] mb-5 flex items-center label-line">
+                Founder & CEO
+              </p>
+              <h2 className="font-display font-black text-white text-4xl mb-1" style={{ letterSpacing: "-0.02em" }}>
+                {siteConfig.founder}
+              </h2>
+              <p className="font-mono text-[11px] text-gold/50 mb-7 uppercase tracking-wider">
+                {siteConfig.founderTitle} · Vanorika Technologies
+              </p>
+              <div className="space-y-4 text-white/45 text-sm leading-relaxed font-light">
                 <p>
                   I&apos;m Donovan Mudarikwa — a certified penetration tester and web developer based in Harare, Zimbabwe. I hold CompTIA A+, Security+, and PenTest+ certifications and work directly with clients on cybersecurity and web projects.
                 </p>
                 <p>
-                  I started Panashe Tech Solutions because most Zimbabwean businesses have no idea what their security exposure looks like — and web developers here are either too expensive or too slow.
+                  I started Vanorika Technologies because most Zimbabwean businesses have no idea what their security exposure looks like — and web developers here are either too expensive or too slow.
                 </p>
                 <p>
-                  I work directly with every client — no middlemen, no junior developers, no outsourcing. When you hire Panashe Tech Solutions, you get me personally handling your project from start to finish.
+                  We work directly with every client — no middlemen, no junior developers, no outsourcing. When you hire Vanorika Technologies, you get the founder handling your project from start to finish.
                 </p>
                 <p>
-                  My main focus is cybersecurity assessments and web development. If you need a pentest, a website, or both — I handle it personally.
+                  Our main focus is cybersecurity assessments and web development. If you need a pentest, a website, or both — we handle it personally.
                 </p>
               </div>
-              <div className="mt-8 p-6 bg-electric/5 border border-electric/20 rounded-2xl">
-                <p className="text-foreground italic">&ldquo;Most businesses in Zimbabwe find out they&apos;ve been hacked after the damage is done. I&apos;d rather you found out from me first.&rdquo;</p>
-                <p className="text-electric font-semibold mt-3">— {siteConfig.founder}, Founder & CEO</p>
+              <div className="mt-8 p-6 border border-gold/15 rounded-2xl bg-gold/3">
+                <p className="text-white/70 italic text-sm leading-relaxed">&ldquo;Most businesses in Zimbabwe find out they&apos;ve been hacked after the damage is done. I&apos;d rather you found out from us first.&rdquo;</p>
+                <p className="font-mono text-[11px] text-gold/60 mt-3 uppercase tracking-wider">— {siteConfig.founder}, Founder & CEO</p>
               </div>
             </div>
 
             {/* Profile Card */}
-            <div className="flex flex-col gap-6">
-              <div className="bg-card border border-border rounded-3xl p-10 text-center">
-                <div className="w-28 h-28 rounded-2xl bg-electric-gradient flex items-center justify-center mx-auto mb-6 text-4xl font-bold text-white blue-glow">
-                  DM
+            <div>
+              <div className="rounded-2xl border border-[#1A1A30] bg-[#07070D] p-10 text-center">
+                <div className="w-24 h-24 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center mx-auto mb-6 gold-glow-sm">
+                  <span className="font-display font-black text-gold text-3xl">DM</span>
                 </div>
-                <h3 className="font-display text-2xl font-bold text-foreground">{siteConfig.founder}</h3>
-                <p className="text-electric text-sm mt-1">{siteConfig.founderTitle}</p>
-                <p className="text-muted-foreground text-sm mt-1">Panashe Tech Solutions</p>
-                <p className="text-muted-foreground text-xs mt-1">📍 Harare, Zimbabwe</p>
-                <div className="mt-6 grid grid-cols-3 gap-4 pt-6 border-t border-border">
-                  {[["A+", "CompTIA Certified"], ["Sec+", "Security Certified"], ["PenTest+", "Pentest Certified"]].map(([v, l]) => (
-                    <div key={l} className="text-center">
-                      <p className="font-display text-2xl font-bold text-electric">{v}</p>
-                      <p className="text-muted-foreground text-xs">{l}</p>
+                <h3 className="font-display font-bold text-white text-xl">{siteConfig.founder}</h3>
+                <p className="font-mono text-[11px] text-gold/50 mt-1 uppercase tracking-wider">{siteConfig.founderTitle}</p>
+                <p className="text-white/30 text-xs mt-0.5">Vanorika Technologies · Harare, Zimbabwe</p>
+
+                <div className="mt-7 grid grid-cols-3 gap-4 pt-6 border-t border-[#1A1A30]">
+                  {siteConfig.certifications.map((c) => (
+                    <div key={c.abbr} className="text-center">
+                      <p className="font-mono font-bold text-gold text-sm">{c.abbr}</p>
+                      <p className="text-white/30 text-[10px] mt-0.5">{c.desc.split(" ")[0]}</p>
                     </div>
                   ))}
                 </div>
-                <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noopener noreferrer"
-                  className="mt-6 block w-full py-3 bg-electric text-white font-semibold rounded-xl text-sm hover:bg-electric-dark transition-all">
-                  Chat with Me Directly
+
+                <a
+                  href={siteConfig.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-7 block w-full py-3.5 bg-gold text-[#07070D] font-bold rounded-xl text-sm hover:bg-gold-light transition-all gold-glow-sm uppercase tracking-wider"
+                >
+                  Chat With Us Directly
                 </a>
               </div>
             </div>
@@ -90,35 +111,39 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-muted/20">
+      <section className="py-24 bg-[#07070D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-card border border-border rounded-2xl p-10 hover:border-electric/30 transition-all">
-              <Target className="w-10 h-10 text-electric mb-6" />
-              <h3 className="font-display text-2xl font-bold text-foreground mb-4">My Mission</h3>
-              <p className="text-muted-foreground leading-relaxed">To give Zimbabwean businesses an honest picture of their security exposure and build websites that actually bring in clients — at prices that don&apos;t require a loan.</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl border border-[#1A1A30] bg-[#0D0D1A] p-10 hover:border-gold/20 transition-all">
+              <Target className="w-9 h-9 text-gold mb-5" />
+              <h3 className="font-display font-bold text-white text-xl mb-3">Our Mission</h3>
+              <p className="text-white/40 text-sm leading-relaxed font-light">
+                To give Zimbabwean businesses an honest picture of their security exposure and build websites that actually bring in clients — at prices that don&apos;t require a loan.
+              </p>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-10 hover:border-cyan/30 transition-all">
-              <Eye className="w-10 h-10 text-cyan mb-6" />
-              <h3 className="font-display text-2xl font-bold text-foreground mb-4">My Vision</h3>
-              <p className="text-muted-foreground leading-relaxed">To be the first call Harare businesses make when they need a website built properly or want to know if their systems are secure.</p>
+            <div className="rounded-2xl border border-[#1A1A30] bg-[#0D0D1A] p-10 hover:border-gold/20 transition-all">
+              <Eye className="w-9 h-9 text-gold mb-5" />
+              <h3 className="font-display font-bold text-white text-xl mb-3">Our Vision</h3>
+              <p className="text-white/40 text-sm leading-relaxed font-light">
+                To be the first call Harare businesses make when they need a website built properly or want to know if their systems are secure.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-[#0D0D1A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader badge="WHAT I STAND FOR" title="My Core" titleGradient="Values" />
-          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <SectionHeader label="What We Stand For" title="Our Core Values" centered />
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map((v) => (
-              <div key={v.title} className="bg-card border border-border rounded-2xl p-6 hover:border-electric/40 transition-all group">
-                <div className="w-10 h-10 rounded-xl bg-electric/10 flex items-center justify-center mb-4 group-hover:bg-electric/20 transition-colors">
-                  <v.icon className="w-5 h-5 text-electric" />
+              <div key={v.title} className="rounded-2xl border border-[#1A1A30] bg-[#07070D] p-6 hover:border-gold/20 transition-all group">
+                <div className="w-10 h-10 rounded-xl bg-gold/8 border border-gold/12 flex items-center justify-center mb-4 group-hover:bg-gold/12 transition-colors">
+                  <v.icon className="w-5 h-5 text-gold" />
                 </div>
-                <h3 className="font-display font-semibold text-foreground mb-2">{v.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{v.desc}</p>
+                <h3 className="font-semibold text-white/85 text-[15px] mb-2">{v.title}</h3>
+                <p className="text-white/35 text-sm leading-relaxed font-light">{v.desc}</p>
               </div>
             ))}
           </div>

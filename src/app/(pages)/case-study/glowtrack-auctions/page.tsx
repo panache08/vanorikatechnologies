@@ -7,7 +7,7 @@ import { ShieldAlert, CheckCircle, Clock, ArrowLeft, AlertTriangle, ArrowRight }
 
 export const metadata: Metadata = {
   title: "Case Study: GlowTrack Auctions Security Audit",
-  description: "How Panashe Tech Solutions found 6 vulnerabilities in a Harare auction platform in under 24 hours — including one exposing live customer data.",
+  description: "How Vanorika Technologies found 6 vulnerabilities in a Harare auction platform in under 24 hours — including one exposing live customer data.",
 };
 
 const findings = [
@@ -122,7 +122,7 @@ export default function CaseStudyPage() {
                 They had a developer who built the site but had no security background. The platform handled user registration, live bidding, and payment coordination — all of which required storing personal customer data.
               </p>
               <p>
-                They contacted Panashe Tech Solutions for a website security audit. We signed a written authorisation agreement and started work the same day.
+                They contacted Vanorika Technologies for a website security audit. We signed a written authorisation agreement and started work the same day.
               </p>
             </div>
           </div>

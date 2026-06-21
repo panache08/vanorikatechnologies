@@ -1,78 +1,109 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Globe, Code2, Smartphone, Shield, Brain, ArrowRight } from "lucide-react";
-import { services } from "@/lib/data";
+import { Globe, Code2, Smartphone, Shield, Brain, ArrowRight, MessageCircle } from "lucide-react";
+import { services, siteConfig } from "@/lib/data";
 import SectionHeader from "@/components/ui/section-header";
 
-const iconMap: Record<string, React.ElementType> = { Globe, Code2, Smartphone, Shield, Brain };
+const ICONS: Record<string, React.ElementType> = {
+  Shield,
+  Globe,
+  Code2,
+  Smartphone,
+  Brain,
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
 
 export default function ServicesOverview() {
   return (
-    <section className="py-28 bg-background relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-mesh-gradient opacity-30" />
-      <div className="absolute inset-0 bg-grid opacity-40" />
+    <section className="relative py-24 bg-[#07070D] overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-15 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="WHAT WE ACTUALLY DO"
-          title="What We"
-          titleGradient="Actually Do"
-          subtitle="Five services. Done properly."
+          label="What We Do"
+          title="Enterprise-Grade Services"
+          subtitle="From penetration testing to production-ready web platforms — we build and secure what Zimbabwean businesses depend on."
+          centered
         />
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((service, i) => {
-            const Icon = iconMap[service.icon] || Globe;
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-14">
+          {services.map((svc, i) => {
+            const Icon = ICONS[svc.icon] ?? Shield;
             return (
-              <motion.div key={service.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
-                <Link href={service.href}
-                  className="group relative flex flex-col h-full bg-card border border-border rounded-2xl p-6 card-hover overflow-hidden shine">
-                  {/* Gradient overlay on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+              <motion.div
+                key={svc.id}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={fadeUp}
+              >
+                <Link
+                  href={svc.href}
+                  className="group block h-full p-6 rounded-xl border border-[#1A1A30] bg-[#0D0D1A] hover:border-gold/25 hover:bg-[#111122] transition-all duration-300 relative overflow-hidden"
+                >
+                  {/* Gold top border reveal */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-t-xl" />
 
-                  {/* Icon */}
-                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300`}>
-                    <Icon className="w-6 h-6 text-white" />
+                  <div className="w-11 h-11 rounded-lg bg-gold/8 border border-gold/12 flex items-center justify-center mb-4 group-hover:bg-gold/12 group-hover:border-gold/25 transition-all">
+                    <Icon className="w-5 h-5 text-gold" />
                   </div>
 
-                  <h3 className="font-display font-semibold text-foreground mb-2.5 group-hover:text-electric transition-colors text-[15px]">
-                    {service.title}
+                  <h3 className="font-display font-bold text-white/90 text-[15px] mb-2 group-hover:text-white transition-colors">
+                    {svc.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">{service.shortDesc}</p>
+                  <p className="text-white/40 text-sm leading-relaxed font-light mb-4">
+                    {svc.description}
+                  </p>
 
-                  {/* Features */}
-                  <div className="space-y-1 mb-5">
-                    {service.features.slice(0, 3).map((f) => (
-                      <div key={f} className="flex items-center gap-2 text-xs text-muted-foreground/70">
-                        <div className={`w-1 h-1 rounded-full bg-gradient-to-r ${service.color}`} />
-                        {f}
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center gap-1.5 text-electric text-sm font-semibold group-hover:gap-2.5 transition-all">
-                    Learn more <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-1.5 font-mono text-[11px] text-gold/50 group-hover:text-gold/80 transition-colors uppercase tracking-wider">
+                    Learn more
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               </motion.div>
             );
           })}
-        </div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-          className="mt-14 text-center">
-          <Link href="/services"
-            className="inline-flex items-center gap-2.5 px-8 py-3.5 border border-electric/30 text-electric rounded-2xl hover:bg-electric/8 hover:border-electric/50 transition-all font-semibold text-sm shine">
-            View All Services <ArrowRight className="w-4 h-4" />
-          </Link>
-        </motion.div>
+          {/* CTA card */}
+          <motion.div
+            custom={services.length}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={fadeUp}
+          >
+            <a
+              href={siteConfig.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block h-full p-6 rounded-xl border border-gold/20 bg-gold/4 hover:bg-gold/8 hover:border-gold/40 transition-all duration-300"
+            >
+              <div className="w-11 h-11 rounded-lg bg-gold/15 border border-gold/25 flex items-center justify-center mb-4">
+                <MessageCircle className="w-5 h-5 text-gold" />
+              </div>
+              <h3 className="font-display font-bold text-gold text-[15px] mb-2">
+                Free Passive Security Assessment
+              </h3>
+              <p className="text-white/40 text-sm leading-relaxed font-light mb-4">
+                No commitment. We scan your public-facing assets and share what we find — at no cost.
+              </p>
+              <div className="flex items-center gap-1.5 font-mono text-[11px] text-gold/70 group-hover:text-gold uppercase tracking-wider">
+                Get yours free
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

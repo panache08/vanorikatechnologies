@@ -51,7 +51,7 @@ export default function ContactPage() {
     setLoading(true);
 
     const lines = [
-      "New enquiry from panashe-tech.vercel.app",
+      "New enquiry from vanorikatechnologies.co.zw",
       "",
       `Name: ${form.name}`,
       form.company ? `Company: ${form.company}` : null,
