@@ -187,7 +187,7 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="text-muted font-light text-lg leading-[1.75] mb-8 max-w-lg">
                 Donovan Mudarikwa — CompTIA A+, Security+ &amp; PenTest+ certified, based in Harare.{" "}
-                <span className="text-white/70">I find security vulnerabilities in Zimbabwean businesses and build websites that bring in real clients.</span>
+                <span className="text-white/70">We find security vulnerabilities in Zimbabwean businesses and build websites that bring in real clients.</span>
               </motion.p>
 
               {/* Trust badges */}
