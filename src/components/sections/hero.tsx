@@ -17,6 +17,12 @@ function ParticleCanvas() {
 
     let animId: number;
 
+    // Scale down work on small screens / honour reduced-motion for performance.
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const PARTICLE_COUNT = isMobile ? 28 : 70;
+    const drawLines = !isMobile; // O(n²) connection lines are the costly part — desktop only
+
     const resize = () => {
       canvas.width  = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
@@ -36,7 +42,7 @@ function ParticleCanvas() {
       "rgba(226,201,122,",
       "rgba(240,223,160,",
     ];
-    const particles = Array.from({ length: 70 }, () => ({
+    const particles = Array.from({ length: PARTICLE_COUNT }, () => ({
       x:     Math.random() * (canvas.width  || 1200),
       y:     Math.random() * (canvas.height || 800),
       vx:    (Math.random() - 0.5) * 0.35,
@@ -75,23 +81,26 @@ function ParticleCanvas() {
         ctx.fillStyle = `${p.color}${p.alpha})`;
         ctx.fill();
 
-        // Connection lines — gold
-        for (let j = i + 1; j < particles.length; j++) {
-          const ex = particles[j].x - p.x;
-          const ey = particles[j].y - p.y;
-          const d  = Math.sqrt(ex * ex + ey * ey);
-          if (d < 130) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(201,168,76,${0.07 * (1 - d / 130)})`;
-            ctx.lineWidth = 0.6;
-            ctx.stroke();
+        // Connection lines — gold (desktop only; O(n²) is the expensive part)
+        if (drawLines) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const ex = particles[j].x - p.x;
+            const ey = particles[j].y - p.y;
+            const d  = Math.sqrt(ex * ex + ey * ey);
+            if (d < 130) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(201,168,76,${0.07 * (1 - d / 130)})`;
+              ctx.lineWidth = 0.6;
+              ctx.stroke();
+            }
           }
         }
       });
 
-      animId = requestAnimationFrame(draw);
+      // Reduced-motion: render a single static frame, no animation loop.
+      if (!reducedMotion) animId = requestAnimationFrame(draw);
     };
     draw();
 
