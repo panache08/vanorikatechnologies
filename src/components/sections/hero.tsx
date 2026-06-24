@@ -106,7 +106,7 @@ function ParticleCanvas() {
 }
 
 const TICKER_ITEMS = [
-  "CompTIA PenTest+ Certified",
+  "Penetration Testing Specialist",
   "17+ Businesses Assessed",
   "ZW DPA 2021 Compliant",
   "HackerOne Bug Bounty",
@@ -186,7 +186,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="text-muted font-light text-lg leading-[1.75] mb-8 max-w-lg">
-                Donovan Mudarikwa — CompTIA A+, Security+ &amp; PenTest+ certified, based in Harare.{" "}
+                Donovan Mudarikwa — penetration tester and web developer, based in Harare.{" "}
                 <span className="text-white/70">We find security vulnerabilities in Zimbabwean businesses and build websites that bring in real clients.</span>
               </motion.p>
 
@@ -197,7 +197,7 @@ export default function Hero() {
                 transition={{ delay: 0.35 }}
                 className="flex flex-wrap gap-4 mb-10">
                 {[
-                  "CompTIA PenTest+ Certified",
+                  "Penetration Testing Specialist",
                   "Based in Harare — same day response",
                   "Reply within 2 hours",
                 ].map((t) => (
@@ -272,22 +272,11 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Certifications */}
+                {/* Quick pitch */}
                 <div className="mb-6">
-                  <p className="font-mono text-[9px] text-gold/50 tracking-[0.2em] uppercase mb-3">Verified Certifications</p>
-                  <div className="space-y-2">
-                    {siteConfig.certifications.map((c) => (
-                      <div key={c.abbr} className="flex items-center gap-3 p-2.5 bg-gold/4 border border-gold/10 rounded-lg">
-                        <div className="w-10 h-8 bg-gold/10 border border-gold/20 rounded flex items-center justify-center">
-                          <span className="font-mono text-gold text-[9px] font-bold">{c.abbr}</span>
-                        </div>
-                        <div>
-                          <p className="text-white/80 text-xs font-medium">{c.full}</p>
-                          <p className="text-white/30 text-[10px] font-light">{c.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  <p className="text-white/55 text-sm font-light leading-relaxed">
+                    Penetration testing and professional websites for Zimbabwean businesses — clear, plain-English reports and direct, founder-led delivery.
+                  </p>
                 </div>
 
                 {/* Stats row */}

@@ -7,8 +7,8 @@ import { siteConfig } from "@/lib/data";
 const reasons = [
   {
     icon: Shield,
-    title: "Certified, Not Self-Proclaimed",
-    desc: "CompTIA A+, Security+, and PenTest+ — earned certifications that demonstrate real-world competency, not just online course badges.",
+    title: "Attacker's Mindset",
+    desc: "We test the way real attackers do — chaining small weaknesses together to find the issues automated scanners quietly miss.",
   },
   {
     icon: Zap,
@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
             <SectionHeader
               label="Why Vanorika"
               title="Built Different by Design"
-              subtitle="We operate at the intersection of real certification, Harare-based availability, and founder accountability."
+              subtitle="We operate at the intersection of real-world testing, Harare-based availability, and founder accountability."
             />
 
             <div className="space-y-5 mt-10">
@@ -99,22 +99,6 @@ export default function WhyChooseUs() {
                 <p className="font-mono text-[10px] text-gold/60 uppercase tracking-[0.2em] mb-1 label-line">Credentials</p>
                 <h3 className="font-display font-bold text-white text-xl">Donovan Mudarikwa</h3>
                 <p className="font-mono text-[11px] text-gold/50 mt-0.5">Founder & CEO · Vanorika Technologies</p>
-              </div>
-
-              {/* Certs */}
-              <div className="space-y-3">
-                <p className="font-mono text-[10px] text-white/25 uppercase tracking-wider">Certifications</p>
-                {siteConfig.certifications.map((c) => (
-                  <div key={c.abbr} className="flex items-center gap-3 p-3 rounded-lg bg-[#0D0D1A] border border-[#1A1A30]">
-                    <div className="w-9 h-9 rounded-lg bg-gold/8 border border-gold/15 flex items-center justify-center flex-shrink-0">
-                      <span className="font-mono font-bold text-gold text-[9px] leading-tight text-center">{c.abbr}</span>
-                    </div>
-                    <div>
-                      <p className="text-white/75 text-xs font-medium">{c.full}</p>
-                      <p className="text-white/30 text-[11px]">{c.desc}</p>
-                    </div>
-                  </div>
-                ))}
               </div>
 
               {/* Bug Bounty */}

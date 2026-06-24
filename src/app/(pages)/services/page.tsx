@@ -28,7 +28,7 @@ const services = [
     accentColor: "bg-red-500/10",
     label: "SECURITY",
     title: "Cybersecurity & Penetration Testing",
-    description: "We attack your systems the way a real threat actor would — then hand you a plain-English report with every gap and exactly how to close it. CompTIA PenTest+ certified.",
+    description: "We attack your systems the way a real threat actor would — then hand you a plain-English report with every gap and exactly how to close it.",
     features: [
       { icon: ScanSearch,    label: "Penetration Testing",       desc: "Manual exploitation of web apps, APIs, and network perimeter" },
       { icon: Network,       label: "Network Vulnerability Scan", desc: "Port-level enumeration and CVE mapping against live infrastructure" },

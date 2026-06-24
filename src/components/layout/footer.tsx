@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, Twitter, Instagram, Github } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Twitter, Instagram, Facebook } from "lucide-react";
 import { siteConfig, navLinks, services } from "@/lib/data";
 
 function VanorikaFooterLogo() {
@@ -41,7 +41,7 @@ export default function Footer() {
               {[
                 { icon: Twitter,   href: siteConfig.social.twitter },
                 { icon: Instagram, href: siteConfig.social.instagram },
-                { icon: Github,    href: siteConfig.social.github },
+                { icon: Facebook,  href: siteConfig.social.facebook },
               ].map(({ icon: Icon, href }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg border border-[#1A1A30] flex items-center justify-center text-white/25 hover:text-gold hover:border-gold/30 hover:bg-gold/5 transition-all">

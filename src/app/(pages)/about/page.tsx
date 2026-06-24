@@ -38,7 +38,7 @@ export default function AboutPage() {
             About Vanorika
           </h1>
           <p className="text-white/45 text-lg font-light">
-            One certified founder. Founder-led engagements. Based in Harare.
+            Founder-led engagements. Direct delivery. Based in Harare.
           </p>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function AboutPage() {
               </p>
               <div className="space-y-4 text-white/45 text-sm leading-relaxed font-light">
                 <p>
-                  I&apos;m Donovan Mudarikwa — a certified penetration tester and web developer based in Harare, Zimbabwe. I hold CompTIA A+, Security+, and PenTest+ certifications and work directly with clients on cybersecurity and web projects.
+                  I&apos;m Donovan Mudarikwa — a penetration tester and web developer based in Harare, Zimbabwe. I work directly with clients on cybersecurity and web projects.
                 </p>
                 <p>
                   I started Vanorika Technologies because most Zimbabwean businesses have no idea what their security exposure looks like — and web developers here are either too expensive or too slow.
