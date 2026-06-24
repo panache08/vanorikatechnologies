@@ -113,7 +113,7 @@ export const portfolio = [
     description: "Full luxury salon website with online booking, product pages, treatment quiz, routine builder, and newsletter — built on Next.js and Supabase, then hardened. 8 security findings identified and resolved before launch.",
     tech: ["Next.js", "Supabase", "EmailJS", "Tailwind CSS"],
     result: "Live with booking, email automation, 6 DB tables — and 8 security findings resolved",
-    image: "https://beauty-by-nyasha.vercel.app/opengraph-image",
+    image: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2Jz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9J2InIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScxJz48c3RvcCBvZmZzZXQ9JzAlJyBzdG9wLWNvbG9yPScjZWM0ODk5Jy8+PHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLWNvbG9yPScjZjQzZjVlJy8+PC9saW5lYXJHcmFkaWVudD48cGF0dGVybiBpZD0nZycgd2lkdGg9JzQwJyBoZWlnaHQ9JzQwJyBwYXR0ZXJuVW5pdHM9J3VzZXJTcGFjZU9uVXNlJz48cGF0aCBkPSdNIDQwIDAgTCAwIDAgMCA0MCcgZmlsbD0nbm9uZScgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScwLjQnIHN0cm9rZS1vcGFjaXR5PScwLjA2Jy8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0nODAwJyBoZWlnaHQ9JzQxNicgZmlsbD0nIzBmMGEwZCcvPjxyZWN0IHdpZHRoPSc4MDAnIGhlaWdodD0nNDE2JyBmaWxsPSd1cmwoI2IpJyBvcGFjaXR5PScwLjEyJy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSc0MTYnIGZpbGw9J3VybCgjZyknLz48Y2lyY2xlIGN4PSc0MDAnIGN5PScyMDgnIHI9JzkyJyBmaWxsPSdub25lJyBzdHJva2U9J3VybCgjYiknIHN0cm9rZS13aWR0aD0nMS41JyBvcGFjaXR5PScwLjUnLz48Y2lyY2xlIGN4PSc0MDAnIGN5PScyMDgnIHI9JzU2JyBmaWxsPSd1cmwoI2IpJyBvcGFjaXR5PScwLjE1Jy8+PHJlY3Qgd2lkdGg9JzgwMCcgaGVpZ2h0PSczJyBmaWxsPSd1cmwoI2IpJy8+PC9zdmc+",
     color: "from-pink-500 to-rose-500",
     url: "https://beauty-by-nyasha.vercel.app",
   },
