@@ -13,6 +13,8 @@ const servicesDropdown = [
   { label: "Custom Software", icon: "💻", href: "/services#software-development" },
   { label: "Mobile Apps", icon: "📱", href: "/services#mobile-apps" },
   { label: "AI & Automation", icon: "🤖", href: "/services#ai-solutions" },
+  { label: "Casino Suite", icon: "🎰", href: "/casino" },
+  { label: "Free Security Check", icon: "🔍", href: "/tools/security-check" },
 ];
 
 function VanorikaLogo() {

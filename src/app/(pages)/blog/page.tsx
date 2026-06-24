@@ -1,12 +1,20 @@
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import Newsletter from "@/components/sections/newsletter";
 import type { Metadata } from "next";
-import { Clock } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Clock, ArrowRight } from "lucide-react";
+import { blogPosts } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Technology insights, cybersecurity tips, and business security advice from Vanorika Technologies.",
+  description: "Cybersecurity insights and practical security advice for Zimbabwe businesses — from CompTIA PenTest+ certified Vanorika Technologies.",
 };
+
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+}
 
 export default function BlogPage() {
   return (
@@ -15,28 +23,40 @@ export default function BlogPage() {
       <section className="relative pt-40 pb-20 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">TECH INSIGHTS</span>
+          <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">SECURITY INSIGHTS</span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Blog</h1>
-          <p className="text-white/60 text-lg">Technology insights and business advice — coming soon.</p>
+          <p className="text-white/60 text-lg">Plain-English cybersecurity advice for Zimbabwe businesses.</p>
         </div>
       </section>
 
       <section className="py-24 bg-background">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-card border border-border rounded-3xl p-14 flex flex-col items-center gap-6">
-            <div className="w-14 h-14 rounded-2xl bg-electric/10 flex items-center justify-center">
-              <Clock className="w-7 h-7 text-electric" />
-            </div>
-            <div>
-              <h2 className="font-display text-2xl font-bold text-foreground mb-3">Articles Coming Soon</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Writing is in progress. Articles on web development, cybersecurity, and running a tech business in Zimbabwe will be published here as they&apos;re ready.
-              </p>
-            </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post) => (
+              <Link key={post.id} href={`/blog/${post.slug}`}
+                className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-gold/40 transition-all hover:-translate-y-1 hover:shadow-xl flex flex-col">
+                <div className="relative h-48 overflow-hidden">
+                  <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
+                  <span className="absolute top-3 left-3 px-3 py-1 text-xs font-semibold text-gold rounded-full bg-background/80 border border-gold/20">{post.category}</span>
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-3 text-muted-foreground text-xs mb-3">
+                    <span>{formatDate(post.date)}</span>
+                    <span className="inline-flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
+                  </div>
+                  <h2 className="font-display font-bold text-foreground text-lg mb-2 group-hover:text-gold transition-colors leading-snug">{post.title}</h2>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">{post.excerpt}</p>
+                  <span className="inline-flex items-center gap-1.5 text-gold text-sm font-medium">
+                    Read article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
 
+      <Newsletter />
       <Footer />
     </main>
   );
