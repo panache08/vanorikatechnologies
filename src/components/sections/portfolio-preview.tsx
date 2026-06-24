@@ -48,6 +48,7 @@ export default function PortfolioPreview() {
                     href={(p as { url: string }).url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Visit ${p.title} (opens in a new tab)`}
                     className="absolute top-3 right-3 w-7 h-7 rounded-lg bg-[#07070D]/80 border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm"
                   >
                     <ExternalLink className="w-3.5 h-3.5 text-white/60" />

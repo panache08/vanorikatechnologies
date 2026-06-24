@@ -36,7 +36,7 @@ export default function BlogPage() {
               <Link key={post.id} href={`/blog/${post.slug}`}
                 className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-gold/40 transition-all hover:-translate-y-1 hover:shadow-xl flex flex-col">
                 <div className="relative h-48 overflow-hidden">
-                  <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
+                  <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                   <span className="absolute top-3 left-3 px-3 py-1 text-xs font-semibold text-gold rounded-full bg-background/80 border border-gold/20">{post.category}</span>
                 </div>
                 <div className="p-6 flex flex-col flex-1 font-jost">

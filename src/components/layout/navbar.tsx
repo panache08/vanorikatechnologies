@@ -148,6 +148,8 @@ export default function Navbar() {
             {/* Mobile toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
               className="lg:hidden w-10 h-10 border border-[#1A1A30] rounded-lg flex items-center justify-center text-white/60 bg-[#0D0D1A]">
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
