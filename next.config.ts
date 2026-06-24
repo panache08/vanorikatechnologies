@@ -6,7 +6,7 @@ const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-  { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';" },
+  { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com https://avatars.githubusercontent.com https://*.vercel.app; font-src 'self' data:;" },
 ];
 
 const nextConfig: NextConfig = {
@@ -24,6 +24,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
       { protocol: "https", hostname: "vanorikatechnologies.vercel.app" },
       { protocol: "https", hostname: "beauty-by-nyasha.vercel.app" },
+      { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
 };

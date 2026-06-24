@@ -34,9 +34,11 @@ const config: Config = {
         destructive: { DEFAULT: 'hsl(var(--destructive))', foreground: 'hsl(var(--destructive-foreground))' },
       },
       fontFamily: {
-        sans:    ['var(--font-outfit)', 'Outfit', 'sans-serif'],
-        display: ['var(--font-outfit)', 'Outfit', 'sans-serif'],
-        mono:    ['var(--font-ibm-plex-mono)', 'IBM Plex Mono', 'monospace'],
+        sans:     ['var(--font-outfit)', 'Outfit', 'sans-serif'],
+        display:  ['var(--font-outfit)', 'Outfit', 'sans-serif'],
+        mono:     ['var(--font-ibm-plex-mono)', 'IBM Plex Mono', 'monospace'],
+        playfair: ['var(--font-playfair)', 'Playfair Display', 'Georgia', 'serif'],
+        jost:     ['var(--font-jost)', 'Jost', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'hero-gradient':  'linear-gradient(160deg, #07070D 0%, #0D0D1A 60%, #111122 100%)',
