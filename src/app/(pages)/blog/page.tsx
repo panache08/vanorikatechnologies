@@ -24,8 +24,8 @@ export default function BlogPage() {
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">SECURITY INSIGHTS</span>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Blog</h1>
-          <p className="text-white/60 text-lg">Plain-English cybersecurity advice for Zimbabwe businesses.</p>
+          <h1 className="font-playfair text-5xl md:text-6xl font-bold text-white mb-6">Blog</h1>
+          <p className="font-jost text-white/60 text-lg">Plain-English cybersecurity advice for Zimbabwe businesses.</p>
         </div>
       </section>
 
@@ -39,12 +39,12 @@ export default function BlogPage() {
                   <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="33vw" />
                   <span className="absolute top-3 left-3 px-3 py-1 text-xs font-semibold text-gold rounded-full bg-background/80 border border-gold/20">{post.category}</span>
                 </div>
-                <div className="p-6 flex flex-col flex-1">
+                <div className="p-6 flex flex-col flex-1 font-jost">
                   <div className="flex items-center gap-3 text-muted-foreground text-xs mb-3">
                     <span>{formatDate(post.date)}</span>
                     <span className="inline-flex items-center gap-1"><Clock className="w-3 h-3" /> {post.readTime}</span>
                   </div>
-                  <h2 className="font-display font-bold text-foreground text-lg mb-2 group-hover:text-gold transition-colors leading-snug">{post.title}</h2>
+                  <h2 className="font-playfair font-bold text-foreground text-xl mb-2 group-hover:text-gold transition-colors leading-snug">{post.title}</h2>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">{post.excerpt}</p>
                   <span className="inline-flex items-center gap-1.5 text-gold text-sm font-medium">
                     Read article <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

@@ -29,8 +29,8 @@ export default function ArticleShell({
             <ArrowLeft className="w-4 h-4" /> Back to blog
           </Link>
           <span className="block px-3 py-1 w-fit text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-5">{category.toUpperCase()}</span>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">{title}</h1>
-          <div className="flex items-center gap-4 text-white/50 text-sm">
+          <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">{title}</h1>
+          <div className="font-jost flex items-center gap-4 text-white/50 text-sm">
             <span>{new Date(date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</span>
             <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {readTime}</span>
           </div>
@@ -38,15 +38,15 @@ export default function ArticleShell({
       </section>
 
       <article className="py-16 bg-background">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-foreground/90 text-lg leading-relaxed mb-10 font-light">{intro}</p>
-          <div className="prose-article space-y-6 text-muted-foreground leading-relaxed [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:font-display [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-foreground [&_h3]:mt-6 [&_h3]:mb-2 [&_strong]:text-foreground [&_ul]:space-y-2 [&_ul]:list-disc [&_ul]:pl-5 [&_a]:text-gold [&_a]:underline">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 font-jost">
+          <p className="text-foreground/90 text-xl leading-relaxed mb-10 font-light">{intro}</p>
+          <div className="prose-article space-y-6 text-muted-foreground leading-relaxed [&_h2]:font-playfair [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:font-playfair [&_h3]:text-lg [&_h3]:font-bold [&_h3]:text-foreground [&_h3]:mt-6 [&_h3]:mb-2 [&_strong]:text-foreground [&_ul]:space-y-2 [&_ul]:list-disc [&_ul]:pl-5 [&_a]:text-gold [&_a]:underline">
             {children}
           </div>
 
           {/* CTA */}
           <div className="mt-16 bg-card border border-gold/20 rounded-3xl p-8 md:p-10 text-center">
-            <h2 className="font-display text-2xl font-bold text-foreground mb-3">{cta.heading}</h2>
+            <h2 className="font-playfair text-2xl font-bold text-foreground mb-3">{cta.heading}</h2>
             <p className="text-muted-foreground leading-relaxed mb-7 max-w-xl mx-auto">{cta.text}</p>
             {isWhatsApp ? (
               <a href={cta.href} target="_blank" rel="noopener noreferrer"
