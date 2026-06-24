@@ -32,7 +32,7 @@ export default function PortfolioPage() {
             {portfolio.map((p) => (
               <div key={p.id} className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-electric/40 transition-all hover:-translate-y-1 hover:shadow-xl">
                 <div className="relative h-52 overflow-hidden">
-                  <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="33vw" />
+                  <Image src={p.image} alt={p.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" />
                   <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
                   <span className={`absolute top-3 left-3 px-3 py-1 text-xs font-semibold text-white rounded-full bg-gradient-to-r ${p.color}`}>{p.category}</span>
                 </div>

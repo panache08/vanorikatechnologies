@@ -101,8 +101,9 @@ export default function ContactPage() {
                     { label: "Phone Number", key: "phone", type: "tel", placeholder: "+263 77 XXX XXXX" },
                   ].map((f) => (
                     <div key={f.key}>
-                      <label className="block text-sm font-medium text-muted-foreground mb-1.5">{f.label}</label>
+                      <label htmlFor={f.key} className="block text-sm font-medium text-muted-foreground mb-1.5">{f.label}</label>
                       <input
+                        id={f.key}
                         type={f.type}
                         value={form[f.key as keyof typeof form]}
                         onChange={set(f.key)}
@@ -116,16 +117,16 @@ export default function ContactPage() {
 
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-muted-foreground mb-1.5">Service Needed *</label>
-                    <select value={form.service} onChange={set("service")} required
+                    <label htmlFor="service" className="block text-sm font-medium text-muted-foreground mb-1.5">Service Needed *</label>
+                    <select id="service" value={form.service} onChange={set("service")} required
                       className="w-full px-4 py-3 bg-card border border-border rounded-xl text-foreground focus:border-electric focus:outline-none transition-all text-sm">
                       <option value="">Select a service</option>
                       {services.map((s) => <option key={s} value={s}>{s}</option>)}
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-muted-foreground mb-1.5">Project Budget</label>
-                    <select value={form.budget} onChange={set("budget")}
+                    <label htmlFor="budget" className="block text-sm font-medium text-muted-foreground mb-1.5">Project Budget</label>
+                    <select id="budget" value={form.budget} onChange={set("budget")}
                       className="w-full px-4 py-3 bg-card border border-border rounded-xl text-foreground focus:border-electric focus:outline-none transition-all text-sm">
                       <option value="">Select budget range</option>
                       {budgets.map((b) => <option key={b} value={b}>{b}</option>)}
@@ -134,18 +135,19 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-muted-foreground mb-1.5">Project Description *</label>
-                  <textarea value={form.message} onChange={set("message")} required rows={5}
+                  <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1.5">Project Description *</label>
+                  <textarea id="message" value={form.message} onChange={set("message")} required rows={5}
                     placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
                     className="w-full px-4 py-3 bg-card border border-border rounded-xl text-foreground placeholder-muted-foreground focus:border-electric focus:outline-none transition-all text-sm resize-none" />
                 </div>
 
                 {/* Math CAPTCHA */}
                 <div>
-                  <label className="block text-sm font-medium text-muted-foreground mb-1.5">
+                  <label htmlFor="captcha" className="block text-sm font-medium text-muted-foreground mb-1.5">
                     Quick check: What is {captcha.a} + {captcha.b}? *
                   </label>
                   <input
+                    id="captcha"
                     type="number"
                     value={captchaInput}
                     onChange={(e) => setCaptchaInput(e.target.value)}
