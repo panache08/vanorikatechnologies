@@ -142,7 +142,7 @@ export default function ServicesPage() {
               <div
                 key={svc.id}
                 id={svc.id}
-                className={`rounded-2xl border ${svc.borderColor} bg-[#0D0D1A] overflow-hidden transition-colors duration-300`}
+                className={`scroll-mt-28 rounded-2xl border ${svc.borderColor} bg-[#0D0D1A] overflow-hidden transition-colors duration-300`}
               >
                 {/* Header */}
                 <div className={`px-8 py-7 bg-gradient-to-r ${svc.color} border-b border-white/5`}>
