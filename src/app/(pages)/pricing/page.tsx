@@ -130,6 +130,57 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Open Rate Card */}
+      <section className="py-24 bg-background border-t border-border">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-4">OPEN PRICING</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">No Hidden Numbers</h2>
+            <p className="text-muted-foreground text-sm mt-3">Honest starting points so you can budget before you even message us.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                heading: "Cybersecurity",
+                rows: [
+                  { service: "Passive Security Assessment", price: "Free" },
+                  { service: "Website Security Audit", price: "From $150" },
+                  { service: "Full Penetration Test", price: "From $400" },
+                ],
+              },
+              {
+                heading: "Software",
+                rows: [
+                  { service: "Website (Basic)", price: "From $300" },
+                  { service: "Website (Business)", price: "From $600" },
+                  { service: "Zenvora SME", price: "$49 / month" },
+                  { service: "Zenvora Casino Suite", price: "$200 / month" },
+                  { service: "Custom Software", price: "From $500" },
+                  { service: "Mobile App", price: "From $800" },
+                ],
+              },
+            ].map((group) => (
+              <div key={group.heading}>
+                <h3 className="font-mono text-[10px] font-semibold text-gold/70 mb-4 uppercase tracking-[0.2em]">{group.heading}</h3>
+                <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                  {group.rows.map((row, i) => (
+                    <div key={row.service}
+                      className={`flex items-center justify-between px-6 py-4 ${i !== 0 ? "border-t border-border" : ""} hover:bg-gold/5 transition-colors`}>
+                      <span className="text-foreground text-sm font-medium">{row.service}</span>
+                      <span className="font-display text-gold font-bold text-sm whitespace-nowrap">{row.price}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-muted-foreground text-xs mt-8">
+            Prices are starting points in USD. Final quotes depend on scope — message us for an exact figure.
+          </p>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-24 bg-muted/20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

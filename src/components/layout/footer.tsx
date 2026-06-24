@@ -57,7 +57,13 @@ export default function Footer() {
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {navLinks.map((l) => (
+              {[
+                ...navLinks,
+                { label: "Casino", href: "/casino" },
+                { label: "Case Studies", href: "/case-studies" },
+                { label: "Resources", href: "/resources" },
+                { label: "Security Check", href: "/tools/security-check" },
+              ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href}
                     className="text-white/35 hover:text-gold text-sm transition-colors flex items-center gap-2 group font-light">

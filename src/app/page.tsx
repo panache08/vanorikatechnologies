@@ -8,6 +8,7 @@ import PortfolioPreview from "@/components/sections/portfolio-preview";
 import ProcessSection from "@/components/sections/process-section";
 import Testimonials from "@/components/sections/testimonials";
 import TechStack from "@/components/sections/tech-stack";
+import Newsletter from "@/components/sections/newsletter";
 import CTABanner from "@/components/sections/cta-banner";
 
 export default function HomePage() {
@@ -22,6 +23,7 @@ export default function HomePage() {
       <ProcessSection />
       <Testimonials />
       <TechStack />
+      <Newsletter />
       <CTABanner />
       <Footer />
     </main>
