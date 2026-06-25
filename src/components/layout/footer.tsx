@@ -59,10 +59,8 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 ...navLinks,
-                { label: "Casino", href: "/casino" },
                 { label: "Case Studies", href: "/case-studies" },
                 { label: "Resources", href: "/resources" },
-                { label: "Security Check", href: "/tools/security-check" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href}

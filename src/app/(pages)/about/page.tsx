@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const values = [
   { icon: Target, title: "Excellence", desc: "We don't send work we wouldn't put our name on. Every project gets the same attention whether it's $300 or $3000." },
   { icon: Heart, title: "Client-First", desc: "We tell clients what they need to hear, not what they want to hear. That's more useful long term." },
-  { icon: Zap, title: "Staying Current", desc: "We stay current so we can tell you what actually works — not just what's trendy." },
+  { icon: Zap, title: "Tested Against Real Systems", desc: "Active bug bounty researcher on HackerOne and Bugcrowd — our skills are proven against live production systems, not just theory or course badges." },
   { icon: CheckCircle, title: "Transparency", desc: "Fixed quotes. Real timelines. You always know where things stand." },
 ];
 
