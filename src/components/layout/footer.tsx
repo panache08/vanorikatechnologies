@@ -59,6 +59,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 ...navLinks,
+                { label: "Free Tools", href: "/tools" },
                 { label: "Case Studies", href: "/case-studies" },
                 { label: "Resources", href: "/resources" },
               ].map((l) => (
