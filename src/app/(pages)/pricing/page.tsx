@@ -152,12 +152,12 @@ export default function PricingPage() {
               {
                 heading: "Software",
                 rows: [
-                  { service: "Website (Basic)", price: "From $300" },
-                  { service: "Website (Business)", price: "From $600" },
-                  { service: "Zenvora SME", price: "$49 / month" },
-                  { service: "Zenvora Casino Suite", price: "$200 / month" },
-                  { service: "Custom Software", price: "From $500" },
-                  { service: "Mobile App", price: "From $800" },
+                  { service: "Website — Starter", price: "From $299", note: "5-page business site" },
+                  { service: "Website — Business", price: "From $799", note: "CMS + e-commerce" },
+                  { service: "Custom Software", price: "From $500", note: "Web apps & systems" },
+                  { service: "Mobile App", price: "From $800", note: "Android / cross-platform" },
+                  { service: "Zenvora ERP — SME", price: "$49 / month", note: "Accounting, invoicing & CRM" },
+                  { service: "Zenvora Casino Suite", price: "$200 / month", note: "Gaming ERP + compliance" },
                 ],
               },
             ].map((group) => (
@@ -166,9 +166,12 @@ export default function PricingPage() {
                 <div className="bg-card border border-border rounded-2xl overflow-hidden">
                   {group.rows.map((row, i) => (
                     <div key={row.service}
-                      className={`flex items-center justify-between px-6 py-4 ${i !== 0 ? "border-t border-border" : ""} hover:bg-gold/5 transition-colors`}>
-                      <span className="text-foreground text-sm font-medium">{row.service}</span>
-                      <span className="font-display text-gold font-bold text-sm whitespace-nowrap">{row.price}</span>
+                      className={`flex items-center justify-between gap-4 px-6 py-4 ${i !== 0 ? "border-t border-border" : ""} hover:bg-gold/5 transition-colors`}>
+                      <span className="min-w-0">
+                        <span className="block text-foreground text-sm font-medium">{row.service}</span>
+                        {"note" in row && row.note && <span className="block text-muted-foreground/70 text-xs mt-0.5">{row.note}</span>}
+                      </span>
+                      <span className="font-display text-gold font-bold text-sm whitespace-nowrap shrink-0">{row.price}</span>
                     </div>
                   ))}
                 </div>
@@ -178,6 +181,50 @@ export default function PricingPage() {
           <p className="text-center text-muted-foreground text-xs mt-8">
             Prices are starting points in USD. Final quotes depend on scope — message us for an exact figure.
           </p>
+        </div>
+      </section>
+
+      {/* What drives pentest pricing + Payment */}
+      <section className="py-24 bg-muted/20 border-t border-border">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10">
+          {/* Pentest scope factors */}
+          <div>
+            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-4">PENTEST SCOPE</span>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What drives the price</h2>
+            <p className="text-muted-foreground text-sm mb-6">A full penetration test starts at $400. The final figure depends on:</p>
+            <div className="bg-card border border-border rounded-2xl overflow-hidden">
+              {[
+                { factor: "Number of domains / apps", effect: "More targets, more time" },
+                { factor: "External vs internal", effect: "Internal needs network access" },
+                { factor: "Authenticated testing", effect: "Testing logged-in roles" },
+                { factor: "Report type", effect: "Standard vs board / compliance-ready" },
+                { factor: "Retest included", effect: "Verifying your fixes afterwards" },
+              ].map((r, i) => (
+                <div key={r.factor} className={`flex items-start justify-between gap-4 px-5 py-3.5 ${i !== 0 ? "border-t border-border" : ""}`}>
+                  <span className="text-foreground text-sm font-medium">{r.factor}</span>
+                  <span className="text-muted-foreground text-xs text-right max-w-[55%]">{r.effect}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Payment methods */}
+          <div>
+            <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-4">PAYMENT</span>
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">How you pay</h2>
+            <p className="text-muted-foreground text-sm mb-6">We keep it simple and flexible for Zimbabwean businesses:</p>
+            <div className="grid grid-cols-2 gap-3">
+              {["EcoCash", "InnBucks", "USD cash", "Bank transfer (USD)", "International (Wise / card)", "Milestone payment plans"].map((m) => (
+                <div key={m} className="flex items-center gap-2 bg-card border border-border rounded-xl px-4 py-3">
+                  <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
+                  <span className="text-foreground text-sm">{m}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground text-xs mt-5">
+              Typically 50% to start and 50% on completion. Larger projects can be split across milestones.
+            </p>
+          </div>
         </div>
       </section>
 

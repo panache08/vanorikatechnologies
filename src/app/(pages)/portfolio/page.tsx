@@ -3,6 +3,7 @@ import Footer from "@/components/layout/footer";
 import CTABanner from "@/components/sections/cta-banner";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import { portfolio } from "@/lib/data";
 import SectionHeader from "@/components/ui/section-header";
 
@@ -48,6 +49,16 @@ export default function PortfolioPage() {
                     <p className="text-sm font-semibold text-foreground">Result</p>
                     <p className="text-green-500 text-sm">✅ {p.result}</p>
                   </div>
+                  {"url" in p && p.url && (
+                    <a
+                      href={(p as { url: string }).url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-electric/10 border border-electric/30 text-electric text-sm font-semibold hover:bg-electric/20 transition-all"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" /> View Live Site
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
