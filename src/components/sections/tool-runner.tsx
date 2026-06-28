@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Search, Loader2, Check, X, ArrowRight, ShieldAlert } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
-type Variant = "ssl" | "whois" | "subdomains" | "email" | "lookalike" | "dns";
+type Variant = "ssl" | "whois" | "subdomains" | "email" | "lookalike" | "dns" | "headers";
 
 function fmtDate(iso: string | null) {
   if (!iso) return "—";
@@ -64,6 +64,7 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
           {variant === "email" && <EmailResult r={result} />}
           {variant === "lookalike" && <LookalikeResult r={result} />}
           {variant === "dns" && <DnsResult r={result} />}
+          {variant === "headers" && <HeadersResult r={result} />}
 
           <div className="mt-8 pt-6 border-t border-border flex items-start gap-3">
             <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
@@ -212,6 +213,28 @@ function LookalikeResult({ r }: { r: any }) {
       ) : (
         <p className="text-muted-foreground text-sm">None of the common lookalike variants we checked are currently registered. Keep an eye on this — it can change.</p>
       )}
+    </div>
+  );
+}
+
+function HeadersResult({ r }: { r: any }) {
+  const grade = r.score >= 80 ? "text-green" : r.score >= 50 ? "text-gold" : "text-red-500";
+  return (
+    <div>
+      <div className="flex items-center justify-between gap-3 mb-6 pb-6 border-b border-border">
+        <div className="min-w-0">
+          <p className="font-display text-lg font-bold text-foreground break-all">{r.domain}</p>
+          <p className="text-muted-foreground text-xs break-all">{r.finalUrl}</p>
+        </div>
+        <div className="text-right shrink-0">
+          <p className={`font-display text-2xl font-bold ${grade}`}>{r.score}%</p>
+          <p className="text-muted-foreground text-xs">{r.passed}/{r.total} headers</p>
+        </div>
+      </div>
+      {r.checks.map((c: any) => (
+        <CheckRow key={c.name} ok={c.present} label={c.name}
+          detail={c.present ? <span className="font-mono break-all">{c.value}</span> : c.desc} />
+      ))}
     </div>
   );
 }
