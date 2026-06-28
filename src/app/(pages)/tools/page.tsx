@@ -2,7 +2,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Lock, Globe, Network, ArrowRight } from "lucide-react";
+import { ShieldCheck, Lock, Globe, Network, KeyRound, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/tools" },
@@ -16,6 +16,7 @@ const tools = [
   { icon: Lock, title: "SSL Certificate Checker", desc: "Check a certificate's expiry, issuer, and what it covers. Know before it lapses.", href: "/tools/ssl" },
   { icon: Globe, title: "WHOIS / Domain Lookup", desc: "Registrar, registration and expiry dates, status, and name servers for any domain.", href: "/tools/whois" },
   { icon: Network, title: "Subdomain Finder", desc: "Discover subdomains from public certificate transparency logs — see your real attack surface.", href: "/tools/subdomains" },
+  { icon: KeyRound, title: "Password Strength Checker", desc: "See how strong a password is and how long it would take to crack — checked privately in your browser.", href: "/tools/password" },
 ];
 
 export default function ToolsPage() {

@@ -8,8 +8,8 @@ import { navLinks, siteConfig } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const servicesDropdown = [
-  { label: "Cybersecurity", icon: "🛡️", href: "/services#cybersecurity" },
-  { label: "Web Development", icon: "🌐", href: "/services#web-development" },
+  { label: "Penetration Testing", icon: "🛡️", href: "/penetration-testing" },
+  { label: "Web Development", icon: "🌐", href: "/web-development" },
   { label: "Custom Software", icon: "💻", href: "/services#software-development" },
   { label: "Mobile Apps", icon: "📱", href: "/services#mobile-apps" },
   { label: "AI & Automation", icon: "🤖", href: "/services#ai-solutions" },
