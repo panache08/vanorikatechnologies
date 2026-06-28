@@ -3,7 +3,7 @@ import Footer from "@/components/layout/footer";
 import CTABanner from "@/components/sections/cta-banner";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle, X, Zap } from "lucide-react";
+import { CheckCircle, X, Zap, ArrowRight } from "lucide-react";
 import { pricingPlans, faqs } from "@/lib/data";
 import SectionHeader from "@/components/ui/section-header";
 import { FaqJsonLd } from "@/components/seo/json-ld";
@@ -25,6 +25,9 @@ export default function PricingPage() {
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">TRANSPARENT PRICING</span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Simple, Clear Pricing</h1>
           <p className="text-white/60 text-lg">Fixed prices. You know the cost before we start.</p>
+          <Link href="/cost-estimator" className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 border border-gold/30 text-gold text-sm font-semibold rounded-xl hover:bg-gold/10 transition-all">
+            Try the free cost estimator <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 

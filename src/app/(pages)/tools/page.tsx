@@ -20,6 +20,7 @@ const tools = [
   { icon: Mail, title: "Email Security Checker", desc: "Check your domain's SPF and DMARC records — find out if attackers can spoof email from your business.", href: "/tools/email-security" },
   { icon: Copy, title: "Lookalike Domain Finder", desc: "Find typosquat and lookalike domains impersonating your business for phishing — before your customers fall for them.", href: "/tools/lookalike" },
   { icon: Network, title: "DNS Records Lookup", desc: "View all public DNS records — A, MX, NS, TXT and more — for any domain in one clean view.", href: "/tools/dns" },
+  { icon: ShieldCheck, title: "Security Headers Checker", desc: "Grade your website's security headers — HSTS, CSP, X-Frame-Options and more — in seconds.", href: "/tools/headers" },
 ];
 
 export default function ToolsPage() {

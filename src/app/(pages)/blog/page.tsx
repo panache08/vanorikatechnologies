@@ -27,6 +27,9 @@ export default function BlogPage() {
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">SECURITY INSIGHTS</span>
           <h1 className="font-playfair text-5xl md:text-6xl font-bold text-white mb-6">Blog</h1>
           <p className="font-jost text-white/60 text-lg">Plain-English cybersecurity advice for Zimbabwe businesses.</p>
+          <Link href="/cybersecurity-zimbabwe" className="inline-flex items-center gap-2 mt-6 px-5 py-2.5 border border-gold/30 text-gold text-sm font-semibold rounded-xl hover:bg-gold/10 transition-all">
+            Read the complete Cybersecurity Guide <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 

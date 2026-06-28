@@ -1,6 +1,21 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, Twitter, Instagram, Facebook } from "lucide-react";
-import { siteConfig, navLinks, services } from "@/lib/data";
+import { siteConfig, navLinks } from "@/lib/data";
+
+const footerServices = [
+  { label: "Penetration Testing", href: "/penetration-testing" },
+  { label: "Web Development", href: "/web-development" },
+  { label: "Custom Software", href: "/custom-software" },
+  { label: "Mobile Apps", href: "/mobile-apps" },
+  { label: "AI & Automation", href: "/ai-automation" },
+];
+
+const footerIndustries = [
+  { label: "Law Firms", href: "/security-for-law-firms" },
+  { label: "Travel Agencies", href: "/security-for-travel-agencies" },
+  { label: "Healthcare", href: "/security-for-healthcare" },
+  { label: "Casinos", href: "/casino" },
+];
 
 function VanorikaFooterLogo() {
   return (
@@ -26,7 +41,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
 
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -60,6 +75,8 @@ export default function Footer() {
               {[
                 ...navLinks,
                 { label: "Free Tools", href: "/tools" },
+                { label: "Cost Estimator", href: "/cost-estimator" },
+                { label: "Security Guide", href: "/cybersecurity-zimbabwe" },
                 { label: "Case Studies", href: "/case-studies" },
                 { label: "Resources", href: "/resources" },
               ].map((l) => (
@@ -80,12 +97,30 @@ export default function Footer() {
               Services
             </h3>
             <ul className="space-y-3">
-              {services.map((s) => (
-                <li key={s.id}>
+              {footerServices.map((s) => (
+                <li key={s.href}>
                   <Link href={s.href}
                     className="text-white/35 hover:text-gold text-sm transition-colors flex items-center gap-2 group font-light">
                     <span className="w-3 h-px bg-gold/20 group-hover:bg-gold group-hover:w-4 transition-all" />
-                    {s.title}
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Industries */}
+          <div>
+            <h3 className="font-mono text-[10px] font-semibold text-gold/70 mb-6 uppercase tracking-[0.2em]">
+              Industries
+            </h3>
+            <ul className="space-y-3">
+              {footerIndustries.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href}
+                    className="text-white/35 hover:text-gold text-sm transition-colors flex items-center gap-2 group font-light">
+                    <span className="w-3 h-px bg-gold/20 group-hover:bg-gold group-hover:w-4 transition-all" />
+                    {s.label}
                   </Link>
                 </li>
               ))}
