@@ -1,8 +1,8 @@
 import { MetadataRoute } from "next";
-import { blogPosts } from "@/lib/data";
+import { blogPosts, SITE_URL } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vanorikatechnologies.co.zw";
+  const base = SITE_URL;
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [

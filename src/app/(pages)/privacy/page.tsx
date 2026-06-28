@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
   title: "Privacy Policy",
   description:
     "How Vanorika Technologies collects, uses, and protects your personal data — aligned with Zimbabwe's Cyber and Data Protection Act (2021).",

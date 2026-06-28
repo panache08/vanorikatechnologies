@@ -11,6 +11,11 @@ import Testimonials from "@/components/sections/testimonials";
 import TechStack from "@/components/sections/tech-stack";
 import Newsletter from "@/components/sections/newsletter";
 import CTABanner from "@/components/sections/cta-banner";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

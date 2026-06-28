@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ShieldAlert, CheckCircle, Clock, ArrowLeft, AlertTriangle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/case-study/glowtrack-auctions" },
   title: "Case Study: GlowTrack Auctions Security Audit",
   description: "How Vanorika Technologies found 6 vulnerabilities in a Harare auction platform in under 24 hours — including one exposing live customer data.",
 };

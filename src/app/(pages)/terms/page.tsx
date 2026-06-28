@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "Terms of Service",
   description: "The terms that govern the use of Vanorika Technologies' website and services.",
 };

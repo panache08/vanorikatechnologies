@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ShieldCheck, Lock, Globe, Network, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/tools" },
   title: "Free Security Tools",
   description:
     "Free passive security tools for Zimbabwe businesses — website security check, SSL certificate checker, WHOIS lookup, and subdomain finder. No login required.",

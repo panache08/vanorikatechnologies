@@ -3,6 +3,8 @@ import ArticleShell from "@/components/sections/article-shell";
 import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog/what-is-penetration-testing-zimbabwe" },
+  openGraph: { type: "article", publishedTime: "2026-06-24", authors: ["Donovan Mudarikwa"] },
   title: "What Is Penetration Testing and Does Your Business Need It?",
   description:
     "A plain-English guide to penetration testing for Zimbabwe businesses — what it is, who needs it, and what a real pentest report looks like.",

@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services" },
   title: "Services",
   description: "Penetration testing, web development, custom software, mobile apps, and AI automation — delivered by a CompTIA PenTest+ certified professional in Harare, Zimbabwe.",
 };

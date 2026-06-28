@@ -8,6 +8,7 @@ import { pricingPlans, faqs } from "@/lib/data";
 import SectionHeader from "@/components/ui/section-header";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/pricing" },
   title: "Pricing",
   description: "Transparent pricing for web development, software, and tech solutions. Starter, Business, Professional, and Enterprise packages available.",
 };

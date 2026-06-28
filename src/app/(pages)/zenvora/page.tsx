@@ -10,6 +10,7 @@ import {
 import { siteConfig, zenvora } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/zenvora" },
   title: "Zenvora — Africa's First AI-Powered ERP",
   description:
     "Zenvora is an AI-powered ERP for African SMEs — accounting, invoicing, HR, CRM, casino suite and partner console, with USD/ZWG dual currency, ZIMRA compliance, EcoCash and an AI Copilot.",

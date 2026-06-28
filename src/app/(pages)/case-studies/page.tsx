@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Target, Search, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/case-studies" },
   title: "Case Studies",
   description:
     "Real Vanorika Technologies engagements — GlowTrack Auctions, Pearlsard Travel, and Beauty by Nyasha. The challenge, what we found, and the outcome.",
