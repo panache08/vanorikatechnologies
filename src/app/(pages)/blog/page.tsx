@@ -8,7 +8,7 @@ import { Clock, ArrowRight } from "lucide-react";
 import { blogPosts } from "@/lib/data";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog", types: { "application/rss+xml": "/blog/rss.xml" } },
   title: "Blog",
   description: "Cybersecurity insights and practical security advice for Zimbabwe businesses — from CompTIA PenTest+ certified Vanorika Technologies.",
 };

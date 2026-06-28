@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldCheck, ScanSearch, FileText, Network, UserX, Radio, ArrowRight, Check } from "lucide-react";
 import { siteConfig } from "@/lib/data";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
+import { ServiceJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/penetration-testing" },
@@ -24,10 +26,17 @@ const tests = [
 export default function PenetrationTestingPage() {
   return (
     <main>
+      <ServiceJsonLd
+        name="Penetration Testing in Zimbabwe"
+        description="Manual, CompTIA PenTest+ certified penetration testing of websites, apps, and networks for Zimbabwean businesses, with a plain-English remediation report."
+        path="/penetration-testing"
+        price="from $400"
+      />
       <Navbar />
-      <section className="relative pt-40 pb-20 bg-hero-gradient overflow-hidden">
+      <section className="relative pt-28 pb-20 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Breadcrumbs className="mb-8 text-left" items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Penetration Testing", path: "/penetration-testing" }]} />
           <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">
             <ShieldCheck className="w-3.5 h-3.5" /> CYBERSECURITY
           </span>

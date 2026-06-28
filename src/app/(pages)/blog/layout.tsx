@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import { Playfair_Display, Jost } from "next/font/google";
+
+export const metadata: Metadata = {
+  alternates: { types: { "application/rss+xml": "/blog/rss.xml" } },
+};
 
 // Beauty by Nyasha typography — Playfair Display (serif headings) + Jost (body).
 const playfair = Playfair_Display({

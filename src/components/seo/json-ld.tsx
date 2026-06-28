@@ -129,3 +129,44 @@ export function FaqJsonLd() {
     />
   );
 }
+
+/** Service schema for a service landing page — ties the offering to the org. */
+export function ServiceJsonLd({
+  name, description, path, price,
+}: { name: string; description: string; path: string; price?: string }) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name,
+        serviceType: name,
+        description,
+        url: `${SITE_URL}${path}`,
+        areaServed: { "@type": "Country", name: "Zimbabwe" },
+        provider: { "@id": `${SITE_URL}/#organization` },
+        ...(price
+          ? { offers: { "@type": "Offer", price: price.replace(/[^0-9.]/g, ""), priceCurrency: "USD" } }
+          : {}),
+      }}
+    />
+  );
+}
+
+/** BreadcrumbList schema. `items` is ordered from Home to the current page. */
+export function BreadcrumbJsonLd({ items }: { items: { name: string; path: string }[] }) {
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: items.map((it, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: it.name,
+          item: `${SITE_URL}${it.path}`,
+        })),
+      }}
+    />
+  );
+}

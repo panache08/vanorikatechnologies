@@ -2,7 +2,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Lock, Globe, Network, KeyRound, Mail, ArrowRight } from "lucide-react";
+import { ShieldCheck, Lock, Globe, Network, KeyRound, Mail, Copy, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/tools" },
@@ -18,6 +18,8 @@ const tools = [
   { icon: Network, title: "Subdomain Finder", desc: "Discover subdomains from public certificate transparency logs — see your real attack surface.", href: "/tools/subdomains" },
   { icon: KeyRound, title: "Password Strength Checker", desc: "See how strong a password is and how long it would take to crack — checked privately in your browser.", href: "/tools/password" },
   { icon: Mail, title: "Email Security Checker", desc: "Check your domain's SPF and DMARC records — find out if attackers can spoof email from your business.", href: "/tools/email-security" },
+  { icon: Copy, title: "Lookalike Domain Finder", desc: "Find typosquat and lookalike domains impersonating your business for phishing — before your customers fall for them.", href: "/tools/lookalike" },
+  { icon: Network, title: "DNS Records Lookup", desc: "View all public DNS records — A, MX, NS, TXT and more — for any domain in one clean view.", href: "/tools/dns" },
 ];
 
 export default function ToolsPage() {

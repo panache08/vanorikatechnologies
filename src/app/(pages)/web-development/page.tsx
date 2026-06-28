@@ -3,6 +3,8 @@ import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Globe, ShoppingCart, LayoutTemplate, SearchCheck, Smartphone, Gauge, ArrowRight, Check } from "lucide-react";
+import Breadcrumbs from "@/components/ui/breadcrumbs";
+import { ServiceJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/web-development" },
@@ -23,10 +25,17 @@ const builds = [
 export default function WebDevelopmentPage() {
   return (
     <main>
+      <ServiceJsonLd
+        name="Website Development in Zimbabwe"
+        description="Professional website and e-commerce development for Zimbabwean businesses — fast, mobile-ready sites with EcoCash/Paynow integration and SEO setup, built in 1–2 weeks."
+        path="/web-development"
+        price="from $299"
+      />
       <Navbar />
-      <section className="relative pt-40 pb-20 bg-hero-gradient overflow-hidden">
+      <section className="relative pt-28 pb-20 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Breadcrumbs className="mb-8 text-left" items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Web Development", path: "/web-development" }]} />
           <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">
             <Globe className="w-3.5 h-3.5" /> WEB DEVELOPMENT
           </span>

@@ -309,6 +309,36 @@ export const pricingPlans = [
 
 export const blogPosts = [
   {
+    id: "6",
+    title: "Should Your Zimbabwe Business Use .co.zw or .com?",
+    excerpt: "The domain you choose shapes how local customers trust you and how you rank. Here's an honest comparison of .co.zw vs .com for a Zimbabwean business — and when to buy both.",
+    category: "Web Development",
+    date: "2026-06-28",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop",
+    slug: "co-zw-vs-com-zimbabwe-business",
+  },
+  {
+    id: "7",
+    title: "Your Website Just Got Hacked — Here's What to Do",
+    excerpt: "A calm, step-by-step plan for the first hour after you discover your Zimbabwe business website has been compromised — what to do, what not to do, and how to come back stronger.",
+    category: "Cybersecurity",
+    date: "2026-06-28",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&q=80&auto=format&fit=crop",
+    slug: "website-hacked-what-to-do-zimbabwe",
+  },
+  {
+    id: "8",
+    title: "Data Protection Act Compliance: A Checklist for Zimbabwe Businesses",
+    excerpt: "A practical, plain-English checklist to get your business compliant with Zimbabwe's Data Protection Act — what to do, in what order, without needing a lawyer to start.",
+    category: "Compliance",
+    date: "2026-06-28",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?w=1200&q=80&auto=format&fit=crop",
+    slug: "data-protection-act-compliance-checklist-zimbabwe",
+  },
+  {
     id: "5",
     title: "How Much Does a Penetration Test Cost in Zimbabwe in 2026?",
     excerpt: "Real pricing for a penetration test in Zimbabwe — typical price bands, what actually drives the cost, and how to spot a $200 'pentest' that's really just an automated scan.",
