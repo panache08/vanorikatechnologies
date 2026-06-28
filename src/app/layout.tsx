@@ -6,6 +6,8 @@ import { Toaster } from "sonner";
 import WhatsAppButton from "@/components/ui/whatsapp-button";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/json-ld";
 import { SITE_URL } from "@/lib/data";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -73,6 +75,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <WhatsAppButton />
           <Toaster theme="dark" toastOptions={{ style: { fontFamily: "Outfit, sans-serif", background: "#0D0D1A", border: "1px solid #1A1A30", color: "#F0EDE8" } }} />
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { CheckCircle, X, Zap } from "lucide-react";
 import { pricingPlans, faqs } from "@/lib/data";
 import SectionHeader from "@/components/ui/section-header";
+import { FaqJsonLd } from "@/components/seo/json-ld";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/pricing" },
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <main>
+      <FaqJsonLd />
       <Navbar />
       <section className="relative pt-40 pb-24 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-20" />
@@ -234,7 +236,7 @@ export default function PricingPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader badge="FAQ" title="Frequently Asked" titleGradient="Questions" />
           <div className="mt-12 space-y-3">
-            {faqs.slice(0, 10).map((faq) => (
+            {faqs.map((faq) => (
               <details key={faq.q} className="group bg-card border border-border rounded-xl overflow-hidden">
                 <summary className="flex items-center justify-between px-6 py-4 cursor-pointer font-medium text-foreground text-sm list-none">
                   {faq.q}
