@@ -10,9 +10,9 @@ import { cn } from "@/lib/utils";
 const servicesDropdown = [
   { label: "Penetration Testing", icon: "🛡️", href: "/penetration-testing" },
   { label: "Web Development", icon: "🌐", href: "/web-development" },
-  { label: "Custom Software", icon: "💻", href: "/services#software-development" },
-  { label: "Mobile Apps", icon: "📱", href: "/services#mobile-apps" },
-  { label: "AI & Automation", icon: "🤖", href: "/services#ai-solutions" },
+  { label: "Custom Software", icon: "💻", href: "/custom-software" },
+  { label: "Mobile Apps", icon: "📱", href: "/mobile-apps" },
+  { label: "AI & Automation", icon: "🤖", href: "/ai-automation" },
   { label: "Casino Suite", icon: "🎰", href: "/casino" },
   { label: "Free Security Tools", icon: "🔍", href: "/tools" },
 ];

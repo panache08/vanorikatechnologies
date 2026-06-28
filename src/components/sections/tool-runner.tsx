@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Search, Loader2, Check, X, ArrowRight, ShieldAlert } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
-type Variant = "ssl" | "whois" | "subdomains" | "email";
+type Variant = "ssl" | "whois" | "subdomains" | "email" | "lookalike" | "dns";
 
 function fmtDate(iso: string | null) {
   if (!iso) return "—";
@@ -62,6 +62,8 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
           {variant === "whois" && <WhoisResult r={result} />}
           {variant === "subdomains" && <SubdomainsResult r={result} />}
           {variant === "email" && <EmailResult r={result} />}
+          {variant === "lookalike" && <LookalikeResult r={result} />}
+          {variant === "dns" && <DnsResult r={result} />}
 
           <div className="mt-8 pt-6 border-t border-border flex items-start gap-3">
             <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
@@ -179,6 +181,72 @@ function EmailResult({ r }: { r: any }) {
         } />
       <CheckRow ok={r.mx.length > 0} label="MX — mail servers"
         detail={r.mx.length > 0 ? r.mx.join(", ") : "No MX records found for this domain."} />
+    </div>
+  );
+}
+
+function LookalikeResult({ r }: { r: any }) {
+  const any = r.count > 0;
+  return (
+    <div>
+      <div className="flex items-center gap-3 mb-6 pb-6 border-b border-border">
+        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${any ? "bg-red-500/10 text-red-500" : "bg-green/10 text-green"}`}>
+          {any ? <ShieldAlert className="w-5 h-5" /> : <Check className="w-5 h-5" />}
+        </div>
+        <div>
+          <p className="font-display text-lg font-bold text-foreground break-all">{r.domain}</p>
+          <p className={`text-sm ${any ? "text-red-500" : "text-green"}`}>
+            {any ? `${r.count} lookalike domain${r.count > 1 ? "s" : ""} already registered` : "No registered lookalikes found"}
+          </p>
+        </div>
+      </div>
+      <p className="text-muted-foreground text-xs mb-4">
+        Checked {r.checked} common typo and lookalike variants. Registered ones could be used to impersonate your business in phishing.
+      </p>
+      {any ? (
+        <div className="space-y-1.5">
+          {r.found.map((d: string) => (
+            <div key={d} className="font-mono text-xs text-foreground bg-red-500/5 border border-red-500/20 rounded-lg px-3 py-2 break-all">{d}</div>
+          ))}
+        </div>
+      ) : (
+        <p className="text-muted-foreground text-sm">None of the common lookalike variants we checked are currently registered. Keep an eye on this — it can change.</p>
+      )}
+    </div>
+  );
+}
+
+function DnsBlock({ label, values }: { label: string; values: string[] }) {
+  if (!values || values.length === 0) return null;
+  return (
+    <div className="mb-5 last:mb-0">
+      <p className="font-mono text-[10px] font-semibold text-gold/70 mb-2 uppercase tracking-[0.2em]">{label}</p>
+      <div className="space-y-1.5">
+        {values.map((v, i) => (
+          <div key={`${label}-${i}`} className="font-mono text-xs text-foreground bg-background border border-border rounded-lg px-3 py-2 break-all">{v}</div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DnsResult({ r }: { r: any }) {
+  const empty = !r.a.length && !r.aaaa.length && !r.mx.length && !r.ns.length && !r.txt.length && !r.cname.length;
+  return (
+    <div>
+      <p className="font-display text-lg font-bold text-foreground mb-5 break-all">{r.domain}</p>
+      {empty ? (
+        <p className="text-muted-foreground text-sm">No DNS records found. The domain may be unregistered or not yet configured.</p>
+      ) : (
+        <>
+          <DnsBlock label="A (IPv4)" values={r.a} />
+          <DnsBlock label="AAAA (IPv6)" values={r.aaaa} />
+          <DnsBlock label="MX (Mail)" values={r.mx} />
+          <DnsBlock label="NS (Name servers)" values={r.ns} />
+          <DnsBlock label="CNAME" values={r.cname} />
+          <DnsBlock label="TXT" values={r.txt} />
+        </>
+      )}
     </div>
   );
 }
