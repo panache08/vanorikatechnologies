@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Search, Loader2, Check, X, ArrowRight, ShieldAlert } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
-type Variant = "ssl" | "whois" | "subdomains";
+type Variant = "ssl" | "whois" | "subdomains" | "email";
 
 function fmtDate(iso: string | null) {
   if (!iso) return "—";
@@ -61,6 +61,7 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
           {variant === "ssl" && <SslResult r={result} />}
           {variant === "whois" && <WhoisResult r={result} />}
           {variant === "subdomains" && <SubdomainsResult r={result} />}
+          {variant === "email" && <EmailResult r={result} />}
 
           <div className="mt-8 pt-6 border-t border-border flex items-start gap-3">
             <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
@@ -136,6 +137,48 @@ function WhoisResult({ r }: { r: any }) {
       <Row label="Last updated" value={fmtDate(r.updated)} />
       {r.status?.length > 0 && <Row label="Status" value={r.status.join(", ")} />}
       {r.nameservers?.length > 0 && <Row label="Name servers" value={r.nameservers.join(", ")} />}
+    </div>
+  );
+}
+
+function CheckRow({ ok, label, detail }: { ok: boolean; label: string; detail: React.ReactNode }) {
+  return (
+    <div className="flex items-start gap-3 py-3 border-b border-border last:border-0">
+      <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${ok ? "bg-green/10 text-green" : "bg-red-500/10 text-red-500"}`}>
+        {ok ? <Check className="w-4 h-4" /> : <X className="w-4 h-4" />}
+      </div>
+      <div className="min-w-0">
+        <p className="text-foreground text-sm font-medium">{label}</p>
+        <p className="text-muted-foreground text-xs mt-0.5 break-words">{detail}</p>
+      </div>
+    </div>
+  );
+}
+
+function EmailResult({ r }: { r: any }) {
+  const grade = r.score >= 80 ? { t: "Strong", c: "text-green" } : r.score >= 50 ? { t: "Partial", c: "text-gold" } : { t: "Weak", c: "text-red-500" };
+  const weakDmarc = r.dmarc.found && (r.dmarc.policy === "none" || !r.dmarc.policy);
+  return (
+    <div>
+      <div className="flex items-center justify-between gap-3 mb-6 pb-6 border-b border-border">
+        <p className="font-display text-lg font-bold text-foreground break-all">{r.domain}</p>
+        <div className="text-right shrink-0">
+          <p className={`font-display text-2xl font-bold ${grade.c}`}>{r.score}%</p>
+          <p className={`text-xs ${grade.c}`}>{grade.t} email security</p>
+        </div>
+      </div>
+      <CheckRow ok={r.spf.found} label="SPF — sender spoofing protection"
+        detail={r.spf.found ? <span className="font-mono">{r.spf.record}</span> : "No SPF record. Anyone can forge email from your domain."} />
+      <CheckRow ok={r.dmarc.found && !weakDmarc} label="DMARC — enforces SPF/DKIM"
+        detail={
+          r.dmarc.found
+            ? weakDmarc
+              ? `Policy is "p=none" — monitoring only, not blocking spoofed mail. Move to quarantine or reject.`
+              : `Policy "p=${r.dmarc.policy}" — spoofed mail is actively rejected or quarantined.`
+            : "No DMARC record. Spoofed email isn't being blocked."
+        } />
+      <CheckRow ok={r.mx.length > 0} label="MX — mail servers"
+        detail={r.mx.length > 0 ? r.mx.join(", ") : "No MX records found for this domain."} />
     </div>
   );
 }

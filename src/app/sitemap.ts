@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/tools`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/security-check`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/password`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/tools/email-security`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/tools/ssl`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/tools/whois`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/tools/subdomains`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
