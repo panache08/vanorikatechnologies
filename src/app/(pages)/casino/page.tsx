@@ -9,6 +9,7 @@ import {
 import { siteConfig, zenvora } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/casino" },
   title: "Casino Technology & Security — Vanorika",
   description:
     "The only technology partner built for Zimbabwe's casino industry — Zenvora Casino Suite with ZIMRA gaming-levy automation, plus casino security audits and penetration testing.",

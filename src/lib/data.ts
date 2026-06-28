@@ -1,3 +1,12 @@
+// Single source of truth for the canonical site URL. Set NEXT_PUBLIC_SITE_URL in
+// the environment (e.g. to https://vanorikatechnologies.co.zw once the domain is
+// live); every SEO surface — metadata, sitemap, robots, JSON-LD — reads from here.
+// NOTE: this module also exports `process` (the process-steps array below), which
+// shadows Node's global `process` in this file's scope. Read env via globalThis.
+export const SITE_URL =
+  globalThis.process?.env?.NEXT_PUBLIC_SITE_URL ??
+  "https://vanorikatechnologies.vercel.app";
+
 export const siteConfig = {
   name: "Vanorika Technologies",
   tagline: "Enterprise Security. Zero Compromise.",
@@ -299,6 +308,26 @@ export const pricingPlans = [
 ];
 
 export const blogPosts = [
+  {
+    id: "5",
+    title: "How Much Does a Penetration Test Cost in Zimbabwe in 2026?",
+    excerpt: "Real pricing for a penetration test in Zimbabwe — typical price bands, what actually drives the cost, and how to spot a $200 'pentest' that's really just an automated scan.",
+    category: "Cybersecurity",
+    date: "2026-06-28",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80&auto=format&fit=crop",
+    slug: "how-much-penetration-test-cost-zimbabwe",
+  },
+  {
+    id: "4",
+    title: "How Much Does a Website Cost in Zimbabwe in 2026?",
+    excerpt: "Straight pricing for a business website in Zimbabwe — what's fair, what's overpriced, and the hidden costs (domain, hosting, payment integration) nobody mentions until the invoice lands.",
+    category: "Web Development",
+    date: "2026-06-28",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop",
+    slug: "how-much-website-cost-zimbabwe",
+  },
   {
     id: "1",
     title: "Is Your Zimbabwe Business Website Actually Secure in 2026?",

@@ -7,6 +7,7 @@ import { CheckCircle, Zap, Target, Eye, Heart } from "lucide-react";
 import SectionHeader from "@/components/ui/section-header";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About Us",
   description: "Donovan Mudarikwa — CompTIA A+, Security+, and PenTest+ certified. Founder & CEO of Vanorika Technologies. Penetration tester and web developer based in Harare, Zimbabwe.",
 };

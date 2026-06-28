@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Globe } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/tools/whois" },
   title: "WHOIS / Domain Lookup",
   description: "Look up a domain's registrar, registration and expiry dates, status, and name servers. Free and passive.",
 };

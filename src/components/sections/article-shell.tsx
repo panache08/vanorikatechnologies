@@ -3,6 +3,7 @@ import Footer from "@/components/layout/footer";
 import Link from "next/link";
 import { Clock, ArrowLeft, MessageCircle, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/data";
+import { ArticleJsonLd } from "@/components/seo/json-ld";
 
 type CTA = { heading: string; text: string; label: string; href: string };
 
@@ -20,6 +21,7 @@ export default function ArticleShell({
   const isWhatsApp = cta.href.startsWith("http");
   return (
     <main>
+      <ArticleJsonLd title={title} />
       <Navbar />
 
       <section className="relative pt-40 pb-16 bg-hero-gradient overflow-hidden">

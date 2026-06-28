@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Network } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/tools/subdomains" },
   title: "Subdomain Finder",
   description: "Discover a domain's subdomains from public certificate transparency logs — see your real attack surface. Free and passive.",
 };

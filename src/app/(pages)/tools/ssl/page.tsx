@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Lock } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/tools/ssl" },
   title: "SSL Certificate Checker",
   description: "Check any website's SSL certificate — expiry date, issuer, and coverage. Free, passive, no login.",
 };

@@ -3,6 +3,8 @@ import ArticleShell from "@/components/sections/article-shell";
 import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog/zimbabwe-data-protection-act-2021" },
+  openGraph: { type: "article", publishedTime: "2026-06-24", authors: ["Donovan Mudarikwa"] },
   title: "Zimbabwe's Data Protection Act 2021 — What Your Business Must Do Now",
   description:
     "What Zimbabwe's Data Protection Act (Cyber and Data Protection Act, 2021) requires of your business, the penalties for non-compliance, and how a security audit helps you comply.",

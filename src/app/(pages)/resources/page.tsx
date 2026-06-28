@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { FileText, ShieldCheck, ClipboardCheck, Download } from "lucide-react";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/resources" },
   title: "Free Resources",
   description:
     "Free branded PDFs for Zimbabwe businesses — a website security checklist, a Data Protection Act 2021 compliance guide for SMEs, and a self-assessment.",

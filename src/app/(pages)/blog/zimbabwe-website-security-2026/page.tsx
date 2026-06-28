@@ -3,6 +3,8 @@ import ArticleShell from "@/components/sections/article-shell";
 import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog/zimbabwe-website-security-2026" },
+  openGraph: { type: "article", publishedTime: "2026-06-24", authors: ["Donovan Mudarikwa"] },
   title: "Is Your Zimbabwe Business Website Actually Secure in 2026?",
   description:
     "Most Harare business websites have at least 3 fixable vulnerabilities — missing security headers, outdated software, and weak password resets. Here's how to find and fix them.",

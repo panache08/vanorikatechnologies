@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Toaster } from "sonner";
 import WhatsAppButton from "@/components/ui/whatsapp-button";
+import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/json-ld";
+import { SITE_URL } from "@/lib/data";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -36,11 +38,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Donovan Mudarikwa" }],
   creator: "Vanorika Technologies",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://vanorikatechnologies.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_ZW",
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://vanorikatechnologies.vercel.app",
+    url: SITE_URL,
     siteName: "Vanorika Technologies",
     title: "Vanorika Technologies | Enterprise Security & Web Development — Zimbabwe",
     description: "CompTIA PenTest+ certified penetration tester and web developer in Harare, Zimbabwe. Security assessments and professional websites.",
@@ -64,6 +66,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${outfit.variable} ${ibmPlexMono.variable} antialiased`}>
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} forcedTheme="dark">
           {children}
           <WhatsAppButton />
