@@ -2,7 +2,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Lock, Globe, Network, KeyRound, Mail, Copy, ArrowRight } from "lucide-react";
+import { ShieldCheck, Lock, Globe, Network, KeyRound, Mail, Copy, Layers, Radar, FileSearch, HelpCircle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/tools" },
@@ -21,6 +21,12 @@ const tools = [
   { icon: Copy, title: "Lookalike Domain Finder", desc: "Find typosquat and lookalike domains impersonating your business for phishing — before your customers fall for them.", href: "/tools/lookalike" },
   { icon: Network, title: "DNS Records Lookup", desc: "View all public DNS records — A, MX, NS, TXT and more — for any domain in one clean view.", href: "/tools/dns" },
   { icon: ShieldCheck, title: "Security Headers Checker", desc: "Grade your website's security headers — HSTS, CSP, X-Frame-Options and more — in seconds.", href: "/tools/headers" },
+  { icon: Mail, title: "SPF & DMARC Generator", desc: "Generate the exact DNS records that stop attackers spoofing email from your domain — copy and paste.", href: "/tools/spf-dmarc-generator" },
+  { icon: FileSearch, title: "Email Header Analyzer", desc: "Suspect a phishing email? Paste its headers and we'll check if it's really from who it claims.", href: "/tools/email-header-analyzer" },
+  { icon: KeyRound, title: "Password Generator", desc: "Create strong random passwords and memorable passphrases — generated privately in your browser.", href: "/tools/password-generator" },
+  { icon: Layers, title: "Tech-Stack Detector", desc: "See what a website is built with — CMS, frameworks, server — and spot outdated software.", href: "/tools/tech-stack" },
+  { icon: Radar, title: "Attack Surface Mapper", desc: "Everything an attacker can discover about your domain — subdomains, IPs, mail and name servers — in one view.", href: "/tools/attack-surface" },
+  { icon: HelpCircle, title: "Cyber-Safety Quiz", desc: "Answer 10 questions and get your business's security score with tailored recommendations. No email needed.", href: "/tools/security-quiz" },
 ];
 
 export default function ToolsPage() {
