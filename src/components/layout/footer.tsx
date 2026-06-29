@@ -164,7 +164,7 @@ export default function Footer() {
             {[
               { l: "Privacy Policy",    h: "/privacy" },
               { l: "Terms of Service",  h: "/terms" },
-              { l: "Data Protection",   h: "/privacy#data-protection" },
+              { l: "Security",          h: "/security" },
             ].map((i) => (
               <Link key={i.h} href={i.h}
                 className="font-mono text-[10px] text-white/20 hover:text-gold/60 transition-colors tracking-wider uppercase">
