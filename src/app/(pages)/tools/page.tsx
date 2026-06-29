@@ -61,6 +61,18 @@ export default function ToolsPage() {
               </Link>
             ))}
           </div>
+
+          <div className="mt-14 max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-8">
+            <p className="font-display text-lg font-bold text-foreground mb-2">Open source &amp; transparent</p>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+              The engine behind these tools is open source — passive, read-only, zero dependencies. Read the code, run it yourself, or build on it.
+            </p>
+            <a href="https://github.com/panache08/vanorika-security-tools" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-gold/30 text-gold rounded-xl hover:bg-gold/10 transition-all text-sm font-semibold">
+              <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-1.7c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5Z"/></svg>
+              View on GitHub
+            </a>
+          </div>
         </div>
       </section>
 
