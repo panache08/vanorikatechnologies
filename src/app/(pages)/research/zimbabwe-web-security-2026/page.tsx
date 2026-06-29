@@ -16,21 +16,24 @@ export const metadata: Metadata = {
    EDIT THESE to match your real anonymised assessment data before
    promoting the report. Numbers below are representative placeholders.
    ───────────────────────────────────────────────────────────────── */
+const TOTAL = 17;
+
 const headline = {
   assessed: "17",
   sectors: "5",
-  withIssue: "94%",
-  avgFindings: "4",
+  withIssue: "16/17",       // 94% had at least one fixable issue
+  totalFindings: "57",       // sum of the category counts below
 };
 
+// count = businesses (of 17) with each issue; pct is derived so the math always reconciles.
 const findings = [
-  { icon: ShieldAlert, label: "Missing one or more critical security headers", pct: 88 },
-  { icon: FileWarning, label: "No privacy policy (Data Protection Act 2021 gap)", pct: 71 },
-  { icon: Server, label: "Running outdated software / CMS / plugins", pct: 65 },
-  { icon: Lock, label: "No HTTP→HTTPS redirect or weak TLS configuration", pct: 47 },
-  { icon: Mail, label: "No SPF/DMARC — email can be spoofed from their domain", pct: 41 },
-  { icon: Eye, label: "Exposed admin panel or sensitive endpoint", pct: 24 },
-];
+  { icon: ShieldAlert, label: "Missing one or more critical security headers", count: 15 },
+  { icon: FileWarning, label: "No privacy policy (Data Protection Act 2021 gap)", count: 12 },
+  { icon: Server, label: "Running outdated software / CMS / plugins", count: 11 },
+  { icon: Lock, label: "No HTTP→HTTPS redirect or weak TLS configuration", count: 8 },
+  { icon: Mail, label: "No SPF/DMARC — email can be spoofed from their domain", count: 7 },
+  { icon: Eye, label: "Exposed admin panel or sensitive endpoint", count: 4 },
+].map((f) => ({ ...f, pct: Math.round((f.count / TOTAL) * 100) }));
 
 const sectors = ["Hospitality", "Healthcare", "Law firms", "Schools", "NGOs"];
 /* ───────────────────────────────────────────────────────────────── */
@@ -66,7 +69,7 @@ export default function ReportPage() {
             { v: headline.assessed, l: "Businesses assessed" },
             { v: headline.sectors, l: "Sectors covered" },
             { v: headline.withIssue, l: "Had a fixable vulnerability" },
-            { v: headline.avgFindings, l: "Avg findings per business" },
+            { v: headline.totalFindings, l: "Findings logged in total" },
           ].map((s) => (
             <div key={s.l}>
               <p className="font-display font-black text-4xl md:text-5xl text-gradient mb-1">{s.v}</p>
@@ -95,7 +98,7 @@ export default function ReportPage() {
                 <div className="flex items-center gap-3 mb-2">
                   <f.icon className="w-4 h-4 text-gold shrink-0" />
                   <span className="text-foreground text-sm font-medium flex-1">{f.label}</span>
-                  <span className="font-display text-gold font-bold text-sm">{f.pct}%</span>
+                  <span className="font-display text-gold font-bold text-sm whitespace-nowrap">{f.count} of {TOTAL} · {f.pct}%</span>
                 </div>
                 <div className="h-2 rounded-full bg-background overflow-hidden">
                   <div className="h-full rounded-full bg-gradient-to-r from-gold to-gold-light" style={{ width: `${f.pct}%` }} />
