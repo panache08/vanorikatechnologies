@@ -218,3 +218,18 @@ textarea:focus-visible,
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* Print-to-PDF report card (isolate #print-report, keep brand colours) */
+.print-only { display: none; }
+@media print {
+  body { background: #07070D !important; }
+  body * { visibility: hidden; }
+  #print-report, #print-report * { visibility: visible; }
+  #print-report {
+    position: absolute; left: 0; top: 0; width: 100%; margin: 0; border-radius: 0;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  @page { margin: 12mm; }
+}
