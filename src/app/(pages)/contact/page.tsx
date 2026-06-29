@@ -219,6 +219,10 @@ export default function ContactPage() {
               {/* Quick actions */}
               <div className="p-6 bg-card border border-border rounded-2xl space-y-3">
                 <h4 className="font-semibold text-foreground text-sm mb-3">Quick Actions</h4>
+                <a href="/book"
+                  className="flex items-center gap-2 text-sm text-gold hover:text-gold-light transition-colors font-medium">
+                  <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" /> Book a free 30-min call
+                </a>
                 <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent("Hi, I'd like a free quote for my project.")}`}
                   target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-[#25D366] transition-colors">
