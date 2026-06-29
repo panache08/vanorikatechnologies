@@ -55,6 +55,7 @@ export const metadata: Metadata = {
     description: "Enterprise security and web development for businesses in Zimbabwe. CompTIA certified.",
   },
   robots: { index: true, follow: true },
+  verification: { google: "c1oz6gI4CoaQs1YGH1Q_y-RPc3ExMnBRzEz5jH9OPrA" },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
