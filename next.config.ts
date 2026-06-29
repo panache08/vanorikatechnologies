@@ -7,6 +7,7 @@ const csp = [
   "img-src 'self' data: https://images.unsplash.com https://avatars.githubusercontent.com https://*.vercel.app https://*.co.zw",
   "font-src 'self' data:",
   "connect-src 'self' https://api.emailjs.com",
+  "frame-src 'self' https://calendly.com https://*.calendly.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

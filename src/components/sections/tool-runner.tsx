@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { Search, Loader2, Check, X, ArrowRight, ShieldAlert } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { Search, Loader2, Check, X, ArrowRight, ShieldAlert, Link2 } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
 type Variant = "ssl" | "whois" | "subdomains" | "email" | "lookalike" | "dns" | "headers";
@@ -16,9 +16,11 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState("");
+  const [copied, setCopied] = useState(false);
 
-  const run = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const runScan = useCallback(async (d: string) => {
+    const target = d.trim();
+    if (!target) return;
     setError("");
     setResult(null);
     setLoading(true);
@@ -26,7 +28,7 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ domain }),
+        body: JSON.stringify({ domain: target }),
       });
       const data = await res.json();
       if (!res.ok) setError(data.error || "Something went wrong. Try again.");
@@ -36,6 +38,20 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
     } finally {
       setLoading(false);
     }
+  }, [endpoint]);
+
+  // Deep-link: ?domain=example.com pre-fills and auto-runs so shared links show results instantly.
+  useEffect(() => {
+    const d = new URLSearchParams(window.location.search).get("domain");
+    if (d) { setDomain(d); runScan(d); }
+  }, [runScan]);
+
+  const run = (e: React.FormEvent) => { e.preventDefault(); runScan(domain); };
+
+  const shareLink = () => {
+    const d = (result?.domain || result?.host || domain || "").trim();
+    const url = `${window.location.origin}${window.location.pathname}?domain=${encodeURIComponent(d)}`;
+    navigator.clipboard?.writeText(url).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); });
   };
 
   return (
@@ -72,10 +88,16 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
               <p className="text-muted-foreground text-sm leading-relaxed mb-3">
                 This is a passive, read-only check. A full assessment goes far deeper — authentication, injection, outdated software and business logic.
               </p>
-              <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
-                Want a full audit? Get yours free <ArrowRight className="w-4 h-4" />
-              </a>
+              <div className="flex flex-wrap items-center gap-4">
+                <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
+                  Want a full audit? Get yours free <ArrowRight className="w-4 h-4" />
+                </a>
+                <button onClick={shareLink} type="button"
+                  className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground text-sm transition-colors">
+                  <Link2 className="w-4 h-4" /> {copied ? "Link copied!" : "Copy shareable link"}
+                </button>
+              </div>
             </div>
           </div>
         </div>
