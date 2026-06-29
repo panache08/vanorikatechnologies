@@ -2,7 +2,7 @@
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import { useState } from "react";
-import { ShieldCheck, ShieldAlert, Check, X, Loader2, Search, ArrowRight } from "lucide-react";
+import { ShieldCheck, ShieldAlert, Check, X, Loader2, Search, ArrowRight, Download } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
 type Check = { id: string; label: string; pass: boolean; detail: string };
@@ -76,7 +76,12 @@ export default function SecurityCheckPage() {
           {error && <p className="text-red-400 text-sm mt-4">{error}</p>}
 
           {result && (
-            <div className="mt-10 bg-card border border-border rounded-3xl p-8">
+            <div id="print-report" className="mt-10 bg-card border border-border rounded-3xl p-8">
+              {/* Branded header — only appears in the printed / saved PDF */}
+              <div className="print-only mb-8 pb-6" style={{ borderBottom: "1px solid #C9A84C" }}>
+                <p style={{ color: "#C9A84C", fontWeight: 800, fontSize: "18px", letterSpacing: "0.08em" }}>VANORIKA TECHNOLOGIES</p>
+                <p style={{ color: "#9aa3b2", fontSize: "11px", marginTop: "2px" }}>Website Security Report · vanorikatechnologies.co.zw · {new Date().toLocaleDateString("en-GB")}</p>
+              </div>
               <div className="flex items-center justify-between mb-8 pb-8 border-b border-border">
                 <div>
                   <p className="text-muted-foreground text-xs uppercase tracking-widest mb-1">Results for</p>
@@ -110,10 +115,16 @@ export default function SecurityCheckPage() {
                     software, and business logic.
                   </p>
                 </div>
-                <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm uppercase tracking-wider">
-                  Want a full audit? Get yours free <ArrowRight className="w-4 h-4" />
-                </a>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm uppercase tracking-wider">
+                    Want a full audit? Get yours free <ArrowRight className="w-4 h-4" />
+                  </a>
+                  <button onClick={() => window.print()} type="button"
+                    className="no-print inline-flex items-center gap-2 px-5 py-3 border border-gold/30 text-gold rounded-xl hover:bg-gold/10 transition-all text-sm font-semibold">
+                    <Download className="w-4 h-4" /> Download report
+                  </button>
+                </div>
               </div>
             </div>
           )}

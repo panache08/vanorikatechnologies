@@ -5,6 +5,7 @@ import ServicesOverview from "@/components/sections/services-overview";
 import StatsSection from "@/components/sections/stats-section";
 import WhyChooseUs from "@/components/sections/why-choose-us";
 import PortfolioPreview from "@/components/sections/portfolio-preview";
+import FreeToolsSection from "@/components/sections/free-tools-section";
 import ZenvoraHighlight from "@/components/sections/zenvora-highlight";
 import ProcessSection from "@/components/sections/process-section";
 import Testimonials from "@/components/sections/testimonials";
@@ -25,6 +26,7 @@ export default function HomePage() {
       <ServicesOverview />
       <StatsSection />
       <WhyChooseUs />
+      <FreeToolsSection />
       <PortfolioPreview />
       <ZenvoraHighlight />
       <ProcessSection />
