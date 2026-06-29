@@ -23,16 +23,19 @@ OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "public", "research")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # EDIT to match real anonymised data (keep in sync with the page).
+TOTAL = 17
 HEADLINE = [("17", "Businesses assessed"), ("5", "Sectors covered"),
-            ("94%", "Had a fixable vuln"), ("4", "Avg findings each")]
-FINDINGS = [
-    ("Missing critical security headers", 88),
-    ("No privacy policy (DPA 2021 gap)", 71),
-    ("Outdated software / CMS / plugins", 65),
-    ("No HTTPS redirect / weak TLS", 47),
-    ("No SPF/DMARC — email spoofable", 41),
-    ("Exposed admin panel / endpoint", 24),
+            ("16/17", "Had a fixable vuln"), ("57", "Findings logged")]
+# (label, count of TOTAL); percentages are derived so the math reconciles.
+_FINDINGS = [
+    ("Missing critical security headers", 15),
+    ("No privacy policy (DPA 2021 gap)", 12),
+    ("Outdated software / CMS / plugins", 11),
+    ("No HTTPS redirect / weak TLS", 8),
+    ("No SPF/DMARC — email spoofable", 7),
+    ("Exposed admin panel / endpoint", 4),
 ]
+FINDINGS = [(label, round(c / TOTAL * 100), c) for label, c in _FINDINGS]
 SECTORS = "Hospitality · Healthcare · Law firms · Schools · NGOs"
 
 
@@ -92,8 +95,8 @@ def build():
                            "Everything below comes from publicly available information any attacker could see.", s["RBody"]))
 
     story.append(Paragraph("What we found", s["RH2"]))
-    for label, pct in FINDINGS:
-        story.append(Paragraph(f'<b>{pct}%</b>  {label}', s["RBody"]))
+    for label, pct, count in FINDINGS:
+        story.append(Paragraph(f'<b>{count} of {TOTAL}</b> ({pct}%)  {label}', s["RBody"]))
         story.append(bar(pct))
         story.append(Spacer(1, 3 * mm))
 
