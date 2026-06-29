@@ -1,6 +1,6 @@
 # Google Business Profile — Vanorika Technologies (Setup Copy)
 
-Create at **google.com/business** with the Gmail account you want to own it. Everything below is copy-paste ready. Free, and works **without a custom domain** — list `vanorikatechnologies.vercel.app` as the website for now and update it when `.co.zw` is live.
+Create at **google.com/business** with the Gmail account you want to own it. Everything below is copy-paste ready. Free. Use `https://vanorikatechnologies.co.zw` as the website once the domain is connected in Vercel and resolving (until then, `vanorikatechnologies.vercel.app` works as a fallback).
 
 > ⚠️ Two Google rules that get profiles suspended — follow them:
 > 1. **Business name must be exactly your real name** — `Vanorika Technologies`. Do NOT stuff keywords (e.g. "Vanorika Technologies | Penetration Testing Harare"). That gets you suspended.
@@ -19,7 +19,7 @@ Create at **google.com/business** with the Gmail account you want to own it. Eve
 | **Service areas** | Harare · Bulawayo · Chitungwiza · Mutare · Gweru · Zimbabwe (nationwide — remote) |
 | **Phone** | +263 77 690 2542 |
 | **WhatsApp** | https://wa.me/263776902542 |
-| **Website** | https://vanorikatechnologies.vercel.app *(swap to .co.zw when live)* |
+| **Website** | https://vanorikatechnologies.co.zw |
 | **Email** | donovanmudarikwa@gmail.com |
 
 ### Hours

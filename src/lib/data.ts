@@ -5,7 +5,7 @@
 // shadows Node's global `process` in this file's scope. Read env via globalThis.
 export const SITE_URL =
   globalThis.process?.env?.NEXT_PUBLIC_SITE_URL ??
-  "https://vanorikatechnologies.vercel.app";
+  "https://vanorikatechnologies.co.zw";
 
 export const siteConfig = {
   name: "Vanorika Technologies",
