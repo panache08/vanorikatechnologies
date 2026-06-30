@@ -4,6 +4,7 @@ import Hero from "@/components/sections/hero";
 import HomeScanner from "@/components/sections/home-scanner";
 import ServicesOverview from "@/components/sections/services-overview";
 import StatsSection from "@/components/sections/stats-section";
+import SecurityIndexBanner from "@/components/sections/security-index-banner";
 import WhyChooseUs from "@/components/sections/why-choose-us";
 import PortfolioPreview from "@/components/sections/portfolio-preview";
 import FreeToolsSection from "@/components/sections/free-tools-section";
@@ -28,6 +29,7 @@ export default function HomePage() {
       <ServicesOverview />
       <StatsSection />
       <WhyChooseUs />
+      <SecurityIndexBanner />
       <FreeToolsSection />
       <PortfolioPreview />
       <ZenvoraHighlight />
