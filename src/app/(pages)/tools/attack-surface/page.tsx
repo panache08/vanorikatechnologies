@@ -96,7 +96,7 @@ export default function AttackSurfacePage() {
                 <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">Every subdomain and service is a potential way in. Forgotten or outdated ones are where attackers start. We&apos;ll assess all of them — free.</p>
-                  <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
+                  <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I mapped ${data.domain} with your attack-surface tool — ${data.counts.subdomains} subdomains, ${data.dns.mx.length} mail servers${data.dns.hasSpf ? "" : ", and NO SPF record"}. Can you assess my exposure?`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
                     Assess my attack surface <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
