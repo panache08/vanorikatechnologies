@@ -1,7 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, ChevronDown, Shield } from "lucide-react";
+import { ArrowRight, CheckCircle, ChevronDown, Shield, FileText } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 import { useEffect, useRef } from "react";
 
@@ -115,15 +115,20 @@ function ParticleCanvas() {
 }
 
 const TICKER_ITEMS = [
-  "Penetration Testing Specialist",
+  "Penetration Testing",
+  "Web Application Security",
   "17+ Businesses Assessed",
   "ZW DPA 2021 Compliant",
-  "HackerOne Bug Bounty",
+  "HackerOne Researcher",
   "Bugcrowd Researcher",
+  "Network Vulnerability Scanning",
   "<48hr Audit Start",
+  "Phishing Simulation",
   "Based in Harare, Zimbabwe",
   "Plain-English Reports",
-  "Enterprise Security. Zero Compromise.",
+  "Open-Source Tooling",
+  "Founder-Led Engagements",
+  "Free Passive Assessments",
 ];
 
 export default function Hero() {
@@ -288,18 +293,18 @@ export default function Hero() {
                   </p>
                 </div>
 
-                {/* Stats row */}
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  {[
-                    { v: "17+", l: "Businesses Assessed" },
-                    { v: "<48h", l: "Audit Start Time" },
-                  ].map((s) => (
-                    <div key={s.l} className="bg-[#111122] border border-[#1A1A30] rounded-lg p-3 text-center">
-                      <p className="font-display font-black text-gold text-xl">{s.v}</p>
-                      <p className="text-white/30 text-[10px] font-light mt-0.5">{s.l}</p>
-                    </div>
-                  ))}
-                </div>
+                {/* Proof artifact — see report quality before you commit */}
+                <a href="/sample-pentest-report.pdf" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 mb-4 p-3 rounded-lg bg-[#111122] border border-[#1A1A30] hover:border-gold/30 transition-all group">
+                  <div className="w-9 h-9 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                    <FileText className="w-4 h-4 text-gold" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white/85 text-xs font-medium">See a sample report</p>
+                    <p className="text-white/30 text-[10px]">Redacted real-format pentest report (PDF)</p>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 text-white/25 group-hover:text-gold group-hover:translate-x-0.5 transition-all shrink-0" />
+                </a>
 
                 <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
                   className="block w-full text-center py-3.5 bg-gold text-[#07070D] font-bold rounded-xl text-sm hover:bg-gold-light transition-colors uppercase tracking-wider">

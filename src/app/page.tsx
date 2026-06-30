@@ -9,7 +9,7 @@ import FreeToolsSection from "@/components/sections/free-tools-section";
 import ZenvoraHighlight from "@/components/sections/zenvora-highlight";
 import ProcessSection from "@/components/sections/process-section";
 import Testimonials from "@/components/sections/testimonials";
-import TechStack from "@/components/sections/tech-stack";
+import PricingTeaser from "@/components/sections/pricing-teaser";
 import Newsletter from "@/components/sections/newsletter";
 import CTABanner from "@/components/sections/cta-banner";
 import type { Metadata } from "next";
@@ -31,7 +31,7 @@ export default function HomePage() {
       <ZenvoraHighlight />
       <ProcessSection />
       <Testimonials />
-      <TechStack />
+      <PricingTeaser />
       <Newsletter />
       <CTABanner />
       <Footer />
