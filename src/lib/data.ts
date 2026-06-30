@@ -388,6 +388,36 @@ export const blogPosts = [
     image: "https://images.unsplash.com/photo-1589216532372-1c2a367900d9?w=1200&q=80&auto=format&fit=crop",
     slug: "zimbabwe-data-protection-act-2021",
   },
+  {
+    id: "4",
+    title: "How Much Should a Website Cost in Zimbabwe in 2026?",
+    excerpt: "Quotes range from $50 to $5,000 for what sounds like the same thing. Here's what actually drives the price — and what you should expect to pay.",
+    category: "Web Development",
+    date: "2026-06-30",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80&auto=format&fit=crop",
+    slug: "website-cost-zimbabwe-2026",
+  },
+  {
+    id: "5",
+    title: "5 Security Mistakes Every Harare Business Makes",
+    excerpt: "After assessing 17+ local businesses, the same handful of gaps come up again and again. Here they are — and how to fix each one.",
+    category: "Cybersecurity",
+    date: "2026-06-30",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&q=80&auto=format&fit=crop",
+    slug: "5-security-mistakes-harare-businesses",
+  },
+  {
+    id: "6",
+    title: "Is Your WordPress Site a Sitting Duck?",
+    excerpt: "Most Zimbabwean business sites run WordPress — and most of them are dangerously out of date. Here's why that matters and what to do about it.",
+    category: "Cybersecurity",
+    date: "2026-06-30",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80&auto=format&fit=crop",
+    slug: "wordpress-security-zimbabwe",
+  },
 ];
 
 export const faqs = [

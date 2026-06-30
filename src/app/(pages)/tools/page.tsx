@@ -2,7 +2,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Lock, Globe, Network, KeyRound, Mail, Copy, Layers, Radar, FileSearch, HelpCircle, BadgeCheck, ArrowRight } from "lucide-react";
+import { ShieldCheck, Lock, Globe, Network, KeyRound, Mail, Copy, Layers, Radar, FileSearch, HelpCircle, BadgeCheck, ShieldAlert, Calculator, Cookie, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/tools" },
@@ -28,6 +28,10 @@ const tools = [
   { icon: Radar, title: "Attack Surface Mapper", desc: "Everything an attacker can discover about your domain — subdomains, IPs, mail and name servers — in one view.", href: "/tools/attack-surface" },
   { icon: HelpCircle, title: "Cyber-Safety Quiz", desc: "Answer 10 questions and get your business's security score with tailored recommendations. No email needed.", href: "/tools/security-quiz" },
   { icon: BadgeCheck, title: "Trust Badge", desc: "Grab a \"Secured by Vanorika\" badge for your site's footer — self-contained, no images or scripts.", href: "/tools/badge" },
+  { icon: ShieldAlert, title: "Password Breach Checker", desc: "See if a password has appeared in a known data breach — checked privately, it never leaves your browser.", href: "/tools/password-breach" },
+  { icon: Calculator, title: "Breach Cost Calculator", desc: "Estimate what a data breach could cost your business — so you can weigh it against the cost of prevention.", href: "/tools/breach-cost" },
+  { icon: Cookie, title: "Cookie & Privacy Scanner", desc: "See which cookies and trackers your site sets, and whether you have the privacy basics the DPA expects.", href: "/tools/cookies" },
+  { icon: Lock, title: "TLS / Protocol Checker", desc: "Find out which TLS versions your site accepts and whether it still allows weak, legacy protocols.", href: "/tools/tls" },
 ];
 
 export default function ToolsPage() {
