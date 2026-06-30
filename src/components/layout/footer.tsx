@@ -84,6 +84,7 @@ export default function Footer() {
                 { label: "Security Guide", href: "/cybersecurity-zimbabwe" },
                 { label: "Case Studies", href: "/case-studies" },
                 { label: "Resources", href: "/resources" },
+                { label: "Glossary", href: "/security-glossary" },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href}
