@@ -6,7 +6,7 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https://images.unsplash.com https://avatars.githubusercontent.com https://*.vercel.app https://*.co.zw",
   "font-src 'self' data:",
-  "connect-src 'self' https://api.emailjs.com https://api.pwnedpasswords.com",
+  "connect-src 'self' https://api.emailjs.com https://api.pwnedpasswords.com https://api.web3forms.com",
   "frame-src 'self' https://calendly.com https://*.calendly.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
