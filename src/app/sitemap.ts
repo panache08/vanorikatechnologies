@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/resources`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/research/zimbabwe-web-security-2026`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${base}/security-index`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/tools`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/security-check`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/tools/password`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
