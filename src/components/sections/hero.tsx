@@ -243,6 +243,19 @@ export default function Hero() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </motion.div>
+
+              {/* Pricing signal — removes friction before they even message */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="mt-5 text-sm text-white/45">
+                <Link href="/pricing" className="hover:text-gold transition-colors">
+                  Pentests from <span className="text-gold font-semibold">$400</span> · Websites from{" "}
+                  <span className="text-gold font-semibold">$300</span> · Passive scan{" "}
+                  <span className="text-gold font-semibold">free</span>
+                </Link>
+              </motion.p>
             </div>
 
             {/* RIGHT — credentials card */}
@@ -349,7 +362,7 @@ export default function Hero() {
       <div className="relative bg-gold/5 border-y border-gold/15 py-3 overflow-hidden">
         <div className="flex animate-ticker whitespace-nowrap">
           {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
-            <span key={i} className="font-mono text-[10px] text-gold/60 tracking-[0.18em] uppercase mx-8 flex-shrink-0">
+            <span key={i} className="font-mono text-[10px] text-gold/90 tracking-[0.18em] uppercase mx-8 flex-shrink-0">
               {item} <span className="text-gold/25 mx-4">·</span>
             </span>
           ))}

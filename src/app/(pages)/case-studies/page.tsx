@@ -17,27 +17,30 @@ const caseStudies = [
     name: "GlowTrack Auctions",
     type: "Web Application Security Audit",
     color: "from-red-600 to-orange-500",
+    headline: "Critical authentication bypass caught and patched before the platform ever went public.",
     challenge: "A Harare auction platform needed assurance its web application was safe before going public.",
-    found: "6 vulnerabilities — including a critical unauthenticated API endpoint that allowed an authentication bypass.",
-    outcome: "Critical auth bypass patched before public launch; full remediation report delivered.",
+    found: "A critical unauthenticated API endpoint allowed an authentication bypass — among 6 issues in total.",
+    outcome: "Patched before public launch, with a full remediation report.",
     href: "/case-study/glowtrack-auctions",
   },
   {
     name: "Pearlsard Travel Services",
     type: "Passive Security Assessment",
     color: "from-blue-600 to-cyan-500",
-    challenge: "Two websites for a travel agency, with an Instagram bio link silently sending followers to a dead page.",
-    found: "10 vulnerabilities across both domains — including a live server error and a missing privacy policy.",
-    outcome: "Full remediation roadmap delivered as a branded PDF report, restoring the broken lead path.",
+    headline: "A silently broken lead path restored — followers were being sent to a dead page.",
+    challenge: "A travel agency whose Instagram bio link sent followers to a dead page, across two websites.",
+    found: "A live server error and a missing privacy policy — among 10 issues across both domains.",
+    outcome: "Broken lead path restored and every issue mapped to a fix-it roadmap.",
     href: null,
   },
   {
     name: "Beauty by Nyasha",
     type: "Web Development + Security Audit",
     color: "from-pink-500 to-rose-500",
+    headline: "Booking, payments and customer data secured before a clean launch.",
     challenge: "A new luxury salon site needed a security review before launch — booking, payments and customer data all live.",
-    found: "8 vulnerabilities across the application and its Supabase backend.",
-    outcome: "All findings resolved; site rated 7.5/10 and launched clean.",
+    found: "Issues across the application and its Supabase backend — 8 in total.",
+    outcome: "Every finding resolved; launched clean.",
     href: "https://beauty-by-nyasha.vercel.app",
   },
 ];
@@ -66,7 +69,10 @@ export default function CaseStudiesPage() {
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span className={`px-3 py-1 text-xs font-semibold text-white rounded-full bg-gradient-to-r ${cs.color}`}>{cs.type}</span>
               </div>
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">{cs.name}</h2>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">{cs.name}</h2>
+              <p className="text-lg md:text-xl text-white/90 font-display font-semibold leading-snug mb-7 border-l-2 border-gold pl-4">
+                {cs.headline}
+              </p>
               <div className="grid sm:grid-cols-3 gap-6">
                 {[
                   { icon: Target, label: "Challenge", text: cs.challenge },
