@@ -3,7 +3,7 @@ import Footer from "@/components/layout/footer";
 import CTABanner from "@/components/sections/cta-banner";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Target, Search, CheckCircle2, ArrowRight } from "lucide-react";
+import { Target, Search, CheckCircle2, ArrowRight, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/case-studies" },
@@ -51,7 +51,11 @@ export default function CaseStudiesPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">CASE STUDIES</span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Real Engagements</h1>
-          <p className="text-white/60 text-lg">The challenge, what we found, and what changed as a result.</p>
+          <p className="text-white/60 text-lg mb-7">The challenge, what we found, and what changed as a result.</p>
+          <a href="/sample-pentest-report.pdf" target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 border border-gold/30 text-gold rounded-xl hover:bg-gold/10 transition-all text-sm font-semibold">
+            <FileText className="w-4 h-4" /> See a sample report (PDF)
+          </a>
         </div>
       </section>
 
