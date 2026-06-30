@@ -3,7 +3,7 @@ import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 import { useState } from "react";
 import { ShieldCheck, ShieldAlert, Check, X, Loader2, Search, ArrowRight, Download } from "lucide-react";
-import { siteConfig } from "@/lib/data";
+import LeadCaptureModal from "@/components/lead-capture-modal";
 
 type Check = { id: string; label: string; pass: boolean; detail: string };
 type Result = { host: string; score: number; checks: Check[] };
@@ -41,13 +41,11 @@ export default function SecurityCheckPage() {
   const scoreColor = result ? (result.score >= 75 ? "text-green" : result.score >= 50 ? "text-gold" : "text-red-500") : "";
 
   const failed = result ? result.checks.filter((c) => !c.pass).map((c) => c.label) : [];
-  const leadUrl = result
-    ? `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-        `Hi Donovan, I ran your free security check on ${result.host} and scored ${result.score}%.` +
-        (failed.length ? ` It flagged: ${failed.join(", ")}.` : "") +
-        ` Can you help me fix these?`,
-      )}`
-    : siteConfig.whatsappUrl;
+  const leadMessage = result
+    ? `Hi Donovan, I ran your free security check on ${result.host} and scored ${result.score}%.` +
+      (failed.length ? ` It flagged: ${failed.join(", ")}.` : "") +
+      ` Can you help me fix these?`
+    : "Hello! I'd like to discuss a project with Vanorika Technologies.";
   const lowScore = result ? result.score < 75 : false;
 
   return (
@@ -126,10 +124,15 @@ export default function SecurityCheckPage() {
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
-                  <a href={leadUrl} target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm uppercase tracking-wider">
-                    {lowScore ? "Get a quote to fix these" : "Want a full audit? Get yours free"} <ArrowRight className="w-4 h-4" />
-                  </a>
+                  <LeadCaptureModal
+                    source={`Security check tool (${result?.host ?? ""} — ${result?.score ?? ""}%)`}
+                    label={lowScore ? "Get a quote to fix these" : "Want a full audit? Get yours free"}
+                    icon={<ArrowRight className="w-4 h-4 order-last" />}
+                    whatsappMessage={leadMessage}
+                    heading="Let's fix what we found"
+                    subheading="Leave your name and contact — we'll review your results and come back with exactly what to fix and a quote. We'll open WhatsApp now so you can send your score over."
+                    className="no-print inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm uppercase tracking-wider"
+                  />
                   <button onClick={() => window.print()} type="button"
                     className="no-print inline-flex items-center gap-2 px-5 py-3 border border-gold/30 text-gold rounded-xl hover:bg-gold/10 transition-all text-sm font-semibold">
                     <Download className="w-4 h-4" /> Download report

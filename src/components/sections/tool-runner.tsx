@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import { Search, Loader2, Check, X, ArrowRight, ShieldAlert, Link2 } from "lucide-react";
-import { siteConfig } from "@/lib/data";
+import LeadCaptureModal from "@/components/lead-capture-modal";
 
 type Variant = "ssl" | "whois" | "subdomains" | "email" | "lookalike" | "dns" | "headers";
 
@@ -70,7 +70,7 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
   }
   const hasProblem = (variant === "headers" && typeof r?.score === "number" && (r.score as number) < 100) || (variant === "email" && !!r?.spoofable);
   const ctaText = hasProblem ? "Get a fixed-price quote to fix these" : "Want a full audit? Get yours free";
-  const leadUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I used your free ${labels[variant]} on ${leadDomain}.${finding} Can you help me review and fix what it found?`)}`;
+  const leadMessage = `Hi Donovan, I used your free ${labels[variant]} on ${leadDomain}.${finding} Can you help me review and fix what it found?`;
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -107,10 +107,15 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
                 This is a passive, read-only check. A full assessment goes far deeper — authentication, injection, outdated software and business logic.
               </p>
               <div className="flex flex-wrap items-center gap-4">
-                <a href={leadUrl} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
-                  {ctaText} <ArrowRight className="w-4 h-4" />
-                </a>
+                <LeadCaptureModal
+                  source={`Tool: ${labels[variant]} (${leadDomain})`}
+                  label={ctaText}
+                  icon={<ArrowRight className="w-4 h-4 order-last" />}
+                  whatsappMessage={leadMessage}
+                  heading="Let's fix what we found"
+                  subheading="Leave your name and contact — we'll review the findings and come back with exactly what to fix. We'll open WhatsApp now so you can send the details over."
+                  className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all"
+                />
                 <button onClick={shareLink} type="button"
                   className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground text-sm transition-colors">
                   <Link2 className="w-4 h-4" /> {copied ? "Link copied!" : "Copy shareable link"}

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Search, Loader2, Check, X, ShieldCheck, ArrowRight } from "lucide-react";
-import { siteConfig } from "@/lib/data";
+import LeadCaptureModal from "@/components/lead-capture-modal";
 
 type Chk = { id: string; label: string; pass: boolean; detail: string };
 type Result = { host: string; score: number; checks: Chk[] };
@@ -24,9 +24,9 @@ export default function HomeScanner() {
 
   const color = result ? (result.score >= 75 ? "text-green" : result.score >= 50 ? "text-gold" : "text-red-500") : "";
   const failed = result ? result.checks.filter((c) => !c.pass).map((c) => c.label) : [];
-  const leadUrl = result
-    ? `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I scanned ${result.host} on your site and scored ${result.score}%.${failed.length ? ` It flagged: ${failed.join(", ")}.` : ""} Can you help me fix these?`)}`
-    : siteConfig.whatsappUrl;
+  const leadMessage = result
+    ? `Hi Donovan, I scanned ${result.host} on your site and scored ${result.score}%.${failed.length ? ` It flagged: ${failed.join(", ")}.` : ""} Can you help me fix these?`
+    : "Hello! I'd like to discuss a project with Vanorika Technologies.";
 
   return (
     <section className="relative py-24 bg-[#0D0D1A] border-y border-border overflow-hidden">
@@ -73,10 +73,15 @@ export default function HomeScanner() {
                 </li>
               ))}
             </ul>
-            <a href={leadUrl} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm uppercase tracking-wider">
-              {result.score < 75 ? "Get a quote to fix these" : "Want a full audit? Get yours free"} <ArrowRight className="w-4 h-4" />
-            </a>
+            <LeadCaptureModal
+              source={`Homepage scanner (${result.host} — ${result.score}%)`}
+              label={result.score < 75 ? "Get a quote to fix these" : "Want a full audit? Get yours free"}
+              icon={<ArrowRight className="w-4 h-4 order-last" />}
+              whatsappMessage={leadMessage}
+              heading="Get your fixes — fast"
+              subheading="Leave your name and contact and we'll come back with exactly what to fix and a quote. We'll open WhatsApp now so you can send your results straight over."
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm uppercase tracking-wider"
+            />
           </div>
         )}
         {!result && !loading && (
