@@ -70,7 +70,7 @@ export default function TechStackPage() {
                 <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">Outdated CMS or plugins are the #1 way sites get hacked. If a version shows above, it&apos;s worth checking it&apos;s current.</p>
-                  <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
+                  <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I checked ${data.host} with your tech-stack tool — it detected: ${data.tech.map((t) => t.name).join(", ") || "a custom stack"}. Can you review it for outdated/vulnerable software?`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
                     Get a full audit — free <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>

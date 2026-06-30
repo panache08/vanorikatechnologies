@@ -54,6 +54,24 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
     navigator.clipboard?.writeText(url).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); });
   };
 
+  // Build a contextual WhatsApp message from the result so a scan becomes a qualified lead.
+  const labels: Record<Variant, string> = {
+    ssl: "SSL checker", whois: "WHOIS lookup", subdomains: "subdomain finder",
+    email: "email security checker", lookalike: "lookalike domain finder", dns: "DNS lookup", headers: "security headers checker",
+  };
+  const r = result as Record<string, unknown> | null;
+  const leadDomain = String(r?.domain || r?.host || domain || "my domain").trim();
+  let finding = "";
+  if (r) {
+    if (variant === "headers" && typeof r.score === "number") finding = ` It scored ${r.score}% (${r.passed}/${r.total} headers present).`;
+    else if (variant === "email" && r.spoofable) finding = " It flagged that email can be spoofed (SPF/DMARC missing or weak).";
+    else if (variant === "ssl" && typeof r.daysRemaining === "number") finding = ` The certificate has ${r.daysRemaining} days left.`;
+    else if (variant === "subdomains" && typeof r.count === "number") finding = ` It found ${r.count} subdomains.`;
+  }
+  const hasProblem = (variant === "headers" && typeof r?.score === "number" && (r.score as number) < 100) || (variant === "email" && !!r?.spoofable);
+  const ctaText = hasProblem ? "Get a fixed-price quote to fix these" : "Want a full audit? Get yours free";
+  const leadUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I used your free ${labels[variant]} on ${leadDomain}.${finding} Can you help me review and fix what it found?`)}`;
+
   return (
     <div className="max-w-2xl mx-auto">
       <form onSubmit={run} className="flex flex-col sm:flex-row gap-3">
@@ -89,9 +107,9 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
                 This is a passive, read-only check. A full assessment goes far deeper — authentication, injection, outdated software and business logic.
               </p>
               <div className="flex flex-wrap items-center gap-4">
-                <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
+                <a href={leadUrl} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
-                  Want a full audit? Get yours free <ArrowRight className="w-4 h-4" />
+                  {ctaText} <ArrowRight className="w-4 h-4" />
                 </a>
                 <button onClick={shareLink} type="button"
                   className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground text-sm transition-colors">

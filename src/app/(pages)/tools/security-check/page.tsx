@@ -40,6 +40,16 @@ export default function SecurityCheckPage() {
 
   const scoreColor = result ? (result.score >= 75 ? "text-green" : result.score >= 50 ? "text-gold" : "text-red-500") : "";
 
+  const failed = result ? result.checks.filter((c) => !c.pass).map((c) => c.label) : [];
+  const leadUrl = result
+    ? `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+        `Hi Donovan, I ran your free security check on ${result.host} and scored ${result.score}%.` +
+        (failed.length ? ` It flagged: ${failed.join(", ")}.` : "") +
+        ` Can you help me fix these?`,
+      )}`
+    : siteConfig.whatsappUrl;
+  const lowScore = result ? result.score < 75 : false;
+
   return (
     <main>
       <Navbar />
@@ -116,9 +126,9 @@ export default function SecurityCheckPage() {
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
-                  <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
+                  <a href={leadUrl} target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm uppercase tracking-wider">
-                    Want a full audit? Get yours free <ArrowRight className="w-4 h-4" />
+                    {lowScore ? "Get a quote to fix these" : "Want a full audit? Get yours free"} <ArrowRight className="w-4 h-4" />
                   </a>
                   <button onClick={() => window.print()} type="button"
                     className="no-print inline-flex items-center gap-2 px-5 py-3 border border-gold/30 text-gold rounded-xl hover:bg-gold/10 transition-all text-sm font-semibold">

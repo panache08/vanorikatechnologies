@@ -75,6 +75,9 @@ export default function Footer() {
               {[
                 ...navLinks,
                 { label: "Book a Call", href: "/book" },
+                { label: "Free Monitoring", href: "/monitoring" },
+                { label: "Free Clinic", href: "/clinic" },
+                { label: "Refer & Earn", href: "/referral" },
                 { label: "2026 Security Report", href: "/research/zimbabwe-web-security-2026" },
                 { label: "Free Tools", href: "/tools" },
                 { label: "Cost Estimator", href: "/cost-estimator" },

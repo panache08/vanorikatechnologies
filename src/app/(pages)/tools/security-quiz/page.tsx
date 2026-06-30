@@ -97,7 +97,7 @@ export default function SecurityQuiz() {
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
+                <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I scored ${score}/100 (${b.label}) on your cyber-safety quiz, with ${questions.length - yes} area(s) flagged. Can you help me improve my security?`)}`} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm gold-glow-sm">
                   <MessageCircle className="w-4 h-4" /> Get a free assessment
                 </a>
