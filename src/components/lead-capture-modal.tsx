@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { MessageCircle, X, Loader2, CheckCircle2 } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
-// Web3Forms access key — set NEXT_PUBLIC_WEB3FORMS_KEY in your environment.
-// If absent, the form gracefully skips capture and goes straight to WhatsApp,
-// so nothing ever breaks before the key is configured.
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+// Web3Forms access key. This is a public, client-side key by design (Web3Forms
+// keys are meant to be embedded in the page) — spam protection is handled on their
+// side. An env var override is supported; otherwise the default below is used.
+// If somehow empty, the form gracefully skips capture and goes straight to WhatsApp.
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "d67988f4-7f52-433d-91e0-08b06ef25f41";
 
 type Props = {
   /** Visible label on the trigger button */
