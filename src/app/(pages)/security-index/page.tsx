@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ShieldAlert, Check, X, ArrowRight, MessageCircle } from "lucide-react";
 import { siteConfig, SITE_URL } from "@/lib/data";
+import LeadCaptureModal from "@/components/lead-capture-modal";
 import {
   SCAN_DATE,
   SCAN_SAMPLE,
@@ -209,14 +210,15 @@ export default function SecurityIndexPage() {
             it. No cost, no obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={claimUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <LeadCaptureModal
+              source="Security Index — claim breakdown"
+              label="Claim your free breakdown"
+              icon={<MessageCircle className="w-4 h-4" />}
+              whatsappMessage="Hi Vanorika — I saw the Zimbabwe Web Security Index. Is my organisation on the list? I'd like our free detailed security breakdown."
+              heading="Get your named breakdown"
+              subheading="Leave your name and contact — we'll send the full, named detail of where your organisation sits and re-check it for you."
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gold text-black font-semibold hover:bg-gold-light transition-colors"
-            >
-              <MessageCircle className="w-4 h-4" /> Claim your free breakdown
-            </a>
+            />
             <Link
               href="/tools/security-check"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-gold/30 text-gold font-semibold hover:bg-gold/5 transition-colors"

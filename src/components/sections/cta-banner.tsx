@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Mail } from "lucide-react";
 import { siteConfig } from "@/lib/data";
+import LeadCaptureModal from "@/components/lead-capture-modal";
 
 export default function CTABanner() {
   return (
@@ -34,15 +35,15 @@ export default function CTABanner() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={siteConfig.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <LeadCaptureModal
+              source="CTA banner"
+              label="WhatsApp Us Now"
+              icon={<MessageCircle className="w-4.5 h-4.5" style={{ width: "18px", height: "18px" }} />}
+              whatsappMessage="Hello! I'd like to discuss a project with Vanorika Technologies."
+              heading="Let's get started"
+              subheading="Leave your name and best contact — we reply within 2 hours. We'll open WhatsApp now so you can message us straight away."
               className="flex items-center gap-2.5 px-7 py-4 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all gold-glow text-sm uppercase tracking-wider"
-            >
-              <MessageCircle className="w-4.5 h-4.5" style={{ width: "18px", height: "18px" }} />
-              WhatsApp Us Now
-            </a>
+            />
             <a
               href={`mailto:${siteConfig.email}`}
               className="flex items-center gap-2.5 px-7 py-4 border border-[#252545] text-white/65 hover:text-white hover:border-gold/30 rounded-xl transition-all text-sm font-medium"
