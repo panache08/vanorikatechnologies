@@ -18,7 +18,7 @@ export const siteConfig = {
   phone: "+263 77 690 2542",
   whatsapp: "263776902542",
   whatsappUrl: "https://wa.me/263776902542?text=Hello!%20I'd%20like%20to%20discuss%20a%20project%20with%20Vanorika%20Technologies.",
-  email: "donovanmudarikwa@gmail.com",
+  email: "donovanmudarikwa@vanorikatechnologies.co.zw",
   website: "vanorikatechnologies.co.zw",
   hours: "Mon – Fri: 8:00 AM – 6:00 PM | Sat: 9:00 AM – 2:00 PM",
   social: {
