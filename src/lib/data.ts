@@ -23,8 +23,6 @@ export const siteConfig = {
   hours: "Mon – Fri: 8:00 AM – 6:00 PM | Sat: 9:00 AM – 2:00 PM",
   social: {
     linkedin: "https://www.linkedin.com/in/donovan-panashe-mudarikwa",
-    twitter: "https://twitter.com/vanorikatechnologies",
-    facebook: "https://facebook.com/vanorikatechnologies",
     instagram: "https://instagram.com/vanorikatechnologies",
     github: "https://github.com/panache08",
   },

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock, Twitter, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, Linkedin } from "lucide-react";
 import { siteConfig, navLinks } from "@/lib/data";
 
 const footerServices = [
@@ -54,9 +54,8 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2">
               {[
-                { icon: Twitter,   href: siteConfig.social.twitter,   label: "Vanorika Technologies on X (Twitter)" },
                 { icon: Instagram, href: siteConfig.social.instagram, label: "Vanorika Technologies on Instagram" },
-                { icon: Facebook,  href: siteConfig.social.facebook,  label: "Vanorika Technologies on Facebook" },
+                { icon: Linkedin,  href: siteConfig.social.linkedin,  label: "Donovan Mudarikwa on LinkedIn" },
               ].map(({ icon: Icon, href, label }) => (
                 <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
                   className="w-9 h-9 rounded-lg border border-[#1A1A30] flex items-center justify-center text-white/25 hover:text-gold hover:border-gold/30 hover:bg-gold/5 transition-all">
