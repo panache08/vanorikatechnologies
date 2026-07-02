@@ -78,6 +78,7 @@ export default function Footer() {
                 { label: "Free Clinic", href: "/clinic" },
                 { label: "Refer & Earn", href: "/referral" },
                 { label: "Free Security Report", href: "/report" },
+                { label: "You vs Competitor", href: "/compare" },
                 { label: "ZW Security Index", href: "/security-index" },
                 { label: "2026 Security Report", href: "/research/zimbabwe-web-security-2026" },
                 { label: "Free Tools", href: "/tools" },

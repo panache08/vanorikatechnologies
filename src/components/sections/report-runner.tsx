@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Search, Loader2, ShieldCheck, Lock, Check, X, MessageCircle, FileDown, ArrowRight } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { Search, Loader2, ShieldCheck, Lock, Check, X, MessageCircle, FileDown, ArrowRight, Link2 } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 import { generateReportPdf, downloadPdf, type ReportData } from "@/lib/report-pdf";
 
@@ -26,13 +26,13 @@ export default function ReportRunner() {
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
+  const [copied, setCopied] = useState(false);
 
-  const scan = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const runScan = useCallback(async (d: string) => {
     setError(""); setResult(null); setDone(false); setLoading(true);
     try {
       const res = await fetch("/api/report", {
-        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ domain }),
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ domain: d }),
       });
       const data = await res.json();
       if (!res.ok) setError(data.error || "Something went wrong. Try again.");
@@ -42,6 +42,23 @@ export default function ReportRunner() {
     } finally {
       setLoading(false);
     }
+  }, []);
+
+  const scan = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (domain.trim()) runScan(domain);
+  };
+
+  // Deep-link: /report?domain=x auto-runs, so shared links work.
+  useEffect(() => {
+    const d = new URLSearchParams(window.location.search).get("domain");
+    if (d) { setDomain(d); runScan(d); }
+  }, [runScan]);
+
+  const shareLink = () => {
+    if (!result) return;
+    const url = `${window.location.origin}/report?domain=${encodeURIComponent(result.host)}`;
+    navigator.clipboard?.writeText(url).then(() => { setCopied(true); setTimeout(() => setCopied(false), 2000); });
   };
 
   const consultUrl = result
@@ -143,6 +160,9 @@ export default function ReportRunner() {
                 <li className="flex items-center gap-2 text-emerald-400 text-sm"><Check className="w-4 h-4" /> No issues in the passive checks — the full report confirms what to verify manually.</li>
               )}
             </ul>
+            <button onClick={shareLink} type="button" className="mt-4 inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground text-xs transition-colors">
+              <Link2 className="w-3.5 h-3.5" /> {copied ? "Link copied" : "Copy shareable link"}
+            </button>
           </div>
 
           {/* Gate */}
