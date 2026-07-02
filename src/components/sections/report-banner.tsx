@@ -27,12 +27,15 @@ export default function ReportBanner() {
                 ))}
               </ul>
             </div>
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 flex flex-col items-stretch gap-2">
               <Link
                 href="/report"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gold text-black font-bold hover:bg-gold-light transition-colors whitespace-nowrap gold-glow-sm"
               >
                 Scan my site — get the report <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/compare" className="text-center text-xs text-white/50 hover:text-gold transition-colors">
+                or compare against a competitor →
               </Link>
             </div>
           </div>
