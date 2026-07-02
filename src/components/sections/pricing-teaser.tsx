@@ -5,8 +5,8 @@ import { ArrowRight, FileText } from "lucide-react";
 
 const items = [
   { service: "Passive Security Assessment", price: "Free" },
-  { service: "Website Security Audit", price: "From $150" },
   { service: "Full Penetration Test", price: "From $400" },
+  { service: "Security Retainer", price: "From $50/mo" },
   { service: "Business Website", price: "From $300" },
 ];
 

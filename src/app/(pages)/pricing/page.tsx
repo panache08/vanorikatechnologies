@@ -3,10 +3,11 @@ import Footer from "@/components/layout/footer";
 import CTABanner from "@/components/sections/cta-banner";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle, X, Zap, ArrowRight } from "lucide-react";
+import { CheckCircle, X, Zap, ArrowRight, RefreshCw, ShieldCheck } from "lucide-react";
 import { pricingPlans, faqs } from "@/lib/data";
 import SectionHeader from "@/components/ui/section-header";
 import { FaqJsonLd } from "@/components/seo/json-ld";
+import LeadCaptureModal from "@/components/lead-capture-modal";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/pricing" },
@@ -74,6 +75,58 @@ export default function PricingPage() {
                 </a>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recurring Retainer — the recurring-revenue product */}
+      <section className="py-20 bg-background border-y border-gold/15">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold tracking-widest text-gold border border-gold/30 rounded-full bg-gold/5 mb-4">
+              <RefreshCw className="w-3.5 h-3.5" /> ONGOING PROTECTION
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Security &amp; Maintenance Retainer</h2>
+            <p className="text-muted-foreground text-sm mt-3 max-w-xl mx-auto">
+              A one-off test tells you where you stand today. A retainer keeps you there. Ongoing cover so small problems
+              never become expensive ones.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-3xl border border-gold/25 bg-gradient-to-br from-[#0D0D1A] to-[#07070D] p-8 md:p-10">
+            <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
+            <div className="relative grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span className="text-white/50 text-sm">from</span>
+                  <span className="font-display text-5xl font-black text-gold">$50</span>
+                  <span className="text-white/50 text-sm">/ month</span>
+                </div>
+                <p className="text-white/50 text-xs mb-6">Billed monthly. Cancel anytime. Scales with your size.</p>
+                <LeadCaptureModal
+                  source="Pricing — retainer"
+                  label="Start a retainer"
+                  icon={<ShieldCheck className="w-4 h-4" />}
+                  whatsappMessage="Hi Donovan, I'm interested in the Security & Maintenance Retainer for my business. Can you tell me more?"
+                  heading="Set up your retainer"
+                  subheading="Leave your name and contact and we'll set up ongoing cover sized to your business. We'll open WhatsApp now so we can talk specifics."
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gold text-black font-bold hover:bg-gold-light transition-colors text-sm"
+                />
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "Continuous external monitoring of your site & domain",
+                  "Monthly re-scan with a plain-English status report",
+                  "Security patches & updates kept current",
+                  "Priority WhatsApp support — you go to the front",
+                  "Discounted rates on any deeper work you need",
+                ].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-white/75 text-sm">
+                    <CheckCircle className="w-4 h-4 text-gold shrink-0 mt-0.5" /> {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -153,6 +206,7 @@ export default function PricingPage() {
                   { service: "Passive Security Assessment", price: "Free" },
                   { service: "Website Security Audit", price: "From $150" },
                   { service: "Full Penetration Test", price: "From $400" },
+                  { service: "Security & Maintenance Retainer", price: "From $50 / month", note: "Monitoring, updates & re-scans" },
                 ],
               },
               {
