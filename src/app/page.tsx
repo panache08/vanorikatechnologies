@@ -5,6 +5,7 @@ import HomeScanner from "@/components/sections/home-scanner";
 import ServicesOverview from "@/components/sections/services-overview";
 import StatsSection from "@/components/sections/stats-section";
 import SecurityIndexBanner from "@/components/sections/security-index-banner";
+import ReportBanner from "@/components/sections/report-banner";
 import WhyChooseUs from "@/components/sections/why-choose-us";
 import PortfolioPreview from "@/components/sections/portfolio-preview";
 import FreeToolsSection from "@/components/sections/free-tools-section";
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <HomeScanner />
+      <ReportBanner />
       <ServicesOverview />
       <StatsSection />
       <WhyChooseUs />
