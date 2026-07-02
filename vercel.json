@@ -2,5 +2,9 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "crons": [
+    { "path": "/api/shield/daily", "schedule": "0 6 * * *" },
+    { "path": "/api/shield/monthly", "schedule": "0 7 1 * *" }
+  ]
 }
