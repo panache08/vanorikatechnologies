@@ -10,7 +10,7 @@ export const SITE_URL =
 export const siteConfig = {
   name: "Vanorika Technologies",
   tagline: "Enterprise Security. Zero Compromise.",
-  description: "CompTIA PenTest+ certified penetration tester and web developer based in Harare, Zimbabwe. Security assessments and professional websites for Zimbabwean businesses.",
+  description: "CompTIA A+, Security+ and PenTest+ certified penetration tester and web developer based in Harare, Zimbabwe. Security assessments and professional websites for Zimbabwean businesses.",
   founder: "Donovan Mudarikwa",
   founderTitle: "Founder & CEO",
   founderBio: "CompTIA A+, Security+, and PenTest+ certified security professional and web developer. Based in Harare, working with businesses across Zimbabwe and beyond.",
