@@ -222,6 +222,21 @@ export default function Hero() {
                 ))}
               </motion.div>
 
+              {/* Certifications — the strongest differentiator, made explicit above the fold */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="flex flex-wrap items-center gap-2.5 mb-10 -mt-4">
+                <span className="font-mono text-[10px] text-white/30 uppercase tracking-[0.2em] mr-1">Certified</span>
+                {siteConfig.certifications.map((c) => (
+                  <span key={c.abbr}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gold/25 bg-gold/5 text-gold text-xs font-semibold">
+                    <Shield className="w-3 h-3" /> {c.full}
+                  </span>
+                ))}
+              </motion.div>
+
               {/* CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
