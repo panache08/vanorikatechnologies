@@ -8,12 +8,12 @@ const reasons = [
   {
     icon: Shield,
     title: "Attacker's Mindset",
-    desc: "We test the way real attackers do — chaining small weaknesses together to find the issues automated scanners quietly miss.",
+    desc: "We test the way real attackers do, chaining small weaknesses together to find the issues automated scanners quietly miss.",
   },
   {
     icon: Zap,
     title: "Sub-48-Hour Audit Start",
-    desc: "We mobilise fast. From first contact to active assessment in under 48 hours — because threats don't wait for procurement cycles.",
+    desc: "We mobilise fast. From first contact to active assessment in under 48 hours, because threats don't wait for procurement cycles.",
   },
   {
     icon: UserCheck,
@@ -28,7 +28,7 @@ const reasons = [
   {
     icon: MessageCircle,
     title: "Ongoing Support Included",
-    desc: "Security is not a one-time event. We stay available after delivery for questions, re-tests, and follow-up — no extra invoice.",
+    desc: "Security is not a one-time event. We stay available after delivery for questions, re-tests, and follow-up. No extra invoice.",
   },
 ];
 

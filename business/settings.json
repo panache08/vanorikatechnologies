@@ -1,0 +1,59 @@
+{
+  "_comment": [
+    "Claude API defaults for Vanorika content + copy generation.",
+    "This mirrors the 'settings.json' in the PASIM.IO guide, with two corrections:",
+    "  1. The guide pins claude-3-5-sonnet-20241022, which is long superseded.",
+    "     Current: claude-opus-4-8 (most capable), claude-sonnet-5 (fast + strong),",
+    "     claude-haiku-4-5-20251001 (cheapest).",
+    "  2. The guide's \"permissions\": \"all\" is not a real field in any Claude config.",
+    "     The Messages API has no permissions key; Claude Code uses allow/deny rule",
+    "     lists in .claude/settings.json. It is dropped here rather than copied.",
+    "This file is documentation of intended defaults - it is not read automatically",
+    "by anything. Point your own script at it, or use it as a checklist."
+  ],
+
+  "defaults": {
+    "model": "claude-opus-4-8",
+    "max_tokens": 4096,
+    "temperature": 0.3
+  },
+
+  "profiles": {
+    "copy_and_content": {
+      "model": "claude-opus-4-8",
+      "temperature": 0.7,
+      "max_tokens": 4096,
+      "_use_for": "Blog posts, landing page copy, social posts, outreach DMs.",
+      "_why": "Higher temperature for range. Always attach brand-voice.md."
+    },
+    "reports_and_client_docs": {
+      "model": "claude-opus-4-8",
+      "temperature": 0.2,
+      "max_tokens": 8192,
+      "_use_for": "Pentest reports, audit findings, proposals, agreements, invoices.",
+      "_why": "Low temperature. These go to clients and must not drift or invent findings."
+    },
+    "bulk_and_cheap": {
+      "model": "claude-haiku-4-5-20251001",
+      "temperature": 0.3,
+      "max_tokens": 2048,
+      "_use_for": "Summarising scan output, classifying leads, tidying data.",
+      "_why": "High volume, low judgement. Don't pay Opus prices for it."
+    }
+  },
+
+  "always_attach": [
+    "about-me.md",
+    "brand-voice.md"
+  ],
+
+  "house_rules": [
+    "Never invent a statistic, client, testimonial, or scan result.",
+    "The '17+ businesses assessed' figure is UNVERIFIED - do not use it.",
+    "The /research/zimbabwe-web-security-2026 report contains PLACEHOLDER stats - do not cite it.",
+    "Never name a client or scan target publicly without written permission.",
+    "No AI attribution in any client-facing deliverable or repo commit. Author: Panashe Party.",
+    "British/Zimbabwean spelling: specialise, anonymised, enquiries, programme.",
+    "Prices are public and specific. Never soften to 'contact us for pricing'."
+  ]
+}

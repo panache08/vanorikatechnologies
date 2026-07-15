@@ -8,28 +8,28 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools" },
   title: "Free Security Tools",
   description:
-    "Free passive security tools for Zimbabwe businesses — website security check, SSL certificate checker, WHOIS lookup, and subdomain finder. No login required.",
+    "Free passive security tools for Zimbabwe businesses: website security check, SSL certificate checker, WHOIS lookup, and subdomain finder. No login required.",
 };
 
 const tools = [
-  { icon: ShieldCheck, title: "Website Security Check", desc: "SSL, security headers, HTTPS redirect and privacy policy — a quick health score for any site.", href: "/tools/security-check" },
+  { icon: ShieldCheck, title: "Website Security Check", desc: "A quick health score for any site: SSL, security headers, HTTPS redirect and privacy policy.", href: "/tools/security-check" },
   { icon: Lock, title: "SSL Certificate Checker", desc: "Check a certificate's expiry, issuer, and what it covers. Know before it lapses.", href: "/tools/ssl" },
   { icon: Globe, title: "WHOIS / Domain Lookup", desc: "Registrar, registration and expiry dates, status, and name servers for any domain.", href: "/tools/whois" },
-  { icon: Network, title: "Subdomain Finder", desc: "Discover subdomains from public certificate transparency logs — see your real attack surface.", href: "/tools/subdomains" },
-  { icon: KeyRound, title: "Password Strength Checker", desc: "See how strong a password is and how long it would take to crack — checked privately in your browser.", href: "/tools/password" },
-  { icon: Mail, title: "Email Security Checker", desc: "Check your domain's SPF and DMARC records — find out if attackers can spoof email from your business.", href: "/tools/email-security" },
-  { icon: Copy, title: "Lookalike Domain Finder", desc: "Find typosquat and lookalike domains impersonating your business for phishing — before your customers fall for them.", href: "/tools/lookalike" },
-  { icon: Network, title: "DNS Records Lookup", desc: "View all public DNS records — A, MX, NS, TXT and more — for any domain in one clean view.", href: "/tools/dns" },
-  { icon: ShieldCheck, title: "Security Headers Checker", desc: "Grade your website's security headers — HSTS, CSP, X-Frame-Options and more — in seconds.", href: "/tools/headers" },
-  { icon: Mail, title: "SPF & DMARC Generator", desc: "Generate the exact DNS records that stop attackers spoofing email from your domain — copy and paste.", href: "/tools/spf-dmarc-generator" },
+  { icon: Network, title: "Subdomain Finder", desc: "Discover subdomains from public certificate transparency logs. See your real attack surface.", href: "/tools/subdomains" },
+  { icon: KeyRound, title: "Password Strength Checker", desc: "See how strong a password is and how long it would take to crack, checked privately in your browser.", href: "/tools/password" },
+  { icon: Mail, title: "Email Security Checker", desc: "Check your domain's SPF and DMARC records to find out if attackers can spoof email from your business.", href: "/tools/email-security" },
+  { icon: Copy, title: "Lookalike Domain Finder", desc: "Find typosquat and lookalike domains impersonating your business for phishing, before your customers fall for them.", href: "/tools/lookalike" },
+  { icon: Network, title: "DNS Records Lookup", desc: "View all public DNS records (A, MX, NS, TXT and more) for any domain in one clean view.", href: "/tools/dns" },
+  { icon: ShieldCheck, title: "Security Headers Checker", desc: "Grade your website's security headers in seconds: HSTS, CSP, X-Frame-Options and more.", href: "/tools/headers" },
+  { icon: Mail, title: "SPF & DMARC Generator", desc: "Generate the exact DNS records that stop attackers spoofing email from your domain, ready to copy and paste.", href: "/tools/spf-dmarc-generator" },
   { icon: FileSearch, title: "Email Header Analyzer", desc: "Suspect a phishing email? Paste its headers and we'll check if it's really from who it claims.", href: "/tools/email-header-analyzer" },
-  { icon: KeyRound, title: "Password Generator", desc: "Create strong random passwords and memorable passphrases — generated privately in your browser.", href: "/tools/password-generator" },
-  { icon: Layers, title: "Tech-Stack Detector", desc: "See what a website is built with — CMS, frameworks, server — and spot outdated software.", href: "/tools/tech-stack" },
-  { icon: Radar, title: "Attack Surface Mapper", desc: "Everything an attacker can discover about your domain — subdomains, IPs, mail and name servers — in one view.", href: "/tools/attack-surface" },
+  { icon: KeyRound, title: "Password Generator", desc: "Create strong random passwords and memorable passphrases. Generated privately in your browser.", href: "/tools/password-generator" },
+  { icon: Layers, title: "Tech-Stack Detector", desc: "See the CMS, frameworks and server a website is built with, and spot outdated software.", href: "/tools/tech-stack" },
+  { icon: Radar, title: "Attack Surface Mapper", desc: "Everything an attacker can discover about your domain in one view: subdomains, IPs, mail and name servers.", href: "/tools/attack-surface" },
   { icon: HelpCircle, title: "Cyber-Safety Quiz", desc: "Answer 10 questions and get your business's security score with tailored recommendations. No email needed.", href: "/tools/security-quiz" },
-  { icon: BadgeCheck, title: "Trust Badge", desc: "Grab a \"Secured by Vanorika\" badge for your site's footer — self-contained, no images or scripts.", href: "/tools/badge" },
-  { icon: ShieldAlert, title: "Password Breach Checker", desc: "See if a password has appeared in a known data breach — checked privately, it never leaves your browser.", href: "/tools/password-breach" },
-  { icon: Calculator, title: "Breach Cost Calculator", desc: "Estimate what a data breach could cost your business — so you can weigh it against the cost of prevention.", href: "/tools/breach-cost" },
+  { icon: BadgeCheck, title: "Trust Badge", desc: "Grab a \"Secured by Vanorika\" badge for your site's footer. Self-contained, no images or scripts.", href: "/tools/badge" },
+  { icon: ShieldAlert, title: "Password Breach Checker", desc: "See if a password has appeared in a known data breach. It's checked privately and never leaves your browser.", href: "/tools/password-breach" },
+  { icon: Calculator, title: "Breach Cost Calculator", desc: "Estimate what a data breach could cost your business, so you can weigh it against the cost of prevention.", href: "/tools/breach-cost" },
   { icon: Cookie, title: "Cookie & Privacy Scanner", desc: "See which cookies and trackers your site sets, and whether you have the privacy basics the DPA expects.", href: "/tools/cookies" },
   { icon: Lock, title: "TLS / Protocol Checker", desc: "Find out which TLS versions your site accepts and whether it still allows weak, legacy protocols.", href: "/tools/tls" },
 ];
@@ -70,7 +70,7 @@ export default function ToolsPage() {
           <div className="mt-14 max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-8">
             <p className="font-display text-lg font-bold text-foreground mb-2">Open source &amp; transparent</p>
             <p className="text-muted-foreground text-sm leading-relaxed mb-5">
-              The engine behind these tools is open source — passive, read-only, zero dependencies. Read the code, run it yourself, or build on it.
+              The engine behind these tools is open source. Passive, read-only, zero dependencies. Read the code, run it yourself, or build on it.
             </p>
             <a href="https://github.com/panache08/vanorika-security-tools" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 border border-gold/30 text-gold rounded-xl hover:bg-gold/10 transition-all text-sm font-semibold">

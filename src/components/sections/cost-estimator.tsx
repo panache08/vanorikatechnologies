@@ -12,8 +12,8 @@ const TYPES = [
 ];
 
 const SIZES = [
-  { id: "small", label: "Small", note: "1–5 pages", mult: 1 },
-  { id: "medium", label: "Medium", note: "6–15 pages", mult: 1.6 },
+  { id: "small", label: "Small", note: "1 to 5 pages", mult: 1 },
+  { id: "medium", label: "Medium", note: "6 to 15 pages", mult: 1.6 },
   { id: "large", label: "Large", note: "15+ pages", mult: 2.5 },
 ];
 
@@ -121,7 +121,7 @@ export default function CostEstimator() {
       {/* Result */}
       <div className="bg-card border border-gold/20 rounded-3xl p-7 lg:sticky lg:top-28">
         <p className="text-muted-foreground text-sm mb-1">Estimated range</p>
-        <p className="font-display text-4xl font-bold text-gold leading-tight">{money(low)}–{money(high)}</p>
+        <p className="font-display text-4xl font-bold text-gold leading-tight">{money(low)} to {money(high)}</p>
         <p className="text-muted-foreground/70 text-xs mt-2 mb-6">USD, once-off. A real quote depends on your exact needs.</p>
         <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 w-full py-3.5 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all gold-glow-sm text-sm uppercase tracking-wider mb-3">

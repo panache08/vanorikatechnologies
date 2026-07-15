@@ -7,7 +7,7 @@ import { Network } from "lucide-react";
 export const metadata: Metadata = {
   alternates: { canonical: "/tools/subdomains" },
   title: "Subdomain Finder",
-  description: "Discover a domain's subdomains from public certificate transparency logs — see your real attack surface. Free and passive.",
+  description: "Discover a domain's subdomains from public certificate transparency logs and see your real attack surface. Free and passive.",
 };
 
 export default function SubdomainsPage() {
@@ -22,7 +22,7 @@ export default function SubdomainsPage() {
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Subdomain Finder</h1>
           <p className="text-white/60 text-lg">
-            Discover subdomains from public certificate transparency logs — the same first step an attacker takes to map your attack surface.
+            Discover subdomains from public certificate transparency logs: the same first step an attacker takes to map your attack surface.
           </p>
         </div>
       </section>

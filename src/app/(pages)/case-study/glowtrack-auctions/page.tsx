@@ -8,7 +8,7 @@ import { ShieldAlert, CheckCircle, Clock, ArrowLeft, AlertTriangle, ArrowRight }
 export const metadata: Metadata = {
   alternates: { canonical: "/case-study/glowtrack-auctions" },
   title: "Case Study: GlowTrack Auctions Security Audit",
-  description: "How Vanorika Technologies found 6 vulnerabilities in a Harare auction platform in under 24 hours — including one exposing live customer data.",
+  description: "How Vanorika Technologies found 6 vulnerabilities in a Harare auction platform in under 24 hours, including one exposing live customer data.",
 };
 
 const findings = [
@@ -18,7 +18,7 @@ const findings = [
     bg: "bg-red-500/10",
     border: "border-red-500/20",
     title: "Unauthenticated API endpoint exposing customer records",
-    detail: "A REST endpoint returning bidder names, email addresses, and phone numbers required no authentication. Any visitor who knew the URL — or guessed it — could download the full customer list.",
+    detail: "A REST endpoint returning bidder names, email addresses, and phone numbers required no authentication. Any visitor who knew the URL, or guessed it, could download the full customer list.",
   },
   {
     severity: "High",
@@ -26,7 +26,7 @@ const findings = [
     bg: "bg-orange-500/10",
     border: "border-orange-500/20",
     title: "SQL injection in the auction search function",
-    detail: "User input passed directly to a database query without sanitisation. An attacker could extract, modify, or delete database records — including bid history and user accounts.",
+    detail: "User input passed directly to a database query without sanitisation. An attacker could extract, modify, or delete database records, including bid history and user accounts.",
   },
   {
     severity: "High",
@@ -58,7 +58,7 @@ const findings = [
     bg: "bg-blue-500/10",
     border: "border-blue-500/20",
     title: "Verbose error messages revealing server internals",
-    detail: "Stack traces and database error messages were displayed to end users on certain error conditions — leaking the server framework, database type, and file paths to anyone who triggered an error.",
+    detail: "Stack traces and database error messages were displayed to end users on certain error conditions. This leaked the server framework, database type, and file paths to anyone who triggered an error.",
   },
 ];
 
@@ -67,8 +67,8 @@ const timeline = [
   { day: "Day 1", label: "Critical API vulnerability identified and reported immediately", done: true },
   { day: "Day 1", label: "All 6 findings documented by end of day", done: true },
   { day: "Day 2", label: "Written report delivered with fixes ranked by priority", done: true },
-  { day: "Day 3–5", label: "Critical and high findings patched by client developer", done: true },
-  { day: "Day 7", label: "Verification retest — all 6 issues confirmed resolved", done: true },
+  { day: "Days 3 to 5", label: "Critical and high findings patched by client developer", done: true },
+  { day: "Day 7", label: "Verification retest: all 6 issues confirmed resolved", done: true },
 ];
 
 export default function CaseStudyPage() {
@@ -120,7 +120,7 @@ export default function CaseStudyPage() {
                 GlowTrack Auctions runs online and in-person auctions for buyers and sellers across Harare. Before opening their platform to the public, they wanted an independent check of their website security.
               </p>
               <p>
-                They had a developer who built the site but had no security background. The platform handled user registration, live bidding, and payment coordination — all of which required storing personal customer data.
+                They had a developer who built the site but had no security background. The platform handled user registration, live bidding, and payment coordination, all of which required storing personal customer data.
               </p>
               <p>
                 They contacted Vanorika Technologies for a website security audit. We signed a written authorisation agreement and started work the same day.
@@ -163,10 +163,10 @@ export default function CaseStudyPage() {
             <h2 className="font-display text-2xl font-bold text-foreground mb-4">The Report</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Every finding was written up in plain English — not just a list of CVE numbers. Each issue included what it was, what an attacker could do with it, and exactly what needed to change to fix it.
+                Every finding was written up in plain English, not just a list of CVE numbers. Each issue included what it was, what an attacker could do with it, and exactly what needed to change to fix it.
               </p>
               <p>
-                Findings were ranked by priority so the developer knew what to fix first. The critical API issue was flagged verbally on day one — before the written report was even complete — so work could start immediately.
+                Findings were ranked by priority so the developer knew what to fix first. The critical API issue was flagged verbally on day one (before the written report was even complete), so work could start immediately.
               </p>
               <p>
                 The client's developer handled the patches. We did a verification retest on day seven to confirm all six issues were resolved before the platform went live.
@@ -199,7 +199,7 @@ export default function CaseStudyPage() {
               <h2 className="font-display text-xl font-bold text-foreground">Outcome</h2>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              GlowTrack Auctions launched with all six vulnerabilities resolved. The platform that went live was materially more secure than the one we tested — with no customer data exposed and no trivially exploitable entry points.
+              GlowTrack Auctions launched with all six vulnerabilities resolved. The platform that went live was materially more secure than the one we tested, with no customer data exposed and no trivially exploitable entry points.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Had the platform gone live with the critical API vulnerability in place, any visitor could have downloaded their full customer database. It would likely have gone unnoticed until something went wrong.

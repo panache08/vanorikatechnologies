@@ -6,7 +6,7 @@ import LeadCaptureModal from "@/components/lead-capture-modal";
 type Variant = "ssl" | "whois" | "subdomains" | "email" | "lookalike" | "dns" | "headers";
 
 function fmtDate(iso: string | null) {
-  if (!iso) return "—";
+  if (!iso) return "Unknown";
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 }
 
@@ -104,7 +104,7 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
             <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
             <div>
               <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-                This is a passive, read-only check. A full assessment goes far deeper — authentication, injection, outdated software and business logic.
+                This is a passive, read-only check. A full assessment goes far deeper: authentication, injection, outdated software and business logic.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <LeadCaptureModal
@@ -113,7 +113,7 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
                   icon={<ArrowRight className="w-4 h-4 order-last" />}
                   whatsappMessage={leadMessage}
                   heading="Let's fix what we found"
-                  subheading="Leave your name and contact — we'll review the findings and come back with exactly what to fix. We'll open WhatsApp now so you can send the details over."
+                  subheading="Leave your name and contact. We'll review the findings and come back with exactly what to fix. We'll open WhatsApp now so you can send the details over."
                   className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all"
                 />
                 <button onClick={shareLink} type="button"
@@ -127,7 +127,7 @@ export default function ToolRunner({ variant, placeholder, endpoint }: { variant
       )}
 
       <p className="text-muted-foreground/60 text-xs text-center mt-6">
-        Read-only and passive. We only query public records — no login, no port scanning, no exploitation.
+        Read-only and passive. We only query public records: no login, no port scanning, no exploitation.
       </p>
     </div>
   );
@@ -162,12 +162,12 @@ function SslResult({ r }: { r: any }) {
       {!r.error && (
         <div>
           <Row label="Days remaining" value={
-            <span className={warn ? "text-gold" : !ok ? "text-red-500" : ""}>{r.daysRemaining} days{warn ? " — renew soon" : ""}</span>
+            <span className={warn ? "text-gold" : !ok ? "text-red-500" : ""}>{r.daysRemaining} days{warn ? ", renew soon" : ""}</span>
           } />
           <Row label="Expires" value={fmtDate(r.validTo)} />
           <Row label="Issued" value={fmtDate(r.validFrom)} />
-          <Row label="Issuer" value={r.issuer || "—"} />
-          <Row label="Issued to" value={r.subject || "—"} />
+          <Row label="Issuer" value={r.issuer || "Unknown"} />
+          <Row label="Issued to" value={r.subject || "Unknown"} />
           {r.san?.length > 0 && <Row label="Covers" value={r.san.join(", ")} />}
         </div>
       )}
@@ -215,17 +215,17 @@ function EmailResult({ r }: { r: any }) {
           <p className={`text-xs ${grade.c}`}>{grade.t} email security</p>
         </div>
       </div>
-      <CheckRow ok={r.spf.found} label="SPF — sender spoofing protection"
+      <CheckRow ok={r.spf.found} label="SPF: sender spoofing protection"
         detail={r.spf.found ? <span className="font-mono">{r.spf.record}</span> : "No SPF record. Anyone can forge email from your domain."} />
-      <CheckRow ok={r.dmarc.found && !weakDmarc} label="DMARC — enforces SPF/DKIM"
+      <CheckRow ok={r.dmarc.found && !weakDmarc} label="DMARC: enforces SPF/DKIM"
         detail={
           r.dmarc.found
             ? weakDmarc
-              ? `Policy is "p=none" — monitoring only, not blocking spoofed mail. Move to quarantine or reject.`
-              : `Policy "p=${r.dmarc.policy}" — spoofed mail is actively rejected or quarantined.`
+              ? `Policy is "p=none": monitoring only, not blocking spoofed mail. Move to quarantine or reject.`
+              : `Policy "p=${r.dmarc.policy}": spoofed mail is actively rejected or quarantined.`
             : "No DMARC record. Spoofed email isn't being blocked."
         } />
-      <CheckRow ok={r.mx.length > 0} label="MX — mail servers"
+      <CheckRow ok={r.mx.length > 0} label="MX: mail servers"
         detail={r.mx.length > 0 ? r.mx.join(", ") : "No MX records found for this domain."} />
     </div>
   );
@@ -256,7 +256,7 @@ function LookalikeResult({ r }: { r: any }) {
           ))}
         </div>
       ) : (
-        <p className="text-muted-foreground text-sm">None of the common lookalike variants we checked are currently registered. Keep an eye on this — it can change.</p>
+        <p className="text-muted-foreground text-sm">None of the common lookalike variants we checked are currently registered. Keep an eye on this. It can change.</p>
       )}
     </div>
   );

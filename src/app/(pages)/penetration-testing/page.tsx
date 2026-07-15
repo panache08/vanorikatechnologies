@@ -11,16 +11,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "/penetration-testing" },
   title: "Penetration Testing in Zimbabwe",
   description:
-    "Professional penetration testing for Zimbabwe businesses — manual, CompTIA PenTest+ certified testing of your website, app, and network, with a plain-English report. From $400. Free passive scan available.",
+    "Professional penetration testing for Zimbabwe businesses: manual, CompTIA PenTest+ certified testing of your website, app, and network, with a plain-English report. From $400. Free passive scan available.",
 };
 
 const tests = [
-  { icon: ScanSearch, title: "Web Application Testing", desc: "We test your website or web app the way an attacker would — auth bypasses, injection, broken access control, and the OWASP Top 10." },
-  { icon: Network, title: "Network & Infrastructure", desc: "External and internal network testing — exposed services, misconfigurations, and weak points in your perimeter." },
+  { icon: ScanSearch, title: "Web Application Testing", desc: "We test your website or web app the way an attacker would: auth bypasses, injection, broken access control, and the OWASP Top 10." },
+  { icon: Network, title: "Network & Infrastructure", desc: "External and internal network testing that covers exposed services, misconfigurations, and weak points in your perimeter." },
   { icon: UserX, title: "Vulnerability Assessment", desc: "A structured scan-and-review of your public-facing systems, with every finding ranked by real business risk." },
-  { icon: Radio, title: "Phishing Simulation", desc: "A controlled phishing campaign that shows how your team responds — and where security awareness training is needed." },
+  { icon: Radio, title: "Phishing Simulation", desc: "A controlled phishing campaign that shows how your team responds, and where security awareness training is needed." },
   { icon: FileText, title: "Written Remediation Report", desc: "An executive summary plus every finding rated by severity, with proof and clear, developer-ready fix instructions." },
-  { icon: ShieldCheck, title: "Retest & Verification", desc: "After you fix the findings, we retest to confirm the holes are actually closed — not just reported." },
+  { icon: ShieldCheck, title: "Retest & Verification", desc: "After you fix the findings, we retest to confirm the holes are actually closed, not just reported." },
 ];
 
 export default function PenetrationTestingPage() {
@@ -42,7 +42,7 @@ export default function PenetrationTestingPage() {
           </span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Penetration Testing in Zimbabwe</h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            We find what attackers would find — before they do. Manual, CompTIA PenTest+ certified testing for Zimbabwean businesses,
+            We find what attackers would find, before they do. Manual, CompTIA PenTest+ certified testing for Zimbabwean businesses,
             with a report you can actually act on.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
@@ -61,7 +61,7 @@ export default function PenetrationTestingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">What we test</h2>
-            <p className="text-muted-foreground mt-3">A real human tester — not just an automated scan with a logo on it.</p>
+            <p className="text-muted-foreground mt-3">A real human tester, not just an automated scan with a logo on it.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tests.map((t) => (

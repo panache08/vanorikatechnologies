@@ -19,7 +19,7 @@ export default function MonitoringPage() {
     }
     const msg = `Hi Donovan, please add me to free monthly security monitoring.\n\nBusiness: ${name || "(not given)"}\nDomain: ${d}`;
     window.open(`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
-    toast.success("Opening WhatsApp — just hit send and you're on the list.");
+    toast.success("Opening WhatsApp. Just hit send and you're on the list.");
   };
 
   return (
@@ -32,7 +32,7 @@ export default function MonitoringPage() {
             <Activity className="w-3.5 h-3.5" /> FREE MONITORING
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Free Monthly Security Monitoring</h1>
-          <p className="text-white/60 text-lg">We re-scan your site every month and message you if anything changes — SSL expiry, new exposures, missing protections. No cost.</p>
+          <p className="text-white/60 text-lg">We re-scan your site every month and message you if anything changes: SSL expiry, new exposures, missing protections. No cost.</p>
         </div>
       </section>
 

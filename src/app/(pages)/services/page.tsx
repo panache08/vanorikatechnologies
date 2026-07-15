@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   alternates: { canonical: "/services" },
   title: "Services",
-  description: "Penetration testing, web development, custom software, mobile apps, and AI automation — delivered by a CompTIA PenTest+ certified professional in Harare, Zimbabwe.",
+  description: "Penetration testing, web development, custom software, mobile apps, and AI automation, delivered by a CompTIA PenTest+ certified professional in Harare, Zimbabwe.",
 };
 
 const services = [
@@ -29,7 +29,7 @@ const services = [
     accentColor: "bg-red-500/10",
     label: "SECURITY",
     title: "Cybersecurity & Penetration Testing",
-    description: "We attack your systems the way a real threat actor would — then hand you a plain-English report with every gap and exactly how to close it.",
+    description: "We attack your systems the way a real threat actor would, then hand you a plain-English report with every gap and exactly how to close it.",
     features: [
       { icon: ScanSearch,    label: "Penetration Testing",       desc: "Manual exploitation of web apps, APIs, and network perimeter" },
       { icon: Network,       label: "Network Vulnerability Scan", desc: "Port-level enumeration and CVE mapping against live infrastructure" },
@@ -48,7 +48,7 @@ const services = [
     accentColor: "bg-blue-500/10",
     label: "WEB",
     title: "Website Development",
-    description: "Professional websites delivered in 1–2 weeks. Fast, mobile-ready, and built to generate enquiries — not just sit there looking good.",
+    description: "Professional websites delivered in 1 to 2 weeks. Fast, mobile-ready, and built to generate enquiries, not just sit there looking good.",
     features: [
       { icon: LayoutTemplate,    label: "Business Websites",      desc: "Multi-page sites with contact, pricing, services and blog" },
       { icon: ShoppingCart,      label: "E-Commerce",             desc: "Product catalogue, cart, checkout and payment gateway" },
@@ -67,7 +67,7 @@ const services = [
     accentColor: "bg-violet-500/10",
     label: "SOFTWARE",
     title: "Custom Software Development",
-    description: "Business systems, dashboards and internal tools built around how your company actually operates. Quoted before we start — no scope creep.",
+    description: "Business systems, dashboards and internal tools built around how your company actually operates. Quoted before we start. No scope creep.",
     features: [
       { icon: LayoutDashboard, label: "Admin Dashboards",         desc: "Role-based control panels with charts, filters and exports" },
       { icon: Database,        label: "Database Design",          desc: "Relational schema, indexing strategy and migration scripts" },
@@ -86,7 +86,7 @@ const services = [
     accentColor: "bg-cyan-500/10",
     label: "MOBILE",
     title: "Mobile Applications",
-    description: "Android and cross-platform apps built with React Native. We handle design, development and Play Store deployment — you get the finished product.",
+    description: "Android and cross-platform apps built with React Native. We handle design, development and Play Store deployment. You get the finished product.",
     features: [
       { icon: AppWindow,     label: "Android & iOS",             desc: "Single React Native codebase targeting both platforms" },
       { icon: Store,         label: "App Store Deployment",      desc: "Play Store and App Store submission handled for you" },
@@ -105,7 +105,7 @@ const services = [
     accentColor: "bg-purple-500/10",
     label: "AI",
     title: "AI & Automation",
-    description: "Chatbots, automated workflows and AI integrations that strip repetitive work from your team. Built on proven tools — deployed fast.",
+    description: "Chatbots, automated workflows and AI integrations that strip repetitive work from your team. Built on proven tools, deployed fast.",
     features: [
       { icon: Bot,            label: "AI Chatbots",              desc: "Context-aware bots trained on your docs, FAQs and products" },
       { icon: Zap,            label: "Workflow Automation",      desc: "Trigger-based pipelines that replace manual back-office tasks" },

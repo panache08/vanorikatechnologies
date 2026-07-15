@@ -1,5 +1,5 @@
 // Transactional email via Resend. Set RESEND_API_KEY (and optionally SHIELD_FROM) in the
-// environment. Until the key is set, sending is a safe no-op that logs — so the cron
+// environment. Until the key is set, sending is a safe no-op that logs, so the cron
 // endpoints run and report without ever crashing.
 
 export type EmailAttachment = { filename: string; content: string /* base64 */ };
@@ -16,7 +16,7 @@ const FROM = process.env.SHIELD_FROM || "Vanorika Shield <shield@vanorikatechnol
 
 export async function sendEmail(input: SendEmailInput): Promise<{ ok: boolean; skipped?: boolean; error?: string }> {
   if (!RESEND_API_KEY) {
-    console.log(`[email] RESEND_API_KEY not set — skipped email to ${input.to} ("${input.subject}")`);
+    console.log(`[email] RESEND_API_KEY not set: skipped email to ${input.to} ("${input.subject}")`);
     return { ok: false, skipped: true };
   }
   try {

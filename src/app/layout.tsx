@@ -23,10 +23,10 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Vanorika Technologies | Enterprise Security & Web Development — Zimbabwe",
+    default: "Vanorika Technologies | Enterprise Security & Web Development in Zimbabwe",
     template: "%s | Vanorika Technologies",
   },
-  description: "Vanorika Technologies — CompTIA PenTest+ certified penetration tester and web developer based in Harare, Zimbabwe. Enterprise security assessments and professional websites for Zimbabwean businesses.",
+  description: "Vanorika Technologies: CompTIA PenTest+ certified penetration tester and web developer based in Harare, Zimbabwe. Enterprise security assessments and professional websites for Zimbabwean businesses.",
   keywords: [
     "penetration testing Zimbabwe",
     "cybersecurity Harare",
@@ -46,12 +46,12 @@ export const metadata: Metadata = {
     locale: "en_ZW",
     url: SITE_URL,
     siteName: "Vanorika Technologies",
-    title: "Vanorika Technologies | Enterprise Security & Web Development — Zimbabwe",
+    title: "Vanorika Technologies | Enterprise Security & Web Development in Zimbabwe",
     description: "CompTIA PenTest+ certified penetration tester and web developer in Harare, Zimbabwe. Security assessments and professional websites.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vanorika Technologies | Enterprise Security — Zimbabwe",
+    title: "Vanorika Technologies | Enterprise Security in Zimbabwe",
     description: "Enterprise security and web development for businesses in Zimbabwe. CompTIA certified.",
   },
   robots: { index: true, follow: true },

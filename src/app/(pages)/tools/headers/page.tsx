@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools/headers" },
   title: "Free Security Headers Checker",
   description:
-    "Check whether your website sends the right security headers — HSTS, CSP, X-Frame-Options and more. Free, passive grader from Vanorika Technologies, Harare.",
+    "Check whether your website sends the right security headers: HSTS, CSP, X-Frame-Options and more. Free, passive grader from Vanorika Technologies, Harare.",
 };
 
 export default function HeadersPage() {

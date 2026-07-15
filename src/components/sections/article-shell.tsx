@@ -21,7 +21,7 @@ export default function ArticleShell({
 }) {
   const isWhatsApp = cta.href.startsWith("http");
 
-  // Resolve this post (for share links) and pick 2 related — same category first.
+  // Resolve this post (for share links) and pick 2 related; same category first.
   const post = blogPosts.find((p) => p.title === title);
   const shareUrl = post ? `${SITE_URL}/blog/${post.slug}` : SITE_URL;
   const u = encodeURIComponent(shareUrl);

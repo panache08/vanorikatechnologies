@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools/email-security" },
   title: "Free Email Security Checker (SPF / DMARC)",
   description:
-    "Check whether your domain is protected against email spoofing — SPF, DMARC, and MX records analysed in seconds. A free tool from Vanorika Technologies, Harare. No login.",
+    "Check whether your domain is protected against email spoofing, with SPF, DMARC, and MX records analysed in seconds. A free tool from Vanorika Technologies, Harare. No login.",
 };
 
 export default function EmailSecurityPage() {

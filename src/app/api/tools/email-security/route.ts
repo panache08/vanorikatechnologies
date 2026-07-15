@@ -30,7 +30,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Enter a valid domain, e.g. yourbusiness.co.zw" }, { status: 400 });
   }
 
-  // All three lookups are public DNS records — no key, no intrusion.
+  // All three lookups are public DNS records: no key, no intrusion.
   const txt = await withTimeout(dns.resolveTxt(domain), 8000, [] as string[][]);
   const dmarcTxt = await withTimeout(dns.resolveTxt(`_dmarc.${domain}`), 8000, [] as string[][]);
   const mxRecs = await withTimeout(dns.resolveMx(domain), 8000, [] as { priority: number; exchange: string }[]);

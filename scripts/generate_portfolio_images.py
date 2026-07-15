@@ -2,7 +2,7 @@
 
 - Crops the real Beauty by Nyasha live screenshot to its title band (elegant, real).
 - Generates clean branded report-cover PNGs for the security engagements
-  (GlowTrack, Pearlsard) — professional covers, not error-state SVG fallbacks.
+  (GlowTrack, Pearlsard): professional covers, not error-state SVG fallbacks.
 
 Run: python scripts/generate_portfolio_images.py
 """

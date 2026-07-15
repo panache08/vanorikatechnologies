@@ -13,7 +13,7 @@ export default function ClinicPage() {
     "How to stop attackers spoofing email from your domain",
     "Data Protection Act (2021): what you actually have to do",
     "Spotting phishing before your staff click it",
-    "What a penetration test is — and when you need one",
+    "What a penetration test is, and when you need one",
   ];
 
   return (
@@ -26,7 +26,7 @@ export default function ClinicPage() {
             <GraduationCap className="w-3.5 h-3.5" /> FREE CLINIC
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Free Cybersecurity Clinic for Zimbabwe SMEs</h1>
-          <p className="text-white/60 text-lg">A free, no-jargon online session on protecting your business online — practical, local, and built for owners, not engineers.</p>
+          <p className="text-white/60 text-lg">A free, no-jargon online session on protecting your business online. Practical, local, and built for owners, not engineers.</p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-7 text-white/50 text-sm">
             <span className="inline-flex items-center gap-2"><Clock className="w-4 h-4 text-gold" /> 30 minutes</span>
             <span className="inline-flex items-center gap-2"><Video className="w-4 h-4 text-gold" /> Online</span>
@@ -53,7 +53,7 @@ export default function ClinicPage() {
             <CalendarClock className="w-9 h-9 text-gold mx-auto mb-4" />
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Join the next session</h2>
             <p className="text-muted-foreground text-sm leading-relaxed mb-7 max-w-md mx-auto">
-              We run these regularly. Join the waitlist and we&apos;ll message you the next date — or book a private 1-on-1 session now.
+              We run these regularly. Join the waitlist and we&apos;ll message you the next date, or book a private 1-on-1 session now.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <a href={`https://wa.me/${siteConfig.whatsapp}?text=${waitlist}`} target="_blank" rel="noopener noreferrer"

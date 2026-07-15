@@ -52,7 +52,7 @@ export default function PasswordGenerator() {
             <KeyRound className="w-3.5 h-3.5" /> FREE TOOL
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Password Generator</h1>
-          <p className="text-white/60 text-lg">Strong, random passwords and passphrases — generated privately in your browser.</p>
+          <p className="text-white/60 text-lg">Strong, random passwords and passphrases, generated privately in your browser.</p>
         </div>
       </section>
 
@@ -96,7 +96,7 @@ export default function PasswordGenerator() {
             <div className="bg-card border border-border rounded-2xl p-6">
               <div className="flex justify-between text-sm mb-2"><span className="text-muted-foreground">Number of words</span><span className="text-foreground font-mono">{words}</span></div>
               <input type="range" min={3} max={7} value={words} onChange={(e) => setWords(+e.target.value)} className="w-full accent-[#C9A84C]" />
-              <p className="text-muted-foreground text-xs mt-3">Passphrases are easier to remember and just as strong — e.g. for your master password.</p>
+              <p className="text-muted-foreground text-xs mt-3">Passphrases are easier to remember and just as strong. Use one for your master password.</p>
             </div>
           )}
 

@@ -19,9 +19,9 @@ export default function FreeToolsSection() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-4">FREE SECURITY TOOLS</span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">See what attackers see — free</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">See what attackers see, free</h2>
           <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
-            A full suite of free, passive tools for Zimbabwe businesses. No login, nothing intrusive — run them on your own site in seconds.
+            A full suite of free, passive tools for Zimbabwe businesses. No login, nothing intrusive. Run them on your own site in seconds.
           </p>
         </div>
 

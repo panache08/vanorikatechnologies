@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cost-estimator" },
   title: "Website & Project Cost Estimator",
   description:
-    "Get an instant price estimate for your website, online store, app, or custom software in Zimbabwe. Pick what you need and see a real USD range — free, no email required.",
+    "Get an instant price estimate for your website, online store, app, or custom software in Zimbabwe. Pick what you need and see a real USD range. Free, no email required.",
 };
 
 export default function CostEstimatorPage() {
@@ -25,7 +25,7 @@ export default function CostEstimatorPage() {
               <Calculator className="w-3.5 h-3.5" /> FREE ESTIMATOR
             </span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">What will your project cost?</h1>
-            <p className="text-white/60 text-lg">Pick what you need and get an instant USD estimate. No email, no sales call — just a real number to budget with.</p>
+            <p className="text-white/60 text-lg">Pick what you need and get an instant USD estimate. No email, no sales call. Just a real number to budget with.</p>
           </div>
         </div>
       </section>

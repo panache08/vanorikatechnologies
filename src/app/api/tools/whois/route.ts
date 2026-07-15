@@ -38,7 +38,7 @@ export async function POST(req: Request) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 12000);
   try {
-    // RDAP — the modern, structured replacement for WHOIS. Free, no key.
+    // RDAP: the modern, structured replacement for WHOIS. Free, no key.
     const res = await fetch(`https://rdap.org/domain/${encodeURIComponent(domain)}`, {
       signal: controller.signal,
       headers: { Accept: "application/rdap+json", "User-Agent": "VanorikaTools/1.0" },

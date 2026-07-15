@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools/password" },
   title: "Free Password Strength Checker",
   description:
-    "Test how strong your password is and how long it would take to crack — checked privately in your browser, nothing sent anywhere. A free tool from Vanorika Technologies, Harare.",
+    "Test how strong your password is and how long it would take to crack, checked privately in your browser, nothing sent anywhere. A free tool from Vanorika Technologies, Harare.",
 };
 
 export default function PasswordPage() {
@@ -24,7 +24,7 @@ export default function PasswordPage() {
             <KeyRound className="w-3.5 h-3.5" /> FREE TOOL
           </span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Password Strength Checker</h1>
-          <p className="text-white/60 text-lg">See how strong your password really is — and how fast an attacker could crack it.</p>
+          <p className="text-white/60 text-lg">See how strong your password really is, and how fast an attacker could crack it.</p>
         </div>
       </section>
 
@@ -36,7 +36,7 @@ export default function PasswordPage() {
           <div className="mt-16 max-w-2xl mx-auto bg-card border border-gold/20 rounded-3xl p-8 md:p-10 text-center">
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Weak passwords are just one way in</h2>
             <p className="text-muted-foreground leading-relaxed mb-7">
-              Most breaches we find in Harare don&apos;t start with a cracked password — they start with a missing security header or an
+              Most breaches we find in Harare don&apos;t start with a cracked password. They start with a missing security header or an
               unpatched system. Get a free passive scan of your website and see what an attacker would.
             </p>
             <Link href="/tools/security-check"

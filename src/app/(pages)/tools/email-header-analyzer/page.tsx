@@ -36,7 +36,7 @@ function analyze(raw: string): { checks: Check[]; from: string; returnPath: stri
       label: "From / Return-Path alignment",
       state: fromDomain && rpDomain ? (fromDomain === rpDomain ? "pass" : "warn") : "unknown",
       detail: fromDomain && rpDomain
-        ? (fromDomain === rpDomain ? "Visible sender matches the envelope sender." : `Mismatch: From is ${fromDomain} but Return-Path is ${rpDomain} — common in spoofing and some mailing lists.`)
+        ? (fromDomain === rpDomain ? "Visible sender matches the envelope sender." : `Mismatch: From is ${fromDomain} but Return-Path is ${rpDomain}. This is common in spoofing and some mailing lists.`)
         : "Could not determine both addresses.",
     },
   ];
@@ -92,8 +92,8 @@ export default function EmailHeaderAnalyzer() {
                 })}
               </div>
               <div className="mt-6 pt-6 border-t border-border text-sm space-y-1">
-                <p className="text-muted-foreground">From: <span className="text-foreground break-all">{result.from || "—"}</span></p>
-                <p className="text-muted-foreground">Return-Path: <span className="text-foreground break-all">{result.returnPath || "—"}</span></p>
+                <p className="text-muted-foreground">From: <span className="text-foreground break-all">{result.from || "Not found"}</span></p>
+                <p className="text-muted-foreground">Return-Path: <span className="text-foreground break-all">{result.returnPath || "Not found"}</span></p>
                 <p className="text-muted-foreground">Mail hops: <span className="text-foreground">{result.hops}</span></p>
               </div>
               <div className="mt-6 pt-6 border-t border-border flex items-start gap-3">
@@ -107,7 +107,7 @@ export default function EmailHeaderAnalyzer() {
               </div>
             </div>
           )}
-          <p className="text-muted-foreground/60 text-xs text-center mt-6">100% private — headers are analysed in your browser and never sent to a server.</p>
+          <p className="text-muted-foreground/60 text-xs text-center mt-6">100% private: headers are analysed in your browser and never sent to a server.</p>
         </div>
       </section>
       <Footer />

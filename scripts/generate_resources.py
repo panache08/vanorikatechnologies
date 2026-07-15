@@ -98,7 +98,7 @@ def build(filename, title, subtitle, blocks):
 build(
     "vanorika-website-security-checklist.pdf",
     "Zimbabwe Website Security Checklist",
-    "A practical, no-jargon checklist for any business website. Tick each item — anything left unchecked is worth fixing.",
+    "A practical, no-jargon checklist for any business website. Tick each item. Anything left unchecked is worth fixing.",
     [
         ("h2", "Transport &amp; certificates"),
         ("checklist", [
@@ -134,24 +134,24 @@ build(
 build(
     "vanorika-dpa-2021-compliance-guide.pdf",
     "DPA 2021 Compliance Guide for SMEs",
-    "A plain-English starting point for Zimbabwe's Cyber and Data Protection Act (2021). Not legal advice — a practical orientation.",
+    "A plain-English starting point for Zimbabwe's Cyber and Data Protection Act (2021). Not legal advice, just a practical orientation.",
     [
         ("h2", "What the Act expects of you"),
         ("bullets", [
-            "<b>Collect only what you need</b> — and tell people why you are collecting it.",
-            "<b>Keep it secure</b> — with appropriate technical safeguards against loss or theft.",
-            "<b>Get consent</b> — for how you use and share personal information.",
-            "<b>Allow access &amp; correction</b> — individuals can ask what you hold about them.",
-            "<b>Register where required</b> — and appoint someone responsible for data protection.",
+            "<b>Collect only what you need</b>, and tell people why you are collecting it.",
+            "<b>Keep it secure</b>, with appropriate technical safeguards against loss or theft.",
+            "<b>Get consent</b> for how you use and share personal information.",
+            "<b>Allow access &amp; correction</b>: individuals can ask what you hold about them.",
+            "<b>Register where required</b>, and appoint someone responsible for data protection.",
         ]),
         ("h2", "Who it applies to"),
-        ("p", "Almost every business that collects customer or staff data — names, phone numbers, ID numbers, payment "
-              "details. It applies regardless of how small your business is. Oversight sits with POTRAZ acting as the "
+        ("p", "Almost every business that collects customer or staff data (names, phone numbers, ID numbers, payment "
+              "details). It applies regardless of how small your business is. Oversight sits with POTRAZ acting as the "
               "Data Protection Authority."),
         ("h2", "What non-compliance can cost"),
         ("bullets", [
             "Significant fines, and for serious breaches the possibility of imprisonment for those responsible.",
-            "Reputational damage — a public breach in Zimbabwe's business community travels fast.",
+            "Reputational damage: a public breach in Zimbabwe's business community travels fast.",
             "Lost customers and potential liability to affected individuals.",
         ]),
         ("h2", "A practical first-90-days checklist"),
@@ -184,11 +184,11 @@ build(
         ]),
         ("h2", "What your score means"),
         ("bullets", [
-            "<b>7-8</b> — Strong. Worth a professional review to confirm and close edge cases.",
-            "<b>4-6</b> — Average. You have real, fixable gaps that an attacker could find.",
-            "<b>0-3</b> — Exposed. Treat this as urgent; the basics are not in place.",
+            "<b>7-8</b>: Strong. Worth a professional review to confirm and close edge cases.",
+            "<b>4-6</b>: Average. You have real, fixable gaps that an attacker could find.",
+            "<b>0-3</b>: Exposed. Treat this as urgent; the basics are not in place.",
         ]),
-        ("p", "Wherever you landed, the fastest way to know for certain is a free passive assessment — we check from the "
+        ("p", "Wherever you landed, the fastest way to know for certain is a free passive assessment: we check from the "
               "outside, without touching your live site, and tell you exactly what to fix first."),
         ("cta",),
     ],

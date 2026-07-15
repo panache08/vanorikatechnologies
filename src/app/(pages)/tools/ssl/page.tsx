@@ -7,7 +7,7 @@ import { Lock } from "lucide-react";
 export const metadata: Metadata = {
   alternates: { canonical: "/tools/ssl" },
   title: "SSL Certificate Checker",
-  description: "Check any website's SSL certificate — expiry date, issuer, and coverage. Free, passive, no login.",
+  description: "Check any website's SSL certificate: expiry date, issuer, and coverage. Free, passive, no login.",
 };
 
 export default function SslCheckPage() {
@@ -21,7 +21,7 @@ export default function SslCheckPage() {
             <Lock className="w-3.5 h-3.5" /> FREE TOOL
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">SSL Certificate Checker</h1>
-          <p className="text-white/60 text-lg">See when a certificate expires, who issued it, and what it covers — before it lapses.</p>
+          <p className="text-white/60 text-lg">See when a certificate expires, who issued it, and what it covers. All before it lapses.</p>
         </div>
       </section>
       <section className="py-16 bg-background">

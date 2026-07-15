@@ -13,7 +13,7 @@ export default function Testimonials() {
         <SectionHeader
           label="Our Guarantee"
           title="We Stand Behind Our Work"
-          subtitle="Every engagement is backed by a clear commitment — if we miss something in scope, we re-test at no charge."
+          subtitle="Every engagement is backed by a clear commitment: if we miss something in scope, we re-test at no charge."
           centered
         />
 
@@ -32,7 +32,7 @@ export default function Testimonials() {
             <div>
               <h3 className="font-display font-bold text-white text-lg mb-2">Free Re-Test Guarantee</h3>
               <p className="text-white/45 text-sm leading-relaxed font-light">
-                If a vulnerability we documented resurfaces after remediation — or if we missed something clearly in scope — we come back. No questions, no invoice.
+                If a vulnerability we documented resurfaces after remediation, or if we missed something clearly in scope, we come back. No questions, no invoice.
               </p>
             </div>
             <p className="font-mono text-[10px] text-gold/50 uppercase tracking-wider mt-auto">
@@ -56,7 +56,7 @@ export default function Testimonials() {
                 GlowTrack Auctions Security Assessment
               </h3>
               <p className="text-white/40 text-sm leading-relaxed font-light mb-6">
-                A full web application penetration test for a Harare-based auction platform — uncovering critical auth bypasses and data exposure before launch.
+                A full web application penetration test for a Harare-based auction platform, uncovering critical auth bypasses and data exposure before launch.
               </p>
               <div className="flex items-center gap-1.5 font-mono text-[11px] text-gold/50 group-hover:text-gold/80 transition-colors uppercase tracking-wider">
                 Read full case study

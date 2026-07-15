@@ -10,9 +10,9 @@ import { siteConfig, zenvora } from "@/lib/data";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/casino" },
-  title: "Casino Technology & Security — Vanorika",
+  title: "Casino Technology & Security | Vanorika",
   description:
-    "The only technology partner built for Zimbabwe's casino industry — Zenvora Casino Suite with ZIMRA gaming-levy automation, plus casino security audits and penetration testing.",
+    "The only technology partner built for Zimbabwe's casino industry: Zenvora Casino Suite with ZIMRA gaming-levy automation, plus casino security audits and penetration testing.",
 };
 
 const suiteFeatures = [
@@ -46,7 +46,7 @@ export default function CasinoPage() {
             The Only Technology Partner Built for <span className="text-gradient-gold">Zimbabwe&apos;s Casino Industry</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10">
-            Gaming-levy compliance, dual-currency operations, and security testing — from a CompTIA PenTest+ certified
+            Gaming-levy compliance, dual-currency operations, and security testing, from a CompTIA PenTest+ certified
             partner who understands ZIMRA and the Data Protection Act.
           </p>
           <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
@@ -67,7 +67,7 @@ export default function CasinoPage() {
               </div>
               <h2 className="font-display text-2xl font-bold text-foreground mb-2">Zenvora Casino Suite</h2>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                A full ERP built for gaming venues — running your floor, cashier and compliance in one system, with ZIMRA
+                A full ERP built for gaming venues, running your floor, cashier and compliance in one system, with ZIMRA
                 gaming-levy automation handled for you.
               </p>
               <ul className="space-y-3 mb-8 flex-1">
@@ -95,7 +95,7 @@ export default function CasinoPage() {
               </div>
               <h2 className="font-display text-2xl font-bold text-foreground mb-2">Casino Security Audits</h2>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Cash-heavy, compliance-bound and heavily targeted — casinos need real testing. We probe your systems the way
+                Cash-heavy, compliance-bound and heavily targeted, casinos need real testing. We probe your systems the way
                 an attacker would and hand you a fix-it roadmap.
               </p>
               <ul className="space-y-3 mb-8 flex-1">
@@ -123,7 +123,7 @@ export default function CasinoPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: Scale, title: "ZIMRA Compliance Risk", desc: "Gaming-levy and tax obligations are strict. Manual reconciliation invites costly errors and penalties." },
-              { icon: ShieldCheck, title: "Data Protection Duty", desc: "You hold player identities and payment data — the Data Protection Act (2021) applies in full." },
+              { icon: ShieldCheck, title: "Data Protection Duty", desc: "You hold player identities and payment data, so the Data Protection Act (2021) applies in full." },
               { icon: TrendingDown, title: "Reputational Risk", desc: "A breach or a public compliance failure in gaming travels fast and erodes player trust overnight." },
             ].map((c) => (
               <div key={c.title} className="bg-card border border-border rounded-2xl p-7">
@@ -150,7 +150,7 @@ export default function CasinoPage() {
             Built for venues like Rainbow Towers, Carribea Bay Resort, and other licensed casinos and gaming operators
             across Zimbabwe.
           </p>
-          <p className="text-white/30 text-sm mb-10">Direct line to Donovan — no account managers, no middlemen.</p>
+          <p className="text-white/30 text-sm mb-10">Direct line to Donovan. No account managers, no middlemen.</p>
           <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-4 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all gold-glow text-sm uppercase tracking-wider">
             <MessageCircle className="w-4 h-4" /> WhatsApp Us

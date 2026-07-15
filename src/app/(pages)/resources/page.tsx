@@ -8,26 +8,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/resources" },
   title: "Free Resources",
   description:
-    "Free branded PDFs for Zimbabwe businesses — a website security checklist, a Data Protection Act 2021 compliance guide for SMEs, and a self-assessment.",
+    "Free branded PDFs for Zimbabwe businesses: a website security checklist, a Data Protection Act 2021 compliance guide for SMEs, and a self-assessment.",
 };
 
 const resources = [
   {
     icon: ShieldCheck,
     title: "Zimbabwe Website Security Checklist",
-    desc: "A no-jargon checklist covering SSL, security headers, software updates, and data handling. Tick each item — anything unchecked is worth fixing.",
+    desc: "A no-jargon checklist covering SSL, security headers, software updates, and data handling. Tick each item. Anything unchecked is worth fixing.",
     file: "/resources/vanorika-website-security-checklist.pdf",
   },
   {
     icon: FileText,
     title: "DPA 2021 Compliance Guide for SMEs",
-    desc: "A plain-English starting point for Zimbabwe's Cyber and Data Protection Act — what it requires, what non-compliance costs, and a first-90-days checklist.",
+    desc: "A plain-English starting point for Zimbabwe's Cyber and Data Protection Act: what it requires, what non-compliance costs, and a first-90-days checklist.",
     file: "/resources/vanorika-dpa-2021-compliance-guide.pdf",
   },
   {
     icon: ClipboardCheck,
     title: "“Is My Website Secure?” Self-Assessment",
-    desc: "Score yourself in two minutes. Eight honest questions that tell you how exposed your website is right now — and what to do about it.",
+    desc: "Score yourself in two minutes. Eight honest questions that tell you how exposed your website is right now, and what to do about it.",
     file: "/resources/vanorika-is-my-website-secure-self-assessment.pdf",
   },
 ];
@@ -41,7 +41,7 @@ export default function ResourcesPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-6">FREE DOWNLOADS</span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Resources</h1>
-          <p className="text-white/60 text-lg">Practical, branded guides for Zimbabwe businesses. Free to download and share — no email required.</p>
+          <p className="text-white/60 text-lg">Practical, branded guides for Zimbabwe businesses. Free to download and share, no email required.</p>
         </div>
       </section>
 

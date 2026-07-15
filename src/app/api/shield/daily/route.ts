@@ -20,7 +20,7 @@ function alertEmail(siteName: string, host: string, alerts: string[]): string {
       <div style="color:#fff;font-size:20px;font-weight:800">VANORIKA <span style="color:#C9A84C;font-size:12px;letter-spacing:2px">SHIELD</span></div>
     </div>
     <div style="padding:28px">
-      <h2 style="margin:0 0 6px">Security alert — ${siteName}</h2>
+      <h2 style="margin:0 0 6px">Security alert: ${siteName}</h2>
       <p style="color:#666;margin:0 0 20px">${host}</p>
       <ul style="padding-left:18px;line-height:1.7">
         ${alerts.map((a) => `<li>${a}</li>`).join("")}
@@ -57,7 +57,7 @@ export async function GET(req: Request) {
     if (alerts.length && site.notify.length) {
       const r = await sendEmail({
         to: site.notify,
-        subject: `Vanorika Shield alert — ${site.name}`,
+        subject: `Vanorika Shield alert: ${site.name}`,
         html: alertEmail(site.name, site.host, alerts),
       });
       emailed = r.ok;

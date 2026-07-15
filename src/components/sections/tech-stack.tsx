@@ -30,7 +30,7 @@ export default function TechStack() {
         <SectionHeader
           label="Tech Stack"
           title="Technologies We Work With"
-          subtitle="Modern, production-proven tools — chosen for performance, security, and developer experience."
+          subtitle="Modern, production-proven tools: chosen for performance, security, and developer experience."
           centered
         />
 

@@ -74,18 +74,18 @@ export default function HomeScanner() {
               ))}
             </ul>
             <LeadCaptureModal
-              source={`Homepage scanner (${result.host} — ${result.score}%)`}
+              source={`Homepage scanner (${result.host}: ${result.score}%)`}
               label={result.score < 75 ? "Get a quote to fix these" : "Want a full audit? Get yours free"}
               icon={<ArrowRight className="w-4 h-4 order-last" />}
               whatsappMessage={leadMessage}
-              heading="Get your fixes — fast"
+              heading="Get your fixes, fast"
               subheading="Leave your name and contact and we'll come back with exactly what to fix and a quote. We'll open WhatsApp now so you can send your results straight over."
               className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm uppercase tracking-wider"
             />
           </div>
         )}
         {!result && !loading && (
-          <p className="text-white/30 text-xs mt-5">We only read public information — no port scanning, no exploitation.</p>
+          <p className="text-white/30 text-xs mt-5">We only read public information: no port scanning, no exploitation.</p>
         )}
       </div>
     </section>

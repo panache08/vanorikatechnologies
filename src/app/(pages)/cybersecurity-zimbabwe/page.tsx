@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cybersecurity-zimbabwe" },
   title: "Cybersecurity for Zimbabwe Businesses: The Complete Guide",
   description:
-    "Everything a Zimbabwean business needs to know about cybersecurity — website security, penetration testing, the Data Protection Act, breach response, and free tools. A practical guide from Vanorika Technologies, Harare.",
+    "Everything a Zimbabwean business needs to know about cybersecurity: website security, penetration testing, the Data Protection Act, breach response, and free tools. A practical guide from Vanorika Technologies, Harare.",
 };
 
 const sections = [
   {
     heading: "1. Securing your website",
-    body: "Most Harare business websites have fixable vulnerabilities the owner never sees — missing security headers, weak password resets, outdated software. This is where most real-world attacks start.",
+    body: "Most Harare business websites have fixable vulnerabilities the owner never sees: missing security headers, weak password resets, outdated software. This is where most real-world attacks start.",
     links: [
       { label: "Is your website actually secure in 2026?", href: "/blog/zimbabwe-website-security-2026" },
       { label: "Run a free security check", href: "/tools/security-check" },
@@ -25,7 +25,7 @@ const sections = [
   },
   {
     heading: "2. Penetration testing",
-    body: "A penetration test is hiring someone to break into your systems — with permission — so you find the holes before a criminal does. Here's what it involves and what it costs locally.",
+    body: "A penetration test is hiring someone to break into your systems (with permission) so you find the holes before a criminal does. Here's what it involves and what it costs locally.",
     links: [
       { label: "What is penetration testing?", href: "/blog/what-is-penetration-testing-zimbabwe" },
       { label: "How much does a pentest cost in Zimbabwe?", href: "/blog/how-much-penetration-test-cost-zimbabwe" },
@@ -34,7 +34,7 @@ const sections = [
   },
   {
     heading: "3. The Data Protection Act",
-    body: "Zimbabwe's Data Protection Act is in force and the regulator is active. If you collect customer data — almost every business does — you have obligations. Getting compliant is mostly practical housekeeping.",
+    body: "Zimbabwe's Data Protection Act is in force and the regulator is active. Almost every business collects customer data, and if you do, you have obligations. Getting compliant is mostly practical housekeeping.",
     links: [
       { label: "The Data Protection Act 2021 explained", href: "/blog/zimbabwe-data-protection-act-2021" },
       { label: "DPA compliance checklist", href: "/blog/data-protection-act-compliance-checklist-zimbabwe" },
@@ -44,12 +44,12 @@ const sections = [
     heading: "4. When things go wrong",
     body: "If you discover you've been hacked, the first hour matters more than the panic. A calm, ordered response limits the damage and keeps you on the right side of the law.",
     links: [
-      { label: "Your website just got hacked — what to do", href: "/blog/website-hacked-what-to-do-zimbabwe" },
+      { label: "Your website just got hacked: what to do", href: "/blog/website-hacked-what-to-do-zimbabwe" },
     ],
   },
   {
     heading: "5. Email & domain security",
-    body: "Attackers don't only target your website — they impersonate your email and register lookalike domains to phish your customers. SPF, DMARC, and domain monitoring close those gaps.",
+    body: "Attackers don't only target your website. They impersonate your email and register lookalike domains to phish your customers. SPF, DMARC, and domain monitoring close those gaps.",
     links: [
       { label: "Check your email security (SPF/DMARC)", href: "/tools/email-security" },
       { label: "Find lookalike domains impersonating you", href: "/tools/lookalike" },
@@ -72,7 +72,7 @@ export default function CybersecurityGuidePage() {
             </span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">Cybersecurity for Zimbabwe Businesses</h1>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
-              A practical, jargon-free guide to protecting your business online — from securing your website to meeting the Data Protection Act. Everything in one place.
+              A practical, jargon-free guide to protecting your business online, from securing your website to meeting the Data Protection Act. Everything in one place.
             </p>
           </div>
         </div>

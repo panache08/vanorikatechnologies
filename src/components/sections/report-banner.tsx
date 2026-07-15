@@ -13,10 +13,10 @@ export default function ReportBanner() {
                 <FileText className="w-3 h-3" /> FREE · INSTANT · BRANDED PDF
               </span>
               <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
-                Get a complete security report on your website — <span className="text-gold">free</span>.
+                Get a complete security report on your website, <span className="text-gold">free</span>.
               </h2>
               <p className="text-white/55 text-sm max-w-xl mb-5">
-                Enter your domain and we check it the way an attacker first would — SSL, security headers, email spoofing,
+                Enter your domain and we check it the way an attacker first would: SSL, security headers, email spoofing,
                 and Data Protection Act 2021 exposure. See your grade instantly, get the full 5-page PDF.
               </p>
               <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
@@ -32,7 +32,7 @@ export default function ReportBanner() {
                 href="/report"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-gold text-black font-bold hover:bg-gold-light transition-colors whitespace-nowrap gold-glow-sm"
               >
-                Scan my site — get the report <ArrowRight className="w-4 h-4" />
+                Scan my site, get the report <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/compare" className="text-center text-xs text-white/50 hover:text-gold transition-colors">
                 or compare against a competitor →

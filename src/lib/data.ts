@@ -1,6 +1,6 @@
 // Single source of truth for the canonical site URL. Set NEXT_PUBLIC_SITE_URL in
 // the environment (e.g. to https://vanorikatechnologies.co.zw once the domain is
-// live); every SEO surface — metadata, sitemap, robots, JSON-LD — reads from here.
+// live); every SEO surface (metadata, sitemap, robots, JSON-LD) reads from here.
 // NOTE: this module also exports `process` (the process-steps array below), which
 // shadows Node's global `process` in this file's scope. Read env via globalThis.
 export const SITE_URL =
@@ -20,7 +20,7 @@ export const siteConfig = {
   whatsappUrl: "https://wa.me/263776902542?text=Hello!%20I'd%20like%20to%20discuss%20a%20project%20with%20Vanorika%20Technologies.",
   email: "donovanmudarikwa@vanorikatechnologies.co.zw",
   website: "vanorikatechnologies.co.zw",
-  hours: "Mon – Fri: 8:00 AM – 6:00 PM | Sat: 9:00 AM – 2:00 PM",
+  hours: "Mon to Fri: 8:00 AM to 6:00 PM | Sat: 9:00 AM to 2:00 PM",
   social: {
     linkedin: "https://www.linkedin.com/in/donovan-panashe-mudarikwa",
     instagram: "https://instagram.com/vanorikatechnologies",
@@ -53,8 +53,8 @@ export const services = [
     id: "cybersecurity",
     icon: "Shield",
     title: "Cybersecurity & Penetration Testing",
-    shortDesc: "We find what attackers would find — before they do.",
-    description: "We test your website and systems the way an attacker would — then give you a plain-English report with exactly what needs fixing. Free initial scan available.",
+    shortDesc: "We find what attackers would find, before they do.",
+    description: "We test your website and systems the way an attacker would, then give you a plain-English report with exactly what needs fixing. Free initial scan available.",
     features: ["Penetration Testing", "Vulnerability Assessment", "Security Audit", "Written Remediation Report", "Phishing Simulation", "Network Scanning"],
     color: "from-red-500 to-orange-500",
     href: "/services#cybersecurity",
@@ -63,8 +63,8 @@ export const services = [
     id: "web-development",
     icon: "Globe",
     title: "Website Development",
-    shortDesc: "A website that works — not just one that looks good in a browser.",
-    description: "Professional websites built in 1–2 weeks. Mobile-ready, fast-loading, and set up to get you enquiries — not just compliments.",
+    shortDesc: "A website that works, not just one that looks good in a browser.",
+    description: "Professional websites built in 1 to 2 weeks. Mobile-ready, fast-loading, and set up to get you enquiries, not just compliments.",
     features: ["Business Websites", "E-Commerce", "Landing Pages", "SEO Setup", "CMS Integration", "Mobile-Responsive"],
     color: "from-blue-600 to-cyan-500",
     href: "/services#web-development",
@@ -84,7 +84,7 @@ export const services = [
     icon: "Smartphone",
     title: "Mobile Applications",
     shortDesc: "Android and cross-platform apps built with React Native.",
-    description: "Android and cross-platform apps built with React Native. We handle design, development and deployment — you get the finished product.",
+    description: "Android and cross-platform apps built with React Native. We handle design, development and deployment. You get the finished product.",
     features: ["Android Apps", "iOS Apps", "React Native", "App Store Deployment", "Push Notifications", "Offline Support"],
     color: "from-cyan-500 to-teal-500",
     href: "/services#mobile-apps",
@@ -106,9 +106,9 @@ export const portfolio = [
     id: "1",
     title: "Beauty by Nyasha",
     category: "Web Dev + Security",
-    description: "Full luxury salon website with online booking, product pages, treatment quiz, routine builder, and newsletter — built on Next.js and Supabase, then hardened. 8 security findings identified and resolved before launch.",
+    description: "Full luxury salon website with online booking, product pages, treatment quiz, routine builder, and newsletter. Built on Next.js and Supabase, then hardened. 8 security findings identified and resolved before launch.",
     tech: ["Next.js", "Supabase", "EmailJS", "Tailwind CSS"],
-    result: "Live with booking, email automation, 6 DB tables — and 8 security findings resolved",
+    result: "Live with booking, email automation, 6 DB tables, and 8 security findings resolved",
     image: "/portfolio/beauty-by-nyasha.png",
     color: "from-pink-500 to-rose-500",
     url: "https://beauty-by-nyasha.vercel.app",
@@ -117,7 +117,7 @@ export const portfolio = [
     id: "2",
     title: "GlowTrack Auctions",
     category: "Security Audit",
-    description: "Web application security audit for a Harare-based auction platform. 6 vulnerabilities found — including one critical auth bypass — and a written remediation report delivered before launch.",
+    description: "Web application security audit for a Harare-based auction platform. 6 vulnerabilities found (including one critical auth bypass) and a written remediation report delivered before launch.",
     tech: ["Penetration Testing", "Web Security", "Vulnerability Assessment", "Written Report"],
     result: "Critical auth bypass patched before public launch",
     image: "/portfolio/glowtrack-auctions.png",
@@ -127,7 +127,7 @@ export const portfolio = [
     id: "3",
     title: "Enterpro Pvt Ltd",
     category: "Security Audit",
-    description: "Security assessment for a Zimbabwe SME — vulnerability scan of public-facing systems with a plain-English written remediation report, findings ranked by business risk.",
+    description: "Security assessment for a Zimbabwe SME: vulnerability scan of public-facing systems with a plain-English written remediation report, findings ranked by business risk.",
     tech: ["Vulnerability Assessment", "Security Audit", "Written Report", "Risk Ranking"],
     result: "Written remediation report delivered, high-severity issues resolved",
     image: "/portfolio/enterpro.png",
@@ -137,9 +137,9 @@ export const portfolio = [
     id: "4",
     title: "Pearlsard Travel Services",
     category: "Passive Assessment",
-    description: "Passive security assessment across two domains for a Harare travel agency. 10 findings — including a live server error that broke their Instagram bio link and was costing them active leads daily. Delivered as a branded PDF report.",
+    description: "Passive security assessment across two domains for a Harare travel agency. 10 findings, including a live server error that broke their Instagram bio link and was costing them active leads daily. Delivered as a branded PDF report.",
     tech: ["Passive Assessment", "OSINT", "Reconnaissance", "Branded PDF Report"],
-    result: "10 findings across 2 domains — found a broken Instagram bio link losing daily leads",
+    result: "10 findings across 2 domains, including a broken Instagram bio link losing daily leads",
     image: "/portfolio/pearlsard-travel.png",
     color: "from-blue-600 to-cyan-500",
   },
@@ -150,7 +150,7 @@ export const zenvora = {
   tagline: "Africa's First AI-Powered ERP",
   demoUrl: "https://zenvora.vercel.app",
   intro:
-    "Zenvora is an all-in-one business operating system built for the realities of running a company in Zimbabwe and across Africa. It unifies accounting, invoicing, HR, CRM and a dedicated casino suite under one roof — with an AI Copilot that does the busywork for you.",
+    "Zenvora is an all-in-one business operating system built for the realities of running a company in Zimbabwe and across Africa. It unifies accounting, invoicing, HR, CRM and a dedicated casino suite under one roof, with an AI Copilot that does the busywork for you.",
   modules: [
     { icon: "Calculator", title: "Accounting", desc: "Double-entry ledger, financial statements, and real-time dashboards." },
     { icon: "FileText", title: "Invoicing", desc: "USD/ZWG invoices, quotes, and receipts with EcoCash and bank payment tracking." },
@@ -160,7 +160,7 @@ export const zenvora = {
     { icon: "Network", title: "Partner Console", desc: "Manage resellers, multi-branch operations, and white-label clients from one place." },
   ],
   differentiators: [
-    { icon: "Coins", title: "USD / ZWG Dual Currency", desc: "Every transaction tracked in both currencies with live rate handling — built for Zimbabwe's multi-currency economy." },
+    { icon: "Coins", title: "USD / ZWG Dual Currency", desc: "Every transaction tracked in both currencies with live rate handling, built for Zimbabwe's multi-currency economy." },
     { icon: "ShieldCheck", title: "ZIMRA Compliance", desc: "Fiscalisation-ready invoicing and tax reporting aligned with ZIMRA requirements." },
     { icon: "Smartphone", title: "EcoCash & Mobile Money", desc: "Reconcile EcoCash, OneMoney and bank payments without leaving the system." },
     { icon: "Sparkles", title: "AI Copilot", desc: "Ask questions in plain English, auto-categorise transactions, and generate reports instantly." },
@@ -178,7 +178,7 @@ export const zenvora = {
       name: "Enterprise",
       price: "$99",
       period: "per month",
-      desc: "For larger operations — full ERP with HR, payroll, advanced CRM and priority support.",
+      desc: "For larger operations: full ERP with HR, payroll, advanced CRM and priority support.",
       features: ["Everything in SME", "HR & payroll", "Unlimited users", "Advanced CRM pipelines", "ZIMRA reporting", "AI Copilot (advanced)", "Priority support"],
       highlight: true,
     },
@@ -186,7 +186,7 @@ export const zenvora = {
       name: "Casino Suite",
       price: "$200",
       period: "per month",
-      desc: "For licensed casinos — floor, cashier, ZIMRA gaming-levy automation and compliance built in.",
+      desc: "For licensed casinos: floor, cashier, ZIMRA gaming-levy automation and compliance built in.",
       features: ["Everything in Enterprise", "Casino floor management", "Cashier & player tracking", "Compliance reporting", "Dedicated onboarding", "SLA support"],
       highlight: false,
     },
@@ -197,16 +197,16 @@ export const testimonials = [
   {
     id: "1",
     name: "T.M.",
-    role: "Director, GlowTrack Auctions — Harare",
-    content: "Donovan found vulnerabilities in our platform we didn't know existed and fixed them before we went live. The new site is faster, cleaner, and we actually feel confident about security now. Straight-talking, no jargon — exactly what we needed.",
+    role: "Director, GlowTrack Auctions, Harare",
+    content: "Donovan found vulnerabilities in our platform we didn't know existed and fixed them before we went live. The new site is faster, cleaner, and we actually feel confident about security now. Straight-talking, no jargon. Exactly what we needed.",
     rating: 5,
     avatar: "TM",
   },
   {
     id: "2",
     name: "K.D.",
-    role: "Owner, Enterpro — Harare",
-    content: "The cybersecurity report was thorough and written in plain English, not tech gibberish. He walked us through every finding and helped us fix the serious ones the same week. Worth every cent — I sleep better knowing our systems are locked down.",
+    role: "Owner, Enterpro, Harare",
+    content: "The cybersecurity report was thorough and written in plain English, not tech gibberish. He walked us through every finding and helped us fix the serious ones the same week. Worth every cent. I sleep better knowing our systems are locked down.",
     rating: 5,
     avatar: "KD",
   },
@@ -309,7 +309,7 @@ export const blogPosts = [
   {
     id: "6",
     title: "Should Your Zimbabwe Business Use .co.zw or .com?",
-    excerpt: "The domain you choose shapes how local customers trust you and how you rank. Here's an honest comparison of .co.zw vs .com for a Zimbabwean business — and when to buy both.",
+    excerpt: "The domain you choose shapes how local customers trust you and how you rank. Here's an honest comparison of .co.zw vs .com for a Zimbabwean business, and when to buy both.",
     category: "Web Development",
     date: "2026-06-28",
     readTime: "6 min read",
@@ -318,8 +318,8 @@ export const blogPosts = [
   },
   {
     id: "7",
-    title: "Your Website Just Got Hacked — Here's What to Do",
-    excerpt: "A calm, step-by-step plan for the first hour after you discover your Zimbabwe business website has been compromised — what to do, what not to do, and how to come back stronger.",
+    title: "Your Website Just Got Hacked: Here's What to Do",
+    excerpt: "A calm, step-by-step plan for the first hour after you discover your Zimbabwe business website has been compromised: what to do, what not to do, and how to come back stronger.",
     category: "Cybersecurity",
     date: "2026-06-28",
     readTime: "7 min read",
@@ -329,7 +329,7 @@ export const blogPosts = [
   {
     id: "8",
     title: "Data Protection Act Compliance: A Checklist for Zimbabwe Businesses",
-    excerpt: "A practical, plain-English checklist to get your business compliant with Zimbabwe's Data Protection Act — what to do, in what order, without needing a lawyer to start.",
+    excerpt: "A practical, plain-English checklist to get your business compliant with Zimbabwe's Data Protection Act: what to do, in what order, without needing a lawyer to start.",
     category: "Compliance",
     date: "2026-06-28",
     readTime: "7 min read",
@@ -339,7 +339,7 @@ export const blogPosts = [
   {
     id: "5",
     title: "How Much Does a Penetration Test Cost in Zimbabwe in 2026?",
-    excerpt: "Real pricing for a penetration test in Zimbabwe — typical price bands, what actually drives the cost, and how to spot a $200 'pentest' that's really just an automated scan.",
+    excerpt: "Real pricing for a penetration test in Zimbabwe: typical price bands, what actually drives the cost, and how to spot a $200 'pentest' that's really just an automated scan.",
     category: "Cybersecurity",
     date: "2026-06-28",
     readTime: "7 min read",
@@ -349,7 +349,7 @@ export const blogPosts = [
   {
     id: "4",
     title: "How Much Does a Website Cost in Zimbabwe in 2026?",
-    excerpt: "Straight pricing for a business website in Zimbabwe — what's fair, what's overpriced, and the hidden costs (domain, hosting, payment integration) nobody mentions until the invoice lands.",
+    excerpt: "Straight pricing for a business website in Zimbabwe: what's fair, what's overpriced, and the hidden costs (domain, hosting, payment integration) nobody mentions until the invoice lands.",
     category: "Web Development",
     date: "2026-06-28",
     readTime: "8 min read",
@@ -359,7 +359,7 @@ export const blogPosts = [
   {
     id: "1",
     title: "Is Your Zimbabwe Business Website Actually Secure in 2026?",
-    excerpt: "Most Harare business websites have at least 3 fixable vulnerabilities. Here's what's quietly leaving your site — and your customers — exposed.",
+    excerpt: "Most Harare business websites have at least 3 fixable vulnerabilities. Here's what's quietly leaving your site, and your customers, exposed.",
     category: "Cybersecurity",
     date: "2026-06-24",
     readTime: "6 min read",
@@ -369,7 +369,7 @@ export const blogPosts = [
   {
     id: "2",
     title: "What Is Penetration Testing and Does Your Business Need It?",
-    excerpt: "A plain-English guide to pentesting — what it is, who needs it, and what a real report actually looks like.",
+    excerpt: "A plain-English guide to pentesting: what it is, who needs it, and what a real report actually looks like.",
     category: "Cybersecurity",
     date: "2026-06-24",
     readTime: "7 min read",
@@ -378,7 +378,7 @@ export const blogPosts = [
   },
   {
     id: "3",
-    title: "Zimbabwe's Data Protection Act 2021 — What Your Business Must Do Now",
+    title: "Zimbabwe's Data Protection Act 2021: What Your Business Must Do Now",
     excerpt: "The law is in force and the regulator is active. Here's what the Data Protection Act requires, the penalties for ignoring it, and how an audit gets you compliant.",
     category: "Compliance",
     date: "2026-06-24",
@@ -389,7 +389,7 @@ export const blogPosts = [
   {
     id: "4",
     title: "How Much Should a Website Cost in Zimbabwe in 2026?",
-    excerpt: "Quotes range from $50 to $5,000 for what sounds like the same thing. Here's what actually drives the price — and what you should expect to pay.",
+    excerpt: "Quotes range from $50 to $5,000 for what sounds like the same thing. Here's what actually drives the price, and what you should expect to pay.",
     category: "Web Development",
     date: "2026-06-30",
     readTime: "6 min read",
@@ -399,7 +399,7 @@ export const blogPosts = [
   {
     id: "5",
     title: "5 Security Mistakes Every Harare Business Makes",
-    excerpt: "After assessing 17+ local businesses, the same handful of gaps come up again and again. Here they are — and how to fix each one.",
+    excerpt: "After assessing 17+ local businesses, the same handful of gaps come up again and again. Here they are, and how to fix each one.",
     category: "Cybersecurity",
     date: "2026-06-30",
     readTime: "6 min read",
@@ -409,7 +409,7 @@ export const blogPosts = [
   {
     id: "6",
     title: "Is Your WordPress Site a Sitting Duck?",
-    excerpt: "Most Zimbabwean business sites run WordPress — and most of them are dangerously out of date. Here's why that matters and what to do about it.",
+    excerpt: "Most Zimbabwean business sites run WordPress, and most of them are dangerously out of date. Here's why that matters and what to do about it.",
     category: "Cybersecurity",
     date: "2026-06-30",
     readTime: "5 min read",
@@ -419,14 +419,14 @@ export const blogPosts = [
 ];
 
 export const faqs = [
-  { q: "How long does it take to build a website?", a: "A standard business website takes 1–2 weeks. Custom web applications take 4–12 weeks depending on complexity. We always provide a detailed timeline before starting." },
+  { q: "How long does it take to build a website?", a: "A standard business website takes 1 to 2 weeks. Custom web applications take 4 to 12 weeks depending on complexity. We always provide a detailed timeline before starting." },
   { q: "What is included in your website packages?", a: "All packages include design, development, mobile responsiveness, basic SEO, contact forms, and deployment. Higher packages include CMS, e-commerce, and more. See our Pricing page for details." },
   { q: "Do I own my website after it's built?", a: "Yes, 100%. You own all code, design files, content, and domains. We hand over everything upon project completion." },
   { q: "What are your payment terms?", a: "We typically require 50% upfront and 50% upon completion. For larger projects, we can arrange milestone-based payments." },
   { q: "Can you work with clients outside Zimbabwe?", a: "Absolutely. We work with clients across Africa and internationally. We use Zoom, Teams, and WhatsApp for communication and accept international payments." },
   { q: "Do you provide ongoing support after launch?", a: "Yes. All packages include free support periods. We also offer monthly maintenance retainers for ongoing updates, security patches, and technical support." },
-  { q: "Do you offer cybersecurity services for small businesses?", a: "Yes. Most of our security clients are small and medium businesses in Harare. You don't need to be a large company to get hacked — and you don't need a large budget to get a proper assessment." },
-  { q: "What happens after a security audit?", a: "You get a written report listing every issue found, how serious each one is, and what to do about it. We can fix the issues ourselves or hand the report to your existing developer — your choice." },
+  { q: "Do you offer cybersecurity services for small businesses?", a: "Yes. Most of our security clients are small and medium businesses in Harare. You don't need to be a large company to get hacked, and you don't need a large budget to get a proper assessment." },
+  { q: "What happens after a security audit?", a: "You get a written report listing every issue found, how serious each one is, and what to do about it. We can fix the issues ourselves or hand the report to your existing developer. Your choice." },
   { q: "Can you redesign my existing website?", a: "Yes. We specialise in website redesigns that improve performance, aesthetics, and conversion rates while preserving your SEO rankings." },
   { q: "Do you build e-commerce websites?", a: "Yes. We build custom e-commerce solutions with payment gateway integration (Paynow, Stripe, PayPal), inventory management, and analytics." },
   { q: "How do you handle project communication?", a: "You communicate directly with Donovan Mudarikwa via WhatsApp, email, or Zoom. No middlemen, no account managers. Direct and clear communication throughout." },
@@ -455,10 +455,10 @@ export const techStack = [
 ];
 
 export const process = [
-  { step: "01", title: "Free Consultation", desc: "WhatsApp, call, or in person in Harare. 20–30 minutes. No commitment.", icon: "Search" },
+  { step: "01", title: "Free Consultation", desc: "WhatsApp, call, or in person in Harare. 20 to 30 minutes. No commitment.", icon: "Search" },
   { step: "02", title: "Clear Proposal", desc: "Written scope, fixed price, timeline. No hourly billing, no surprise invoices.", icon: "FileText" },
   { step: "03", title: "We Do the Work", desc: "Weekly updates for web. Real-time findings notification for pentests.", icon: "Code2" },
-  { step: "04", title: "Delivery", desc: "Website live in 1–2 weeks. Pentest report in 5–7 business days.", icon: "Rocket" },
+  { step: "04", title: "Delivery", desc: "Website live in 1 to 2 weeks. Pentest report in 5 to 7 business days.", icon: "Rocket" },
   { step: "05", title: "We Stay Available", desc: "Same WhatsApp, same person, post-delivery. Questions, fixes, follow-up.", icon: "Headphones" },
 ];
 

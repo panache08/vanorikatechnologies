@@ -31,7 +31,7 @@ export default function CTABanner() {
           </h2>
 
           <p className="text-white/45 text-lg font-light leading-relaxed max-w-2xl mx-auto mb-10">
-            Whether you need a penetration test, a professional website, or both — we respond within 2 hours and can start your engagement in under 48 hours.
+            Whether you need a penetration test, a professional website, or both: we respond within 2 hours and can start your engagement in under 48 hours.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -41,7 +41,7 @@ export default function CTABanner() {
               icon={<MessageCircle className="w-4.5 h-4.5" style={{ width: "18px", height: "18px" }} />}
               whatsappMessage="Hello! I'd like to discuss a project with Vanorika Technologies."
               heading="Let's get started"
-              subheading="Leave your name and best contact — we reply within 2 hours. We'll open WhatsApp now so you can message us straight away."
+              subheading="Leave your name and best contact. We reply within 2 hours. We'll open WhatsApp now so you can message us straight away."
               className="flex items-center gap-2.5 px-7 py-4 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all gold-glow text-sm uppercase tracking-wider"
             />
             <a

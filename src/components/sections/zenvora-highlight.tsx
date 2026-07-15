@@ -23,10 +23,10 @@ export default function ZenvoraHighlight() {
                 <Sparkles className="w-3 h-3" /> Also Building
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                Zenvora — an <span className="text-gradient-gold">AI-powered ERP</span> for African SMEs
+                Zenvora: an <span className="text-gradient-gold">AI-powered ERP</span> for African SMEs
               </h2>
               <p className="text-white/55 leading-relaxed mb-7">
-                A live SaaS product: accounting, invoicing, HR, CRM and a casino suite in one system — built for Zimbabwe
+                A live SaaS product: accounting, invoicing, HR, CRM and a casino suite in one system, built for Zimbabwe
                 with USD/ZWG dual currency, ZIMRA compliance, EcoCash, and an AI Copilot.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">

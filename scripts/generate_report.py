@@ -32,7 +32,7 @@ _FINDINGS = [
     ("No privacy policy (DPA 2021 gap)", 12),
     ("Outdated software / CMS / plugins", 11),
     ("No HTTPS redirect / weak TLS", 8),
-    ("No SPF/DMARC — email spoofable", 7),
+    ("No SPF/DMARC: email spoofable", 7),
     ("Exposed admin panel / endpoint", 4),
 ]
 FINDINGS = [(label, round(c / TOTAL * 100), c) for label, c in _FINDINGS]
@@ -80,7 +80,7 @@ def build():
                             title="The State of Zimbabwe Web Security 2026", author="Vanorika Technologies")
     story = [
         Paragraph("The State of Zimbabwe Web Security 2026", s["RTitle"]),
-        Paragraph("What we found assessing 17 Harare businesses across 5 sectors — and what every Zimbabwean business owner should take from it.", s["RSub"]),
+        Paragraph("What we found assessing 17 Harare businesses across 5 sectors, and what every Zimbabwean business owner should take from it.", s["RSub"]),
     ]
 
     # headline stats row
@@ -91,7 +91,7 @@ def build():
                            ("BOTTOMPADDING", (0, 0), (-1, -1), 10)]))
     story += [t, Spacer(1, 8 * mm)]
 
-    story.append(Paragraph("We ran passive, no-touch assessments — no logins, no port scanning, nothing intrusive. "
+    story.append(Paragraph("We ran passive, no-touch assessments: no logins, no port scanning, nothing intrusive. "
                            "Everything below comes from publicly available information any attacker could see.", s["RBody"]))
 
     story.append(Paragraph("What we found", s["RH2"]))
@@ -106,7 +106,7 @@ def build():
     story.append(Paragraph("What to do about it", s["RH2"]))
     items = [
         "Add the core security headers (HSTS, CSP, X-Frame-Options, X-Content-Type-Options).",
-        "Update your CMS, plugins and server software — and keep them updated.",
+        "Update your CMS, plugins and server software, then keep them updated.",
         "Publish a privacy policy and force HTTP to redirect to HTTPS.",
         "Set SPF and DMARC so no one can spoof email from your domain.",
         "Get a free passive assessment so you know exactly where you stand.",

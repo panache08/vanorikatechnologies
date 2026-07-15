@@ -79,7 +79,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Recurring Retainer — the recurring-revenue product */}
+      {/* Recurring Retainer: the recurring-revenue product */}
       <section className="py-20 bg-background border-y border-gold/15">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
@@ -104,7 +104,7 @@ export default function PricingPage() {
                 </div>
                 <p className="text-white/50 text-xs mb-6">Billed monthly. Cancel anytime. Scales with your size.</p>
                 <LeadCaptureModal
-                  source="Pricing — retainer"
+                  source="Pricing: retainer"
                   label="Start a retainer"
                   icon={<ShieldCheck className="w-4 h-4" />}
                   whatsappMessage="Hi Donovan, I'm interested in the Security & Maintenance Retainer for my business. Can you tell me more?"
@@ -118,7 +118,7 @@ export default function PricingPage() {
                   "Continuous external monitoring of your site & domain",
                   "Monthly re-scan with a plain-English status report",
                   "Security patches & updates kept current",
-                  "Priority WhatsApp support — you go to the front",
+                  "Priority WhatsApp support, so you go to the front",
                   "Discounted rates on any deeper work you need",
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-3 text-white/75 text-sm">
@@ -212,11 +212,11 @@ export default function PricingPage() {
               {
                 heading: "Software",
                 rows: [
-                  { service: "Website — Starter", price: "From $299", note: "5-page business site" },
-                  { service: "Website — Business", price: "From $799", note: "CMS + e-commerce" },
+                  { service: "Starter Website", price: "From $299", note: "5-page business site" },
+                  { service: "Business Website", price: "From $799", note: "CMS + e-commerce" },
                   { service: "Custom Software", price: "From $500", note: "Web apps & systems" },
                   { service: "Mobile App", price: "From $800", note: "Android / cross-platform" },
-                  { service: "Zenvora ERP — SME", price: "$49 / month", note: "Accounting, invoicing & CRM" },
+                  { service: "Zenvora ERP for SMEs", price: "$49 / month", note: "Accounting, invoicing & CRM" },
                   { service: "Zenvora Casino Suite", price: "$200 / month", note: "Gaming ERP + compliance" },
                 ],
               },
@@ -239,7 +239,7 @@ export default function PricingPage() {
             ))}
           </div>
           <p className="text-center text-muted-foreground text-xs mt-8">
-            Prices are starting points in USD. Final quotes depend on scope — message us for an exact figure.
+            Prices are starting points in USD. Final quotes depend on scope. Message us for an exact figure.
           </p>
         </div>
       </section>

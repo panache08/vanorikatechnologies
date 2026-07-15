@@ -45,7 +45,7 @@ export default function Newsletter() {
         });
         if (!res.ok) throw new Error("EmailJS request failed");
       } else {
-        // No backend configured — open a pre-filled subscribe email.
+        // No backend configured: open a pre-filled subscribe email.
         const subject = encodeURIComponent("Newsletter subscription");
         const body = encodeURIComponent(`Please add ${email} to the Vanorika cybersecurity newsletter.`);
         window.open(`mailto:${siteConfig.email}?subject=${subject}&body=${body}`, "_blank");

@@ -8,12 +8,12 @@ import { SITE_URL } from "@/lib/data";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/compare" },
-  title: "You vs Them — Compare Your Website Security to a Competitor",
+  title: "You vs Them: Compare Your Website Security to a Competitor",
   description:
-    "Scan your website and a competitor's side by side. See who's more secure — SSL, security headers, email spoofing and Data Protection Act 2021 exposure — graded A–F, instantly and free.",
+    "Scan your website and a competitor's side by side. See who's more secure on SSL, security headers, email spoofing and Data Protection Act 2021 exposure, graded A to F, instantly and free.",
   openGraph: {
-    title: "You vs Them — Website Security Showdown",
-    description: "Compare your site's security against a competitor, graded A–F. Free and instant.",
+    title: "You vs Them: Website Security Showdown",
+    description: "Compare your site's security against a competitor, graded A to F. Free and instant.",
     url: `${SITE_URL}/compare`,
     type: "website",
   },
@@ -34,7 +34,7 @@ export default function ComparePage() {
           </h1>
           <p className="text-white/60 text-lg mb-8">
             Put your site head-to-head with a competitor. We grade both on the security basics that customers and attackers
-            both notice — and show you exactly where you win and where you fall behind.
+            both notice, and show you exactly where you win and where you fall behind.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white/45 text-sm">
             <span className="inline-flex items-center gap-2"><Zap className="w-4 h-4 text-gold" /> Instant side-by-side</span>

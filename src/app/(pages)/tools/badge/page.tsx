@@ -42,7 +42,7 @@ export default function BadgePage() {
             <BadgeCheck className="w-3.5 h-3.5" /> TRUST BADGE
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">&ldquo;Secured by Vanorika&rdquo; Badge</h1>
-          <p className="text-white/60 text-lg">Passed a security review with us? Show it. Add a trust badge to your site&apos;s footer — it reassures your customers and links back to us.</p>
+          <p className="text-white/60 text-lg">Passed a security review with us? Show it. Add a trust badge to your site&apos;s footer. It reassures your customers and links back to us.</p>
         </div>
       </section>
 
@@ -63,7 +63,7 @@ export default function BadgePage() {
               </div>
             </div>
           ))}
-          <p className="text-muted-foreground/60 text-xs text-center">Paste the snippet into your site&apos;s footer HTML. The badge is self-contained — no images or scripts to load.</p>
+          <p className="text-muted-foreground/60 text-xs text-center">Paste the snippet into your site&apos;s footer HTML. The badge is self-contained, with no images or scripts to load.</p>
         </div>
       </section>
       <Footer />

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/research/zimbabwe-web-security-2026" },
   title: "The State of Zimbabwe Web Security 2026",
   description:
-    "A data-driven report from Vanorika Technologies based on passive security assessments of Harare businesses across hospitality, healthcare, law, education and NGOs — what we found, and what it means.",
+    "A data-driven report from Vanorika Technologies based on passive security assessments of Harare businesses across hospitality, healthcare, law, education and NGOs: what we found, and what it means.",
 };
 
 /* ─────────────────────────────────────────────────────────────────
@@ -31,7 +31,7 @@ const findings = [
   { icon: FileWarning, label: "No privacy policy (Data Protection Act 2021 gap)", count: 12 },
   { icon: Server, label: "Running outdated software / CMS / plugins", count: 11 },
   { icon: Lock, label: "No HTTP→HTTPS redirect or weak TLS configuration", count: 8 },
-  { icon: Mail, label: "No SPF/DMARC — email can be spoofed from their domain", count: 7 },
+  { icon: Mail, label: "No SPF/DMARC: email can be spoofed from their domain", count: 7 },
   { icon: Eye, label: "Exposed admin panel or sensitive endpoint", count: 4 },
 ].map((f) => ({ ...f, pct: Math.round((f.count / TOTAL) * 100) }));
 
@@ -52,7 +52,7 @@ export default function ReportPage() {
             The State of <span className="text-gradient-gold">Zimbabwe Web Security</span> 2026
           </h1>
           <p className="text-white/60 text-lg mb-8">
-            What we found assessing {headline.assessed} Harare businesses across {headline.sectors} sectors — and what every
+            What we found assessing {headline.assessed} Harare businesses across {headline.sectors} sectors, and what every
             Zimbabwean business owner should take from it.
           </p>
           <a href="/research/zimbabwe-web-security-2026.pdf" download
@@ -84,7 +84,7 @@ export default function ReportPage() {
           [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-4 [&_p]:text-[15px] [&_strong]:text-foreground">
           <p className="text-foreground/90 text-lg font-light">
             Over the past months we ran <strong>passive, no-touch security assessments</strong> of {headline.assessed} businesses
-            across Harare — hospitality, healthcare, legal, education and the NGO sector. We never logged in, scanned ports, or
+            across Harare: hospitality, healthcare, legal, education and the NGO sector. We never logged in, scanned ports, or
             touched a live system. Everything below comes from publicly available information any attacker could see. The picture
             is consistent, and it&apos;s fixable.
           </p>
@@ -116,28 +116,28 @@ export default function ReportPage() {
 
           <h2>What it means</h2>
           <p>
-            None of these are exotic, nation-state problems. They&apos;re the basics — security headers, software updates, a privacy
-            policy, email anti-spoofing — and the overwhelming majority of the businesses we assessed were missing at least one.
+            None of these are exotic, nation-state problems. They&apos;re the basics (security headers, software updates, a privacy
+            policy, email anti-spoofing), and the overwhelming majority of the businesses we assessed were missing at least one.
             Each is cheap to fix once you know it&apos;s there, and each is something a motivated attacker (or an automated bot) finds
             in minutes.
           </p>
           <p>
             The privacy-policy gap matters twice over: it&apos;s a Data Protection Act (2021) compliance exposure as well as a trust
-            signal. And the email anti-spoofing gap means a stranger can send mail that looks like it came from these businesses —
+            signal. And the email anti-spoofing gap means a stranger can send mail that looks like it came from these businesses,
             a direct phishing risk to their own customers.
           </p>
 
           <h2>What to do about it</h2>
           <ul className="list-disc pl-5 space-y-2 text-[15px]">
             <li>Add the core security headers (HSTS, CSP, X-Frame-Options, X-Content-Type-Options).</li>
-            <li>Update your CMS, plugins, and server software — and keep them updated.</li>
+            <li>Update your CMS, plugins, and server software, and keep them updated.</li>
             <li>Publish a privacy policy and make sure HTTP redirects to HTTPS.</li>
             <li>Set SPF and DMARC records so no one can spoof email from your domain.</li>
-            <li>Get a passive assessment so you know exactly where you stand — it&apos;s free.</li>
+            <li>Get a passive assessment so you know exactly where you stand. It&apos;s free.</li>
           </ul>
 
           <p className="text-xs text-muted-foreground/60 pt-6 border-t border-border">
-            Methodology: passive assessment only — public DNS, certificate transparency, HTTP response headers, and open-source
+            Methodology: passive assessment only, using public DNS, certificate transparency, HTTP response headers, and open-source
             reconnaissance. No authentication, port scanning, or exploitation. Figures are aggregated and anonymised; no individual
             business is identified.
           </p>
@@ -151,7 +151,7 @@ export default function ReportPage() {
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">Where does your business stand?</h2>
-          <p className="text-white/50 text-lg mb-8">Get a free passive assessment of your own site — no obligation, no cost.</p>
+          <p className="text-white/50 text-lg mb-8">Get a free passive assessment of your own site. No obligation, no cost.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-4 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all gold-glow text-sm uppercase tracking-wider">

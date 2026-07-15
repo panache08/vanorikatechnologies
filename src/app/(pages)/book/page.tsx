@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/book" },
   title: "Book a Free Consultation",
   description:
-    "Book a free 30-minute consultation with Donovan Mudarikwa — discuss a security assessment, a website, or Zenvora. No obligation.",
+    "Book a free 30-minute consultation with Donovan Mudarikwa to discuss a security assessment, a website, or Zenvora. No obligation.",
 };
 
 // Calendly inline embed, themed to the Vanorika dark/gold palette.
@@ -27,7 +27,7 @@ export default function BookPage() {
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Book a Free Consultation</h1>
           <p className="text-white/60 text-lg">
-            A free 30-minute call with Donovan — talk through a security assessment, a website, or Zenvora. No obligation.
+            A free 30-minute call with Donovan: talk through a security assessment, a website, or Zenvora. No obligation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-7 text-white/50 text-sm">
             <span className="inline-flex items-center gap-2"><Clock className="w-4 h-4 text-gold" /> 30 minutes</span>

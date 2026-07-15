@@ -15,7 +15,7 @@ export default function PortfolioPreview() {
         <SectionHeader
           label="Our Work"
           title="Featured Projects"
-          subtitle="From live production systems to security assessments — a sample of what we ship."
+          subtitle="From live production systems to security assessments, a sample of what we ship."
           centered
         />
 

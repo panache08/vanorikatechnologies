@@ -59,7 +59,7 @@ export default function SecurityCheckPage() {
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Free Website Security Check</h1>
           <p className="text-white/60 text-lg">
-            Enter your website and we&apos;ll run a few passive checks — SSL, security headers, HTTPS redirect and privacy policy.
+            Enter your website and we&apos;ll run a few passive checks: SSL, security headers, HTTPS redirect and privacy policy.
             No login, nothing intrusive.
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function SecurityCheckPage() {
 
           {result && (
             <div id="print-report" className="mt-10 bg-card border border-border rounded-3xl p-8">
-              {/* Branded header — only appears in the printed / saved PDF */}
+              {/* Branded header: only appears in the printed / saved PDF */}
               <div className="print-only mb-8 pb-6" style={{ borderBottom: "1px solid #C9A84C" }}>
                 <p style={{ color: "#C9A84C", fontWeight: 800, fontSize: "18px", letterSpacing: "0.08em" }}>VANORIKA TECHNOLOGIES</p>
                 <p style={{ color: "#9aa3b2", fontSize: "11px", marginTop: "2px" }}>Website Security Report · vanorikatechnologies.co.zw · {new Date().toLocaleDateString("en-GB")}</p>
@@ -119,18 +119,18 @@ export default function SecurityCheckPage() {
                 <div className="flex items-start gap-3 mb-5">
                   <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    This is a surface-level passive check. A full audit tests far more — authentication, injection, outdated
+                    This is a surface-level passive check. A full audit tests far more: authentication, injection, outdated
                     software, and business logic.
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
                   <LeadCaptureModal
-                    source={`Security check tool (${result?.host ?? ""} — ${result?.score ?? ""}%)`}
+                    source={`Security check tool (${result?.host ?? ""}, ${result?.score ?? ""}%)`}
                     label={lowScore ? "Get a quote to fix these" : "Want a full audit? Get yours free"}
                     icon={<ArrowRight className="w-4 h-4 order-last" />}
                     whatsappMessage={leadMessage}
                     heading="Let's fix what we found"
-                    subheading="Leave your name and contact — we'll review your results and come back with exactly what to fix and a quote. We'll open WhatsApp now so you can send your score over."
+                    subheading="Leave your name and contact, and we'll review your results and come back with exactly what to fix and a quote. We'll open WhatsApp now so you can send your score over."
                     className="no-print inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm uppercase tracking-wider"
                   />
                   <button onClick={() => window.print()} type="button"
@@ -145,7 +145,7 @@ export default function SecurityCheckPage() {
           {!result && !loading && (
             <p className="text-muted-foreground/60 text-xs text-center mt-6">
               We only read publicly available information. We never log in, scan ports, or attempt to exploit anything.
-              Results may vary for sites behind a firewall or bot protection (e.g. Cloudflare) — this is a quick teaser,
+              Results may vary for sites behind a firewall or bot protection (e.g. Cloudflare). This is a quick teaser,
               not a definitive scan.
             </p>
           )}

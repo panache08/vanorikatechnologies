@@ -63,7 +63,7 @@ export default function ReportRunner() {
 
   const consultUrl = result
     ? `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-        `Hi Donovan, I got the full security report for ${result.host} (grade ${result.grade}, ${result.score}/100). YES — I'd like the free 20-minute consult.`,
+        `Hi Donovan, I got the full security report for ${result.host} (grade ${result.grade}, ${result.score}/100). YES, I'd like the free 20-minute consult.`,
       )}`
     : siteConfig.whatsappUrl;
 
@@ -72,14 +72,14 @@ export default function ReportRunner() {
     if (!result) return;
     setSubmitting(true);
 
-    // 1. Capture the lead (warm — they gave us their number + their scan result)
+    // 1. Capture the lead (warm: they gave us their number + their scan result)
     try {
       await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: `New report lead — ${result.host} (grade ${result.grade}, ${result.score}/100)`,
+          subject: `New report lead: ${result.host} (grade ${result.grade}, ${result.score}/100)`,
           from_name: "Vanorika Report Tool",
           name,
           whatsapp,
@@ -124,7 +124,7 @@ export default function ReportRunner() {
       </form>
       {error && <p className="text-red-400 text-sm mt-4">{error}</p>}
       {!result && !loading && (
-        <p className="text-white/30 text-xs mt-4 text-center">Passive checks only — we read public information, never log in or scan aggressively.</p>
+        <p className="text-white/30 text-xs mt-4 text-center">Passive checks only: we read public information, never log in or scan aggressively.</p>
       )}
 
       {result && (
@@ -157,7 +157,7 @@ export default function ReportRunner() {
                 </li>
               ))}
               {result.topFindings.length === 0 && (
-                <li className="flex items-center gap-2 text-emerald-400 text-sm"><Check className="w-4 h-4" /> No issues in the passive checks — the full report confirms what to verify manually.</li>
+                <li className="flex items-center gap-2 text-emerald-400 text-sm"><Check className="w-4 h-4" /> No issues in the passive checks. The full report confirms what to verify manually.</li>
               )}
             </ul>
             <button onClick={shareLink} type="button" className="mt-4 inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground text-xs transition-colors">
@@ -170,7 +170,7 @@ export default function ReportRunner() {
             <div className="mt-7 pt-7 border-t border-border">
               <div className="flex items-center gap-2 mb-1">
                 <Lock className="w-4 h-4 text-gold" />
-                <p className="font-display font-bold text-foreground">Get the complete 5-page report — free</p>
+                <p className="font-display font-bold text-foreground">Get the complete 5-page report, free</p>
               </div>
               <p className="text-muted-foreground text-sm mb-5">
                 Every finding, ranked by severity, with plain-English fixes and your Data Protection Act (2021) exposure. Sent to you as a branded PDF.
@@ -182,7 +182,7 @@ export default function ReportRunner() {
                   <input required value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} placeholder="WhatsApp number"
                     className="px-4 py-3 rounded-xl bg-[#07070D] border border-[#252545] text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none" />
                 </div>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email (optional — for a copy)"
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email (optional, for a copy)"
                   className="w-full px-4 py-3 rounded-xl bg-[#07070D] border border-[#252545] text-white text-sm placeholder:text-white/30 focus:border-gold/50 focus:outline-none" />
                 <button type="submit" disabled={submitting}
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gold text-black font-bold hover:bg-gold-light transition-colors disabled:opacity-60 text-sm">
@@ -197,7 +197,7 @@ export default function ReportRunner() {
               <ShieldCheck className="w-10 h-10 text-emerald-400 mx-auto mb-3" />
               <p className="font-display font-bold text-foreground mb-1">Your report is downloading.</p>
               <p className="text-muted-foreground text-sm mb-5">
-                Check your downloads for the PDF. {result.topFindings.length > 0 ? "Some findings need a manual test to confirm — " : ""}reply YES on WhatsApp for a free 20-minute consult.
+                Check your downloads for the PDF. {result.topFindings.length > 0 ? "Some findings need a manual test to confirm, so " : ""}reply YES on WhatsApp for a free 20-minute consult.
               </p>
               <a href={consultUrl} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gold text-black font-semibold hover:bg-gold-light transition-colors text-sm">

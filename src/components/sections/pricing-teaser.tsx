@@ -20,7 +20,7 @@ export default function PricingTeaser() {
             <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-cyan border border-cyan/30 rounded-full bg-cyan/5 mb-5">TRANSPARENT PRICING</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">No mystery quotes. Know the cost up front.</h2>
             <p className="text-white/55 leading-relaxed mb-7">
-              Honest starting prices in USD, published before you ever message us. Final figures depend on scope — but you&apos;ll never be left guessing.
+              Honest starting prices in USD, published before you ever message us. Final figures depend on scope, but you&apos;ll never be left guessing.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/pricing"

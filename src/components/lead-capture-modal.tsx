@@ -5,7 +5,7 @@ import { MessageCircle, X, Loader2, CheckCircle2 } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
 // Web3Forms access key. This is a public, client-side key by design (Web3Forms
-// keys are meant to be embedded in the page) — spam protection is handled on their
+// keys are meant to be embedded in the page); spam protection is handled on their
 // side. An env var override is supported; otherwise the default below is used.
 // If somehow empty, the form gracefully skips capture and goes straight to WhatsApp.
 const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "d67988f4-7f52-433d-91e0-08b06ef25f41";
@@ -38,7 +38,7 @@ export default function LeadCaptureModal({
   whatsappMessage,
   icon,
   heading = "Where should we send your results?",
-  subheading = "Drop your name and best contact — we'll follow up with your findings, then continue on WhatsApp now.",
+  subheading = "Drop your name and best contact. We'll follow up with your findings, then continue on WhatsApp now.",
 }: Props) {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
@@ -68,7 +68,7 @@ export default function LeadCaptureModal({
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify({
             access_key: WEB3FORMS_KEY,
-            subject: `New lead (${source}) — ${name || "no name"}`,
+            subject: `New lead (${source}): ${name || "no name"}`,
             from_name: "Vanorika Website",
             name,
             contact,
@@ -77,7 +77,7 @@ export default function LeadCaptureModal({
           }),
         });
       } catch {
-        // Never block the user on a capture failure — fall through to WhatsApp.
+        // Never block the user on a capture failure; fall through to WhatsApp.
       }
     }
 
@@ -118,7 +118,7 @@ export default function LeadCaptureModal({
                 <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
                 <h3 className="font-display text-xl font-bold text-white mb-2">You&apos;re all set</h3>
                 <p className="text-white/60 text-sm mb-6">
-                  WhatsApp just opened in a new tab. If it didn&apos;t, tap below — we&apos;ve got your details and will
+                  WhatsApp just opened in a new tab. If it didn&apos;t, tap below. We&apos;ve got your details and will
                   follow up either way.
                 </p>
                 <button

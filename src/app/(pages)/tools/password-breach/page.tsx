@@ -46,7 +46,7 @@ export default function PasswordBreachPage() {
             <KeyRound className="w-3.5 h-3.5" /> FREE TOOL
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Password Breach Checker</h1>
-          <p className="text-white/60 text-lg">Find out if a password has appeared in a known data breach — checked privately, the password never leaves your browser.</p>
+          <p className="text-white/60 text-lg">Find out if a password has appeared in a known data breach. It&apos;s checked privately, and the password never leaves your browser.</p>
         </div>
       </section>
 
@@ -84,7 +84,7 @@ export default function PasswordBreachPage() {
                   ) : (
                     <>
                       <p className="font-display text-lg font-bold text-green">Not found in any known breach</p>
-                      <p className="text-muted-foreground text-sm mt-1">Good — but still use a unique password per account and enable 2FA.</p>
+                      <p className="text-muted-foreground text-sm mt-1">Good, but still use a unique password per account and enable 2FA.</p>
                     </>
                   )}
                 </div>

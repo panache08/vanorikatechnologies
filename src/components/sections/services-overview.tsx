@@ -31,7 +31,7 @@ export default function ServicesOverview() {
         <SectionHeader
           label="What We Do"
           title="Enterprise-Grade Services"
-          subtitle="From penetration testing to production-ready web platforms — we build and secure what Zimbabwean businesses depend on."
+          subtitle="From penetration testing to production-ready web platforms, we build and secure what Zimbabwean businesses depend on."
           centered
         />
 
@@ -95,7 +95,7 @@ export default function ServicesOverview() {
                 Free Passive Security Assessment
               </h3>
               <p className="text-white/40 text-sm leading-relaxed font-light mb-4">
-                No commitment. We scan your public-facing assets and share what we find — at no cost.
+                No commitment. We scan your public-facing assets and share what we find, at no cost.
               </p>
               <div className="flex items-center gap-1.5 font-mono text-[11px] text-gold/70 group-hover:text-gold uppercase tracking-wider">
                 Get yours free

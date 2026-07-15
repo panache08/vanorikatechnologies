@@ -1,8 +1,8 @@
-// Zimbabwe Web Security Index — dataset.
+// Zimbabwe Web Security Index: dataset.
 //
 // Built from a passive, external scan of 17 prominent Zimbabwean organisations
 // across 6 sectors. Only public signals were checked (HTTPS reachability, response
-// headers, and published SPF/DMARC DNS records) — nothing was logged into, probed
+// headers, and published SPF/DMARC DNS records). Nothing was logged into, probed
 // aggressively, or disrupted. Entries are anonymised to sector level: we publish the
 // aggregate picture, and offer each organisation its named, detailed breakdown privately.
 //

@@ -21,7 +21,7 @@ const questions = [
 function band(score: number) {
   if (score >= 80) return { label: "Strong", color: "text-green", desc: "You're ahead of most Zimbabwean SMEs. A professional assessment would confirm it and close any blind spots." };
   if (score >= 50) return { label: "At Risk", color: "text-gold", desc: "You have real, fixable gaps that an attacker could find. Worth tightening before they're exploited." };
-  return { label: "Exposed", color: "text-red-500", desc: "The basics aren't in place. Treat this as urgent — most breaches start exactly here." };
+  return { label: "Exposed", color: "text-red-500", desc: "The basics aren't in place. Treat this as urgent, because most breaches start exactly here." };
 }
 
 export default function SecurityQuiz() {
@@ -46,7 +46,7 @@ export default function SecurityQuiz() {
             <ShieldCheck className="w-3.5 h-3.5" /> 2-MINUTE QUIZ
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">How Cyber-Safe Is Your Business?</h1>
-          <p className="text-white/60 text-lg">Answer 10 honest questions and get your security score — no email required.</p>
+          <p className="text-white/60 text-lg">Answer 10 honest questions and get your security score. No email required.</p>
         </div>
       </section>
 
@@ -92,7 +92,7 @@ export default function SecurityQuiz() {
                       <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" /> {q}
                     </li>
                   ))}
-                  {yes === questions.length && <li className="flex items-center gap-2 text-sm text-green"><Check className="w-4 h-4" /> Nothing flagged — excellent. Confirm it with a professional assessment.</li>}
+                  {yes === questions.length && <li className="flex items-center gap-2 text-sm text-green"><Check className="w-4 h-4" /> Nothing flagged, excellent. Confirm it with a professional assessment.</li>}
                 </ul>
               </div>
 

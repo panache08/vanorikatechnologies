@@ -19,7 +19,7 @@ export default function SecurityIndexBanner() {
               </h2>
               <p className="text-white/55 text-sm max-w-xl">
                 {STAT_FAILING} of {SCAN_SAMPLE} prominent organisations scored an F. The national average is a{" "}
-                <strong className="text-white">{AVG_GRADE}</strong>. See where every sector stands — and whether your
+                <strong className="text-white">{AVG_GRADE}</strong>. See where every sector stands, and whether your
                 business is exposed.
               </p>
             </div>

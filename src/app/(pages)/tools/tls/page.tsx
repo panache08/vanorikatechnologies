@@ -34,7 +34,7 @@ export default function TlsPage() {
             <Lock className="w-3.5 h-3.5" /> FREE TOOL
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">TLS / Protocol Checker</h1>
-          <p className="text-white/60 text-lg">Find out which TLS versions your site accepts — and whether it still allows weak, legacy protocols attackers exploit.</p>
+          <p className="text-white/60 text-lg">Find out which TLS versions your site accepts, and whether it still allows weak, legacy protocols attackers exploit.</p>
         </div>
       </section>
 
@@ -63,7 +63,7 @@ export default function TlsPage() {
                     </div>
                     <span className="text-foreground text-sm font-medium w-20">{p.version}</span>
                     <span className={`text-sm ${!p.supported ? "text-muted-foreground" : p.weak ? "text-red-500" : "text-green"}`}>
-                      {!p.supported ? "Not supported" : p.weak ? "Supported — weak, disable this" : "Supported"}
+                      {!p.supported ? "Not supported" : p.weak ? "Supported, but weak. Disable this" : "Supported"}
                     </span>
                     {p.cipher && <span className="text-muted-foreground text-xs ml-auto font-mono hidden sm:inline">{p.cipher}</span>}
                   </div>
@@ -72,15 +72,15 @@ export default function TlsPage() {
               <div className="mt-6 pt-6 border-t border-border flex items-start gap-3">
                 <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">{data.weakEnabled.length ? `Disable ${data.weakEnabled.join(" and ")} — they're deprecated and exploitable. We can fix your TLS configuration.` : "Your TLS configuration looks healthy. A full audit checks ciphers, certificates and the rest of your stack."}</p>
-                  <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I tested ${data.host} TLS${data.weakEnabled.length ? ` — it still allows ${data.weakEnabled.join(", ")}` : ""}. Can you review my configuration?`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
-                    Get a full audit — free <ArrowRight className="w-4 h-4" />
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">{data.weakEnabled.length ? `Disable ${data.weakEnabled.join(" and ")}. They're deprecated and exploitable. We can fix your TLS configuration.` : "Your TLS configuration looks healthy. A full audit checks ciphers, certificates and the rest of your stack."}</p>
+                  <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I tested ${data.host} TLS${data.weakEnabled.length ? ` and it still allows ${data.weakEnabled.join(", ")}` : ""}. Can you review my configuration?`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
+                    Get a full audit, free <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>
             </div>
           )}
-          <p className="text-muted-foreground/60 text-xs text-center mt-6">Passive — we attempt a handshake at each protocol version. No data is sent beyond the standard TLS negotiation.</p>
+          <p className="text-muted-foreground/60 text-xs text-center mt-6">Passive. We attempt a handshake at each protocol version. No data is sent beyond the standard TLS negotiation.</p>
         </div>
       </section>
       <Footer />

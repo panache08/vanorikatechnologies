@@ -65,9 +65,9 @@ export default function SpfDmarcGenerator() {
               <label htmlFor="pol" className="block text-sm font-medium text-muted-foreground mb-1.5">DMARC enforcement</label>
               <select id="pol" value={policy} onChange={(e) => setPolicy(e.target.value)}
                 className="w-full px-4 py-3 bg-card border border-border rounded-xl text-foreground focus:border-gold focus:outline-none transition-all text-sm">
-                <option value="none">Monitor only (p=none) — start here</option>
-                <option value="quarantine">Quarantine (p=quarantine) — recommended</option>
-                <option value="reject">Reject (p=reject) — strictest</option>
+                <option value="none">Monitor only (p=none), start here</option>
+                <option value="quarantine">Quarantine (p=quarantine), recommended</option>
+                <option value="reject">Reject (p=reject), strictest</option>
               </select>
             </div>
           </div>

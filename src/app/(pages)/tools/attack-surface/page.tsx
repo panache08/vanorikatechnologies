@@ -45,7 +45,7 @@ export default function AttackSurfacePage() {
             <Radar className="w-3.5 h-3.5" /> FREE TOOL
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Attack Surface Mapper</h1>
-          <p className="text-white/60 text-lg">See everything an attacker can discover about your domain — subdomains, IPs, mail and name servers — in one view.</p>
+          <p className="text-white/60 text-lg">See everything an attacker can discover about your domain in one view: subdomains, IPs, mail and name servers.</p>
         </div>
       </section>
 
@@ -67,7 +67,7 @@ export default function AttackSurfacePage() {
                   <p className="font-display text-lg font-bold text-gold break-all">{data.domain}</p>
                 </div>
                 {!data.dns.hasSpf && (
-                  <p className="text-red-400 text-xs mt-3 inline-flex items-center gap-1.5"><ShieldAlert className="w-3.5 h-3.5" /> No SPF record — email can be spoofed from this domain.</p>
+                  <p className="text-red-400 text-xs mt-3 inline-flex items-center gap-1.5"><ShieldAlert className="w-3.5 h-3.5" /> No SPF record, so email can be spoofed from this domain.</p>
                 )}
               </div>
 
@@ -95,15 +95,15 @@ export default function AttackSurfacePage() {
               <div className="mt-8 bg-card border border-border rounded-2xl p-5 flex items-start gap-3">
                 <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">Every subdomain and service is a potential way in. Forgotten or outdated ones are where attackers start. We&apos;ll assess all of them — free.</p>
-                  <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I mapped ${data.domain} with your attack-surface tool — ${data.counts.subdomains} subdomains, ${data.dns.mx.length} mail servers${data.dns.hasSpf ? "" : ", and NO SPF record"}. Can you assess my exposure?`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">Every subdomain and service is a potential way in. Forgotten or outdated ones are where attackers start. We&apos;ll assess all of them, free.</p>
+                  <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I mapped ${data.domain} with your attack-surface tool and it found ${data.counts.subdomains} subdomains, ${data.dns.mx.length} mail servers${data.dns.hasSpf ? "" : ", and NO SPF record"}. Can you assess my exposure?`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
                     Assess my attack surface <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>
             </div>
           )}
-          <p className="text-muted-foreground/60 text-xs text-center mt-6">Passive — public certificate transparency logs and DNS only. Nothing intrusive.</p>
+          <p className="text-muted-foreground/60 text-xs text-center mt-6">Passive: public certificate transparency logs and DNS only. Nothing intrusive.</p>
         </div>
       </section>
       <Footer />

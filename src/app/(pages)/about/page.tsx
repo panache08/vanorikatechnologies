@@ -9,13 +9,13 @@ import SectionHeader from "@/components/ui/section-header";
 export const metadata: Metadata = {
   alternates: { canonical: "/about" },
   title: "About Us",
-  description: "Donovan Mudarikwa — CompTIA A+, Security+, and PenTest+ certified. Founder & CEO of Vanorika Technologies. Penetration tester and web developer based in Harare, Zimbabwe.",
+  description: "Donovan Mudarikwa: CompTIA A+, Security+, and PenTest+ certified. Founder & CEO of Vanorika Technologies. Penetration tester and web developer based in Harare, Zimbabwe.",
 };
 
 const values = [
   { icon: Target, title: "Excellence", desc: "We don't send work we wouldn't put our name on. Every project gets the same attention whether it's $300 or $3000." },
   { icon: Heart, title: "Client-First", desc: "We tell clients what they need to hear, not what they want to hear. That's more useful long term." },
-  { icon: Zap, title: "Tested Against Real Systems", desc: "Active bug bounty researcher on HackerOne and Bugcrowd — our skills are proven against live production systems, not just theory or course badges." },
+  { icon: Zap, title: "Tested Against Real Systems", desc: "Active bug bounty researcher on HackerOne and Bugcrowd. Our skills are proven against live production systems, not just theory or course badges." },
   { icon: CheckCircle, title: "Transparency", desc: "Fixed quotes. Real timelines. You always know where things stand." },
 ];
 
@@ -60,21 +60,21 @@ export default function AboutPage() {
               </p>
               <div className="space-y-4 text-white/45 text-sm leading-relaxed font-light">
                 <p>
-                  I&apos;m Donovan Mudarikwa — a penetration tester and web developer based in Harare, Zimbabwe. I work directly with clients on cybersecurity and web projects.
+                  I&apos;m Donovan Mudarikwa, a penetration tester and web developer based in Harare, Zimbabwe. I work directly with clients on cybersecurity and web projects.
                 </p>
                 <p>
-                  I started Vanorika Technologies because most Zimbabwean businesses have no idea what their security exposure looks like — and web developers here are either too expensive or too slow.
+                  I started Vanorika Technologies because most Zimbabwean businesses have no idea what their security exposure looks like, and web developers here are either too expensive or too slow.
                 </p>
                 <p>
-                  We work directly with every client — no middlemen, no junior developers, no outsourcing. When you hire Vanorika Technologies, you get the founder handling your project from start to finish.
+                  We work directly with every client: no middlemen, no junior developers, no outsourcing. When you hire Vanorika Technologies, you get the founder handling your project from start to finish.
                 </p>
                 <p>
-                  Our main focus is cybersecurity assessments and web development. If you need a pentest, a website, or both — we handle it personally.
+                  Our main focus is cybersecurity assessments and web development. If you need a pentest, a website, or both, we handle it personally.
                 </p>
               </div>
               <div className="mt-8 p-6 border border-gold/15 rounded-2xl bg-gold/3">
                 <p className="text-white/70 italic text-sm leading-relaxed">&ldquo;Most businesses in Zimbabwe find out they&apos;ve been hacked after the damage is done. I&apos;d rather you found out from us first.&rdquo;</p>
-                <p className="font-mono text-[11px] text-gold/60 mt-3 uppercase tracking-wider">— {siteConfig.founder}, Founder & CEO</p>
+                <p className="font-mono text-[11px] text-gold/60 mt-3 uppercase tracking-wider">{siteConfig.founder}, Founder & CEO</p>
               </div>
             </div>
 
@@ -119,7 +119,7 @@ export default function AboutPage() {
               <Target className="w-9 h-9 text-gold mb-5" />
               <h3 className="font-display font-bold text-white text-xl mb-3">Our Mission</h3>
               <p className="text-white/40 text-sm leading-relaxed font-light">
-                To give Zimbabwean businesses an honest picture of their security exposure and build websites that actually bring in clients — at prices that don&apos;t require a loan.
+                To give Zimbabwean businesses an honest picture of their security exposure and build websites that actually bring in clients, at prices that don&apos;t require a loan.
               </p>
             </div>
             <div className="rounded-2xl border border-[#1A1A30] bg-[#0D0D1A] p-10 hover:border-gold/20 transition-all">

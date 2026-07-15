@@ -59,7 +59,7 @@ function wrap(text: string, font: PDFFont, size: number, maxW: number): string[]
 
 export async function generateReportPdf(data: ReportData): Promise<Uint8Array> {
   const doc = await PDFDocument.create();
-  doc.setTitle(`Vanorika Security Report — ${data.host}`);
+  doc.setTitle(`Vanorika Security Report: ${data.host}`);
   doc.setAuthor("Vanorika Technologies");
   const font = await doc.embedFont(StandardFonts.Helvetica);
   const bold = await doc.embedFont(StandardFonts.HelveticaBold);
@@ -72,7 +72,7 @@ export async function generateReportPdf(data: ReportData): Promise<Uint8Array> {
     page.drawText(`Page ${n}`, { x: W - M - 40, y: 30, size: 8, font, color: MUTE });
   };
 
-  // ---------- PAGE 1 — COVER ----------
+  // ---------- PAGE 1: COVER ----------
   const p1 = doc.addPage(A4);
   const H = A4[1];
   p1.drawRectangle({ x: 0, y: 0, width: W, height: H, color: DARK });
@@ -102,7 +102,7 @@ export async function generateReportPdf(data: ReportData): Promise<Uint8Array> {
 
   p1.drawText("Prepared by Donovan Mudarikwa, CompTIA A+ / Security+ / PenTest+ certified", { x: M, y: 60, size: 9, font, color: MUTE });
 
-  // ---------- PAGE 2 — EXECUTIVE SUMMARY ----------
+  // ---------- PAGE 2: EXECUTIVE SUMMARY ----------
   const p2 = doc.addPage(A4);
   let y = H - 70;
   const heading = (page: PDFPage, t: string, yy: number) => {
@@ -116,20 +116,20 @@ export async function generateReportPdf(data: ReportData): Promise<Uint8Array> {
   const passes = data.checks.filter((c) => c.pass);
   const highFails = fails.filter((c) => c.severity === "high").length;
 
-  const intro = `We ran a passive, external check of ${data.host} — the same read-only signals any visitor's browser sees. Out of ${data.total} checks, ${data.passed} passed and ${fails.length} need attention${highFails ? `, including ${highFails} high-severity issue${highFails > 1 ? "s" : ""}` : ""}.`;
+  const intro = `We ran a passive, external check of ${data.host}, the same read-only signals any visitor's browser sees. Out of ${data.total} checks, ${data.passed} passed and ${fails.length} need attention${highFails ? `, including ${highFails} high-severity issue${highFails > 1 ? "s" : ""}` : ""}.`;
   wrap(intro, font, 11, contentW).forEach((ln) => { p2.drawText(ln, { x: M, y, size: 11, font, color: INK }); y -= 16; });
   y -= 14;
 
   p2.drawText("What needs attention", { x: M, y, size: 12, font: bold, color: RED }); y -= 20;
   if (fails.length === 0) {
-    p2.drawText("Nothing failed the passive checks — see page 5 for what to verify with a manual test.", { x: M, y, size: 10, font, color: INK }); y -= 16;
+    p2.drawText("Nothing failed the passive checks. See page 5 for what to verify with a manual test.", { x: M, y, size: 10, font, color: INK }); y -= 16;
   } else {
     for (const c of fails.slice(0, 8)) {
       p2.drawText("•", { x: M, y, size: 11, font: bold, color: RED });
-      wrap(`${c.label} — ${c.detail}`, font, 10, contentW - 14).forEach((ln, i) => {
+      wrap(`${c.label}: ${c.detail}`, font, 10, contentW - 14).forEach((ln, i) => {
         p2.drawText(ln, { x: M + 14, y: y - i * 13, size: 10, font, color: INK });
       });
-      y -= wrap(`${c.label} — ${c.detail}`, font, 10, contentW - 14).length * 13 + 6;
+      y -= wrap(`${c.label}: ${c.detail}`, font, 10, contentW - 14).length * 13 + 6;
     }
   }
   y -= 10;
@@ -142,7 +142,7 @@ export async function generateReportPdf(data: ReportData): Promise<Uint8Array> {
   }
   footer(p2, 2);
 
-  // ---------- PAGE 3 — DETAILED FINDINGS ----------
+  // ---------- PAGE 3: DETAILED FINDINGS ----------
   const p3 = doc.addPage(A4);
   y = H - 70;
   heading(p3, "Detailed findings", y);
@@ -165,12 +165,12 @@ export async function generateReportPdf(data: ReportData): Promise<Uint8Array> {
   }
   footer(p3, 3);
 
-  // ---------- PAGE 4 — DPA 2021 + RISK ----------
+  // ---------- PAGE 4: DPA 2021 + RISK ----------
   const p4 = doc.addPage(A4);
   y = H - 70;
   heading(p4, "Compliance & business risk", y);
   y -= 40;
-  const dpaIntro = "Zimbabwe's Cyber and Data Protection Act (2021) places real obligations on any business that collects personal data — names, emails, phone numbers, payment details. The findings below carry legal or reputational risk, not just technical risk.";
+  const dpaIntro = "Zimbabwe's Cyber and Data Protection Act (2021) places real obligations on any business that collects personal data: names, emails, phone numbers, payment details. The findings below carry legal or reputational risk, not just technical risk.";
   wrap(dpaIntro, font, 11, contentW).forEach((ln) => { p4.drawText(ln, { x: M, y, size: 11, font, color: INK }); y -= 16; });
   y -= 14;
 
@@ -187,7 +187,7 @@ export async function generateReportPdf(data: ReportData): Promise<Uint8Array> {
   }
   footer(p4, 4);
 
-  // ---------- PAGE 5 — CLOSING / CONVERSION ----------
+  // ---------- PAGE 5: CLOSING / CONVERSION ----------
   const p5 = doc.addPage(A4);
   p5.drawRectangle({ x: 0, y: 0, width: W, height: H, color: DARK });
   p5.drawRectangle({ x: 0, y: 0, width: W, height: 6, color: GOLD });
@@ -195,14 +195,14 @@ export async function generateReportPdf(data: ReportData): Promise<Uint8Array> {
   p5.drawText("This is what a browser can see.", { x: M, y, size: 20, font: bold, color: WHITE }); y -= 28;
   p5.drawText("An attacker looks deeper.", { x: M, y, size: 20, font: bold, color: GOLD }); y -= 44;
 
-  const closing = "This report is a passive scan — it reads only public signals. It does not test authentication, injection flaws, business logic, or outdated software behind the scenes. Those are exactly where the serious problems hide, and they can only be confirmed with a manual test.";
+  const closing = "This report is a passive scan: it reads only public signals. It does not test authentication, injection flaws, business logic, or outdated software behind the scenes. Those are exactly where the serious problems hide, and they can only be confirmed with a manual test.";
   wrap(closing, font, 12, contentW).forEach((ln) => { p5.drawText(ln, { x: M, y, size: 12, font, color: LIGHT }); y -= 18; });
   y -= 20;
 
   const need = Math.max(3, data.checks.filter((c) => !c.pass && c.severity === "high").length);
   p5.drawRectangle({ x: M, y: y - 90, width: contentW, height: 84, color: rgb(0.08, 0.08, 0.14), borderColor: GOLD, borderWidth: 1 });
   p5.drawText(`${need} of these findings need a manual test to confirm.`, { x: M + 20, y: y - 32, size: 14, font: bold, color: WHITE });
-  p5.drawText("Reply YES on WhatsApp for a free 20-minute consult — no obligation.", { x: M + 20, y: y - 54, size: 12, font, color: GOLD });
+  p5.drawText("Reply YES on WhatsApp for a free 20-minute consult, no obligation.", { x: M + 20, y: y - 54, size: 12, font, color: GOLD });
   p5.drawText("WhatsApp +263 77 690 2542", { x: M + 20, y: y - 74, size: 11, font: bold, color: WHITE });
   y -= 130;
 

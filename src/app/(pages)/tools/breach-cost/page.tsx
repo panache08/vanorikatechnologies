@@ -6,9 +6,9 @@ import { Calculator, AlertTriangle, ArrowRight, MessageCircle } from "lucide-rea
 import { siteConfig } from "@/lib/data";
 
 const sizes = [
-  { id: "micro", label: "1–5 staff", base: 1500, records: 500 },
-  { id: "small", label: "6–20 staff", base: 4000, records: 3000 },
-  { id: "medium", label: "21–100 staff", base: 12000, records: 20000 },
+  { id: "micro", label: "1 to 5 staff", base: 1500, records: 500 },
+  { id: "small", label: "6 to 20 staff", base: 4000, records: 3000 },
+  { id: "medium", label: "21 to 100 staff", base: 12000, records: 20000 },
   { id: "large", label: "100+ staff", base: 35000, records: 100000 },
 ];
 const sectors = [
@@ -50,7 +50,7 @@ export default function BreachCostPage() {
             <Calculator className="w-3.5 h-3.5" /> FREE TOOL
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">What Could a Breach Cost You?</h1>
-          <p className="text-white/60 text-lg">A quick estimate of what a data breach could cost your Zimbabwean business — so you can weigh it against the cost of prevention.</p>
+          <p className="text-white/60 text-lg">A quick estimate of what a data breach could cost your Zimbabwean business, so you can weigh it against the cost of prevention.</p>
         </div>
       </section>
 
@@ -85,23 +85,23 @@ export default function BreachCostPage() {
 
           <div className="mt-8 bg-card border border-gold/20 rounded-3xl p-8 text-center">
             <p className="text-muted-foreground text-sm uppercase tracking-widest mb-2">Estimated breach cost</p>
-            <p className="font-display font-black text-4xl md:text-5xl text-gold mb-1">{money(low)} – {money(high)}</p>
+            <p className="font-display font-black text-4xl md:text-5xl text-gold mb-1">{money(low)} to {money(high)}</p>
             <p className="text-muted-foreground text-xs mb-6">Indicative range in USD</p>
             <div className="text-left space-y-2 mb-7">
               {breakdown.map((b) => (
                 <div key={b.label} className="flex items-center justify-between text-sm border-b border-border pb-2 last:border-0">
                   <span className="text-muted-foreground">{b.label}</span>
-                  <span className="text-foreground font-medium">{money(b.value)} – {money(b.value * 2.4)}</span>
+                  <span className="text-foreground font-medium">{money(b.value)} to {money(b.value * 2.4)}</span>
                 </div>
               ))}
             </div>
-            <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, your calculator estimates a breach could cost my business ${money(low)}–${money(high)}. I'd like to reduce that risk — can we talk?`)}`}
+            <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, your calculator estimates a breach could cost my business ${money(low)} to ${money(high)}. I'd like to reduce that risk. Can we talk?`)}`}
               target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-[#07070D] font-bold rounded-xl hover:bg-gold-light transition-all text-sm gold-glow-sm">
               <MessageCircle className="w-4 h-4" /> Reduce my risk for less
             </a>
             <p className="text-muted-foreground/60 text-xs mt-5 flex items-start gap-1.5 justify-center">
-              <AlertTriangle className="w-3.5 h-3.5 shrink-0 mt-0.5" /> Indicative only — a directional estimate, not a precise figure. A free assessment gives you the real picture.
+              <AlertTriangle className="w-3.5 h-3.5 shrink-0 mt-0.5" /> Indicative only: a directional estimate, not a precise figure. A free assessment gives you the real picture.
             </p>
           </div>
           <p className="text-center text-muted-foreground text-sm mt-6">

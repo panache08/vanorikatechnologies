@@ -101,7 +101,7 @@ export default function PasswordTool() {
           </div>
           <div className="flex items-center justify-between mt-3 text-sm">
             <span className="font-semibold" style={{ color: a && pw ? COLORS[a.score] : undefined }}>
-              {a && pw ? LABELS[a.score] : "—"}
+              {a && pw ? LABELS[a.score] : "Not rated yet"}
             </span>
             {a && pw && (
               <span className="text-muted-foreground text-xs">
@@ -129,7 +129,7 @@ export default function PasswordTool() {
           <div className="mt-5 flex items-start gap-2 bg-red-500/8 border border-red-500/20 rounded-xl px-4 py-3 text-sm text-red-400">
             <ShieldAlert className="w-4 h-4 shrink-0 mt-0.5" />
             <span>
-              {a.isCommon && "This is one of the most common passwords in the world — change it immediately. "}
+              {a.isCommon && "This is one of the most common passwords in the world. Change it immediately. "}
               {a.hasRepeats && "Avoid repeated characters (aaa, 111). "}
               {a.hasSequence && "Avoid sequences (abc, 123, qwe). "}
             </span>
@@ -140,7 +140,7 @@ export default function PasswordTool() {
       {/* Privacy note */}
       <p className="flex items-center justify-center gap-2 text-muted-foreground/70 text-xs mt-4">
         <ShieldCheck className="w-3.5 h-3.5 text-gold" />
-        100% private — everything is checked inside your browser. Your password is never sent anywhere.
+        100% private: everything is checked inside your browser. Your password is never sent anywhere.
       </p>
     </div>
   );

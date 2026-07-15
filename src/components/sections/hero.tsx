@@ -21,7 +21,7 @@ function ParticleCanvas() {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const PARTICLE_COUNT = isMobile ? 28 : 70;
-    const drawLines = !isMobile; // O(n²) connection lines are the costly part — desktop only
+    const drawLines = !isMobile; // O(n²) connection lines are the costly part: desktop only
 
     const resize = () => {
       canvas.width  = canvas.offsetWidth;
@@ -81,7 +81,7 @@ function ParticleCanvas() {
         ctx.fillStyle = `${p.color}${p.alpha})`;
         ctx.fill();
 
-        // Connection lines — gold (desktop only; O(n²) is the expensive part)
+        // Gold connection lines (desktop only; O(n²) is the expensive part)
         if (drawLines) {
           for (let j = i + 1; j < particles.length; j++) {
             const ex = particles[j].x - p.x;
@@ -200,7 +200,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="text-muted font-light text-lg leading-[1.75] mb-8 max-w-lg">
-                Donovan Mudarikwa — penetration tester and web developer, based in Harare.{" "}
+                Donovan Mudarikwa: penetration tester and web developer, based in Harare.{" "}
                 <span className="text-white/70">We find security vulnerabilities in Zimbabwean businesses and build websites that bring in real clients.</span>
               </motion.p>
 
@@ -212,7 +212,7 @@ export default function Hero() {
                 className="flex flex-wrap gap-4 mb-10">
                 {[
                   "Penetration Testing Specialist",
-                  "Based in Harare — same day response",
+                  "Based in Harare, same day response",
                   "Reply within 2 hours",
                 ].map((t) => (
                   <div key={t} className="flex items-center gap-2 text-white/45 text-sm font-light">
@@ -222,7 +222,7 @@ export default function Hero() {
                 ))}
               </motion.div>
 
-              {/* Certifications — the strongest differentiator, made explicit above the fold */}
+              {/* Certifications: the strongest differentiator, made explicit above the fold */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -259,7 +259,7 @@ export default function Hero() {
                 </Link>
               </motion.div>
 
-              {/* Pricing signal — removes friction before they even message */}
+              {/* Pricing signal removes friction before they even message */}
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -273,7 +273,7 @@ export default function Hero() {
               </motion.p>
             </div>
 
-            {/* RIGHT — credentials card */}
+            {/* RIGHT: credentials card */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -317,11 +317,11 @@ export default function Hero() {
                 {/* Quick pitch */}
                 <div className="mb-6">
                   <p className="text-white/55 text-sm font-light leading-relaxed">
-                    Penetration testing and professional websites for Zimbabwean businesses — clear, plain-English reports and direct, founder-led delivery.
+                    Penetration testing and professional websites for Zimbabwean businesses. Clear, plain-English reports and direct, founder-led delivery.
                   </p>
                 </div>
 
-                {/* Proof artifact — see report quality before you commit */}
+                {/* Proof artifact: see report quality before you commit */}
                 <a href="/sample-pentest-report.pdf" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 mb-4 p-3 rounded-lg bg-[#111122] border border-[#1A1A30] hover:border-gold/30 transition-all group">
                   <div className="w-9 h-9 rounded-lg bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">

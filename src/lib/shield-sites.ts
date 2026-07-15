@@ -1,6 +1,6 @@
-// Vanorika Shield — the sites under continuous monitoring.
+// Vanorika Shield: the sites under continuous monitoring.
 //
-// v0.1 keeps the client list here in the repo (there are only a handful to start —
+// v0.1 keeps the client list here in the repo (there are only a handful to start:
 // GlowTrack, Pearlsard, Nyasha). When the roster grows or we add stateful checks
 // (content-diff, "new subdomain since last"), this moves to Supabase.
 //
@@ -14,7 +14,7 @@ export type ShieldSite = {
 };
 
 export const SHIELD_SITES: ShieldSite[] = [
-  // Example — replace with real paying clients:
+  // Example, replace with real paying clients:
   // { name: "Beauty by Nyasha", host: "beautybynyasha.co.zw", notify: ["nyasha@example.com", "donovanmudarikwa@vanorikatechnologies.co.zw"], plan: "essential" },
   // { name: "GlowTrack Auctions", host: "glowtrack.co.zw", notify: ["ops@glowtrack.co.zw", "donovanmudarikwa@vanorikatechnologies.co.zw"], plan: "growth" },
 ];

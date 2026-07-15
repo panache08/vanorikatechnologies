@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/security" },
   title: "Responsible Disclosure Policy",
   description:
-    "Vanorika Technologies' responsible disclosure / vulnerability disclosure policy — how to safely report a security issue in our systems.",
+    "Vanorika Technologies' responsible disclosure / vulnerability disclosure policy: how to safely report a security issue in our systems.",
 };
 
 export default function SecurityPage() {
@@ -22,7 +22,7 @@ export default function SecurityPage() {
             <ShieldCheck className="w-3.5 h-3.5" /> SECURITY
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Responsible Disclosure Policy</h1>
-          <p className="text-white/60 text-lg">We&apos;re a security company — we hold ourselves to the standard we set for clients.</p>
+          <p className="text-white/60 text-lg">We&apos;re a security company. We hold ourselves to the standard we set for clients.</p>
         </div>
       </section>
 
@@ -114,7 +114,7 @@ export default function SecurityPage() {
               </a>
             ))}
           </div>
-          <p className="text-white/30 text-xs text-center mt-6">Open any of these and scan our domain yourself — we&apos;ve got nothing to hide.</p>
+          <p className="text-white/30 text-xs text-center mt-6">Open any of these and scan our domain yourself. We&apos;ve got nothing to hide.</p>
         </div>
       </section>
 
@@ -125,7 +125,7 @@ export default function SecurityPage() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Hall of Fame</h2>
           <p className="text-muted-foreground leading-relaxed max-w-xl mx-auto mb-8">
             We credit security researchers who responsibly disclose valid findings in our systems. This space is reserved
-            for them — report a genuine issue under the policy above and we&apos;ll list you here (with your permission).
+            for them. Report a genuine issue under the policy above and we&apos;ll list you here (with your permission).
           </p>
           <a href={`mailto:${siteConfig.email}`} className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
             Be the first <ExternalLink className="w-4 h-4" />

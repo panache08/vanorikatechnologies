@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
   title: "Privacy Policy",
   description:
-    "How Vanorika Technologies collects, uses, and protects your personal data — aligned with Zimbabwe's Cyber and Data Protection Act (2021).",
+    "How Vanorika Technologies collects, uses, and protects your personal data, aligned with Zimbabwe's Cyber and Data Protection Act (2021).",
 };
 
 const updated = "24 June 2026";
@@ -37,9 +37,9 @@ export default function PrivacyPage() {
 
           <h2>Information we collect</h2>
           <ul>
-            <li><strong>Information you give us</strong> — your name, email, phone number, company, and the project details you send via our contact form, WhatsApp, or email.</li>
-            <li><strong>Newsletter</strong> — the email address you submit to receive our monthly security updates.</li>
-            <li><strong>Technical data</strong> — basic, non-identifying analytics about how the site is used (pages visited, device type), where enabled.</li>
+            <li><strong>Information you give us</strong>: your name, email, phone number, company, and the project details you send via our contact form, WhatsApp, or email.</li>
+            <li><strong>Newsletter</strong>: the email address you submit to receive our monthly security updates.</li>
+            <li><strong>Technical data</strong>: basic, non-identifying analytics about how the site is used (pages visited, device type), where enabled.</li>
           </ul>
 
           <h2>How we use it</h2>
@@ -57,9 +57,9 @@ export default function PrivacyPage() {
             necessary, and apply appropriate technical safeguards to protect it.
           </p>
           <ul>
-            <li><strong>Access &amp; correction</strong> — request a copy of your data or ask us to fix inaccuracies.</li>
-            <li><strong>Deletion</strong> — ask us to remove your data where we have no ongoing need to keep it.</li>
-            <li><strong>Consent</strong> — withdraw your consent (e.g. unsubscribe) at any time.</li>
+            <li><strong>Access &amp; correction</strong>: request a copy of your data or ask us to fix inaccuracies.</li>
+            <li><strong>Deletion</strong>: ask us to remove your data where we have no ongoing need to keep it.</li>
+            <li><strong>Consent</strong>: withdraw your consent (e.g. unsubscribe) at any time.</li>
           </ul>
           <p>To exercise any of these rights, email <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.</p>
 

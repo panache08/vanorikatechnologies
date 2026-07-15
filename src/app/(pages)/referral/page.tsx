@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/data";
 
 export default function ReferralPage() {
   const shareMsg = encodeURIComponent(
-    `I use Vanorika Technologies for cybersecurity and web work in Zimbabwe — worth a look. They give free security assessments: ${siteConfig.website}`,
+    `I use Vanorika Technologies for cybersecurity and web work in Zimbabwe, worth a look. They give free security assessments: ${siteConfig.website}`,
   );
   const referMsg = encodeURIComponent("Hi Donovan, I'd like to refer a business to you under your referral programme.");
 
@@ -21,7 +21,7 @@ export default function ReferralPage() {
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Refer a business, you both win</h1>
           <p className="text-white/60 text-lg">
-            Know a Zimbabwean business that needs a secure website or a security check? Refer them — when they take on a paid engagement,
+            Know a Zimbabwean business that needs a secure website or a security check? Refer them. When they take on a paid engagement,
             <span className="text-gold"> you both get 20% off.</span>
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function ReferralPage() {
             {[
               { icon: Share2, t: "1. Refer them", d: "Share Vanorika with a business that needs it." },
               { icon: Users, t: "2. They engage", d: "They take on a paid project or audit." },
-              { icon: Percent, t: "3. You both save", d: "20% off for them — and 20% off your next project." },
+              { icon: Percent, t: "3. You both save", d: "20% off for them, and 20% off your next project." },
             ].map((c) => (
               <div key={c.t} className="bg-card border border-border rounded-2xl p-5">
                 <c.icon className="w-6 h-6 text-gold mb-3" />

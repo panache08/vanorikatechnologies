@@ -40,7 +40,7 @@ export default function CookiesPage() {
             <Cookie className="w-3.5 h-3.5" /> FREE TOOL
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">Cookie &amp; Privacy Scanner</h1>
-          <p className="text-white/60 text-lg">See which cookies and trackers your website sets — and whether you have the privacy basics the Data Protection Act expects.</p>
+          <p className="text-white/60 text-lg">See which cookies and trackers your website sets, and whether you have the privacy basics the Data Protection Act expects.</p>
         </div>
       </section>
 
@@ -60,14 +60,14 @@ export default function CookiesPage() {
               <p className="font-display text-lg font-bold text-foreground mb-5 break-all">{data.host}</p>
               <Row ok={data.hasPrivacyLink} label={data.hasPrivacyLink ? "Privacy policy found" : "No privacy policy detected"} detail="Required under the Data Protection Act (2021) if you collect any personal data." />
               <Row ok={data.cookiesSetOnLoad === 0} label={`${data.cookiesSetOnLoad} cookie(s) set on load`} detail={data.cookieNames.length ? data.cookieNames.join(", ") : "None set before any interaction."} />
-              <Row ok={data.trackers.length === 0} label={data.trackers.length ? `${data.trackers.length} third-party tracker(s)` : "No common trackers detected"} detail={data.trackers.length ? data.trackers.join(", ") + " — these may set cookies that need consent." : "Nothing obvious loading third-party tracking."} />
+              <Row ok={data.trackers.length === 0} label={data.trackers.length ? `${data.trackers.length} third-party tracker(s)` : "No common trackers detected"} detail={data.trackers.length ? data.trackers.join(", ") + ". These may set cookies that need consent." : "Nothing obvious loading third-party tracking."} />
 
               <div className="mt-6 pt-6 border-t border-border flex items-start gap-3">
                 <ShieldAlert className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">{data.concern ? "You have tracking but no clear privacy policy — a Data Protection Act compliance gap." : "Want a full privacy & compliance review? We'll check consent, retention and your whole data flow."}</p>
-                  <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I scanned ${data.host} with your cookie tool${data.hasPrivacyLink ? "" : " — no privacy policy detected"}. Can you help with DPA compliance?`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
-                    Get a compliance review — free <ArrowRight className="w-4 h-4" />
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-3">{data.concern ? "You have tracking but no clear privacy policy, which is a Data Protection Act compliance gap." : "Want a full privacy & compliance review? We'll check consent, retention and your whole data flow."}</p>
+                  <a href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(`Hi Donovan, I scanned ${data.host} with your cookie tool${data.hasPrivacyLink ? "" : " and no privacy policy was detected"}. Can you help with DPA compliance?`)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gold text-sm font-semibold hover:gap-2.5 transition-all">
+                    Get a compliance review, free <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>
               </div>

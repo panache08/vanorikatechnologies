@@ -127,7 +127,7 @@ export function ArticleJsonLd({ title }: { title: string }) {
   );
 }
 
-/** FAQPage schema — drop onto any page that renders the shared FAQ list. */
+/** FAQPage schema. Drop onto any page that renders the shared FAQ list. */
 export function FaqJsonLd() {
   return (
     <JsonLd
@@ -144,7 +144,7 @@ export function FaqJsonLd() {
   );
 }
 
-/** Service schema for a service landing page — ties the offering to the org. */
+/** Service schema for a service landing page, tying the offering to the org. */
 export function ServiceJsonLd({
   name, description, path, price,
 }: { name: string; description: string; path: string; price?: string }) {

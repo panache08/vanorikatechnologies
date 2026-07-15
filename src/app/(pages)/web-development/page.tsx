@@ -10,16 +10,16 @@ export const metadata: Metadata = {
   alternates: { canonical: "/web-development" },
   title: "Website Development in Zimbabwe",
   description:
-    "Professional website development for Zimbabwe businesses — fast, mobile-ready sites built in 1–2 weeks with EcoCash/Paynow integration and SEO setup. You own everything. From $299.",
+    "Professional website development for Zimbabwe businesses: fast, mobile-ready sites built in 1 to 2 weeks with EcoCash/Paynow integration and SEO setup. You own everything. From $299.",
 };
 
 const builds = [
-  { icon: Globe, title: "Business Websites", desc: "Professional, mobile-ready sites that load fast and turn visitors into enquiries — not just compliments." },
+  { icon: Globe, title: "Business Websites", desc: "Professional, mobile-ready sites that load fast and turn visitors into enquiries, not just compliments." },
   { icon: ShoppingCart, title: "E-Commerce", desc: "Online stores with EcoCash, Paynow, and card payment integration, inventory, and order management." },
-  { icon: LayoutTemplate, title: "Landing Pages", desc: "High-converting single pages for a campaign, product, or launch — built to capture leads." },
-  { icon: SearchCheck, title: "SEO Setup", desc: "Proper titles, structured data, sitemaps, and speed — so customers can actually find you on Google." },
+  { icon: LayoutTemplate, title: "Landing Pages", desc: "High-converting single pages for a campaign, product, or launch, built to capture leads." },
+  { icon: SearchCheck, title: "SEO Setup", desc: "Proper titles, structured data, sitemaps, and speed, so customers can actually find you on Google." },
   { icon: Smartphone, title: "Mobile-First", desc: "Most Zimbabwean traffic is on a phone. Every site is built and tested for mobile from the ground up." },
-  { icon: Gauge, title: "Fast & Secure", desc: "Modern hosting, HTTPS, and security hardening as standard — built by a security company, after all." },
+  { icon: Gauge, title: "Fast & Secure", desc: "Modern hosting, HTTPS, and security hardening as standard. Built by a security company, after all." },
 ];
 
 export default function WebDevelopmentPage() {
@@ -27,7 +27,7 @@ export default function WebDevelopmentPage() {
     <main>
       <ServiceJsonLd
         name="Website Development in Zimbabwe"
-        description="Professional website and e-commerce development for Zimbabwean businesses — fast, mobile-ready sites with EcoCash/Paynow integration and SEO setup, built in 1–2 weeks."
+        description="Professional website and e-commerce development for Zimbabwean businesses: fast, mobile-ready sites with EcoCash/Paynow integration and SEO setup, built in 1 to 2 weeks."
         path="/web-development"
         price="from $299"
       />
@@ -41,7 +41,7 @@ export default function WebDevelopmentPage() {
           </span>
           <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">Website Development in Zimbabwe</h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            A website that works — not just one that looks good in a browser. Built in 1–2 weeks, mobile-ready, fast, and set up to bring
+            A website that works, not just one that looks good in a browser. Built in 1 to 2 weeks, mobile-ready, fast, and set up to bring
             you enquiries. You own everything.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
@@ -85,7 +85,7 @@ export default function WebDevelopmentPage() {
               No nasty surprises and no charging extra for the basics. As standard, you get:
             </p>
             <ul className="space-y-3">
-              {["Full ownership — code, design, content, and domain", "Mobile-responsive on every device", "Fast loading and clean, modern design", "Basic SEO setup so you can be found", "HTTPS and security hardening", "A working contact path, tested before launch"].map((f) => (
+              {["Full ownership: code, design, content, and domain", "Mobile-responsive on every device", "Fast loading and clean, modern design", "Basic SEO setup so you can be found", "HTTPS and security hardening", "A working contact path, tested before launch"].map((f) => (
                 <li key={f} className="flex items-start gap-2.5 text-sm text-foreground">
                   <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" /> {f}
                 </li>

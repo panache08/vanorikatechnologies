@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Vanorika dark theme (always dark — no light mode toggle) */
+    /* Vanorika dark theme (always dark, no light mode toggle) */
     --background:   225 39% 4%;
     --foreground:   30 20% 92%;
     --card:         230 35% 7%;
@@ -122,7 +122,7 @@
     box-shadow: 0 20px 50px rgba(201,168,76,0.1), 0 0 0 1px rgba(201,168,76,0.15);
   }
 
-  /* Grid overlay — gold-tinted */
+  /* Grid overlay: gold-tinted */
   .bg-grid {
     background-image:
       linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),

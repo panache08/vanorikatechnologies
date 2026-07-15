@@ -50,7 +50,7 @@ export default function Footer() {
               {siteConfig.tagline}
             </p>
             <p className="text-white/30 text-xs leading-relaxed mb-7 font-light">
-              Penetration testing and web development — Harare-based, founder-led.
+              Penetration testing and web development. Harare-based, founder-led.
             </p>
             <div className="flex items-center gap-2">
               {[

@@ -50,7 +50,7 @@ def hf(canvas, doc):
     canvas.setFillColor(colors.white); canvas.setFont("Helvetica", 8)
     canvas.drawRightString(w - 18 * mm, h - 15 * mm, "CONFIDENTIAL · SAMPLE REPORT")
     canvas.setFillColor(MUTED); canvas.setFont("Helvetica", 8)
-    canvas.drawCentredString(w / 2, 12 * mm, "Sample report — client name, hostnames and evidence redacted. Real reports include full proof-of-concept and remediation steps.")
+    canvas.drawCentredString(w / 2, 12 * mm, "Sample report: client name, hostnames and evidence redacted. Real reports include full proof-of-concept and remediation steps.")
     canvas.drawRightString(w - 18 * mm, 8 * mm, f"Page {doc.page}")
     canvas.setFont("Helvetica", 8); canvas.drawString(18 * mm, 8 * mm, "vanorikatechnologies.co.zw")
     canvas.restoreState()
@@ -126,7 +126,7 @@ def build():
     story += [Paragraph("Findings at a glance", s["H2"])]
     story += [sev_table([
         ("CRITICAL", "Authentication bypass on an unprotected API endpoint"),
-        ("HIGH", "Broken access control — horizontal privilege escalation"),
+        ("HIGH", "Broken access control: horizontal privilege escalation"),
         ("MEDIUM", "Outdated CMS component with a known CVE"),
         ("MEDIUM", "Missing security headers (CSP, HSTS)"),
         ("LOW", "Verbose error messages leak internal paths"),
@@ -137,14 +137,14 @@ def build():
         s, "CRITICAL", "Authentication bypass on an unprotected API endpoint", "VAN-2026-01",
         "An internal API endpoint returning customer records was reachable without any authentication token. "
         "Requesting the endpoint directly returned full records belonging to other users.",
-        "An attacker could enumerate and exfiltrate the entire customer database — names, contact details and order "
-        "history — leading to a reportable data breach under the Data Protection Act (2021).",
+        "An attacker could enumerate and exfiltrate the entire customer database (names, contact details and order "
+        "history), leading to a reportable data breach under the Data Protection Act (2021).",
         "Enforce authentication and object-level authorisation on every API route; deny by default. Add server-side "
         "checks that the requesting user owns the records being returned.",
         "GET /api/v1/customers/<id> → 200 OK  (no Authorization header)  [response body redacted]",
     )
     story += finding(
-        s, "HIGH", "Broken access control — horizontal privilege escalation", "VAN-2026-02",
+        s, "HIGH", "Broken access control: horizontal privilege escalation", "VAN-2026-02",
         "By changing a numeric identifier in a request, a logged-in user could view and modify another user's account.",
         "Any customer could tamper with other customers' data, undermining trust and integrity of the platform.",
         "Validate ownership of every referenced object server-side; use non-guessable identifiers; log access anomalies.",

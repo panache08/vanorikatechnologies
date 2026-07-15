@@ -24,13 +24,13 @@ import {
 
 export const metadata: Metadata = {
   alternates: { canonical: "/security-index" },
-  title: "Zimbabwe Web Security Index — How the Country's Top Sites Score",
+  title: "Zimbabwe Web Security Index: How the Country's Top Sites Score",
   description:
-    "A live index grading the security posture of Zimbabwe's most prominent websites — HTTPS, security headers and email anti-spoofing — across banking, telecom, government, insurance, media and retail.",
+    "A live index grading the security posture of Zimbabwe's most prominent websites (HTTPS, security headers and email anti-spoofing) across banking, telecom, government, insurance, media and retail.",
   openGraph: {
     title: "Zimbabwe Web Security Index",
     description:
-      "We graded the security of Zimbabwe's top organisations A–F. Most are failing. See where each sector stands.",
+      "We graded the security of Zimbabwe's top organisations A to F. Most are failing. See where each sector stands.",
     url: `${SITE_URL}/security-index`,
     type: "website",
   },
@@ -45,7 +45,7 @@ const GRADE_COLOR: Record<IndexGrade, string> = {
 };
 
 const claimUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
-  "Hi Vanorika — I saw the Zimbabwe Web Security Index. Is my organisation on the list? I'd like our free detailed security breakdown."
+  "Hi Vanorika, I saw the Zimbabwe Web Security Index. Is my organisation on the list? I'd like our free detailed security breakdown."
 )}`;
 
 function GradeBadge({ grade, big }: { grade: IndexGrade; big?: boolean }) {
@@ -90,8 +90,8 @@ export default function SecurityIndexPage() {
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-3">
             We ran a passive, external security check on{" "}
-            <strong className="text-white">{SCAN_SAMPLE} prominent organisations</strong> across {SCAN_SECTORS} sectors —
-            and graded each one A–F. The results are sobering.
+            <strong className="text-white">{SCAN_SAMPLE} prominent organisations</strong> across {SCAN_SECTORS} sectors,
+            then graded each one A to F. The results are sobering.
           </p>
           <p className="text-white/30 text-xs font-mono">Last scanned {SCAN_DATE}</p>
         </div>
@@ -129,7 +129,7 @@ export default function SecurityIndexPage() {
           </div>
           <p className="text-center text-muted-foreground text-sm mt-6 max-w-xl mx-auto">
             Only <strong className="text-emerald-400">{STAT_TOP}</strong> of {SCAN_SAMPLE} organisations reached an A.
-            The rest leave visitors — and their own brand — exposed to entirely preventable attacks.
+            The rest leave visitors, and their own brand, exposed to entirely preventable attacks.
           </p>
         </div>
       </section>
@@ -159,7 +159,7 @@ export default function SecurityIndexPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-2xl font-bold text-foreground mb-2 text-center">The full leaderboard</h2>
           <p className="text-center text-muted-foreground text-sm mb-8 max-w-xl mx-auto">
-            Anonymised to sector level. Each organisation can claim its named, detailed breakdown — free.
+            Anonymised to sector level. Each organisation can claim its named, detailed breakdown for free.
           </p>
 
           <div className="overflow-x-auto rounded-2xl border border-border">
@@ -206,17 +206,17 @@ export default function SecurityIndexPage() {
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl font-bold text-white mb-4">Is your organisation on this list?</h2>
           <p className="text-white/60 mb-8">
-            We&apos;ll send you the named, full breakdown of where you sit — every check, every gap, and exactly how to fix
+            We&apos;ll send you the named, full breakdown of where you sit: every check, every gap, and exactly how to fix
             it. No cost, no obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <LeadCaptureModal
-              source="Security Index — claim breakdown"
+              source="Security Index: claim breakdown"
               label="Claim your free breakdown"
               icon={<MessageCircle className="w-4 h-4" />}
-              whatsappMessage="Hi Vanorika — I saw the Zimbabwe Web Security Index. Is my organisation on the list? I'd like our free detailed security breakdown."
+              whatsappMessage="Hi Vanorika, I saw the Zimbabwe Web Security Index. Is my organisation on the list? I'd like our free detailed security breakdown."
               heading="Get your named breakdown"
-              subheading="Leave your name and contact — we'll send the full, named detail of where your organisation sits and re-check it for you."
+              subheading="Leave your name and contact. We'll send the full, named detail of where your organisation sits and re-check it for you."
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gold text-black font-semibold hover:bg-gold-light transition-colors"
             />
             <Link
@@ -232,7 +232,7 @@ export default function SecurityIndexPage() {
       {/* Methodology */}
       <section className="py-16 bg-background border-t border-border">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-xl font-bold text-foreground mb-4">How we scored — and what we didn&apos;t do</h2>
+          <h2 className="font-display text-xl font-bold text-foreground mb-4">How we scored, and what we didn&apos;t do</h2>
           <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
             <p>
               Every grade comes from a <strong className="text-foreground">passive, external check of public signals only</strong>:
@@ -243,12 +243,12 @@ export default function SecurityIndexPage() {
             </p>
             <p>
               Scores are out of 100, weighted toward the highest-impact protections (working HTTPS and email anti-spoofing
-              carry the most weight). Grades: A 90+, B 75–89, C 60–74, D 40–59, F below 40.
+              carry the most weight). Grades: A 90+, B 75 to 89, C 60 to 74, D 40 to 59, F below 40.
             </p>
             <p>
               Results reflect what was observable on <strong className="text-foreground">{SCAN_DATE}</strong>. A site that did
               not return a response within the scan window is recorded as unreachable over HTTPS at that moment, which affects
-              its score. Organisations are anonymised to sector level by design — this index is about the national picture, not
+              its score. Organisations are anonymised to sector level by design. This index is about the national picture, not
               singling anyone out. Any organisation can{" "}
               <a href={claimUrl} target="_blank" rel="noopener noreferrer" className="text-gold hover:underline">
                 claim its entry

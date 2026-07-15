@@ -83,7 +83,7 @@ export default function CompareRunner() {
   const tie = result ? result.you.score === result.them.score : false;
 
   const leadMessage = result
-    ? `Hi Donovan, I compared ${result.you.host} (grade ${result.you.grade}) against ${result.them.host} (grade ${result.them.grade}) on your site. ${youAhead ? "I want to stay ahead" : "I want to close the gap"} — can you help?`
+    ? `Hi Donovan, I compared ${result.you.host} (grade ${result.you.grade}) against ${result.them.host} (grade ${result.them.grade}) on your site. ${youAhead ? "I want to stay ahead" : "I want to close the gap"}. Can you help?`
     : "Hello! I'd like to discuss a security comparison.";
 
   return (
@@ -107,7 +107,7 @@ export default function CompareRunner() {
         </button>
       </form>
       {error && <p className="text-red-400 text-sm mt-4">{error}</p>}
-      {!result && !loading && <p className="text-white/30 text-xs mt-4 text-center">Passive checks only — public information, nothing intrusive, for either site.</p>}
+      {!result && !loading && <p className="text-white/30 text-xs mt-4 text-center">Passive checks only: public information, nothing intrusive, for either site.</p>}
 
       {result && (
         <div className="mt-8 bg-card border border-border rounded-3xl p-6 sm:p-8">
@@ -119,7 +119,7 @@ export default function CompareRunner() {
 
           <div className="text-center pb-6 border-b border-border">
             {tie ? (
-              <p className="text-foreground font-display font-bold">Neck and neck — you both scored {result.you.score}.</p>
+              <p className="text-foreground font-display font-bold">Neck and neck: you both scored {result.you.score}.</p>
             ) : youAhead ? (
               <p className="text-emerald-400 font-display font-bold">You&apos;re ahead by {result.you.score - result.them.score} points. Now keep it that way.</p>
             ) : (

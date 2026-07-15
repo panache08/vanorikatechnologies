@@ -47,7 +47,7 @@ export async function POST(req: Request) {
     html = await res.text().catch(() => "");
     checks.push({ id: "ssl", label: "Valid SSL certificate (HTTPS)", pass: res.ok || res.status < 500, detail: `Site responded over HTTPS (status ${res.status}).` });
   } catch {
-    checks.push({ id: "ssl", label: "Valid SSL certificate (HTTPS)", pass: false, detail: "Could not establish a secure HTTPS connection — certificate may be missing or invalid." });
+    checks.push({ id: "ssl", label: "Valid SSL certificate (HTTPS)", pass: false, detail: "Could not establish a secure HTTPS connection. The certificate may be missing or invalid." });
   }
 
   // 2. HTTP -> HTTPS redirect
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
       id: "redirect",
       label: "HTTP redirects to HTTPS",
       pass: redirects,
-      detail: redirects ? "Insecure HTTP traffic is redirected to HTTPS." : "HTTP requests are not forced to HTTPS — visitors can be served insecurely.",
+      detail: redirects ? "Insecure HTTP traffic is redirected to HTTPS." : "HTTP requests are not forced to HTTPS, so visitors can be served insecurely.",
     });
   } catch {
     checks.push({ id: "redirect", label: "HTTP redirects to HTTPS", pass: false, detail: "Could not verify an HTTP→HTTPS redirect." });
@@ -91,7 +91,7 @@ export async function POST(req: Request) {
     id: "privacy",
     label: "Privacy policy detected",
     pass: hasPrivacy,
-    detail: hasPrivacy ? "A privacy policy link or reference was found on the homepage." : "No privacy policy link was detected — this is a Data Protection Act (2021) compliance gap.",
+    detail: hasPrivacy ? "A privacy policy link or reference was found on the homepage." : "No privacy policy link was detected. This is a Data Protection Act (2021) compliance gap.",
   });
 
   const score = Math.round((checks.filter((c) => c.pass).length / checks.length) * 100);

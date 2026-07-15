@@ -47,7 +47,7 @@ export async function runReport(host: string): Promise<ReportData> {
   }
   checks.push({
     id: "https", label: "Serves a secure HTTPS connection", pass: httpsOk, weight: 22, severity: "high",
-    detail: httpsOk ? "The site responded correctly over an encrypted HTTPS connection." : "We could not reach the site over HTTPS — the certificate may be missing, expired or misconfigured.",
+    detail: httpsOk ? "The site responded correctly over an encrypted HTTPS connection." : "We could not reach the site over HTTPS. The certificate may be missing, expired or misconfigured.",
     fix: "Install a valid TLS certificate (Let's Encrypt is free) and serve all traffic over HTTPS.",
   });
 
@@ -61,7 +61,7 @@ export async function runReport(host: string): Promise<ReportData> {
   }
   checks.push({
     id: "redirect", label: "Forces insecure traffic to HTTPS", pass: redirects, weight: 8, severity: "medium",
-    detail: redirects ? "Visitors arriving over plain HTTP are redirected to the secure version." : "Plain HTTP requests are not redirected — visitors can be served an insecure version of the site.",
+    detail: redirects ? "Visitors arriving over plain HTTP are redirected to the secure version." : "Plain HTTP requests are not redirected, so visitors can be served an insecure version of the site.",
     fix: "Add a permanent 301 redirect from http:// to https:// at the server or CDN level.",
   });
 
@@ -90,13 +90,13 @@ export async function runReport(host: string): Promise<ReportData> {
 
   checks.push({
     id: "spf", label: "SPF record (anti-spoofing)", pass: !!spf, weight: 12, severity: "high",
-    detail: spf ? "An SPF record is published, declaring who may send email for this domain." : "No SPF record found — anyone can send email that appears to come from this domain.",
+    detail: spf ? "An SPF record is published, declaring who may send email for this domain." : "No SPF record found, so anyone can send email that appears to come from this domain.",
     fix: "Publish an SPF TXT record listing your legitimate mail servers (e.g. v=spf1 include:your-provider ~all).",
   });
   checks.push({
     id: "dmarc", label: "DMARC policy (anti-spoofing)", pass: !!dmarcRec && dmarcStrong, weight: 13, severity: "high",
     detail: !dmarcRec
-      ? "No DMARC record found — there is nothing telling mail servers to reject forged email from this domain."
+      ? "No DMARC record found. There is nothing telling mail servers to reject forged email from this domain."
       : dmarcStrong
         ? `A DMARC policy is enforced (p=${dmarcPolicy}), actively blocking spoofed email.`
         : "A DMARC record exists but its policy is p=none, so spoofed email is monitored but not blocked.",
@@ -107,7 +107,7 @@ export async function runReport(host: string): Promise<ReportData> {
   const hasPrivacy = /href=["'][^"']*privacy[^"']*["']/.test(lower) || lower.includes("privacy policy");
   checks.push({
     id: "privacy", label: "Privacy policy (Data Protection Act 2021)", pass: hasPrivacy, weight: 8, severity: "medium",
-    detail: hasPrivacy ? "A privacy policy was found — a baseline expectation under Zimbabwe's Data Protection Act (2021)." : "No privacy policy was detected. Zimbabwe's Data Protection Act (2021) requires businesses handling personal data to disclose how it's used.",
+    detail: hasPrivacy ? "A privacy policy was found, a baseline expectation under Zimbabwe's Data Protection Act (2021)." : "No privacy policy was detected. Zimbabwe's Data Protection Act (2021) requires businesses handling personal data to disclose how it's used.",
     fix: "Publish a clear privacy policy covering what personal data you collect, why, and how it's protected.",
   });
 

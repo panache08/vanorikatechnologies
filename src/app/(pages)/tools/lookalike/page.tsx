@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools/lookalike" },
   title: "Free Lookalike Domain Finder",
   description:
-    "Find lookalike and typosquat domains impersonating your business — common misspellings and homoglyphs that attackers register for phishing. Free tool from Vanorika Technologies, Harare.",
+    "Find lookalike and typosquat domains impersonating your business: the common misspellings and homoglyphs that attackers register for phishing. Free tool from Vanorika Technologies, Harare.",
 };
 
 export default function LookalikePage() {

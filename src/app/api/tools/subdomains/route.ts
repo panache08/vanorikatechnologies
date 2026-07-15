@@ -25,7 +25,7 @@ export async function POST(req: Request) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15000);
   try {
-    // crt.sh certificate transparency logs — free, no API key.
+    // crt.sh certificate transparency logs: free, no API key.
     const res = await fetch(`https://crt.sh/?q=${encodeURIComponent("%." + domain)}&output=json`, {
       signal: controller.signal,
       headers: { "User-Agent": "VanorikaTools/1.0" },
@@ -45,7 +45,7 @@ export async function POST(req: Request) {
   } catch (e) {
     const aborted = e instanceof Error && e.name === "AbortError";
     return NextResponse.json(
-      { error: aborted ? "Lookup timed out — crt.sh can be slow. Try again." : "Could not reach the certificate transparency logs. Try again shortly." },
+      { error: aborted ? "Lookup timed out. crt.sh can be slow, so try again." : "Could not reach the certificate transparency logs. Try again shortly." },
       { status: 502 },
     );
   } finally {

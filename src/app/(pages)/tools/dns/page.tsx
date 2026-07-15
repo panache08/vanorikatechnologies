@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/tools/dns" },
   title: "Free DNS Records Lookup",
   description:
-    "View a domain's DNS records — A, AAAA, MX, NS, TXT, and CNAME — in one clean view. Free, passive tool from Vanorika Technologies, Harare. No login.",
+    "View a domain's DNS records (A, AAAA, MX, NS, TXT, and CNAME) in one clean view. Free, passive tool from Vanorika Technologies, Harare. No login.",
 };
 
 export default function DnsPage() {
@@ -22,7 +22,7 @@ export default function DnsPage() {
             <Network className="w-3.5 h-3.5" /> FREE TOOL
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">DNS Records Lookup</h1>
-          <p className="text-white/60 text-lg">See all the public DNS records for any domain — A, MX, NS, TXT and more — in one place.</p>
+          <p className="text-white/60 text-lg">See all the public DNS records for any domain in one place: A, MX, NS, TXT and more.</p>
         </div>
       </section>
       <section className="py-16 bg-background">

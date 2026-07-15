@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import SectionHeader from "@/components/ui/section-header";
 
 const services = ["Website Development", "Custom Software", "Mobile App", "Cybersecurity", "Cloud Services", "IT Consulting", "AI & Automation", "Technical Support", "Other"];
-const budgets = ["Under $500", "$500 – $1,000", "$1,000 – $3,000", "$3,000 – $10,000", "$10,000+", "Not Sure Yet"];
+const budgets = ["Under $500", "$500 to $1,000", "$1,000 to $3,000", "$3,000 to $10,000", "$10,000+", "Not Sure Yet"];
 
 function makeCaptcha() {
   const a = Math.floor(Math.random() * 9) + 1;
@@ -66,7 +66,7 @@ export default function ContactPage() {
     const waUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`;
     window.open(waUrl, "_blank", "noopener,noreferrer");
 
-    toast.success("Opening WhatsApp — just hit send and Donovan will reply within 2 hours.");
+    toast.success("Opening WhatsApp. Just hit send and Donovan will reply within 2 hours.");
     setForm({ name: "", company: "", email: "", phone: "", service: "", budget: "", message: "", _honey: "" });
     setCaptchaInput("");
     setLoading(false);
@@ -157,7 +157,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Honeypot — visually hidden, bots fill it, humans don't */}
+                {/* Honeypot: visually hidden, bots fill it, humans don't */}
                 <input
                   type="text"
                   name="_honey"

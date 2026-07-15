@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/case-studies" },
   title: "Case Studies",
   description:
-    "Real Vanorika Technologies engagements — GlowTrack Auctions, Pearlsard Travel, and Beauty by Nyasha. The challenge, what we found, and the outcome.",
+    "Real Vanorika Technologies engagements: GlowTrack Auctions, Pearlsard Travel, and Beauty by Nyasha. The challenge, what we found, and the outcome.",
 };
 
 const caseStudies = [
@@ -19,7 +19,7 @@ const caseStudies = [
     color: "from-red-600 to-orange-500",
     headline: "Critical authentication bypass caught and patched before the platform ever went public.",
     challenge: "A Harare auction platform needed assurance its web application was safe before going public.",
-    found: "A critical unauthenticated API endpoint allowed an authentication bypass — among 6 issues in total.",
+    found: "A critical unauthenticated API endpoint allowed an authentication bypass, among 6 issues in total.",
     outcome: "Patched before public launch, with a full remediation report.",
     href: "/case-study/glowtrack-auctions",
   },
@@ -27,9 +27,9 @@ const caseStudies = [
     name: "Pearlsard Travel Services",
     type: "Passive Security Assessment",
     color: "from-blue-600 to-cyan-500",
-    headline: "A silently broken lead path restored — followers were being sent to a dead page.",
+    headline: "A silently broken lead path restored: followers were being sent to a dead page.",
     challenge: "A travel agency whose Instagram bio link sent followers to a dead page, across two websites.",
-    found: "A live server error and a missing privacy policy — among 10 issues across both domains.",
+    found: "A live server error and a missing privacy policy, among 10 issues across both domains.",
     outcome: "Broken lead path restored and every issue mapped to a fix-it roadmap.",
     href: null,
   },
@@ -38,8 +38,8 @@ const caseStudies = [
     type: "Web Development + Security Audit",
     color: "from-pink-500 to-rose-500",
     headline: "Booking, payments and customer data secured before a clean launch.",
-    challenge: "A new luxury salon site needed a security review before launch — booking, payments and customer data all live.",
-    found: "Issues across the application and its Supabase backend — 8 in total.",
+    challenge: "A new luxury salon site needed a security review before launch: booking, payments and customer data all live.",
+    found: "8 issues in total across the application and its Supabase backend.",
     outcome: "Every finding resolved; launched clean.",
     href: "https://beauty-by-nyasha.vercel.app",
   },

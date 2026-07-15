@@ -10,7 +10,7 @@ import SectionHeader from "@/components/ui/section-header";
 export const metadata: Metadata = {
   alternates: { canonical: "/portfolio" },
   title: "Portfolio",
-  description: "Explore our portfolio of completed projects — websites, apps, software, and digital solutions for businesses across Zimbabwe.",
+  description: "Explore our portfolio of completed projects: websites, apps, software, and digital solutions for businesses across Zimbabwe.",
 };
 
 export default function PortfolioPage() {
