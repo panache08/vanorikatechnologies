@@ -3,133 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, ChevronDown, Shield, FileText } from "lucide-react";
 import { siteConfig } from "@/lib/data";
-import { useEffect, useRef } from "react";
-
-function ParticleCanvas() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mouseRef  = useRef({ x: -9999, y: -9999 });
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animId: number;
-
-    // Scale down work on small screens / honour reduced-motion for performance.
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const PARTICLE_COUNT = isMobile ? 28 : 70;
-    const drawLines = !isMobile; // O(n²) connection lines are the costly part: desktop only
-
-    const resize = () => {
-      canvas.width  = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const onMouse = (e: MouseEvent) => {
-      const r = canvas.getBoundingClientRect();
-      mouseRef.current = { x: e.clientX - r.left, y: e.clientY - r.top };
-    };
-    canvas.addEventListener("mousemove", onMouse);
-
-    // Gold + warm nodes
-    const COLORS = [
-      "rgba(201,168,76,",
-      "rgba(226,201,122,",
-      "rgba(240,223,160,",
-    ];
-    const particles = Array.from({ length: PARTICLE_COUNT }, () => ({
-      x:     Math.random() * (canvas.width  || 1200),
-      y:     Math.random() * (canvas.height || 800),
-      vx:    (Math.random() - 0.5) * 0.35,
-      vy:    (Math.random() - 0.5) * 0.35,
-      size:  Math.random() * 1.8 + 0.4,
-      alpha: Math.random() * 0.5 + 0.08,
-      color: COLORS[Math.floor(Math.random() * COLORS.length)],
-    }));
-
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((p, i) => {
-        // Mouse repel
-        const dx = p.x - mouseRef.current.x;
-        const dy = p.y - mouseRef.current.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 100) {
-          const force = (100 - dist) / 100;
-          p.vx += (dx / dist) * force * 0.6;
-          p.vy += (dy / dist) * force * 0.6;
-        }
-        // Dampen velocity
-        p.vx *= 0.98;
-        p.vy *= 0.98;
-
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width)  p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `${p.color}${p.alpha})`;
-        ctx.fill();
-
-        // Gold connection lines (desktop only; O(n²) is the expensive part)
-        if (drawLines) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const ex = particles[j].x - p.x;
-            const ey = particles[j].y - p.y;
-            const d  = Math.sqrt(ex * ex + ey * ey);
-            if (d < 130) {
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(201,168,76,${0.07 * (1 - d / 130)})`;
-              ctx.lineWidth = 0.6;
-              ctx.stroke();
-            }
-          }
-        }
-      });
-
-      // Reduced-motion: render a single static frame, no animation loop.
-      if (!reducedMotion) animId = requestAnimationFrame(draw);
-    };
-    draw();
-
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
-      canvas.removeEventListener("mousemove", onMouse);
-    };
-  }, []);
-
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-50" />;
-}
-
-const TICKER_ITEMS = [
-  "Penetration Testing",
-  "Web Application Security",
-  "17+ Businesses Assessed",
-  "ZW DPA 2021 Compliant",
-  "HackerOne Researcher",
-  "Bugcrowd Researcher",
-  "Network Vulnerability Scanning",
-  "<48hr Audit Start",
-  "Phishing Simulation",
-  "Based in Harare, Zimbabwe",
-  "Plain-English Reports",
-  "Open-Source Tooling",
-  "Founder-Led Engagements",
-  "Free Passive Assessments",
-];
+import { useRef } from "react";
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -143,7 +17,6 @@ export default function Hero() {
         {/* Background layers */}
         <div className="absolute inset-0 bg-mesh-gradient" />
         <div className="absolute inset-0 bg-grid opacity-100" />
-        <ParticleCanvas />
 
         {/* Gold orbs */}
         <motion.div style={{ y }} className="absolute inset-0 pointer-events-none">
@@ -325,26 +198,9 @@ export default function Hero() {
 
                 <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
                   className="block w-full text-center py-3.5 bg-gold text-[#07070D] font-bold rounded-xl text-sm hover:bg-gold-light transition-colors uppercase tracking-wider">
-                  💬 Chat with Donovan Directly
+                  Chat with Donovan Directly
                 </a>
               </div>
-
-              {/* Floating chips */}
-              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 bg-[#0D0D1A] border border-gold/20 rounded-xl px-4 py-2.5 shadow-xl">
-                <div className="flex items-center gap-2">
-                  <span className="text-green text-xs">●</span>
-                  <span className="font-mono text-white/60 text-xs">ZW DPA 2021 Compliant</span>
-                </div>
-              </motion.div>
-
-              <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-5 -left-6 bg-[#0D0D1A] border border-gold/20 rounded-xl px-4 py-2.5 shadow-xl">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-3.5 h-3.5 text-gold" />
-                  <span className="font-mono text-white/60 text-xs">HackerOne · Bugcrowd</span>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
         </motion.div>
@@ -358,20 +214,9 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Bottom fade to ticker */}
+        {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#07070D] to-transparent z-10" />
       </section>
-
-      {/* Gold ticker band */}
-      <div className="relative bg-gold/5 border-y border-gold/15 py-3 overflow-hidden">
-        <div className="flex animate-ticker whitespace-nowrap">
-          {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
-            <span key={i} className="font-mono text-[10px] text-gold/90 tracking-[0.18em] uppercase mx-8 flex-shrink-0">
-              {item} <span className="text-gold/25 mx-4">·</span>
-            </span>
-          ))}
-        </div>
-      </div>
     </>
   );
 }
