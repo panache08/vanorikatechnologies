@@ -3,18 +3,18 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Shield } from "lucide-react";
+import { Menu, X, ChevronDown, Shield, Globe, Code2, Smartphone, Bot, Dice5, Search } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const servicesDropdown = [
-  { label: "Penetration Testing", icon: "🛡️", href: "/penetration-testing" },
-  { label: "Web Development", icon: "🌐", href: "/web-development" },
-  { label: "Custom Software", icon: "💻", href: "/custom-software" },
-  { label: "Mobile Apps", icon: "📱", href: "/mobile-apps" },
-  { label: "AI & Automation", icon: "🤖", href: "/ai-automation" },
-  { label: "Casino Suite", icon: "🎰", href: "/casino" },
-  { label: "Free Security Tools", icon: "🔍", href: "/tools" },
+  { label: "Penetration Testing", Icon: Shield, href: "/penetration-testing" },
+  { label: "Web Development", Icon: Globe, href: "/web-development" },
+  { label: "Custom Software", Icon: Code2, href: "/custom-software" },
+  { label: "Mobile Apps", Icon: Smartphone, href: "/mobile-apps" },
+  { label: "AI & Automation", Icon: Bot, href: "/ai-automation" },
+  { label: "Casino Suite", Icon: Dice5, href: "/casino" },
+  { label: "Free Security Tools", Icon: Search, href: "/tools" },
 ];
 
 function VanorikaLogo() {
@@ -102,7 +102,7 @@ export default function Navbar() {
                             {servicesDropdown.map((s) => (
                               <Link key={s.href} href={s.href}
                                 className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/55 hover:text-white hover:bg-[#C9A84C]/6 transition-all text-sm font-medium group">
-                                <span className="text-base">{s.icon}</span>
+                                <s.Icon className="w-4 h-4 text-gold/70" />
                                 <span className="group-hover:text-gold transition-colors">{s.label}</span>
                               </Link>
                             ))}
@@ -188,7 +188,7 @@ export default function Navbar() {
               <div className="mt-auto space-y-3">
                 <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer"
                   className="block w-full text-center py-3.5 border border-[#1A1A30] text-white/60 font-medium rounded-lg text-sm">
-                  💬 WhatsApp Us
+                  WhatsApp Us
                 </a>
                 <Link href="/contact"
                   className="block w-full text-center py-3.5 bg-gold text-[#07070D] font-bold rounded-lg text-sm uppercase tracking-wider">

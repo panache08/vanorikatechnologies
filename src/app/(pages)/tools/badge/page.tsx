@@ -11,7 +11,7 @@ function snippet(theme: "dark" | "light") {
   const fg = theme === "dark" ? "#F0EDE8" : "#1A1A1A";
   const border = "#C9A84C";
   return `<a href="${SITE}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font-family:system-ui,sans-serif;font-size:13px;font-weight:600;color:${fg};background:${bg};border:1px solid ${border};border-radius:10px;padding:8px 14px;text-decoration:none">
-  <span style="color:${border}">&#128737;</span> Secured by Vanorika
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="${border}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z"/></svg> Secured by Vanorika
 </a>`;
 }
 
@@ -23,7 +23,9 @@ function Preview({ theme }: { theme: "dark" | "light" }) {
       color: dark ? "#F0EDE8" : "#1A1A1A", background: dark ? "#0D0D1A" : "#ffffff",
       border: "1px solid #C9A84C", borderRadius: 10, padding: "8px 14px",
     }}>
-      <span style={{ color: "#C9A84C" }}>🛡</span> Secured by Vanorika
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 2 4 5v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V5l-8-3Z" />
+      </svg> Secured by Vanorika
     </span>
   );
 }

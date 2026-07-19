@@ -3,7 +3,7 @@ import Footer from "@/components/layout/footer";
 import CTABanner from "@/components/sections/cta-banner";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Check } from "lucide-react";
 import { portfolio } from "@/lib/data";
 import SectionHeader from "@/components/ui/section-header";
 
@@ -48,7 +48,9 @@ export default function PortfolioPage() {
                   </div>
                   <div className="pt-4 border-t border-border">
                     <p className="text-sm font-semibold text-foreground">Result</p>
-                    <p className="text-green-500 text-sm">✅ {p.result}</p>
+                    <p className="text-green-500 text-sm inline-flex items-start gap-1.5">
+                      <Check className="w-4 h-4 shrink-0 mt-0.5" /> {p.result}
+                    </p>
                   </div>
                   {"url" in p && p.url && (
                     <a
