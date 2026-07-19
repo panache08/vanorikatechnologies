@@ -5,7 +5,6 @@ const stats = [
   { value: "2hr", label: "Response Time", sub: "During business hours" },
   { value: "17+", label: "Businesses Assessed", sub: "Across Zimbabwe & region" },
   { value: "<48hr", label: "Audit Start Time", sub: "From first contact" },
-  { value: "100%", label: "DPA 2021 Compliant", sub: "Zimbabwe Data Protection Act" },
 ];
 
 const fadeUp = {
@@ -21,7 +20,7 @@ export default function StatsSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}

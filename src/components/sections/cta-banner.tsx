@@ -53,9 +53,6 @@ export default function CTABanner() {
             </a>
           </div>
 
-          <p className="font-mono text-[10px] text-white/20 mt-8 uppercase tracking-widest">
-            No commitment · Free passive scan included · ZW DPA 2021 Compliant
-          </p>
         </motion.div>
       </div>
     </section>
