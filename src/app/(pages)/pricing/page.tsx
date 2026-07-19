@@ -60,7 +60,7 @@ export default function PricingPage() {
               {
                 name: "Full Penetration Test",
                 price: "from $400",
-                desc: "Comprehensive test of your systems, network and website. Formal report suitable for compliance or board review.",
+                desc: "A full test of your systems, network and website. Formal report suitable for compliance or board review.",
                 cta: "Get a Quote",
                 href: "/contact",
                 highlight: false,

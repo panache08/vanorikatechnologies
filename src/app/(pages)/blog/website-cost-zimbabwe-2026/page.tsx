@@ -37,7 +37,7 @@ export default function Page() {
       <ul>
         <li><strong>Basic business website (3 to 5 pages):</strong> roughly $300 to $600. Mobile-ready, contact form, basic SEO.</li>
         <li><strong>Business site with CMS / e-commerce:</strong> roughly $600 to $2,000. You can edit content yourself, sell products, take payments.</li>
-        <li><strong>Custom web application:</strong> $2,000+. Logins, dashboards, integrations, bespoke logic.</li>
+        <li><strong>Custom web application:</strong> $2,000+. Logins, dashboards, integrations, custom logic.</li>
       </ul>
       <p>If a quote is dramatically below these, ask what's missing; usually it's the design, the security, or the support.</p>
 

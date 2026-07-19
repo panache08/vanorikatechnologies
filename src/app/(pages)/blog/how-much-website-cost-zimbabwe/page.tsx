@@ -32,7 +32,7 @@ export default function Page() {
       <ul>
         <li><strong>$250 to $400</strong>: a clean 5-page brochure site (home, about, services, contact, one extra). Right for most small businesses.</li>
         <li><strong>$700 to $1,200</strong>: a larger site with a content dashboard you can edit yourself, a blog, or a small online store.</li>
-        <li><strong>$1,500 to $3,000+</strong>: a custom web application with logins, dashboards, bookings, payment integration, or anything bespoke.</li>
+        <li><strong>$1,500 to $3,000+</strong>: a custom web application with logins, dashboards, bookings, payment integration, or anything custom-built.</li>
       </ul>
       <p>
         Anything far below this usually means a template someone filled in for an afternoon, and you&apos;ll feel it within months. Anything
