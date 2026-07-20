@@ -68,7 +68,7 @@ const steps = [
   {
     n: "04",
     title: "Remediation",
-    desc: "You take the report to your own team, to a licensed DPO, or back to us to build the fixes. All three are fine. The report is yours either way.",
+    desc: "You take the report to your own team, to a certified DPO, or back to us to build the fixes. All three are fine. The report is yours either way.",
   },
 ];
 
@@ -227,10 +227,11 @@ export default function DataProtectionReadinessPage() {
                 ))}
               </ul>
               <p className="text-sm text-foreground/80 leading-relaxed mt-6 pt-6 border-t border-border">
-                Those are the role of a Data Protection Officer, and in Zimbabwe that role carries registration
-                requirements with POTRAZ as the Data Protection Authority. If you need one, we will say so and
-                point you to someone who holds it. We would rather send you down the road than sell you
-                something we are not.
+                Those are the role of a Data Protection Officer. Under SI 155 of 2024, a DPO is certified
+                through a course at the Harare Institute of Technology, run on behalf of POTRAZ as the Data
+                Protection Authority. Your business separately needs its own data controller licence from
+                POTRAZ. We hold neither, so if you need either we will say so and point you to someone who
+                does. We would rather send you down the road than sell you something we are not.
               </p>
             </div>
           </div>
