@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/security-for-travel-agencies`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/security-for-healthcare`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/penetration-testing`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/data-protection-readiness`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/web-development`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/custom-software`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/mobile-apps`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

@@ -3,12 +3,13 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Shield, Globe, Code2, Smartphone, Bot, Dice5, Search } from "lucide-react";
+import { Menu, X, ChevronDown, Shield, Globe, Code2, Smartphone, Bot, Dice5, Search, Scale } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 const servicesDropdown = [
   { label: "Penetration Testing", Icon: Shield, href: "/penetration-testing" },
+  { label: "Data Protection Readiness", Icon: Scale, href: "/data-protection-readiness" },
   { label: "Web Development", Icon: Globe, href: "/web-development" },
   { label: "Custom Software", Icon: Code2, href: "/custom-software" },
   { label: "Mobile Apps", Icon: Smartphone, href: "/mobile-apps" },

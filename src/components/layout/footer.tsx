@@ -4,6 +4,7 @@ import { siteConfig, navLinks } from "@/lib/data";
 
 const footerServices = [
   { label: "Penetration Testing", href: "/penetration-testing" },
+  { label: "Data Protection Readiness", href: "/data-protection-readiness" },
   { label: "Web Development", href: "/web-development" },
   { label: "Custom Software", href: "/custom-software" },
   { label: "Mobile Apps", href: "/mobile-apps" },
