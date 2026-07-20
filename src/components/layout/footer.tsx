@@ -153,8 +153,8 @@ export default function Footer() {
                     <Icon className="w-3.5 h-3.5 text-gold/60" />
                   </div>
                   {href
-                    ? <a href={href} className="text-white/35 text-sm hover:text-gold transition-colors leading-relaxed font-light">{value}</a>
-                    : <span className="text-white/35 text-sm leading-relaxed font-light">{value}</span>
+                    ? <a href={href} className="min-w-0 break-words text-white/35 text-sm hover:text-gold transition-colors leading-relaxed font-light">{value}</a>
+                    : <span className="min-w-0 break-words text-white/35 text-sm leading-relaxed font-light">{value}</span>
                   }
                 </li>
               ))}
