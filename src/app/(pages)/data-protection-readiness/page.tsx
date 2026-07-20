@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/data-protection-readiness" },
   title: "Data Protection Readiness Assessment in Zimbabwe",
   description:
-    "Find out where your business actually stands against Zimbabwe's Cyber and Data Protection Act [Chapter 12:07]. A technical readiness assessment: data mapping, security controls, breach readiness, and a prioritised remediation plan. From $250.",
+    "Find out where your business actually stands against Zimbabwe's Cyber and Data Protection Act [Chapter 12:07]. A technical readiness assessment: data mapping, security controls, breach readiness, and a prioritised remediation plan.",
 };
 
 const assessed = [
@@ -75,8 +75,8 @@ const steps = [
 const tiers = [
   {
     name: "Readiness Assessment",
-    price: "from $250",
-    note: "One-off. Most SMEs sit at this tier.",
+    scope: "One-off engagement",
+    note: "Where most SMEs start. Scoped on how many systems hold personal data.",
     features: [
       "Full personal data map",
       "Security controls review",
@@ -89,8 +89,8 @@ const tiers = [
   },
   {
     name: "Assess and Remediate",
-    price: "quoted",
-    note: "Assessment plus the engineering to close the gaps.",
+    scope: "Fixed-scope project",
+    note: "The assessment plus the engineering to close the gaps it finds.",
     features: [
       "Everything in the assessment",
       "Consent capture and privacy policy build",
@@ -104,7 +104,7 @@ const tiers = [
   },
   {
     name: "Ongoing Compliance Support",
-    price: "from $80/mo",
+    scope: "Monthly retainer",
     note: "For businesses whose data footprint keeps changing.",
     features: [
       "Quarterly reassessment",
@@ -130,7 +130,6 @@ export default function DataProtectionReadinessPage() {
         name="Data Protection Readiness Assessment in Zimbabwe"
         description="A technical readiness assessment against Zimbabwe's Cyber and Data Protection Act [Chapter 12:07]: personal data mapping, security controls review, breach readiness, third-party risk, and a prioritised remediation plan."
         path="/data-protection-readiness"
-        price="from $250"
       />
       <Navbar />
 
@@ -291,11 +290,11 @@ export default function DataProtectionReadinessPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 max-w-2xl mx-auto">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-balance">
-              Straightforward pricing
+              Three ways to engage
             </h2>
             <p className="text-muted-foreground mt-3 leading-relaxed">
-              No hourly billing, no surprise invoices. Final price depends on how many systems hold
-              personal data, not on how large your logo is.
+              No hourly billing, no surprise invoices. Every engagement is quoted on scope, which
+              means how many systems hold personal data, not how large your logo is.
             </p>
           </div>
 
@@ -310,7 +309,7 @@ export default function DataProtectionReadinessPage() {
                 }
               >
                 <h3 className="font-display text-lg font-bold text-foreground mb-1">{t.name}</h3>
-                <p className="font-display text-4xl font-bold text-gold mb-2">{t.price}</p>
+                <p className="font-display text-xl font-bold text-gold mb-2">{t.scope}</p>
                 <p className="text-muted-foreground text-xs mb-7 leading-relaxed">{t.note}</p>
                 <ul className="space-y-3 mb-8">
                   {t.features.map((f) => (
