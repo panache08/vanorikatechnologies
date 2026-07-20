@@ -1,7 +1,7 @@
 import { promises as dns } from "dns";
-import type { ReportData, ReportCheck, TopFinding } from "@/lib/report-pdf";
+import type { ReportData, ReportCheck, TopFinding, Advisory } from "@/lib/report-pdf";
 
-export type { ReportData, ReportCheck, TopFinding };
+export type { ReportData, ReportCheck, TopFinding, Advisory };
 
 export function normalizeHost(input: string): string | null {
   let v = (input || "").trim().toLowerCase();
@@ -111,6 +111,41 @@ export async function runReport(host: string): Promise<ReportData> {
     fix: "Publish a clear privacy policy covering what personal data you collect, why, and how it's protected.",
   });
 
+  // --- Advisories: obligations we can infer apply, but cannot verify from outside ---
+  const advisories: Advisory[] = [];
+
+  // Evidence that this site processes personal data, which makes the operator a
+  // "data controller" under the Act. We can see the collection; we cannot see the licence.
+  const collectionSignals: string[] = [];
+  if (/<form[\s>]/i.test(html)) collectionSignals.push("a form that submits data");
+  if (/type=["']?email/i.test(html) || /name=["'][^"']*e-?mail/i.test(html)) collectionSignals.push("an email address field");
+  if (/type=["']?tel/i.test(html) || /name=["'][^"']*(phone|mobile|whatsapp)/i.test(html)) collectionSignals.push("a phone number field");
+  if (/(newsletter|subscribe)/i.test(lower)) collectionSignals.push("a newsletter or subscription prompt");
+  if (/(googletagmanager|google-analytics|gtag\(|fbq\(|connect\.facebook\.net|hotjar|clarity\.ms)/i.test(html)) {
+    collectionSignals.push("third-party analytics or advertising trackers");
+  }
+  if (/(cookie\s?(consent|banner|policy)|we use cookies|accept all cookies)/i.test(lower)) {
+    collectionSignals.push("a cookie consent banner");
+  }
+  if (/(type=["']?password|\/(login|signin|sign-in|account|register|my-?account)\b)/i.test(html)) {
+    collectionSignals.push("a login or customer account area");
+  }
+
+  if (collectionSignals.length > 0) {
+    const list = collectionSignals.length === 1
+      ? collectionSignals[0]
+      : `${collectionSignals.slice(0, -1).join(", ")} and ${collectionSignals[collectionSignals.length - 1]}`;
+    advisories.push({
+      id: "controller-licence",
+      label: "Data controller licence (POTRAZ)",
+      basis: `We found ${list} on ${host}. That makes you a data controller under Zimbabwe's Cyber and Data Protection Act [Chapter 12:07].`,
+      detail:
+        "Under SI 155 of 2024, every data controller must hold a licence from POTRAZ. The compliance deadline was 12 March 2025, and processing personal data without a licence is an offence carrying a fine or imprisonment. This is separate from your website security: a perfectly secure site can still be unlicensed.",
+      action:
+        "Apply using Form DP1 on the POTRAZ website. The application fee is US$30 and the licence fee runs from US$50 to US$2,000 depending on your tier, renewable every 12 months. You must also appoint a certified Data Protection Officer.",
+    });
+  }
+
   const totalWeight = checks.reduce((s, c) => s + c.weight, 0);
   const earned = checks.reduce((s, c) => s + (c.pass ? c.weight : 0), 0);
   const score = Math.round((earned / totalWeight) * 100);
@@ -130,6 +165,7 @@ export async function runReport(host: string): Promise<ReportData> {
     total: checks.length,
     checks,
     topFindings,
+    advisories,
     scannedAt: new Date().toISOString(),
   };
 }

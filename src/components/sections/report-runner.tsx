@@ -160,6 +160,21 @@ export default function ReportRunner() {
                 <li className="flex items-center gap-2 text-emerald-400 text-sm"><Check className="w-4 h-4" /> No issues in the passive checks. The full report confirms what to verify manually.</li>
               )}
             </ul>
+            {(result.advisories ?? []).map((a) => (
+              <div key={a.id} className="mt-5 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-amber-400/90 mb-1.5">
+                  Compliance obligation
+                </p>
+                <p className="text-foreground text-sm font-medium">{a.label}</p>
+                <p className="text-muted-foreground text-xs mt-1.5 leading-relaxed">{a.basis}</p>
+                <p className="text-muted-foreground text-xs mt-2 leading-relaxed">{a.detail}</p>
+                <p className="text-muted-foreground/70 text-[11px] mt-2.5 leading-relaxed">
+                  This is a duty that applies to you, not a test you failed. Licence status is not public,
+                  so we cannot tell from outside whether you already hold one. It does not affect your score.
+                </p>
+              </div>
+            ))}
+
             <button onClick={shareLink} type="button" className="mt-4 inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground text-xs transition-colors">
               <Link2 className="w-3.5 h-3.5" /> {copied ? "Link copied" : "Copy shareable link"}
             </button>

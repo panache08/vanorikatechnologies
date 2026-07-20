@@ -11,6 +11,12 @@ export type ReportCheck = {
   fix: string;
 };
 export type TopFinding = { label: string; severity: "high" | "medium" | "low"; detail: string; fix: string };
+/**
+ * A regulatory obligation we can infer applies, but cannot verify compliance with
+ * from outside. Deliberately kept out of the score: an advisory says "this duty
+ * applies to you", never "you have failed it".
+ */
+export type Advisory = { id: string; label: string; basis: string; detail: string; action: string };
 export type ReportData = {
   host: string;
   score: number;
@@ -19,6 +25,7 @@ export type ReportData = {
   total: number;
   checks: ReportCheck[];
   topFindings: TopFinding[];
+  advisories?: Advisory[];
   scannedAt: string;
 };
 
@@ -185,6 +192,24 @@ export async function generateReportPdf(data: ReportData): Promise<Uint8Array> {
       y -= 8;
     }
   }
+
+  for (const a of data.advisories ?? []) {
+    y -= 10;
+    p4.drawRectangle({ x: M, y: y - 4, width: contentW, height: 1, color: LIGHT });
+    y -= 22;
+    p4.drawText(a.label, { x: M, y, size: 11, font: bold, color: INK }); y -= 15;
+    wrap(a.basis, font, 10, contentW).forEach((ln) => { p4.drawText(ln, { x: M, y, size: 10, font, color: MUTE }); y -= 13; });
+    y -= 6;
+    wrap(a.detail, font, 10, contentW).forEach((ln) => { p4.drawText(ln, { x: M, y, size: 10, font, color: MUTE }); y -= 13; });
+    y -= 6;
+    wrap(a.action, font, 10, contentW).forEach((ln) => { p4.drawText(ln, { x: M, y, size: 10, font, color: INK }); y -= 13; });
+    y -= 6;
+    wrap(
+      "This is an obligation that applies to you, not a check you failed. Licence status is not publicly searchable, so we cannot confirm from outside whether you already hold one. It does not affect your score.",
+      font, 9, contentW,
+    ).forEach((ln) => { p4.drawText(ln, { x: M, y, size: 9, font, color: MUTE }); y -= 12; });
+  }
+
   footer(p4, 4);
 
   // ---------- PAGE 5: CLOSING / CONVERSION ----------
